@@ -2,7 +2,7 @@
 ---
 
 <!-- TOP COUNTRY BAR -->
-<div class="w-full text-sm" style="background-color: #1E293B;">
+<div class="w-full text-sm relative" style="background-color: #1E293B; z-index: 60;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-10">
       <div class="flex items-center" style="divide-color: #334155;">
@@ -82,10 +82,10 @@
           >
             <!-- UK -->
             <div>
-              <div class="flex items-center gap-2 mb-3">
+              <a href="/uk" class="flex items-center gap-2 mb-3 hover:opacity-80 transition-opacity">
                 <img src="https://flagcdn.com/w20/gb.png" alt="UK" class="w-5 h-3.5 object-cover rounded-sm" />
                 <span class="text-xs font-bold uppercase tracking-widest" style="color: #1a4480;">United Kingdom</span>
-              </div>
+              </a>
               <ul class="space-y-1.5">
                 {['Tax Compliance & Planning','Accounting & Bookkeeping','Payroll & CIS','Company Formation','Monthly Financial Management'].map(s => (
                   <li><a href="/uk" class="text-xs text-gray-500 hover:text-gray-900 hover:underline transition-colors block py-0.5">{s}</a></li>
@@ -94,22 +94,28 @@
             </div>
             <!-- US -->
             <div>
-              <div class="flex items-center gap-2 mb-3">
+              <a href="/us" class="flex items-center gap-2 mb-3 hover:opacity-80 transition-opacity">
                 <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-5 h-3.5 object-cover rounded-sm" />
                 <span class="text-xs font-bold uppercase tracking-widest" style="color: #1a4480;">United States</span>
-              </div>
+              </a>
               <ul class="space-y-1.5">
-                {['Accounting & Financial Reporting','Federal & State Tax Compliance','Payroll & Employment Tax','Business Formation','Financial Management'].map(s => (
-                  <li><a href="/us" class="text-xs text-gray-500 hover:text-gray-900 hover:underline transition-colors block py-0.5">{s}</a></li>
+                {[
+                  ['Accounting & Financial Reporting', '/us/accounting'],
+                  ['Federal & State Tax Compliance', '/us/tax'],
+                  ['Payroll & Employment Tax', '/us/payroll'],
+                  ['Business Formation', '/us/business-formation'],
+                  ['Financial Management', '/us/financial-management'],
+                ].map(([label, href]) => (
+                  <li><a href={href} class="text-xs text-gray-500 hover:text-gray-900 hover:underline transition-colors block py-0.5">{label}</a></li>
                 ))}
               </ul>
             </div>
             <!-- UAE -->
             <div>
-              <div class="flex items-center gap-2 mb-3">
+              <a href="/uae" class="flex items-center gap-2 mb-3 hover:opacity-80 transition-opacity">
                 <img src="https://flagcdn.com/w20/ae.png" alt="UAE" class="w-5 h-3.5 object-cover rounded-sm" />
                 <span class="text-xs font-bold uppercase tracking-widest" style="color: #1a4480;">Dubai / UAE</span>
-              </div>
+              </a>
               <ul class="space-y-1.5">
                 {['Payroll Management','Accounting & Bookkeeping','VAT Filing','Accounts Payable & Receivable','Financial Reporting','Offshore Staffing'].map(s => (
                   <li><a href="/uae" class="text-xs text-gray-500 hover:text-gray-900 hover:underline transition-colors block py-0.5">{s}</a></li>

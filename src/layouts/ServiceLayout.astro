@@ -1,0 +1,18 @@
+---
+import Layout from './Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  title,
+  description = 'Ambit – Accounting, Tax & Business Advisory Across Key Markets',
+  countryPhone = '+1 (800) 123 4567',
+  countryEmail = 'us@ambit.co.uk',
+} = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <Navbar />
+  <slot />
+  <Footer countryPhone={countryPhone} countryEmail={countryEmail} />
+</Layout>

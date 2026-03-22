@@ -1,0 +1,482 @@
+---
+import USLayout from '../../layouts/USLayout.astro';
+---
+
+<USLayout
+  title="Accounting & Financial Reporting – US"
+  description="Stay IRS-compliant and make smarter decisions with professional accounting and financial reporting services for US businesses."
+  countryPhone="+1 (800) 123 4567"
+  countryEmail="us@ambit.co.uk"
+>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden" style="background-color: #0F172A; min-height: 580px;">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.06] blur-3xl" style="background: #1a4480;"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center" style="min-height: 580px;">
+      <div class="grid lg:grid-cols-2 gap-16 items-center w-full py-24 lg:py-0">
+
+        <!-- Left -->
+        <div x-data="{ v: false }" x-init="setTimeout(() => v = true, 80)" x-show="v"
+          x-transition:enter="transition ease-out duration-700"
+          x-transition:enter-start="opacity-0 translate-y-6"
+          x-transition:enter-end="opacity-100 translate-y-0">
+
+          <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
+            <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-5 h-3.5 object-cover rounded-sm" />
+            <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #93B4D4;">United States · Accounting</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-bold leading-[1.08] text-white mb-6" style="letter-spacing: -0.02em;">
+            Accurate Accounting<br/>&amp; Financial Reporting<br/>
+            <span style="color: #93B4D4;">for US Businesses</span>
+          </h1>
+          <p class="text-base leading-relaxed mb-8" style="color: #94A3B8; max-width: 480px;">
+            Stay IRS-compliant, track your finances in real-time, and make smarter business decisions with professional accounting and reporting services tailored for US companies.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-10">
+            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.45);">
+              Speak to Our Accounting Experts
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#how-it-works" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold rounded border transition-all hover:bg-white/5" style="color: #CBD5E1; border-color: #334155;">
+              See How It Works
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-6 pt-8" style="border-top: 1px solid #1E293B;">
+            {['IRS & State Compliance', 'Real-Time Reports', 'US GAAP Standards', 'Dedicated Team'].map(t => (
+              <div class="flex items-center gap-2">
+                <div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(26,68,128,0.4);">
+                  <svg class="w-2.5 h-2.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-xs font-medium" style="color: #94A3B8;">{t}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right: image -->
+        <div x-data="{ v: false }" x-init="setTimeout(() => v = true, 300)" x-show="v"
+          x-transition:enter="transition ease-out duration-700"
+          x-transition:enter-start="opacity-0 translate-x-6"
+          x-transition:enter-end="opacity-100 translate-x-0"
+          class="hidden lg:block relative">
+          <div class="absolute -top-4 -right-4 w-full h-full rounded-2xl" style="border: 1px solid #1E293B;"></div>
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80"
+            alt="Financial reporting dashboard"
+            class="relative rounded-2xl w-full object-cover shadow-2xl"
+            style="height: 420px; object-position: center;"
+          />
+          <div class="absolute -bottom-5 -left-5 bg-white rounded-xl p-4 shadow-xl" style="border: 1px solid #EEF2F6;">
+            <p class="text-xs mb-1" style="color: #94A3B8;">Monthly Reports Delivered</p>
+            <p class="text-2xl font-black" style="color: #0F172A;">On Time<span style="color: #1a4480;">.</span></p>
+            <div class="mt-2 flex items-center gap-1.5">
+              <div class="w-2 h-2 rounded-full" style="background-color: #22C55E;"></div>
+              <span class="text-xs" style="color: #64748B;">IRS-ready every month</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST STRIP ===== -->
+  <div class="py-4 overflow-hidden" style="background-color: #1a4480;">
+    <div class="flex whitespace-nowrap" style="animation: marquee 25s linear infinite;">
+      {[...Array(3)].map(() => (
+        <div class="flex items-center flex-shrink-0">
+          {['IRS & State Compliance', 'Real-Time Financial Reports', 'Expert Accounting Support', 'Dedicated US Accounting Team', 'US GAAP Certified', 'Multi-State Reporting'].map(item => (
+            <div class="flex items-center gap-8 px-8">
+              <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: rgba(255,255,255,0.75);">{item}</span>
+              <span class="w-1 h-1 rounded-full flex-shrink-0" style="background-color: rgba(255,255,255,0.3);"></span>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- ===== WHY IT MATTERS ===== -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left: image -->
+        <div class="relative hidden lg:block">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80"
+            alt="Financial analytics"
+            class="rounded-2xl w-full object-cover shadow-lg"
+            style="height: 420px; object-position: center;"
+          />
+          <div class="absolute -bottom-5 -right-5 bg-white rounded-xl p-5 shadow-xl" style="border: 1px solid #EEF2F6; max-width: 200px;">
+            <p class="text-3xl font-black mb-1" style="color: #1a4480;">98%</p>
+            <p class="text-xs leading-snug" style="color: #64748B;">of clients report better financial clarity within 30 days</p>
+          </div>
+        </div>
+
+        <!-- Right: content -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
+          <h2 class="text-4xl sm:text-5xl font-bold mb-6" style="color: #0F172A; letter-spacing: -0.025em;">
+            Your Numbers Should<br/>Guide Growth, Not<br/>Confuse You
+          </h2>
+          <p class="text-sm leading-relaxed mb-6" style="color: #64748B;">
+            Without accurate financial reporting, US businesses risk poor decision-making, IRS penalties, and missed growth opportunities.
+          </p>
+          <p class="text-sm leading-relaxed mb-8" style="color: #64748B;">
+            Ambit provides transparent, real-time accounting and reporting so you can focus on running your business confidently — knowing your numbers are always clean, compliant, and current.
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90" style="background-color: #1a4480;">
+            Get Started Today
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="py-24" style="background-color: #F8FAFC;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">What We Provide</p>
+        <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: #0F172A; letter-spacing: -0.025em;">Our Accounting &amp; Financial Reporting Services</h2>
+        <p class="text-sm leading-relaxed" style="color: #64748B;">End-to-end accounting built around US compliance and business clarity.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        {[
+          {
+            num: '01',
+            title: 'Bookkeeping & Accounting',
+            img: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80',
+            icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z',
+            points: ['Daily transaction tracking', 'Bank reconciliation', 'Expense & revenue monitoring'],
+          },
+          {
+            num: '02',
+            title: 'Financial Reporting',
+            img: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80',
+            icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+            points: ['Monthly, quarterly & annual reports', 'Profit & Loss statements', 'Balance sheets & cash flow analysis'],
+          },
+          {
+            num: '03',
+            title: 'Advisory & Compliance',
+            img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80',
+            icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+            points: ['IRS-compliant reporting', 'Tax-ready financial statements', 'Forecasting & budgeting insights'],
+          },
+        ].map(s => (
+          <div class="bg-white rounded-2xl overflow-hidden group hover:-translate-y-1 transition-all duration-300" style="border: 1px solid #EEF2F6; box-shadow: 0 2px 20px rgba(15,23,42,0.06);">
+            <div class="relative overflow-hidden" style="height: 180px;">
+              <img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.7) 0%, transparent 60%);"></div>
+              <div class="absolute bottom-4 left-5 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2);">
+                  <svg class="w-4.5 h-4.5 text-white w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={s.icon}/>
+                  </svg>
+                </div>
+                <span class="text-xs font-black tracking-widest text-white opacity-40">{s.num}</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-4" style="color: #0F172A;">{s.title}</h3>
+              <ul class="space-y-2.5">
+                {s.points.map(p => (
+                  <li class="flex items-start gap-2.5">
+                    <div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #EEF2F8;">
+                      <svg class="w-2.5 h-2.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <span class="text-xs leading-relaxed" style="color: #64748B;">{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO IT'S FOR ===== -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Ideal For</p>
+          <h2 class="text-4xl sm:text-5xl font-bold mb-6" style="color: #0F172A; letter-spacing: -0.025em;">Built for US Businesses of All Sizes</h2>
+          <p class="text-sm leading-relaxed mb-10" style="color: #64748B;">Whether you're a fast-growing startup or an established CPA firm, our accounting and reporting service adapts to your scale and complexity.</p>
+
+          <div class="space-y-3">
+            {[
+              { label: 'Startups & SMEs', desc: 'Investor-ready books from day one', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+              { label: 'E-Commerce Businesses', desc: 'Multi-channel reconciliation & sales tax', icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' },
+              { label: 'Service Companies & Agencies', desc: 'Clean P&L with project-level reporting', icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
+              { label: 'International Companies in the US', desc: 'US GAAP compliance for global operations', icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064' },
+              { label: 'CPA Firms', desc: 'Outsource overflow accounting work', icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z' },
+            ].map(item => (
+              <div class="flex items-center gap-4 p-4 rounded-xl transition-all hover:-translate-x-1 duration-200" style="background-color: #F8FAFC; border: 1px solid #EEF2F6;">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #0F172A, #1a4480);">
+                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={item.icon}/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold" style="color: #0F172A;">{item.label}</p>
+                  <p class="text-xs" style="color: #94A3B8;">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right: image -->
+        <div class="relative hidden lg:block">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80"
+            alt="US business team"
+            class="rounded-2xl w-full object-cover shadow-lg"
+            style="height: 520px; object-position: center top;"
+          />
+          <div class="absolute top-6 -left-5 bg-white rounded-xl px-4 py-3 shadow-lg" style="border: 1px solid #EEF2F6;">
+            <p class="text-xs font-bold mb-0.5" style="color: #0F172A;">500+ US Clients</p>
+            <p class="text-xs" style="color: #94A3B8;">Across all industries</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM → SOLUTION ===== -->
+  <section class="py-24 relative overflow-hidden" style="background-color: #0F172A;">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 28px 28px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #3B82F6;">Common Challenges</p>
+          <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6" style="letter-spacing: -0.025em;">Struggling with Accounting &amp; Financial Clarity?</h2>
+          <p class="text-sm leading-relaxed mb-10" style="color: #64748B;">Most US businesses hit the same walls. Here's what we solve.</p>
+
+          <!-- Problems -->
+          <div class="space-y-3 mb-10">
+            {[
+              'Confusing, inconsistent reports you can\'t act on',
+              'Risk of IRS penalties from non-compliant filings',
+              'Cash flow surprises that catch you off guard',
+              'Hours wasted on manual bookkeeping every month',
+            ].map(p => (
+              <div class="flex items-start gap-3 p-4 rounded-xl" style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.1);">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #F87171;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                <span class="text-sm" style="color: #94A3B8;">{p}</span>
+              </div>
+            ))}
+          </div>
+
+          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.4);">
+            Solve This With Ambit
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Right: solutions -->
+        <div class="space-y-3">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-6" style="color: #3B82F6;">How Ambit Solves It</p>
+          {[
+            { problem: 'Confusing reports', solution: 'Clear, structured monthly financials with plain-English insights you can actually use.' },
+            { problem: 'IRS penalty risk', solution: 'Every filing is reviewed for compliance — IRS and state-level, every time.' },
+            { problem: 'Cash flow surprises', solution: 'Real-time cash flow tracking and forecasting so you\'re never caught off guard.' },
+            { problem: 'Manual bookkeeping time drain', solution: 'Fully managed bookkeeping — accurate, automated, and delivered on schedule.' },
+          ].map(s => (
+            <div class="flex items-start gap-4 p-5 rounded-xl" style="background: #1E293B; border: 1px solid #334155;">
+              <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: rgba(26,68,128,0.5);">
+                <svg class="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold mb-1.5 line-through" style="color: #475569;">{s.problem}</p>
+                <p class="text-sm leading-relaxed" style="color: #CBD5E1;">{s.solution}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how-it-works" class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="max-w-xl mb-20">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">The Process</p>
+        <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: #0F172A; letter-spacing: -0.025em;">4-Step Accounting &amp; Reporting Process</h2>
+        <p class="text-sm leading-relaxed" style="color: #64748B;">A clear process from onboarding to ongoing delivery — no guesswork.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 relative">
+        <div class="hidden lg:block absolute top-3 left-0 right-0 h-px" style="background-color: #E2E8F0;"></div>
+
+        {[
+          { step: '01', title: 'Setup & Review', desc: 'We audit your current accounting systems, software, and workflows to understand exactly where you are.' },
+          { step: '02', title: 'Organize Transactions', desc: 'Clean, accurate bookkeeping — every transaction categorized, reconciled, and audit-ready.' },
+          { step: '03', title: 'Generate Reports', desc: 'Monthly P&L, balance sheets, and cash flow statements delivered on a reliable schedule.' },
+          { step: '04', title: 'Advisory & Support', desc: 'Ongoing insights, tax-ready compliance, forecasting, and a direct line to your accounting team.' },
+        ].map(s => (
+          <div class="relative">
+            <div class="relative mb-8">
+              <div class="w-6 h-6 rounded-full border-2 bg-white relative z-10" style="border-color: #1a4480;">
+                <div class="absolute inset-1 rounded-full" style="background-color: #1a4480;"></div>
+              </div>
+            </div>
+            <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #94A3B8;">{s.step} / 04</p>
+            <h3 class="text-base font-bold mb-2 leading-snug" style="color: #0F172A;">{s.title}</h3>
+            <div class="w-8 h-0.5 mb-3" style="background-color: #1a4480;"></div>
+            <p class="text-sm leading-relaxed" style="color: #64748B;">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section class="py-24" style="background-color: #F8FAFC;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">What You Gain</p>
+          <h2 class="text-4xl sm:text-5xl font-bold mb-10" style="color: #0F172A; letter-spacing: -0.025em;">The Results You'll See</h2>
+
+          <div class="space-y-4">
+            {[
+              { title: 'Accurate, IRS-compliant reporting', desc: 'Every report built to withstand IRS scrutiny — federal and state level.' },
+              { title: 'Clear visibility into profits & cash flow', desc: 'Know exactly where your money is, at any point in the month.' },
+              { title: 'Better decision-making & planning', desc: 'Financial data you can actually act on — not just numbers in a spreadsheet.' },
+              { title: 'Time and cost efficiency', desc: 'Stop spending hours on bookkeeping. Redirect that time to growing your business.' },
+            ].map(r => (
+              <div class="flex items-start gap-4 p-5 bg-white rounded-2xl" style="border: 1px solid #EEF2F6; box-shadow: 0 2px 12px rgba(15,23,42,0.04);">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #0F172A, #1a4480);">
+                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-bold mb-1" style="color: #0F172A;">{r.title}</p>
+                  <p class="text-xs leading-relaxed" style="color: #64748B;">{r.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right: image + US-specific -->
+        <div class="space-y-5">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80"
+            alt="US accounting results"
+            class="rounded-2xl w-full object-cover shadow-md"
+            style="height: 240px; object-position: center top;"
+          />
+          <div class="rounded-2xl p-7 bg-white" style="border: 1px solid #EEF2F6;">
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style="color: #1a4480;">Tailored for US Standards</p>
+            <div class="grid grid-cols-2 gap-3">
+              {['IRS & State Compliance', 'US GAAP Reports', 'QuickBooks US · Xero US', 'Multi-State Reporting'].map(item => (
+                <div class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background-color: #1a4480;"></div>
+                  <span class="text-xs" style="color: #64748B;">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="py-24" style="background-color: #0F172A;">
+    <div class="absolute inset-0 opacity-[0.025]" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 28px 28px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #3B82F6;">Testimonials</p>
+        <h2 class="text-4xl font-bold text-white" style="letter-spacing: -0.025em;">Trusted by US Businesses</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        {[
+          { quote: "Ambit's financial reports helped us understand our business like never before — accurate, timely, and genuinely actionable.", name: 'Rachel M.', role: 'CEO, E-Commerce Brand', location: 'Austin, TX' },
+          { quote: "Their team ensures everything is IRS-ready and always delivered on time. We haven't had a single compliance issue since switching to Ambit.", name: 'David K.', role: 'CPA Firm Owner', location: 'Chicago, IL' },
+        ].map(t => (
+          <div class="rounded-2xl p-8" style="background: #1E293B; border: 1px solid #334155;">
+            <svg class="w-7 h-7 mb-6 opacity-25" style="color: #3B82F6;" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-sm leading-relaxed mb-7" style="color: #94A3B8;">"{t.quote}"</p>
+            <div class="flex items-center gap-3" style="border-top: 1px solid #334155; padding-top: 1.25rem;">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">{t.name[0]}</div>
+              <div>
+                <p class="text-sm font-semibold text-white">{t.name}</p>
+                <p class="text-xs" style="color: #475569;">{t.role} · {t.location}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section id="contact" class="py-24 relative overflow-hidden" style="background-color: #F8FAFC;">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+      <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Get Started</p>
+      <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: #0F172A; letter-spacing: -0.025em;">
+        Take Control of Your<br/>Business Finances
+      </h2>
+      <p class="text-sm leading-relaxed mb-10 mx-auto" style="color: #64748B; max-width: 480px;">
+        Accurate accounting, real-time insights, and IRS-ready reporting — all in one place, handled by experts who know US compliance.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-14">
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 24px rgba(26,68,128,0.4);">
+          Book Free Consultation
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/us" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold rounded border transition-all hover:bg-gray-50" style="color: #0F172A; border-color: #E2E8F0;">
+          ← Back to US Services
+        </a>
+      </div>
+
+      <!-- Stat strip -->
+      <div class="grid sm:grid-cols-3 gap-6 pt-10 max-w-2xl mx-auto" style="border-top: 1px solid #E2E8F0;">
+        {[
+          { val: '500+', label: 'US Clients Served' },
+          { val: '20+', label: 'Years of Expertise' },
+          { val: '100%', label: 'IRS Compliance Rate' },
+        ].map(s => (
+          <div>
+            <p class="text-3xl font-black mb-1" style="color: #1a4480;">{s.val}</p>
+            <p class="text-xs" style="color: #94A3B8;">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</USLayout>
