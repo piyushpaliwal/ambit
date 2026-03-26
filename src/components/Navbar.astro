@@ -123,8 +123,15 @@
                 <span class="text-xs font-bold uppercase tracking-widest" style="color: #1a4480;">Dubai / UAE</span>
               </a>
               <ul class="space-y-1.5">
-                {['Payroll Management','Accounting & Bookkeeping','VAT Filing','Accounts Payable & Receivable','Financial Reporting','Offshore Staffing'].map(s => (
-                  <li><a href="/uae" class="text-xs text-gray-500 hover:text-gray-900 hover:underline transition-colors block py-0.5">{s}</a></li>
+                {[
+                  ['Accounting & Bookkeeping (IFRS)', '/uae/accounting'],
+                  ['Payroll Management (UAE Labour Law)', '/uae/payroll'],
+                  ['Tax & VAT Filing', '/uae/tax'],
+                  ['Accounts Payable & Receivable', '/uae/accounts'],
+                  ['Financial Reporting & Analysis', '/uae/reporting'],
+                  ['Offshore Accounting Teams', '/uae/offshore'],
+                ].map(([label, href]) => (
+                  <li><a href={href} class="text-xs text-gray-500 hover:text-gray-900 hover:underline transition-colors block py-0.5">{label}</a></li>
                 ))}
               </ul>
             </div>
