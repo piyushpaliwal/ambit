@@ -179,10 +179,10 @@ import Footer from '../components/Footer.astro';
   <!-- ===== MISSION & VISION ===== -->
   <section class="py-24 px-6 lg:px-12" style="background-color: #F8FAFC;">
     <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid md:grid-cols-2 gap-8 items-stretch">
 
         <!-- Mission -->
-        <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
+        <div class="bg-white rounded-2xl p-10 shadow-sm border border-gray-100 flex flex-col">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background-color: #EFF6FF;">
             <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
@@ -191,7 +191,7 @@ import Footer from '../components/Footer.astro';
           <p class="text-base leading-relaxed mb-8" style="color: #64748B;">
             To deliver accurate, efficient, and scalable accounting solutions to US businesses while ensuring confidentiality, reliability, and personalised service.
           </p>
-          <ul class="space-y-3">
+          <ul class="space-y-3 mt-auto">
             {[
               'Reduce accounting costs without compromising quality',
               'Provide real-time financial insights for better decisions',
@@ -209,7 +209,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- Vision -->
-        <div class="rounded-2xl p-10" style="background-color: #0F172A;">
+        <div class="rounded-2xl p-10 flex flex-col" style="background-color: #0F172A;">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background-color: #1E293B;">
             <svg class="w-6 h-6" style="color: #3B82F6;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
           </div>
@@ -218,7 +218,7 @@ import Footer from '../components/Footer.astro';
           <p class="text-base leading-relaxed mb-8" style="color: #94A3B8;">
             To be the most trusted offshore accounting partner for US businesses, setting new standards in accuracy, efficiency, and innovation in bookkeeping and financial management.
           </p>
-          <div class="grid grid-cols-2 gap-4 pt-8 border-t" style="border-color: #1E293B;">
+          <div class="grid grid-cols-2 gap-4 pt-8 border-t mt-auto" style="border-color: #1E293B;">
             {[
               { val: '12+', label: 'Years of Experience' },
               { val: '280+', label: 'Businesses Helped' },
