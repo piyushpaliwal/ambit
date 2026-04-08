@@ -38,7 +38,8 @@ import Footer from '../components/Footer.astro';
         style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;"
       >
         <svg class="w-3.5 h-3.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-        Our Process
+        Our Approach
+
       </div>
 
       <h1
@@ -49,8 +50,7 @@ import Footer from '../components/Footer.astro';
         class="text-4xl lg:text-6xl xl:text-7xl font-black leading-none mb-8 text-white"
         style="letter-spacing: -0.03em;"
       >
-        Our Simple, Transparent<br />
-        <span style="color: #3B82F6;">Process for Accounting Success</span>
+       How Work Is Structured
       </h1>
 
       <p
@@ -61,7 +61,7 @@ import Footer from '../components/Footer.astro';
         class="text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
         style="color: #94A3B8;"
       >
-        From discovery to delivery, Ambit makes outsourcing accounting and bookkeeping easy, accurate, and stress-free.
+        A defined approach to understanding requirements, aligning workflows, and ensuring delivery remains consistent across teams, systems, and jurisdictions.
       </p>
 
       <div
@@ -75,7 +75,7 @@ import Footer from '../components/Footer.astro';
           Book Free Consultation
         </a>
         <a href="#process" class="px-8 py-4 text-sm font-semibold rounded-lg border transition-all hover:bg-white/5" style="color: #94A3B8; border-color: #334155;">
-          See the Process
+          View Process
         </a>
       </div>
 
@@ -87,7 +87,7 @@ import Footer from '../components/Footer.astro';
         x-transition:enter-end="opacity-100"
         class="flex flex-wrap justify-center gap-3"
       >
-        {['01 Discovery', '02 Hire Staff', '03 Onboarding', '04 Execution', '05 Support'].map(label => (
+        {['01 Understanding', '02 Structuring', '03 Onboarding', '04 Delivery & Review', '05 Continuity'].map(label => (
           <span class="text-xs font-semibold px-4 py-2 rounded-full" style="background-color: #1E293B; color: #64748B; border: 1px solid #334155;">{label}</span>
         ))}
       </div>
@@ -113,8 +113,9 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">At a Glance</div>
-        <h2 class="text-4xl font-black mb-4" style="color: #0F172A; letter-spacing: -0.02em;">5 Steps to Accounting Success</h2>
-        <p class="text-lg max-w-2xl mx-auto" style="color: #64748B;">A simple, proven process that gets you from onboarding to fully managed accounting — without the headaches.</p>
+        <h2 class="text-4xl font-black mb-4" style="color: #0F172A; letter-spacing: -0.02em;">A Structured Approach to Deliverys</h2>
+        <p class="text-lg max-w-2xl mx-auto" style="color: #64748B;">Work is not treated as isolated tasks.</p>
+        <p class="text-lg max-w-2xl mx-auto" style="color: #64748B;"> Each engagement is designed to integrate into existing systems, maintain consistency across reporting cycles, and hold under scale.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -153,19 +154,19 @@ import Footer from '../components/Footer.astro';
               <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-lg font-black text-white flex-shrink-0" style="background-color: #1a4480;">01</div>
               <div class="text-xs font-bold uppercase tracking-widest" style="color: #64748B;">First Step</div>
             </div>
-            <h2 class="text-4xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Discovery Call</h2>
+            <h2 class="text-4xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Understanding the Requirement</h2>
             <p class="text-lg leading-relaxed mb-8" style="color: #94A3B8;">
-              We start by understanding your business, your accounting needs, and the challenges you face. This helps us tailor a solution specifically for your industry — no generic packages, just what works for you.
+             Work begins with a detailed review of current systems, workflows, and reporting structures.
             </p>
             <div class="p-5 rounded-xl mb-8 flex items-start gap-3" style="background-color: #1E293B; border-left: 3px solid #1a4480;">
               <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color: #3B82F6;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
               <div>
                 <div class="text-xs font-bold uppercase tracking-widest mb-1" style="color: #3B82F6;">Impact</div>
-                <div class="text-sm" style="color: #94A3B8;">Personalized accounting plan, no wasted effort.</div>
+                <div class="text-sm" style="color: #94A3B8;">Clarity on gaps, dependencies, and areas where structure is required.</div>
               </div>
             </div>
             <ul class="space-y-3">
-              {['30-minute free strategy call with our team', 'Deep-dive into your current accounting setup', 'Identify pain points, gaps, and opportunities', 'Receive a customised accounting proposal', 'No obligation — just clarity'].map(item => (
+              {['Review of existing processes and workflows', 'Identification of inconsistencies and bottlenecks', 'Alignment with business structure and reporting needs', 'Definition of scope across functions'].map(item => (
                 <li class="flex items-center gap-3">
                   <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #1E293B;">
                     <svg class="w-3 h-3" style="color: #3B82F6;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -202,19 +203,19 @@ import Footer from '../components/Footer.astro';
               <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-lg font-black text-white flex-shrink-0" style="background-color: #1a4480;">02</div>
               <div class="text-xs font-bold uppercase tracking-widest" style="color: #1a4480;">Second Step</div>
             </div>
-            <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">Hire Dedicated Staff</h2>
+            <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">Defining the Structure</h2>
             <p class="text-lg leading-relaxed mb-8" style="color: #64748B;">
-              You select your dedicated accounting professionals from our offshore team. Each team member is trained, certified, and ready to handle US accounting standards — working as a true extension of your business.
+            Processes, workflows, and delivery models are aligned to ensure consistency across teams and systems.
             </p>
             <div class="p-5 rounded-xl mb-8 flex items-start gap-3" style="background-color: #EFF6FF; border-left: 3px solid #1a4480;">
               <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
               <div>
                 <div class="text-xs font-bold uppercase tracking-widest mb-1" style="color: #1a4480;">Impact</div>
-                <div class="text-sm" style="color: #374151;">Build a team that works as an extension of your business.</div>
+                <div class="text-sm" style="color: #374151;">A clear structure that supports reliable execution without dependency on individuals.</div>
               </div>
             </div>
             <ul class="space-y-3">
-              {['Choose from a vetted pool of accounting professionals', 'CPA-trained with US GAAP knowledge', 'Flexible staffing — part-time or full-time', 'Direct communication with your dedicated team', 'Scale up or down as your business grows'].map(item => (
+              {['Workflow design aligned to existing systems', 'Role definition and responsibility mapping', 'Reporting structure alignment', 'Integration across finance and operational processes'].map(item => (
                 <li class="flex items-center gap-3">
                   <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF;">
                     <svg class="w-3 h-3" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -237,19 +238,19 @@ import Footer from '../components/Footer.astro';
               <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-lg font-black text-white flex-shrink-0" style="background-color: #1a4480;">03</div>
               <div class="text-xs font-bold uppercase tracking-widest" style="color: #1a4480;">Third Step</div>
             </div>
-            <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">Onboarding & Setup</h2>
+            <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">Onboarding and Alignment</h2>
             <p class="text-lg leading-relaxed mb-8" style="color: #64748B;">
-              We smoothly integrate your processes, software, and workflows. From QuickBooks to NetSuite, we ensure a seamless transition that keeps your operations running without a hitch.
+          Systems, access, and workflows are established in a controlled and structured manner.
             </p>
             <div class="p-5 rounded-xl mb-8 flex items-start gap-3" style="background-color: #EFF6FF; border-left: 3px solid #1a4480;">
               <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
               <div>
                 <div class="text-xs font-bold uppercase tracking-widest mb-1" style="color: #1a4480;">Impact</div>
-                <div class="text-sm" style="color: #374151;">Zero disruption to your current operations, immediate productivity.</div>
+                <div class="text-sm" style="color: #374151;">Smooth transition without disruption to ongoing operations.</div>
               </div>
             </div>
             <ul class="space-y-3">
-              {['Full software integration (QuickBooks, Xero, NetSuite, FreshBooks)', 'Process mapping & workflow documentation', 'Data migration with zero loss', 'Team briefing & role clarity', 'Go-live in as little as 1 week'].map(item => (
+              {['System access and environment setup', 'Process documentation and alignment', 'Data transition and validation', 'Team integration across workflows'].map(item => (
                 <li class="flex items-center gap-3">
                   <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF;">
                     <svg class="w-3 h-3" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -296,19 +297,20 @@ import Footer from '../components/Footer.astro';
               <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-lg font-black text-white flex-shrink-0" style="background-color: #1a4480;">04</div>
               <div class="text-xs font-bold uppercase tracking-widest" style="color: #1a4480;">Fourth Step</div>
             </div>
-            <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">Execution & Reporting</h2>
+            <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">Execution & Review</h2>
             <p class="text-lg leading-relaxed mb-8" style="color: #64748B;">
-              Your team executes daily accounting, bookkeeping, payroll, tax preparation, and reporting tasks. We deliver accurate, timely, and compliant financials — every time, without fail.
+              Work is delivered with defined review layers to ensure consistency, accuracy, and compliance.
+
             </p>
             <div class="p-5 rounded-xl mb-8 flex items-start gap-3" style="background-color: #EFF6FF; border-left: 3px solid #1a4480;">
               <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
               <div>
                 <div class="text-xs font-bold uppercase tracking-widest mb-1" style="color: #1a4480;">Impact</div>
-                <div class="text-sm" style="color: #374151;">Reliable financial data for decision-making, reduced errors, and cost savings.</div>
+                <div class="text-sm" style="color: #374151;">Reliable outputs that remain consistent across periods and teams.</div>
               </div>
             </div>
             <ul class="space-y-3">
-              {['Daily bookkeeping & transaction categorisation', 'Bank & credit card reconciliations', 'Payroll processing & compliance', 'Tax preparation & filing', 'Monthly P&L, balance sheet & cash flow reports'].map(item => (
+              {['Ongoing execution across defined workflows', 'Multi-level review and validation', 'Reporting aligned to agreed structures', 'Consistency maintained across cycles'].map(item => (
                 <li class="flex items-center gap-3">
                   <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #EFF6FF;">
                     <svg class="w-3 h-3" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -333,17 +335,17 @@ import Footer from '../components/Footer.astro';
             </div>
             <h2 class="text-4xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Continuous Support</h2>
             <p class="text-lg leading-relaxed mb-8" style="color: #94A3B8;">
-              We don't stop at execution. Our team provides ongoing support, monthly and quarterly reports, and actionable insights to help you grow smarter and stay fully compliant.
+             Delivery is maintained with continuity, adapting to changes in volume, structure, and regulatory requirements.
             </p>
             <div class="p-5 rounded-xl mb-8 flex items-start gap-3" style="background-color: #1E293B; border-left: 3px solid #1a4480;">
               <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color: #3B82F6;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
               <div>
                 <div class="text-xs font-bold uppercase tracking-widest mb-1" style="color: #3B82F6;">Impact</div>
-                <div class="text-sm" style="color: #94A3B8;">Long-term partnership, proactive financial management, peace of mind.</div>
+                <div class="text-sm" style="color: #94A3B8;">Long-term stability without operational disruption.</div>
               </div>
             </div>
             <ul class="space-y-3">
-              {['Dedicated account manager always available', 'Monthly & quarterly financial reviews', 'Proactive tax planning & compliance alerts', 'Real-time financial dashboards & KPIs', 'Scale your team at any time with zero friction'].map(item => (
+              {['Ongoing delivery and monitoring', 'Adaptation to business changes', 'Support across evolving requirements', 'Continuity across teams and reporting periods'].map(item => (
                 <li class="flex items-center gap-3">
                   <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #1E293B;">
                     <svg class="w-3 h-3" style="color: #3B82F6;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
