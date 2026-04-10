@@ -13,13 +13,13 @@ const {
 const currentUrl = Astro.url.pathname;
 
 const services = [
-  { label: 'UAE Overview', href: '/uae', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
-  { label: 'Accounting & Bookkeeping', href: '/uae/accounting', icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z' },
-  { label: 'Payroll (UAE Labour Law)', href: '/uae/payroll', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' },
-  { label: 'Tax & VAT Filing', href: '/uae/tax', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
-  { label: 'Accounts Payable & Receivable', href: '/uae/accounts', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
-  { label: 'Financial Reporting', href: '/uae/reporting', icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' },
-  { label: 'Offshore Accounting Teams', href: '/uae/offshore', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z' },
+  { label: 'Overview', href: '/services/finance-accounting-tax/uae/overview', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+  { label: 'Accounting & Bookkeeping', href: '/services/finance-accounting-tax/uae/accounting-bookkeeping', icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z' },
+  { label: 'Tax Compliance', href: '/services/finance-accounting-tax/uae/tax-compliance', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+  { label: 'VAT Compliance', href: '/services/finance-accounting-tax/uae/tax-compliance', icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5' },
+  { label: 'Payroll', href: '/services/finance-accounting-tax/uae/payroll', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' },
+  { label: 'Financial Management', href: '/services/finance-accounting-tax/uae/financial-management', icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' },
+  { label: 'Business Formation', href: '/services/finance-accounting-tax/uae/business-formation', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z' },
 ];
 ---
 
@@ -33,7 +33,7 @@ const services = [
 
       <!-- Country header -->
       <div class="px-6 py-6" style="border-bottom: 1px solid #1E293B;">
-        <a href="/uae" class="flex items-center gap-3 group">
+        <a href="/services/finance-accounting-tax/uae/overview" class="flex items-center gap-3 group">
           <div class="w-8 h-8 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center" style="background-color: #1E293B;">
             <img src="https://flagcdn.com/w40/ae.png" alt="UAE" class="w-8 h-5 object-cover" />
           </div>
@@ -47,7 +47,7 @@ const services = [
       <!-- Nav links -->
       <nav class="flex-1 overflow-y-auto px-4 py-6 space-y-1">
         {services.map(({ label, href, icon }) => {
-          const isActive = currentUrl === href || (href !== '/uae' && currentUrl.startsWith(href));
+          const isActive = currentUrl === href || currentUrl === href + '/';
           return (
             <a
               href={href}
@@ -114,7 +114,7 @@ const services = [
       <div class="flex items-center gap-2">
         <img src="https://flagcdn.com/w20/ae.png" alt="UAE" class="w-5 h-3.5 object-cover rounded-sm" />
         <span class="text-sm font-semibold" style="color: #F8FAFC;">UAE Services</span>
-        <span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background-color: #1E293B; color: #64748B;">7 pages</span>
+        <span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background-color: #1E293B; color: #64748B;">7 services</span>
       </div>
       <svg class="w-4 h-4 transition-transform" :class="open ? 'rotate-180' : ''" style="color: #64748B;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
@@ -124,7 +124,7 @@ const services = [
     <!-- Drawer content -->
     <div x-show="open" x-transition class="px-4 pb-4 grid grid-cols-2 gap-2">
       {services.map(({ label, href, icon }) => {
-        const isActive = currentUrl === href || (href !== '/uae' && currentUrl.startsWith(href));
+        const isActive = currentUrl === href || currentUrl === href + '/';
         return (
           <a
             href={href}
