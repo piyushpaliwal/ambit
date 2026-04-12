@@ -2,229 +2,269 @@
 import USLayout from '../../../../layouts/USLayout.astro';
 ---
 
-<USLayout
-  title="Business Formation – US"
-  description="From LLCs to Corporations, Ambit guides US entrepreneurs through every step of business formation, ensuring legal compliance and a strong foundation for growth."
-  countryPhone="+1 (800) 123 4567"
-  countryEmail="us@ambit.co.uk"
->
+<USLayout title="US Business Formation | Entity Setup & State Registration | Ambit" description="Entity formation, EIN registration, and multi-state structuring for US businesses. IRS-aligned setup for LLCs, S-Corps, and C-Corps with tax and compliance alignment from day one.">
 
   <!-- ===== HERO ===== -->
-  <section class="relative overflow-hidden" style="background-color: #0F172A; min-height: 560px;">
-    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 32px 32px;"></div>
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06] blur-3xl" style="background: #1a4480;"></div>
+  <section class="relative min-h-[88vh] flex items-center overflow-hidden" style="background-color: #0F172A;">
+    <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#1E293B 1px, transparent 1px), linear-gradient(90deg, #1E293B 1px, transparent 1px); background-size: 64px 64px;"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,68,128,0.18) 0%, transparent 70%);"></div>
 
-    <div class="relative max-w-6xl mx-auto px-6 lg:px-10 flex items-center" style="min-height: 560px;">
-      <div class="grid lg:grid-cols-2 gap-14 items-center w-full py-20 lg:py-0">
-
-        <!-- Left -->
-        <div x-data="{ v: false }" x-init="setTimeout(() => v = true, 80)" x-show="v"
-          x-transition:enter="transition ease-out duration-700"
-          x-transition:enter-start="opacity-0 translate-y-6"
-          x-transition:enter-end="opacity-100 translate-y-0">
-
-          <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
-            <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-5 h-3.5 object-cover rounded-sm" />
-            <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #93B4D4;">United States · Business Formation</span>
-          </div>
-
-          <h1 class="text-4xl sm:text-5xl font-bold leading-[1.08] text-white mb-6" style="letter-spacing: -0.02em;">
-            Launch Your Business<br/>
-            the Right Way —<br/>
-            <span style="color: #93B4D4;">Hassle-Free</span>
-          </h1>
-          <p class="text-base leading-relaxed mb-8" style="color: #94A3B8; max-width: 460px;">
-            From LLCs to Corporations, Ambit guides US entrepreneurs through every step of business formation, ensuring legal compliance and a strong foundation for growth.
-          </p>
-
-          <div class="flex flex-wrap gap-3 mb-10">
-            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.45);">
-              Start My Business Formation
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-            <a href="#how-it-works" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold rounded border transition-all hover:bg-white/5" style="color: #CBD5E1; border-color: #334155;">
-              See How It Works
-            </a>
-          </div>
-
-          <div class="flex flex-wrap gap-5 pt-8" style="border-top: 1px solid #1E293B;">
-            {['Quick Registration', 'IRS Compliant', 'Multi-State Support', 'Dedicated Experts'].map(t => (
-              <div class="flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #3B82F6;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                <span class="text-xs font-medium" style="color: #64748B;">{t}</span>
-              </div>
-            ))}
-          </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase" style="background-color: rgba(26,68,128,0.25); border: 1px solid rgba(26,68,128,0.4); color: #93C5FD;">
+          <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-4 h-3 object-cover rounded-sm" />
+          United States · Business Formation
         </div>
+      </div>
 
-        <!-- Right: hero image + floating stats -->
-        <div class="relative hidden lg:block">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl" style="height: 420px;">
-            <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&auto=format&fit=crop&q=80"
-              alt="Business formation consultation"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(15,23,42,0.45) 0%, transparent 60%);"></div>
-          </div>
-          <!-- Floating stat -->
-          <div class="absolute -bottom-6 -left-8 rounded-xl px-5 py-4 shadow-xl" style="background: #1a4480; border: 1px solid rgba(255,255,255,0.1);">
-            <div class="text-2xl font-bold text-white leading-none mb-0.5">Days</div>
-            <div class="text-xs font-medium" style="color: #93B4D4;">Not Months to Launch</div>
-          </div>
-          <!-- Second float -->
-          <div class="absolute -top-4 -right-4 rounded-xl px-4 py-3 shadow-xl" style="background: #1E293B; border: 1px solid #334155;">
-            <div class="text-xl font-bold text-white leading-none mb-0.5">50+</div>
-            <div class="text-xs" style="color: #64748B;">States Covered</div>
-          </div>
-        </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6" style="color: #F8FAFC;">
+        Business Formation
+        <span class="block" style="color: #93C5FD;">United States</span>
+      </h1>
 
+      <p class="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed" style="color: #94A3B8;">
+        Entity setup, registration, and structuring aligned with federal and state requirements to ensure compliance, tax efficiency, and operational readiness from day one.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mb-14">
+        {['IRS Compliant', 'Federal and State Aligned', 'Multi-State Ready', 'Entity Structure Aligned', 'Tax-Ready Setup'].map(label => (
+          <span class="px-3 py-1.5 rounded-full text-xs font-semibold" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">{label}</span>
+        ))}
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#process" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+          See How It Works
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold transition-all hover:opacity-80" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">
+          Book Free Consultation
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== TRUST STRIP ===== -->
-  <div class="overflow-hidden py-4" style="background-color: #1a4480;">
-    <div class="flex items-center gap-0" style="animation: marquee 28s linear infinite; width: max-content;">
+  <!-- ===== METRICS STRIP ===== -->
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B; border-bottom: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { metric: 'Structured', label: 'Entity setup', sub: 'LLC, S-Corp, and C-Corp coverage' },
+          { metric: 'State-wise', label: 'Registration', sub: 'All jurisdictions handled' },
+          { metric: 'Tax-aware', label: 'Foundation', sub: 'IRS and state aligned from day one' },
+          { metric: 'Operational', label: 'Readiness', sub: 'Ready to trade without delays' },
+        ].map(({ metric, label, sub }) => (
+          <div class="text-center lg:text-left">
+            <div class="text-3xl lg:text-4xl font-black mb-1" style="color: #F8FAFC;">{metric}</div>
+            <div class="text-sm font-semibold mb-1" style="color: #93C5FD;">{label}</div>
+            <div class="text-xs" style="color: #475569;">{sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAPABILITY MARQUEE ===== -->
+  <div class="overflow-hidden py-4" style="background-color: #0F172A; border-bottom: 1px solid #1E293B;">
+    <div class="flex gap-12 whitespace-nowrap animate-marquee text-xs font-semibold tracking-widest uppercase" style="color: #475569;">
       {[
-        'Quick & Accurate Registration',
-        'IRS & State Compliance',
-        'Multi-State Expertise',
-        'Dedicated Business Formation Experts',
-        'LLC & Corporation Setup',
-        'EIN Registration',
-        'Operating Agreements',
-        'Bank Account Assistance',
-      ].concat([
-        'Quick & Accurate Registration',
-        'IRS & State Compliance',
-        'Multi-State Expertise',
-        'Dedicated Business Formation Experts',
-        'LLC & Corporation Setup',
-        'EIN Registration',
-        'Operating Agreements',
-        'Bank Account Assistance',
-      ]).map(item => (
-        <div class="flex items-center gap-3 px-6 whitespace-nowrap">
-          <span class="w-1.5 h-1.5 rounded-full bg-white opacity-60 flex-shrink-0"></span>
-          <span class="text-xs font-semibold tracking-[0.12em] uppercase text-white opacity-90">{item}</span>
-        </div>
+        'Entity formation across states',
+        'IRS and EIN registration',
+        'State-wise business registrations',
+        'Multi-state structuring',
+        'Tax-efficient entity setup',
+        'Compliance and documentation alignment',
+        'Scalable business structures',
+        'Integration with accounting and tax',
+        'Entity formation across states',
+        'IRS and EIN registration',
+        'State-wise business registrations',
+        'Multi-state structuring',
+        'Tax-efficient entity setup',
+        'Compliance and documentation alignment',
+        'Scalable business structures',
+        'Integration with accounting and tax',
+      ].map(item => (
+        <span class="flex items-center gap-3">
+          <span class="w-1 h-1 rounded-full inline-block" style="background-color: #1a4480;"></span>
+          {item}
+        </span>
       ))}
     </div>
   </div>
 
+  <!-- ===== CERTIFICATION BLOCK ===== -->
+  <section style="background-color: #060D18; border-bottom: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-10">
+      <div class="flex flex-wrap items-center gap-6">
+        <span class="text-xs font-bold tracking-widest uppercase" style="color: #334155;">Standards</span>
+        {['ISO 27001 Certified', 'IRS-Aligned Processes', 'State-Level Compliance Ready', 'Multi-State Structure Ready'].map(cert => (
+          <div class="flex items-center gap-2 px-4 py-2 rounded-lg" style="background-color: #0F172A; border: 1px solid #1E293B;">
+            <svg class="w-4 h-4" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            <span class="text-xs font-semibold" style="color: #94A3B8;">{cert}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- ===== WHY IT MATTERS ===== -->
-  <section class="py-20 lg:py-28" style="background-color: #ffffff;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <section style="background-color: #0F172A;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight max-w-3xl" style="color: #F8FAFC;">
+          Entity Structure in the US Determines Tax, Compliance, and Scalability
+        </h2>
+        <p class="mt-4 text-base max-w-2xl leading-relaxed" style="color: #64748B;">
+          Business formation in the United States is not limited to registration. The choice of entity type, state of registration, and operational structure directly impacts tax obligations, compliance requirements, and long-term scalability. A poorly structured setup leads to higher taxes, compliance issues, and future restructuring.
+        </p>
+      </div>
 
-        <!-- Image -->
-        <div class="relative rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1" style="height: 480px;">
-          <img
-            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&auto=format&fit=crop&q=80"
-            alt="Business documents and legal formation"
-            class="w-full h-full object-cover"
-          />
-          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.55) 0%, transparent 55%);"></div>
-          <div class="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-3">
-            {[
-              { num: '$0', label: 'Hidden Fees' },
-              { num: '100%', label: 'Compliance Rate' },
-              { num: '50+', label: 'States Covered' },
-              { num: '24h', label: 'Avg. Response Time' },
-            ].map(m => (
-              <div class="rounded-lg px-4 py-3" style="background: rgba(15,23,42,0.85); border: 1px solid rgba(255,255,255,0.1);">
-                <div class="text-xl font-bold text-white leading-none mb-0.5">{m.num}</div>
-                <div class="text-xs" style="color: #94A3B8;">{m.label}</div>
-              </div>
-            ))}
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'Correct Entity Selection', body: 'Structure aligned with business model and growth plans.', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
+          { title: 'Federal and State Alignment', body: 'Setup aligned with IRS and state-level requirements.', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+          { title: 'Tax Positioning from Day One', body: 'Entity structure aligned with tax efficiency and compliance.', icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5' },
+          { title: 'Operational Readiness', body: 'Business ready to operate across states without delays.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+        ].map(({ title, body, icon }) => (
+          <div class="rounded-xl p-6" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-5" style="background-color: #1a4480;">
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/></svg>
+            </div>
+            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
-        </div>
-
-        <!-- Content -->
-        <div class="order-1 lg:order-2">
-          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
-          <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: #0F172A; letter-spacing: -0.02em;">
-            Start Right. Avoid Costly Mistakes Later.
-          </h2>
-          <div class="w-10 h-px mb-6" style="background-color: #1a4480;"></div>
-          <p class="text-base leading-relaxed mb-8" style="color: #475569;">
-            Incorrect formation, missing licenses, or poor legal structure can create headaches, fines, and extra costs. Ambit ensures your US business is legally compliant, properly structured, and ready to operate from day one.
-          </p>
-
-          <div class="space-y-4">
-            {[
-              { title: 'Right Legal Structure from Day One', desc: 'We advise on the optimal entity type — LLC, S-Corp, C-Corp — based on your tax efficiency and growth goals.' },
-              { title: 'Federal & State Registration Handled', desc: 'All filings, EIN setup, and state-level registrations completed accurately and on time.' },
-              { title: 'Compliance Built Into the Foundation', desc: 'Licenses, permits, operating agreements, and bylaws set up properly so you can focus on building.' },
-            ].map(item => (
-              <div class="flex gap-4 p-4 rounded-xl" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
-                <div class="w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center mt-0.5" style="background: #EFF6FF;">
-                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #1a4480;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold mb-1" style="color: #0F172A;">{item.title}</div>
-                  <div class="text-xs leading-relaxed" style="color: #64748B;">{item.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section class="py-20 lg:py-28" style="background-color: #F8FAFC;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="text-center mb-14">
-        <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #1a4480;">What We Offer</p>
-        <h2 class="text-3xl lg:text-4xl font-bold" style="color: #0F172A; letter-spacing: -0.02em;">Our Business Formation Services</h2>
-        <div class="w-10 h-px mx-auto mt-5" style="background-color: #1a4480;"></div>
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">What We Offer</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Business Formation Services</h2>
+        <p class="mt-3 text-base max-w-2xl" style="color: #64748B;">End-to-end entity setup across federal and state jurisdictions with tax and compliance built in from the start.</p>
       </div>
 
-      <div class="grid sm:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 gap-6">
         {[
           {
-            title: 'LLC & Corporation Formation',
-            img: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&auto=format&fit=crop&q=75',
-            points: ['Federal & state registration', 'Articles of incorporation / organization', 'EIN registration'],
-            icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+            num: '01',
+            title: 'Entity Formation',
+            points: [
+              'Formation of LLC, S-Corp, and C-Corp entities',
+              'State-level incorporation',
+              'Documentation and filing support',
+            ],
           },
           {
-            title: 'Compliance Setup',
-            img: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&auto=format&fit=crop&q=75',
-            points: ['Business licenses & permits guidance', 'Bank account setup assistance', 'Operating agreements & bylaws'],
-            icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+            num: '02',
+            title: 'EIN and Federal Registration',
+            points: [
+              'Employer Identification Number (EIN) setup',
+              'IRS registration alignment',
+              'Federal compliance setup',
+            ],
           },
           {
-            title: 'Advisory & Planning',
-            img: 'https://images.unsplash.com/photo-1553484771-047a44eee27a?w=700&auto=format&fit=crop&q=75',
-            points: ['Optimal legal structure for tax efficiency', 'Compliance guidance for federal & state', 'Growth-focused formation strategy'],
-            icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+            num: '03',
+            title: 'State Registrations',
+            points: [
+              'State business registrations',
+              'Secretary of State filings',
+              'Multi-state registration coordination',
+            ],
           },
-        ].map(svc => (
-          <div class="rounded-2xl overflow-hidden shadow-sm" style="background: white; border: 1px solid #E2E8F0;">
-            <div class="relative h-44 overflow-hidden">
-              <img src={svc.img} alt={svc.title} class="w-full h-full object-cover" />
-              <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.72));"></div>
-              <div class="absolute bottom-4 left-4 flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: #1a4480;">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={svc.icon}/></svg>
-                </div>
-                <h3 class="text-white font-bold text-sm leading-snug">{svc.title}</h3>
+          {
+            num: '04',
+            title: 'Multi-State Structuring',
+            points: [
+              'Expansion across multiple states',
+              'Alignment with operational presence',
+              'Structuring based on nexus and activity',
+            ],
+          },
+          {
+            num: '05',
+            title: 'Tax Structure Alignment',
+            points: [
+              'Entity-level tax implications',
+              'Alignment with federal and state tax requirements',
+              'Structuring for compliance and scalability',
+            ],
+          },
+          {
+            num: '06',
+            title: 'Sales Tax and Nexus Registration',
+            points: [
+              'Sales tax registration across states',
+              'Nexus-based registration planning',
+              'Alignment with business operations',
+            ],
+          },
+          {
+            num: '07',
+            title: 'Payroll and Employer Setup',
+            points: [
+              'Employer registration across states',
+              'Payroll tax account setup',
+              'Alignment with employment tax requirements',
+            ],
+          },
+          {
+            num: '08',
+            title: 'Business Licenses and Compliance',
+            points: [
+              'Identification of required licenses',
+              'Industry-specific compliance alignment',
+              'Ongoing regulatory setup',
+            ],
+          },
+          {
+            num: '09',
+            title: 'Operating Agreements and Documentation',
+            points: [
+              'Drafting and structuring of operating agreements',
+              'Internal documentation alignment',
+              'Ownership and governance clarity',
+            ],
+          },
+          {
+            num: '10',
+            title: 'Foreign-Owned Business Setup',
+            points: [
+              'Setup for non-US founders',
+              'IRS and regulatory alignment',
+              'Structuring for cross-border operations',
+            ],
+          },
+          {
+            num: '11',
+            title: 'Ongoing Compliance Setup',
+            points: [
+              'Initial compliance framework',
+              'Filing and reporting alignment',
+              'Preparation for ongoing obligations',
+            ],
+          },
+        ].map(({ num, title, points }) => (
+          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <div class="flex items-start gap-5">
+              <span class="text-4xl font-black leading-none flex-shrink-0" style="color: #1E293B;">{num}</span>
+              <div class="flex-1">
+                <h3 class="text-sm font-bold mb-4" style="color: #F8FAFC;">{title}</h3>
+                <ul class="space-y-2">
+                  {points.map(point => (
+                    <li class="flex items-start gap-2 text-sm leading-relaxed" style="color: #64748B;">
+                      <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-            <div class="p-5">
-              <ul class="space-y-2.5">
-                {svc.points.map(p => (
-                  <li class="flex items-start gap-2.5">
-                    <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #1a4480;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    <span class="text-sm" style="color: #374151;">{p}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         ))}
@@ -232,249 +272,178 @@ import USLayout from '../../../../layouts/USLayout.astro';
     </div>
   </section>
 
-  <!-- ===== WHO IT'S FOR ===== -->
-  <section class="py-20 lg:py-28" style="background-color: #ffffff;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Who We Serve</p>
-          <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: #0F172A; letter-spacing: -0.02em;">
-            Ideal for US Entrepreneurs &amp; Growing Businesses
-          </h2>
-          <div class="w-10 h-px mb-8" style="background-color: #1a4480;"></div>
+  <!-- ===== WHO WE SERVE ===== -->
+  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Who We Serve</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Designed for Businesses Setting Up or Expanding in the US</h2>
+      </div>
 
-          <div class="space-y-3">
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Startups and Founders', body: 'Structured setup aligned with long-term growth.' },
+          { title: 'Growing Businesses', body: 'Expansion into new states with proper structuring.' },
+          { title: 'International Businesses', body: 'Entry into the US with compliant and scalable structure.' },
+          { title: 'Multi-Entity Groups', body: 'Formation and structuring across multiple entities.' },
+        ].map(({ title, body }) => (
+          <div class="rounded-xl p-8 flex items-start gap-4" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <div class="w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center mt-0.5" style="background-color: #1a4480;">
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #64748B;">{body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM / SOLUTION ===== -->
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">The Challenge</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Without vs. With Structured Formation</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #374151;">
+          <h3 class="text-sm font-bold uppercase tracking-widest mb-6" style="color: #64748B;">Without Structured Formation</h3>
+          <ul class="space-y-4">
             {[
-              { label: 'Startups & First-Time Founders', desc: 'Get a solid legal foundation without the complexity or costly attorney fees.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
-              { label: 'SMEs Seeking Legal Compliance', desc: 'Ensure your existing or new entity is fully registered, licensed, and audit-ready.', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
-              { label: 'E-Commerce & Service Businesses', desc: 'Protect your online business with the right legal structure and tax setup.', icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z' },
-              { label: 'International Businesses Entering the US', desc: 'Navigate US federal and state requirements seamlessly from abroad.', icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064' },
+              'Incorrect entity selection',
+              'Misalignment with tax requirements',
+              'Delays in registrations',
+              'Compliance gaps across states',
+              'Future restructuring required',
             ].map(item => (
-              <div class="flex items-start gap-4 p-4 rounded-xl transition-all hover:shadow-md" style="border: 1px solid #E2E8F0;">
-                <div class="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: #EFF6FF;">
-                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #1a4480;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}/></svg>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold mb-0.5" style="color: #0F172A;">{item.label}</div>
-                  <div class="text-xs leading-relaxed" style="color: #64748B;">{item.desc}</div>
-                </div>
-              </div>
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #374151;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
-        <div class="relative rounded-2xl overflow-hidden shadow-xl hidden lg:block" style="height: 520px;">
-          <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&auto=format&fit=crop&q=80"
-            alt="Entrepreneur launching business"
-            class="w-full h-full object-cover"
-          />
-          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.6) 0%, transparent 55%);"></div>
-          <div class="absolute bottom-8 left-8 right-8">
-            <div class="text-white font-bold text-xl mb-2">Built for Founders</div>
-            <div class="text-sm" style="color: #93B4D4;">From first-time entrepreneurs to global entrants</div>
-          </div>
+        <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1a4480;">
+          <h3 class="text-sm font-bold uppercase tracking-widest mb-6" style="color: #93C5FD;">With Structured Formation</h3>
+          <ul class="space-y-4">
+            {[
+              'Correct entity from the outset',
+              'Alignment with federal and state tax',
+              'Smooth operational setup',
+              'Scalable business structure',
+              'Controlled compliance',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROBLEM → SOLUTION ===== -->
-  <section class="py-20 lg:py-28" style="background-color: #0F172A;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="text-center mb-14">
-        <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #93B4D4;">The Challenge</p>
-        <h2 class="text-3xl lg:text-4xl font-bold text-white" style="letter-spacing: -0.02em;">
-          Avoid Common Formation Mistakes
-        </h2>
-        <div class="w-10 h-px mx-auto mt-5" style="background-color: #1a4480;"></div>
+  <!-- ===== PROCESS ===== -->
+  <section id="process" style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">How Work Is Structured</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Our Process</h2>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-8">
-        <!-- Problems -->
-        <div class="rounded-2xl p-8" style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15);">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.15);">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #EF4444;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-            </div>
-            <span class="text-sm font-bold uppercase tracking-widest" style="color: #EF4444;">Without Ambit</span>
-          </div>
-          <div class="space-y-4">
-            {[
-              'Incorrect legal structure causing future tax issues',
-              'Missing registrations, licenses, or permits',
-              'Multi-state compliance gaps and fines',
-              'Time-consuming, confusing paperwork',
-              'Costly mistakes requiring expensive corrections',
-            ].map(p => (
-              <div class="flex items-start gap-3">
-                <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #EF4444;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
-                <span class="text-sm leading-relaxed" style="color: #94A3B8;">{p}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Solutions -->
-        <div class="rounded-2xl p-8" style="background: rgba(26,68,128,0.15); border: 1px solid rgba(26,68,128,0.35);">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: rgba(26,68,128,0.3);">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #93B4D4;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            </div>
-            <span class="text-sm font-bold uppercase tracking-widest" style="color: #93B4D4;">With Ambit</span>
-          </div>
-          <div class="space-y-4">
-            {[
-              'Optimal LLC or Corporation structure from the start',
-              'Complete federal and state registration handled for you',
-              'Multi-state compliance, licenses, and permits covered',
-              'Fast, accurate filing — launch in days, not months',
-              'Peace of mind with audit-ready documentation',
-            ].map(s => (
-              <div class="flex items-start gap-3">
-                <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #3B82F6;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                <span class="text-sm leading-relaxed" style="color: #CBD5E1;">{s}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section id="how-it-works" class="py-20 lg:py-28" style="background-color: #F8FAFC;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="text-center mb-16">
-        <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #1a4480;">Our Process</p>
-        <h2 class="text-3xl lg:text-4xl font-bold" style="color: #0F172A; letter-spacing: -0.02em;">4-Step US Business Formation Process</h2>
-        <div class="w-10 h-px mx-auto mt-5" style="background-color: #1a4480;"></div>
-      </div>
-
-      <!-- Desktop timeline -->
-      <div class="hidden lg:grid grid-cols-4 gap-6 relative">
-        <div class="absolute top-[52px] left-[12.5%] right-[12.5%] h-px" style="background: linear-gradient(to right, #1a4480, #1e5ab5, #1a4480);"></div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
         {[
-          { num: '01', title: 'Consultation', desc: 'Understand your business type, goals, and the optimal legal structure for your situation.' },
-          { num: '02', title: 'Formation Filing', desc: 'Register your LLC, Corporation, or other entity at federal and state level accurately.' },
-          { num: '03', title: 'Compliance Setup', desc: 'Business licenses, permits, bank account support, operating agreements, and bylaws.' },
-          { num: '04', title: 'Ongoing Guidance', desc: 'Advisory for tax planning, reporting obligations, and long-term growth strategy.' },
-        ].map((step, i) => (
-          <div class="flex flex-col items-center text-center">
-            <div class="relative z-10 w-[104px] h-[104px] rounded-full flex flex-col items-center justify-center mb-6 shadow-lg" style="background: white; border: 2px solid #1a4480;">
-              <span class="text-xs font-bold tracking-[0.15em] uppercase mb-0.5" style="color: #94A3B8;">{step.num} / 04</span>
-              <span class="text-lg font-bold" style="color: #0F172A;">{i + 1}</span>
-            </div>
-            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{step.title}</h3>
-            <div class="w-6 h-px mb-3 mx-auto" style="background: #1a4480;"></div>
-            <p class="text-xs leading-relaxed" style="color: #64748B;">{step.desc}</p>
+          { label: '01 / 05', title: 'Understanding', body: 'We review your business model, intended activities, ownership structure, and states of operation to assess formation requirements.' },
+          { label: '02 / 05', title: 'Structuring', body: 'We advise on entity type, state of formation, tax implications, and multi-state structuring considerations.' },
+          { label: '03 / 05', title: 'Registration', body: 'We handle entity incorporation, EIN registration, Secretary of State filings, and state-level business registrations.' },
+          { label: '04 / 05', title: 'Setup and Alignment', body: 'We complete tax and payroll registrations, establish compliance frameworks, and connect with accounting and reporting systems.' },
+          { label: '05 / 05', title: 'Continuity', body: 'We support ongoing annual filings, state renewals, and compliance requirements as the business grows and expands.' },
+        ].map(({ label, title, body }) => (
+          <div>
+            <div class="text-xs font-bold tracking-widest mb-4" style="color: #1a4480;">{label}</div>
+            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
       </div>
 
-      <!-- Mobile timeline -->
-      <div class="lg:hidden space-y-6">
-        {[
-          { num: '01', title: 'Consultation', desc: 'Understand your business type, goals, and the optimal legal structure for your situation.' },
-          { num: '02', title: 'Formation Filing', desc: 'Register your LLC, Corporation, or other entity at federal and state level accurately.' },
-          { num: '03', title: 'Compliance Setup', desc: 'Business licenses, permits, bank account support, operating agreements, and bylaws.' },
-          { num: '04', title: 'Ongoing Guidance', desc: 'Advisory for tax planning, reporting obligations, and long-term growth strategy.' },
-        ].map((step, i) => (
-          <div class="flex gap-5 items-start">
-            <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-white text-sm" style="background: #1a4480;">{i + 1}</div>
-            <div class="pt-1">
-              <div class="text-xs font-bold tracking-[0.15em] uppercase mb-1" style="color: #94A3B8;">{step.num} / 04</div>
-              <div class="text-sm font-bold mb-1.5" style="color: #0F172A;">{step.title}</div>
-              <p class="text-xs leading-relaxed" style="color: #64748B;">{step.desc}</p>
-            </div>
-          </div>
-        ))}
+      <div class="mt-14">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+          Book Free Consultation for Business Formation
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== RESULTS / IMPACT ===== -->
-  <section class="py-20 lg:py-28" style="background-color: #ffffff;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <!-- ===== RESULTS + BUILT FOR US ===== -->
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="grid lg:grid-cols-2 gap-16">
         <div>
-          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">The Results</p>
-          <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: #0F172A; letter-spacing: -0.02em;">What You Gain</h2>
-          <div class="w-10 h-px mb-8" style="background-color: #1a4480;"></div>
-
-          <div class="space-y-4 mb-10">
+          <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">What You Gain</p>
+          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #F8FAFC;">The Results</h2>
+          <ul class="space-y-4">
             {[
-              'Fully registered and compliant business',
-              'Proper legal structure for growth',
-              'Audit-ready documentation from day one',
-              'Peace of mind for founders',
-            ].map(r => (
-              <div class="flex items-center gap-3 py-3 px-4 rounded-xl" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
-                <div class="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style="background: #EFF6FF;">
-                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #1a4480;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <span class="text-sm font-medium" style="color: #0F172A;">{r}</span>
-              </div>
+              'Fully registered and compliant entity',
+              'Structured tax and financial foundation',
+              'Operational readiness from day one',
+              'Scalable structure for growth',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
             ))}
-          </div>
-
-          <!-- US Specific Grid -->
-          <div class="rounded-2xl p-6" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
-            <p class="text-xs font-bold tracking-[0.15em] uppercase mb-4" style="color: #1a4480;">Tailored for US Business Laws</p>
-            <div class="grid grid-cols-2 gap-3">
-              {[
-                'Federal & State Registration',
-                'EIN & Tax ID Setup',
-                'Operating Agreements & Bylaws',
-                'Multi-State Formation Guidance',
-              ].map(item => (
-                <div class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background: #1a4480;"></div>
-                  <span class="text-xs font-medium" style="color: #374151;">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          </ul>
         </div>
 
-        <div class="relative rounded-2xl overflow-hidden shadow-xl hidden lg:block" style="height: 480px;">
-          <img
-            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&auto=format&fit=crop&q=80"
-            alt="Business team celebrating launch"
-            class="w-full h-full object-cover"
-          />
-          <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(15,23,42,0.5) 0%, transparent 60%);"></div>
-          <div class="absolute top-6 right-6 rounded-xl px-5 py-4 shadow-xl" style="background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.1);">
-            <div class="text-2xl font-bold text-white leading-none mb-0.5">100%</div>
-            <div class="text-xs" style="color: #93B4D4;">Compliance Rate</div>
-          </div>
+        <div>
+          <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why Ambit</p>
+          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #F8FAFC;">Built for US Business Environment</h2>
+          <ul class="space-y-4">
+            {[
+              'IRS-aligned entity setup',
+              'Multi-state structuring expertise',
+              'Integration with tax, payroll, and accounting',
+              'Cross-border readiness for international businesses',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="py-20 lg:py-24" style="background-color: #0F172A;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="text-center mb-14">
-        <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #93B4D4;">Client Feedback</p>
-        <h2 class="text-3xl font-bold text-white" style="letter-spacing: -0.02em;">Trusted by US Entrepreneurs</h2>
-        <div class="w-10 h-px mx-auto mt-5" style="background-color: #1a4480;"></div>
+  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-12">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Client Feedback</p>
+        <h2 class="text-2xl lg:text-3xl font-black" style="color: #F8FAFC;">What Clients Say</h2>
       </div>
-      <div class="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
         {[
-          { quote: 'Ambit made forming our LLC seamless and stress-free. We launched within days without any hassle.', name: 'Michael T.', role: 'Founder, US Tech Startup' },
-          { quote: 'From federal registration to state compliance, Ambit handled it all perfectly.', name: 'Priya S.', role: 'CEO, E-Commerce Venture' },
-        ].map(t => (
-          <div class="rounded-2xl p-7" style="background: #1E293B; border: 1px solid #334155;">
-            <svg class="w-7 h-7 mb-4 opacity-40" fill="currentColor" viewBox="0 0 24 24" style="color: #1a4480;"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <p class="text-sm leading-relaxed mb-6 italic" style="color: #CBD5E1;">"{t.quote}"</p>
-            <div class="flex items-center gap-3 pt-4" style="border-top: 1px solid #334155;">
-              <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">{t.name[0]}</div>
-              <div>
-                <div class="text-sm font-semibold text-white">{t.name}</div>
-                <div class="text-xs" style="color: #64748B;">{t.role}</div>
-              </div>
+          { quote: 'Ambit helped us choose the right entity and set up across multiple states without complications.', name: 'Co-founder', company: 'Technology Startup, United States' },
+          { quote: 'Our US setup was structured correctly from the start. We avoided tax and compliance issues later.', name: 'CEO', company: 'International Business, United States' },
+        ].map(({ quote, name, company }) => (
+          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <svg class="w-6 h-6 mb-4" style="color: #1a4480;" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p class="text-sm leading-relaxed mb-6" style="color: #94A3B8;">{quote}</p>
+            <div>
+              <div class="text-xs font-bold" style="color: #F8FAFC;">{name}</div>
+              <div class="text-xs mt-0.5" style="color: #475569;">{company}</div>
             </div>
           </div>
         ))}
@@ -483,39 +452,23 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section id="contact" class="py-20 lg:py-28" style="background-color: #F8FAFC;">
-    <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center">
-      <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Get Started Today</p>
-      <h2 class="text-3xl lg:text-4xl font-bold mb-5" style="color: #0F172A; letter-spacing: -0.02em;">
-        Start Your US Business Confidently
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 py-24 text-center">
+      <p class="text-xs font-bold tracking-widest uppercase mb-6" style="color: #1a4480;">Get Started</p>
+      <h2 class="text-3xl lg:text-4xl font-black mb-6 leading-tight" style="color: #F8FAFC;">
+        Start with the Right Structure
       </h2>
-      <p class="text-base leading-relaxed mb-10 mx-auto" style="color: #64748B; max-width: 500px;">
-        Accurate registration. Full compliance. Expert guidance from day one.
+      <p class="text-base mb-10 max-w-xl mx-auto leading-relaxed" style="color: #64748B;">
+        A properly structured US business setup ensures smoother operations, clearer compliance, and long-term scalability.
       </p>
-
-      <div class="flex flex-wrap justify-center gap-4 mb-14">
-        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5 shadow-lg" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.35);">
-          Get Started Today
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+          Get a Free Quote
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <a href="tel:+18001234567" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold rounded border transition-all hover:shadow-md" style="color: #0F172A; border-color: #CBD5E1; background: white;">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          Call Us Now
+        <a href="mailto:us@ambit.co.uk" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-sm font-semibold transition-all hover:opacity-80" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">
+          Email Our US Team
         </a>
-      </div>
-
-      <!-- Stats row -->
-      <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto">
-        {[
-          { num: '50+', label: 'States Covered' },
-          { num: '100%', label: 'Compliance Rate' },
-          { num: '$0', label: 'Hidden Fees' },
-        ].map(s => (
-          <div class="text-center">
-            <div class="text-2xl font-bold mb-1" style="color: #1a4480;">{s.num}</div>
-            <div class="text-xs" style="color: #64748B;">{s.label}</div>
-          </div>
-        ))}
       </div>
     </div>
   </section>

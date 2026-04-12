@@ -2,221 +2,261 @@
 import USLayout from '../../../../layouts/USLayout.astro';
 ---
 
-<USLayout
-  title="Federal & State Tax Compliance – US"
-  description="From federal filings to state-specific requirements, Ambit ensures your business is 100% IRS and state-compliant — penalty-free."
-  countryPhone="+1 (800) 123 4567"
-  countryEmail="us@ambit.co.uk"
->
+<USLayout title="US Tax Compliance | Federal, State & Sales Tax | Ambit" description="Federal, state, and multi-state tax compliance structured for IRS alignment. Sales tax, nexus assessment, multi-state registrations, and audit-ready documentation.">
 
   <!-- ===== HERO ===== -->
-  <section class="relative overflow-hidden" style="background-color: #0F172A; min-height: 580px;">
-    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 32px 32px;"></div>
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.06] blur-3xl" style="background: #1a4480;"></div>
-    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.04] blur-3xl" style="background: #3B82F6;"></div>
+  <section class="relative min-h-[88vh] flex items-center overflow-hidden" style="background-color: #0F172A;">
+    <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#1E293B 1px, transparent 1px), linear-gradient(90deg, #1E293B 1px, transparent 1px); background-size: 64px 64px;"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,68,128,0.18) 0%, transparent 70%);"></div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center" style="min-height: 580px;">
-      <div class="grid lg:grid-cols-2 gap-16 items-center w-full py-24 lg:py-0">
-
-        <!-- Left -->
-        <div x-data="{ v: false }" x-init="setTimeout(() => v = true, 80)" x-show="v"
-          x-transition:enter="transition ease-out duration-700"
-          x-transition:enter-start="opacity-0 translate-y-6"
-          x-transition:enter-end="opacity-100 translate-y-0">
-
-          <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
-            <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-5 h-3.5 object-cover rounded-sm" />
-            <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #93B4D4;">United States · Tax Compliance</span>
-          </div>
-
-          <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-bold leading-[1.08] text-white mb-6" style="letter-spacing: -0.02em;">
-            Stay Compliant,<br/>Avoid Penalties,<br/>
-            <span style="color: #93B4D4;">Focus on Growth</span>
-          </h1>
-          <p class="text-base leading-relaxed mb-8" style="color: #94A3B8; max-width: 480px;">
-            From federal filings to state-specific requirements, Ambit ensures your business is 100% IRS and state-compliant — keeping you worry-free and penalty-free.
-          </p>
-
-          <div class="flex flex-wrap gap-3 mb-10">
-            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.45);">
-              Book Free Tax Consultation
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-            <a href="#how-it-works" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold rounded border transition-all hover:bg-white/5" style="color: #CBD5E1; border-color: #334155;">
-              See How It Works
-            </a>
-          </div>
-
-          <div class="flex flex-wrap gap-6 pt-8" style="border-top: 1px solid #1E293B;">
-            {['IRS & State Compliance', 'Penalty-Free Filings', 'Federal & State Experts', 'Multi-State Support'].map(t => (
-              <div class="flex items-center gap-2">
-                <div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: rgba(26,68,128,0.4);">
-                  <svg class="w-2.5 h-2.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <span class="text-xs font-medium" style="color: #94A3B8;">{t}</span>
-              </div>
-            ))}
-          </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase" style="background-color: rgba(26,68,128,0.25); border: 1px solid rgba(26,68,128,0.4); color: #93C5FD;">
+          <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-4 h-3 object-cover rounded-sm" />
+          United States · Tax Compliance
         </div>
+      </div>
 
-        <!-- Right: image -->
-        <div x-data="{ v: false }" x-init="setTimeout(() => v = true, 300)" x-show="v"
-          x-transition:enter="transition ease-out duration-700"
-          x-transition:enter-start="opacity-0 translate-x-6"
-          x-transition:enter-end="opacity-100 translate-x-0"
-          class="hidden lg:block relative">
-          <div class="absolute -top-4 -right-4 w-full h-full rounded-2xl" style="border: 1px solid #1E293B;"></div>
-          <img
-            src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=900&q=80"
-            alt="Tax compliance documents"
-            class="relative rounded-2xl w-full object-cover shadow-2xl"
-            style="height: 420px; object-position: center;"
-          />
-          <div class="absolute -bottom-5 -left-5 bg-white rounded-xl p-4 shadow-xl" style="border: 1px solid #EEF2F6;">
-            <p class="text-xs mb-1" style="color: #94A3B8;">Filing Accuracy Rate</p>
-            <p class="text-2xl font-black" style="color: #0F172A;">100<span style="color: #1a4480;">%</span></p>
-            <div class="mt-2 flex items-center gap-1.5">
-              <div class="w-2 h-2 rounded-full" style="background-color: #22C55E;"></div>
-              <span class="text-xs" style="color: #64748B;">Zero penalty record</span>
-            </div>
-          </div>
-        </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6" style="color: #F8FAFC;">
+        Tax Compliance
+        <span class="block" style="color: #93C5FD;">United States</span>
+      </h1>
 
+      <p class="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed" style="color: #94A3B8;">
+        Federal, state, and multi-state tax compliance structured to ensure accurate filings, clear tax positions, and alignment with IRS and state requirements.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mb-14">
+        {['IRS Compliant', 'Federal and State Aligned', 'Sales Tax Compliant', 'Multi-State Ready', 'Audit-Ready Documentation'].map(label => (
+          <span class="px-3 py-1.5 rounded-full text-xs font-semibold" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">{label}</span>
+        ))}
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#process" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+          See How It Works
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold transition-all hover:opacity-80" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">
+          Book Free Consultation
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== TRUST STRIP ===== -->
-  <div class="py-4 overflow-hidden" style="background-color: #1a4480;">
-    <div class="flex whitespace-nowrap" style="animation: marquee 25s linear infinite;">
-      {[...Array(3)].map(() => (
-        <div class="flex items-center flex-shrink-0">
-          {['IRS & State Compliance', 'Penalty-Free Filings', 'Expert Federal & State Tax Advisors', 'Multi-State Filing Support', 'Audit-Ready Documentation', 'US GAAP Aligned'].map(item => (
-            <div class="flex items-center gap-8 px-8">
-              <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: rgba(255,255,255,0.75);">{item}</span>
-              <span class="w-1 h-1 rounded-full flex-shrink-0" style="background-color: rgba(255,255,255,0.3);"></span>
-            </div>
-          ))}
-        </div>
+  <!-- ===== METRICS STRIP ===== -->
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B; border-bottom: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { metric: 'Accurate', label: 'Tax filings', sub: 'Federal and state aligned' },
+          { metric: 'Compliant', label: 'Across jurisdictions', sub: 'Every filing period' },
+          { metric: 'Structured', label: 'Documentation', sub: 'Audit-ready records' },
+          { metric: 'Multi-state', label: 'Aligned', sub: 'Nexus and obligations managed' },
+        ].map(({ metric, label, sub }) => (
+          <div class="text-center lg:text-left">
+            <div class="text-3xl lg:text-4xl font-black mb-1" style="color: #F8FAFC;">{metric}</div>
+            <div class="text-sm font-semibold mb-1" style="color: #93C5FD;">{label}</div>
+            <div class="text-xs" style="color: #475569;">{sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAPABILITY MARQUEE ===== -->
+  <div class="overflow-hidden py-4" style="background-color: #0F172A; border-bottom: 1px solid #1E293B;">
+    <div class="flex gap-12 whitespace-nowrap animate-marquee text-xs font-semibold tracking-widest uppercase" style="color: #475569;">
+      {[
+        'Federal and state tax compliance',
+        'Sales tax and nexus structuring',
+        'Multi-state registrations and filings',
+        'Tax position alignment with financials',
+        'Audit-ready documentation',
+        'Integration with accounting and payroll',
+        'Entity-level tax structuring',
+        'Ongoing compliance monitoring',
+        'Federal and state tax compliance',
+        'Sales tax and nexus structuring',
+        'Multi-state registrations and filings',
+        'Tax position alignment with financials',
+        'Audit-ready documentation',
+        'Integration with accounting and payroll',
+        'Entity-level tax structuring',
+        'Ongoing compliance monitoring',
+      ].map(item => (
+        <span class="flex items-center gap-3">
+          <span class="w-1 h-1 rounded-full inline-block" style="background-color: #1a4480;"></span>
+          {item}
+        </span>
       ))}
     </div>
   </div>
 
+  <!-- ===== CERTIFICATION BLOCK ===== -->
+  <section style="background-color: #060D18; border-bottom: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-10">
+      <div class="flex flex-wrap items-center gap-6">
+        <span class="text-xs font-bold tracking-widest uppercase" style="color: #334155;">Standards</span>
+        {['ISO 27001 Certified', 'IRS-Aligned Processes', 'Multi-State Compliance Ready', 'Audit-Ready Documentation'].map(cert => (
+          <div class="flex items-center gap-2 px-4 py-2 rounded-lg" style="background-color: #0F172A; border: 1px solid #1E293B;">
+            <svg class="w-4 h-4" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            <span class="text-xs font-semibold" style="color: #94A3B8;">{cert}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- ===== WHY IT MATTERS ===== -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <section style="background-color: #0F172A;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight max-w-3xl" style="color: #F8FAFC;">
+          US Tax Requires Alignment Across Federal, State, and Transaction Layers
+        </h2>
+        <p class="mt-4 text-base max-w-2xl leading-relaxed" style="color: #64748B;">
+          Tax in the United States operates across multiple layers including federal tax, state tax, and sales tax. Each layer has its own rules, filing requirements, and compliance obligations. Without structured alignment across these layers, businesses face penalties, incorrect filings, and gaps in compliance.
+        </p>
+      </div>
 
-        <!-- Left: content -->
-        <div>
-          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
-          <h2 class="text-4xl sm:text-5xl font-bold mb-6" style="color: #0F172A; letter-spacing: -0.025em;">
-            Non-Compliance Can<br/>Cost More Than<br/>You Think
-          </h2>
-          <p class="text-sm leading-relaxed mb-5" style="color: #64748B;">
-            Late or incorrect federal and state tax filings can result in significant fines, penalties, and IRS audits — all of which drain time, money, and energy from your business.
-          </p>
-          <p class="text-sm leading-relaxed mb-8" style="color: #64748B;">
-            Ambit provides accurate, timely, and legally compliant tax filings across all required federal and state jurisdictions, so your business stays safe, clean, and stress-free.
-          </p>
-
-          <div class="grid grid-cols-2 gap-4 mb-8">
-            {[
-              { val: '$10K+', label: 'Avg IRS penalty avoided' },
-              { val: '50+', label: 'States we file in' },
-              { val: '100%', label: 'On-time filing rate' },
-              { val: '20+', label: 'Years tax expertise' },
-            ].map(s => (
-              <div class="p-4 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #EEF2F6;">
-                <p class="text-2xl font-black mb-1" style="color: #1a4480;">{s.val}</p>
-                <p class="text-xs" style="color: #64748B;">{s.label}</p>
-              </div>
-            ))}
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'Federal and State Alignment', body: 'Tax structured across IRS and state-level requirements.', icon: 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3' },
+          { title: 'Multi-State Awareness', body: 'Compliance managed across multiple jurisdictions.', icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7' },
+          { title: 'Transaction-Level Accuracy', body: 'Sales tax and nexus handled at transaction level.', icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5' },
+          { title: 'Documentation Readiness', body: 'Records structured to support filings and audit requirements.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
+        ].map(({ title, body, icon }) => (
+          <div class="rounded-xl p-6" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-5" style="background-color: #1a4480;">
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/></svg>
+            </div>
+            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
-
-          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90" style="background-color: #1a4480;">
-            Get Protected Today
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-
-        <!-- Right: image -->
-        <div class="relative hidden lg:block">
-          <img
-            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80"
-            alt="Tax compliance team"
-            class="rounded-2xl w-full object-cover shadow-lg"
-            style="height: 480px; object-position: center top;"
-          />
-          <div class="absolute top-6 -right-5 bg-white rounded-xl px-4 py-3 shadow-lg" style="border: 1px solid #EEF2F6;">
-            <p class="text-xs font-bold mb-0.5" style="color: #0F172A;">Multi-State Filing</p>
-            <p class="text-xs" style="color: #94A3B8;">All 50 US states covered</p>
-          </div>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section class="py-24" style="background-color: #F8FAFC;">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">What We Provide</p>
-        <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: #0F172A; letter-spacing: -0.025em;">Our Federal &amp; State Tax Compliance Services</h2>
-        <p class="text-sm leading-relaxed" style="color: #64748B;">End-to-end tax compliance — federal, state, and everything in between.</p>
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">What We Offer</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Tax Compliance Services</h2>
+        <p class="mt-3 text-base max-w-2xl" style="color: #64748B;">End-to-end tax compliance across federal, state, and transaction-level obligations.</p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 gap-6">
         {[
           {
             num: '01',
-            title: 'Federal Tax Filing',
-            img: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80',
-            icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-            points: ['IRS corporate tax filings', 'Income tax reporting', 'Quarterly estimated payments'],
+            title: 'Federal Tax Compliance',
+            points: [
+              'Corporate federal tax filings',
+              'Income tax reporting',
+              'Quarterly estimated tax payments',
+              'Alignment with IRS requirements',
+            ],
           },
           {
             num: '02',
-            title: 'State Tax Filing',
-            img: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80',
-            icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064',
-            points: ['Multi-state compliance', 'Sales tax & excise tax filing', 'State-specific reporting & registrations'],
+            title: 'State Tax Compliance',
+            points: [
+              'State income and franchise tax filings',
+              'State-specific reporting requirements',
+              'Multi-state filing coordination',
+            ],
           },
           {
             num: '03',
-            title: 'Advisory & Support',
-            img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
-            icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-            points: ['Tax planning for liability reduction', 'Audit support & correspondence', 'Risk management & compliance consulting'],
+            title: 'Sales Tax Compliance',
+            points: [
+              'Sales tax registration across states',
+              'Sales tax calculation and reporting',
+              'Filing and remittance across jurisdictions',
+            ],
           },
-        ].map(s => (
-          <div class="bg-white rounded-2xl overflow-hidden group hover:-translate-y-1 transition-all duration-300" style="border: 1px solid #EEF2F6; box-shadow: 0 2px 20px rgba(15,23,42,0.06);">
-            <div class="relative overflow-hidden" style="height: 180px;">
-              <img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,23,42,0.7) 0%, transparent 60%);"></div>
-              <div class="absolute bottom-4 left-5 flex items-center gap-3">
-                <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2);">
-                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={s.icon}/>
-                  </svg>
-                </div>
-                <span class="text-xs font-black tracking-widest text-white opacity-40">{s.num}</span>
+          {
+            num: '04',
+            title: 'Nexus Assessment and Structuring',
+            points: [
+              'Economic and physical nexus determination',
+              'State-wise obligation mapping',
+              'Alignment with business operations',
+            ],
+          },
+          {
+            num: '05',
+            title: 'Multi-State Registrations',
+            points: [
+              'State tax registrations',
+              'Sales tax permits',
+              'Employer registrations across states',
+            ],
+          },
+          {
+            num: '06',
+            title: 'Tax Credits and Adjustments',
+            points: [
+              'Identification of applicable tax credits',
+              'Alignment with federal and state regulations',
+              'Consistency across reporting and filings',
+            ],
+          },
+          {
+            num: '07',
+            title: 'Entity-Level Tax Structuring',
+            points: [
+              'Tax implications based on entity type',
+              'Alignment across LLC, S-Corp, and C-Corp structures',
+              'Structuring for compliance and scalability',
+            ],
+          },
+          {
+            num: '08',
+            title: 'Tax Filing and Compliance',
+            points: [
+              'Preparation and filing of returns',
+              'Review and validation before submission',
+              'Deadline tracking across jurisdictions',
+            ],
+          },
+          {
+            num: '09',
+            title: 'Audit Support and Documentation',
+            points: [
+              'Preparation of audit-ready documentation',
+              'Supporting schedules and working papers',
+              'Support during IRS or state reviews',
+            ],
+          },
+          {
+            num: '10',
+            title: 'Ongoing Compliance Support',
+            points: [
+              'Monitoring of filing deadlines',
+              'Regulatory updates and alignment',
+              'Continuous compliance management',
+            ],
+          },
+        ].map(({ num, title, points }) => (
+          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <div class="flex items-start gap-5">
+              <span class="text-4xl font-black leading-none flex-shrink-0" style="color: #1E293B;">{num}</span>
+              <div class="flex-1">
+                <h3 class="text-sm font-bold mb-4" style="color: #F8FAFC;">{title}</h3>
+                <ul class="space-y-2">
+                  {points.map(point => (
+                    <li class="flex items-start gap-2 text-sm leading-relaxed" style="color: #64748B;">
+                      <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-base font-bold mb-4" style="color: #0F172A;">{s.title}</h3>
-              <ul class="space-y-2.5">
-                {s.points.map(p => (
-                  <li class="flex items-start gap-2.5">
-                    <div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #EEF2F8;">
-                      <svg class="w-2.5 h-2.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <span class="text-xs leading-relaxed" style="color: #64748B;">{p}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         ))}
@@ -224,230 +264,178 @@ import USLayout from '../../../../layouts/USLayout.astro';
     </div>
   </section>
 
-  <!-- ===== WHO IT'S FOR ===== -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-        <!-- Left: image -->
-        <div class="relative hidden lg:block">
-          <img
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=900&q=80"
-            alt="US business team meeting"
-            class="rounded-2xl w-full object-cover shadow-lg"
-            style="height: 500px; object-position: center top;"
-          />
-          <div class="absolute -bottom-5 -right-5 bg-white rounded-xl p-5 shadow-xl" style="border: 1px solid #EEF2F6; max-width: 190px;">
-            <p class="text-3xl font-black mb-1" style="color: #1a4480;">500+</p>
-            <p class="text-xs leading-snug" style="color: #64748B;">US businesses filing penalty-free with Ambit</p>
-          </div>
-        </div>
-
-        <!-- Right -->
-        <div>
-          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Ideal For</p>
-          <h2 class="text-4xl sm:text-5xl font-bold mb-6" style="color: #0F172A; letter-spacing: -0.025em;">Designed for US Businesses</h2>
-          <p class="text-sm leading-relaxed mb-10" style="color: #64748B;">Whether you operate in one state or fifty, our tax compliance service scales with your obligations and complexity.</p>
-
-          <div class="space-y-3">
-            {[
-              { label: 'SMEs with Multi-State Operations', desc: 'Compliance across every jurisdiction you operate in', icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064' },
-              { label: 'Startups & Fast-Growing Companies', desc: 'Build compliance habits right from the start', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
-              { label: 'E-Commerce & Service Providers', desc: 'Sales tax nexus, excise filings, and state registrations', icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' },
-              { label: 'Corporations Needing IRS Compliance', desc: 'Corporate tax filings, quarterly estimates, and more', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1v5m4 0H9' },
-              { label: 'International Businesses in the US', desc: 'US tax compliance for foreign entities and subsidiaries', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9' },
-            ].map(item => (
-              <div class="flex items-center gap-4 p-4 rounded-xl transition-all hover:-translate-x-1 duration-200" style="background-color: #F8FAFC; border: 1px solid #EEF2F6;">
-                <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #0F172A, #1a4480);">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={item.icon}/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-sm font-semibold" style="color: #0F172A;">{item.label}</p>
-                  <p class="text-xs" style="color: #94A3B8;">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROBLEM → SOLUTION ===== -->
-  <section class="py-24 relative overflow-hidden" style="background-color: #0F172A;">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 28px 28px;"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-        <!-- Left: problems -->
-        <div>
-          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #3B82F6;">Common Mistakes</p>
-          <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6" style="letter-spacing: -0.025em;">Avoid These Tax Compliance Mistakes</h2>
-          <p class="text-sm leading-relaxed mb-10" style="color: #64748B;">These are the most common — and costly — compliance failures we see in US businesses every day.</p>
-
-          <div class="space-y-3 mb-10">
-            {[
-              'Missed federal or state filing deadlines',
-              'Incorrect filings leading to IRS penalties',
-              'Multi-state tax confusion and missed registrations',
-              'Lack of audit-ready documentation',
-            ].map(p => (
-              <div class="flex items-start gap-3 p-4 rounded-xl" style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.1);">
-                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #F87171;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                <span class="text-sm" style="color: #94A3B8;">{p}</span>
-              </div>
-            ))}
-          </div>
-
-          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.4);">
-            Fix This With Ambit
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-
-        <!-- Right: solutions -->
-        <div class="space-y-3">
-          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-6" style="color: #3B82F6;">How Ambit Solves It</p>
-          {[
-            { problem: 'Missed deadlines', solution: 'Proactive deadline tracking — every federal and state filing submitted ahead of schedule, every time.' },
-            { problem: 'Incorrect filings', solution: 'Every return reviewed by experienced US tax professionals before submission.' },
-            { problem: 'Multi-state confusion', solution: 'We manage your nexus analysis, registrations, and filings across all required states.' },
-            { problem: 'Not audit-ready', solution: 'Full documentation, organised and stored — so you\'re always prepared if the IRS comes knocking.' },
-          ].map(s => (
-            <div class="flex items-start gap-4 p-5 rounded-xl" style="background: #1E293B; border: 1px solid #334155;">
-              <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: rgba(26,68,128,0.5);">
-                <svg class="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <div>
-                <p class="text-xs font-bold mb-1.5 line-through" style="color: #475569;">{s.problem}</p>
-                <p class="text-sm leading-relaxed" style="color: #CBD5E1;">{s.solution}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section id="how-it-works" class="py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="max-w-xl mb-20">
-        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">The Process</p>
-        <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: #0F172A; letter-spacing: -0.025em;">4-Step Tax Compliance Process</h2>
-        <p class="text-sm leading-relaxed" style="color: #64748B;">From first conversation to ongoing compliance — a clear, structured process.</p>
+  <!-- ===== WHO WE SERVE ===== -->
+  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Who We Serve</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Designed for US Businesses Across Jurisdictions</h2>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 relative">
-        <div class="hidden lg:block absolute top-3 left-0 right-0 h-px" style="background-color: #E2E8F0;"></div>
-
+      <div class="grid sm:grid-cols-2 gap-6">
         {[
-          { step: '01', title: 'Consultation', desc: 'We map your business structure, tax obligations, and filing history across all federal and state levels.' },
-          { step: '02', title: 'Review & Analysis', desc: 'We assess your past filings, identify risks or gaps, and establish a compliant baseline going forward.' },
-          { step: '03', title: 'Filing & Compliance', desc: 'Accurate, on-time federal and state tax submissions — reviewed by professionals before every submission.' },
-          { step: '04', title: 'Ongoing Support', desc: 'Proactive advisory, deadline management, and continuous compliance monitoring throughout the year.' },
-        ].map(s => (
-          <div class="relative">
-            <div class="relative mb-8">
-              <div class="w-6 h-6 rounded-full border-2 bg-white relative z-10" style="border-color: #1a4480;">
-                <div class="absolute inset-1 rounded-full" style="background-color: #1a4480;"></div>
-              </div>
+          { title: 'Single-State Businesses', body: 'Federal and state tax compliance structured correctly.' },
+          { title: 'Multi-State Businesses', body: 'Consistent filings and compliance across jurisdictions.' },
+          { title: 'E-commerce Businesses', body: 'Sales tax, nexus, and multi-state compliance alignment.' },
+          { title: 'International Businesses in the US', body: 'Structured compliance across US federal and state systems.' },
+        ].map(({ title, body }) => (
+          <div class="rounded-xl p-8 flex items-start gap-4" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <div class="w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center mt-0.5" style="background-color: #1a4480;">
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             </div>
-            <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #94A3B8;">{s.step} / 04</p>
-            <h3 class="text-base font-bold mb-2 leading-snug" style="color: #0F172A;">{s.title}</h3>
-            <div class="w-8 h-0.5 mb-3" style="background-color: #1a4480;"></div>
-            <p class="text-sm leading-relaxed" style="color: #64748B;">{s.desc}</p>
+            <div>
+              <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+              <p class="text-sm leading-relaxed" style="color: #64748B;">{body}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ===== RESULTS ===== -->
-  <section class="py-24" style="background-color: #F8FAFC;">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <!-- ===== PROBLEM / SOLUTION ===== -->
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">The Challenge</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Without vs. With Structured Tax Compliance</h2>
+      </div>
 
-        <!-- Left -->
-        <div>
-          <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">What You Gain</p>
-          <h2 class="text-4xl sm:text-5xl font-bold mb-10" style="color: #0F172A; letter-spacing: -0.025em;">The Results You'll See</h2>
-
-          <div class="space-y-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #374151;">
+          <h3 class="text-sm font-bold uppercase tracking-widest mb-6" style="color: #64748B;">Without Structured Tax Compliance</h3>
+          <ul class="space-y-4">
             {[
-              { title: 'Penalty-free IRS & state compliance', desc: 'Every filing submitted correctly and on time — zero penalties, zero surprises.' },
-              { title: 'Accurate filings across all jurisdictions', desc: 'Federal, state, and multi-state covered with complete accuracy.' },
-              { title: 'Reduced tax liability', desc: 'Strategic planning that legally minimises what you owe — within IRS guidelines.' },
-              { title: 'Confidence in multi-state operations', desc: 'Operate across state lines without fear of missing registrations or filings.' },
-            ].map(r => (
-              <div class="flex items-start gap-4 p-5 bg-white rounded-2xl" style="border: 1px solid #EEF2F6; box-shadow: 0 2px 12px rgba(15,23,42,0.04);">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #0F172A, #1a4480);">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <div>
-                  <p class="text-sm font-bold mb-1" style="color: #0F172A;">{r.title}</p>
-                  <p class="text-xs leading-relaxed" style="color: #64748B;">{r.desc}</p>
-                </div>
-              </div>
+              'Missed federal or state filings',
+              'Incorrect sales tax treatment',
+              'Nexus misalignment across states',
+              'Lack of documentation for audits',
+              'Increased compliance risk',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #374151;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
-        <!-- Right -->
-        <div class="space-y-5">
-          <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80"
-            alt="US compliance results"
-            class="rounded-2xl w-full object-cover shadow-md"
-            style="height: 240px; object-position: center;"
-          />
-          <div class="rounded-2xl p-7 bg-white" style="border: 1px solid #EEF2F6;">
-            <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style="color: #1a4480;">Tailored for US Tax Regulations</p>
-            <div class="grid grid-cols-2 gap-3">
-              {['IRS Federal Tax Reporting', 'Multi-State Sales Tax', 'US GAAP-Aligned Reports', 'Audit-Ready Documentation'].map(item => (
-                <div class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background-color: #1a4480;"></div>
-                  <span class="text-xs" style="color: #64748B;">{item}</span>
-                </div>
-              ))}
-            </div>
+        <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1a4480;">
+          <h3 class="text-sm font-bold uppercase tracking-widest mb-6" style="color: #93C5FD;">With Structured Tax Compliance</h3>
+          <ul class="space-y-4">
+            {[
+              'Accurate filings across jurisdictions',
+              'Clear tax position',
+              'Proper sales tax and nexus handling',
+              'Audit-ready documentation',
+              'Controlled compliance',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section id="process" style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-14">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">How Work Is Structured</p>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Our Process</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {[
+          { label: '01 / 05', title: 'Understanding', body: 'We review your entity structure, current tax registrations, states of operation, and existing compliance position.' },
+          { label: '02 / 05', title: 'Structuring', body: 'We identify federal and state obligations, nexus positions, sales tax requirements, and applicable elections.' },
+          { label: '03 / 05', title: 'Onboarding', body: 'We establish the compliance calendar, complete outstanding registrations, and align with your accounting and payroll.' },
+          { label: '04 / 05', title: 'Execution and Review', body: 'We prepare and file returns across all jurisdictions on schedule, with review before submission.' },
+          { label: '05 / 05', title: 'Continuity', body: 'We monitor deadlines, track regulatory changes, and maintain compliance across all jurisdictions continuously.' },
+        ].map(({ label, title, body }) => (
+          <div>
+            <div class="text-xs font-bold tracking-widest mb-4" style="color: #1a4480;">{label}</div>
+            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
+        ))}
+      </div>
+
+      <div class="mt-14">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+          Book Free Consultation for US Tax
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS + BUILT FOR US ===== -->
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">What You Gain</p>
+          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #F8FAFC;">The Results</h2>
+          <ul class="space-y-4">
+            {[
+              'Accurate federal and state tax filings',
+              'Reduced compliance risk',
+              'Clarity across multi-state obligations',
+              'Alignment between accounting and tax',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
+        <div>
+          <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why Ambit</p>
+          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #F8FAFC;">Built for US Tax Environment</h2>
+          <ul class="space-y-4">
+            {[
+              'IRS-aligned federal tax compliance',
+              'Multi-state tax structuring',
+              'Sales tax and nexus handling',
+              'Integration with accounting and payroll',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="py-24" style="background-color: #0F172A;">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="text-center max-w-xl mx-auto mb-14">
-        <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #3B82F6;">Testimonials</p>
-        <h2 class="text-4xl font-bold text-white" style="letter-spacing: -0.025em;">Trusted by US Businesses</h2>
+  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="mb-12">
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Client Feedback</p>
+        <h2 class="text-2xl lg:text-3xl font-black" style="color: #F8FAFC;">What Clients Say</h2>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
         {[
-          { quote: "Ambit ensures we never miss a federal or state filing. Completely stress-free and always accurate — they've taken compliance off my plate entirely.", name: 'James R.', role: 'CFO, Tech Startup', location: 'Seattle, WA' },
-          { quote: "Their multi-state compliance expertise saved us from costly penalties we didn't even know we were at risk of. Highly recommend Ambit to any growing business.", name: 'Linda S.', role: 'Owner, E-Commerce Business', location: 'Miami, FL' },
-        ].map(t => (
-          <div class="rounded-2xl p-8" style="background: #1E293B; border: 1px solid #334155;">
-            <svg class="w-7 h-7 mb-6 opacity-25" style="color: #3B82F6;" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-            </svg>
-            <p class="text-sm leading-relaxed mb-7" style="color: #94A3B8;">"{t.quote}"</p>
-            <div class="flex items-center gap-3" style="border-top: 1px solid #334155; padding-top: 1.25rem;">
-              <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">{t.name[0]}</div>
-              <div>
-                <p class="text-sm font-semibold text-white">{t.name}</p>
-                <p class="text-xs" style="color: #475569;">{t.role} · {t.location}</p>
-              </div>
+          { quote: 'Ambit helped us manage multi-state tax filings with complete clarity. Everything is now structured and compliant.', name: 'CFO', company: 'Multi-State Business, United States' },
+          { quote: 'Their handling of sales tax and nexus removed confusion across states. We now operate with confidence.', name: 'Finance Director', company: 'E-commerce Business, United States' },
+        ].map(({ quote, name, company }) => (
+          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <svg class="w-6 h-6 mb-4" style="color: #1a4480;" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p class="text-sm leading-relaxed mb-6" style="color: #94A3B8;">{quote}</p>
+            <div>
+              <div class="text-xs font-bold" style="color: #F8FAFC;">{name}</div>
+              <div class="text-xs mt-0.5" style="color: #475569;">{company}</div>
             </div>
           </div>
         ))}
@@ -456,38 +444,23 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section id="contact" class="py-24 relative overflow-hidden" style="background-color: #F8FAFC;">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-      <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Get Started</p>
-      <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: #0F172A; letter-spacing: -0.025em;">
-        Ensure Federal &amp; State Tax<br/>Compliance — Effortlessly
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 py-24 text-center">
+      <p class="text-xs font-bold tracking-widest uppercase mb-6" style="color: #1a4480;">Get Started</p>
+      <h2 class="text-3xl lg:text-4xl font-black mb-6 leading-tight" style="color: #F8FAFC;">
+        Ensure Your Tax Compliance Is Structured and Aligned
       </h2>
-      <p class="text-sm leading-relaxed mb-10 mx-auto" style="color: #64748B; max-width: 480px;">
-        Accurate filings. Penalty-free compliance. Expert support every step of the way.
+      <p class="text-base mb-10 max-w-xl mx-auto leading-relaxed" style="color: #64748B;">
+        Federal, state, and sales tax compliance handled with clarity, consistency, and control.
       </p>
-
-      <div class="flex flex-wrap justify-center gap-4 mb-14">
-        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 24px rgba(26,68,128,0.4);">
-          Book Free Consultation
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+          Get a Free Quote
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <a href="/us" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold rounded border transition-all hover:bg-gray-50" style="color: #0F172A; border-color: #E2E8F0;">
-          ← Back to US Services
+        <a href="mailto:us@ambit.co.uk" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-sm font-semibold transition-all hover:opacity-80" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">
+          Email Our US Team
         </a>
-      </div>
-
-      <div class="grid sm:grid-cols-3 gap-6 pt-10 max-w-2xl mx-auto" style="border-top: 1px solid #E2E8F0;">
-        {[
-          { val: '100%', label: 'On-Time Filing Rate' },
-          { val: '50+', label: 'States We File In' },
-          { val: '$0', label: 'Penalties for Our Clients' },
-        ].map(s => (
-          <div>
-            <p class="text-3xl font-black mb-1" style="color: #1a4480;">{s.val}</p>
-            <p class="text-xs" style="color: #94A3B8;">{s.label}</p>
-          </div>
-        ))}
       </div>
     </div>
   </section>
