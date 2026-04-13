@@ -52,11 +52,11 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== CAPABILITY MARQUEE ===== -->
-  <div class="overflow-hidden py-4" style="background-color: #0F172A; border-top: 1px solid #1E293B; border-bottom: 1px solid #1E293B;">
-    <div class="flex gap-12 whitespace-nowrap animate-marquee text-xs font-semibold tracking-widest uppercase" style="color: #ffffff;">
+  <div class="overflow-hidden py-4" style="background-color: #1a4480;">
+    <div class="flex gap-12 whitespace-nowrap animate-marquee text-xs font-semibold tracking-widest uppercase text-white">
       {['Corporate Tax Registration', 'CT Computation', 'FTA Filing', 'VAT Returns', 'Transfer Pricing', 'Freezone Tax', 'Tax Documentation', 'Compliance Review', 'Corporate Tax Registration', 'CT Computation', 'FTA Filing', 'VAT Returns', 'Transfer Pricing', 'Freezone Tax', 'Tax Documentation', 'Compliance Review'].map(item => (
         <span class="flex items-center gap-3">
-          <span class="w-1 h-1 rounded-full inline-block" style="background-color: #1a4480;"></span>
+          <span class="w-1 h-1 rounded-full inline-block bg-white opacity-60"></span>
           {item}
         </span>
       ))}
@@ -64,19 +64,19 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </div>
 
   <!-- ===== METRICS STRIP ===== -->
-  <section style="background-color: #0F172A; border-bottom: 1px solid #1E293B;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+  <section style="background-color: #F8FAFC; border-bottom: 1px solid #E2E8F0;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-10">
+      <div class="flex flex-wrap items-center gap-8">
+        <span class="text-xs font-bold tracking-widest uppercase" style="color: #94A3B8;">Standards</span>
         {[
-          { metric: 'Accurate', label: 'Tax computation', sub: 'IFRS-aligned and FTA-ready' },
-          { metric: 'Compliant', label: 'Filings', sub: 'On-time, every period' },
-          { metric: 'Structured', label: 'Documentation', sub: 'Audit-ready records maintained' },
-          { metric: 'FTA', label: 'Aligned', sub: 'Current and evolving requirements' },
-        ].map(({ metric, label, sub }) => (
-          <div class="text-center lg:text-left">
-            <div class="text-3xl lg:text-4xl font-black mb-1" style="color: #F8FAFC;">{metric}</div>
-            <div class="text-sm font-semibold mb-1" style="color: #93C5FD;">{label}</div>
-            <div class="text-xs" style="color: #475569;">{sub}</div>
+          { metric: 'Accurate', label: 'Tax computation' },
+          { metric: 'Compliant', label: 'Filings, on-time' },
+          { metric: 'Structured', label: 'Audit-ready docs' },
+          { metric: 'FTA', label: 'Aligned' },
+        ].map(({ metric, label }) => (
+          <div class="flex items-center gap-3 px-4 py-2 rounded-lg" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
+            <div class="text-sm font-black" style="color: #1a4480;">{metric}</div>
+            <div class="text-xs" style="color: #64748B;">{label}</div>
           </div>
         ))}
       </div>
@@ -134,11 +134,11 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+  <section style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">What We Do</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Tax Compliance Services</h2>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Tax Compliance Services</h2>
         <p class="mt-3 text-base max-w-2xl" style="color: #64748B;">End-to-end coverage across UAE corporate tax and VAT obligations.</p>
       </div>
 
@@ -195,11 +195,11 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             body: 'Tax compliance is not limited to the annual return. We provide year-round support including responding to FTA queries, preparing voluntary disclosures, supporting tax audits, and advising on regulatory updates that affect your tax position.',
           },
         ].map(({ num, title, body }) => (
-          <div class="rounded-xl p-8 group" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-8 bg-white shadow-sm" style="border: 1px solid #E2E8F0;">
             <div class="flex items-start gap-5">
-              <span class="text-4xl font-black leading-none flex-shrink-0" style="color: #1E293B;">{num}</span>
+              <span class="text-4xl font-black leading-none flex-shrink-0" style="color: #E2E8F0;">{num}</span>
               <div>
-                <h3 class="text-sm font-bold mb-3" style="color: #F8FAFC;">{title}</h3>
+                <h3 class="text-sm font-bold mb-3" style="color: #0F172A;">{title}</h3>
                 <p class="text-sm leading-relaxed" style="color: #64748B;">{body}</p>
               </div>
             </div>
@@ -322,13 +322,13 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== RESULTS + BUILT FOR UAE ===== -->
-  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+  <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="grid lg:grid-cols-2 gap-16">
         <!-- Results -->
         <div>
           <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">What You Can Expect</p>
-          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #F8FAFC;">Results</h2>
+          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #0F172A;">Results</h2>
           <ul class="space-y-4">
             {[
               'Full FTA registration completed within required timelines with no penalties.',
@@ -338,7 +338,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
               'Freezone tax position reviewed and maintained throughout the year.',
               'Compliance calendar managed proactively with no missed elections or notifications.',
             ].map(item => (
-              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #64748B;">
                 <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 {item}
               </li>
@@ -349,7 +349,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
         <!-- Built for UAE -->
         <div>
           <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why Ambit</p>
-          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #F8FAFC;">Built for the UAE</h2>
+          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #0F172A;">Built for the UAE</h2>
           <ul class="space-y-4">
             {[
               'We work exclusively with UAE, UK, and US entities. Your tax compliance is handled by people who know the FTA\'s requirements in detail.',
@@ -358,7 +358,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
               'We operate on fixed fees with no surprise charges for standard compliance work.',
               'We stay current with FTA updates, ministerial decisions, and guidance notes so you do not need to track regulatory changes yourself.',
             ].map(item => (
-              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #64748B;">
                 <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 {item}
               </li>
