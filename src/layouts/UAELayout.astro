@@ -103,18 +103,18 @@ const services = [
   <!-- ===== MOBILE BOTTOM DRAWER ===== -->
   <div
     class="lg:hidden fixed bottom-0 left-0 right-0 z-50"
-    style="background-color: #0F172A; border-top: 1px solid #1E293B;"
+    style="background-color: #ffffff; border-top: 2px solid #E2E8F0; box-shadow: 0 -4px 24px rgba(0,0,0,0.12);"
     x-data="{ open: false }"
   >
     <!-- Trigger bar -->
     <button
       @click="open = !open"
-      class="w-full flex items-center justify-between px-6 py-3"
+      class="w-full flex items-center justify-between px-6 py-3.5"
     >
       <div class="flex items-center gap-2">
         <img src="https://flagcdn.com/w20/ae.png" alt="UAE" class="w-5 h-3.5 object-cover rounded-sm" />
-        <span class="text-sm font-semibold" style="color: #F8FAFC;">UAE Services</span>
-        <span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background-color: #1E293B; color: #64748B;">7 services</span>
+        <span class="text-xs font-bold tracking-wide" style="color: #0F172A;">UAE Services</span>
+        <span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background-color: #EFF6FF; color: #1a4480;">7 services</span>
       </div>
       <svg class="w-4 h-4 transition-transform" :class="open ? 'rotate-180' : ''" style="color: #64748B;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
@@ -122,24 +122,31 @@ const services = [
     </button>
 
     <!-- Drawer content -->
-    <div x-show="open" x-transition class="px-4 pb-4 grid grid-cols-2 gap-2">
-      {services.map(({ label, href, icon }) => {
-        const isActive = currentUrl === href || currentUrl === href + '/';
-        return (
-          <a
-            href={href}
-            class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-xs font-medium"
-            style={isActive
-              ? 'background-color: #1a4480; color: #ffffff;'
-              : 'background-color: #1E293B; color: #94A3B8;'}
-          >
-            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={isActive ? 'color: #ffffff;' : 'color: #64748B;'}>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={icon} />
-            </svg>
-            {label}
-          </a>
-        );
-      })}
+    <div x-show="open" x-transition style="display:none; border-top: 1px solid #E2E8F0;">
+      <div class="grid grid-cols-2 gap-px" style="background-color: #E2E8F0;">
+        {services.map(({ label, href, icon }) => {
+          const isActive = currentUrl === href || currentUrl === href + '/';
+          return (
+            <a
+              href={href}
+              class="flex items-center gap-2 px-4 py-3.5 text-xs font-medium"
+              style={isActive
+                ? 'background-color: #1a4480; color: #ffffff;'
+                : 'background-color: #ffffff; color: #374151;'}
+            >
+              <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={icon} />
+              </svg>
+              {label}
+            </a>
+          );
+        })}
+      </div>
+      <div class="px-4 py-3" style="border-top: 1px solid #E2E8F0; background-color: #F8FAFC;">
+        <a href="/contact" class="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-semibold text-white rounded-lg" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+          Book Free Consultation
+        </a>
+      </div>
     </div>
   </div>
 
