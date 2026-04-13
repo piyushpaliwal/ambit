@@ -154,16 +154,26 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </div>
 
   <!-- ===== WHY IT MATTERS ===== -->
-  <section class="py-24 px-6 lg:px-12 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 max-w-3xl mx-auto">
-        <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #1a4480;">Why It Matters</div>
-        <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">
-          Accounting in the UAE Requires Alignment Across Standards and Jurisdictions
-        </h2>
-        <p class="text-lg leading-relaxed" style="color: #64748B;">
-          UAE businesses operate across Freezone and Mainland structures, each with distinct reporting obligations. Add IFRS requirements, FTA VAT filings, and corporate tax readiness into the mix and accounting becomes a compliance function that demands specialist knowledge. Getting it wrong creates audit exposure, regulatory risk, and financial blind spots.
-        </p>
+  <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div class="relative hidden lg:block">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80" alt="UAE accounting and bookkeeping" class="rounded-2xl w-full object-cover shadow-lg" style="height: 420px; object-position: center;" />
+          <div class="absolute top-6 -right-5 bg-white rounded-xl px-4 py-3 shadow-lg" style="border: 1px solid #EEF2F6;">
+            <p class="text-xs font-bold mb-0.5" style="color: #0F172A;">UAE Compliant</p>
+            <p class="text-xs" style="color: #94A3B8;">FTA Aligned</p>
+          </div>
+          <div class="absolute -bottom-5 left-6 rounded-xl px-4 py-3 shadow-lg" style="background: #0F172A; border: 1px solid #1E293B;">
+            <p class="text-xs font-bold text-white mb-0.5">IFRS Ready</p>
+            <p class="text-xs" style="color: #475569;">Multi-Entity</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: #0F172A; letter-spacing: -0.02em;">Accounting in the UAE Requires Alignment Across Standards and Jurisdictions</h2>
+          <div class="w-10 h-px mb-8" style="background-color: #1a4480;"></div>
+          <p class="text-base leading-relaxed" style="color: #64748B;">UAE businesses operate across Freezone and Mainland structures, each with distinct reporting obligations. Add IFRS requirements, FTA VAT filings, and corporate tax readiness into the mix and accounting becomes a compliance function that demands specialist knowledge. Getting it wrong creates audit exposure, regulatory risk, and financial blind spots.</p>
+        </div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
@@ -184,9 +194,9 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             desc: 'With VAT at 5%, corporate tax now in effect, and the FTA actively monitoring compliance, your accounting function needs to be ready for scrutiny at any point. Clean, structured books are not optional.',
           },
         ].map(({ icon, title, desc }) => (
-          <div class="p-8 rounded-2xl border border-gray-100 shadow-sm" style="background-color: #F8FAFC;">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background-color: #EFF6FF;">
-              <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="p-8 rounded-2xl shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background-color: #1a4480;">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={icon} />
               </svg>
             </div>
@@ -268,8 +278,8 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== WHO WE SERVE ===== -->
-  <section class="py-24 px-6 lg:px-12 bg-white">
-    <div class="max-w-6xl mx-auto">
+  <section style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="text-center mb-16">
         <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">Who We Serve</div>
         <h2 class="text-4xl font-black" style="color: #0F172A; letter-spacing: -0.02em;">Built for UAE Business Structures</h2>
@@ -301,7 +311,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             desc: 'Accounting and financial reporting for overseas businesses establishing or expanding into the UAE, ensuring local compliance while maintaining alignment with the standards required in home jurisdictions.',
           },
         ].map(({ icon, title, desc }) => (
-          <div class="flex gap-6 p-8 rounded-2xl border border-gray-100 shadow-sm" style="background-color: #F8FAFC;">
+          <div class="flex gap-6 p-8 rounded-2xl" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <span class="text-3xl flex-shrink-0">{icon}</span>
             <div>
               <h3 class="text-lg font-bold mb-3" style="color: #0F172A;">{title}</h3>
@@ -358,8 +368,8 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section class="py-24 px-6 lg:px-12 bg-white">
-    <div class="max-w-4xl mx-auto">
+  <section style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 py-24">
       <div class="text-center mb-16">
         <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">Our Process</div>
         <h2 class="text-4xl font-black" style="color: #0F172A; letter-spacing: -0.02em;">4-Step Accounting &<br />Bookkeeping Process</h2>
@@ -460,17 +470,17 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="py-24 px-6 lg:px-12" style="background-color: #0F172A;">
-    <div class="max-w-5xl mx-auto">
+  <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12 py-24">
       <div class="text-center mb-16">
-        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #64748B;">Testimonials</div>
-        <h2 class="text-4xl font-black text-white" style="letter-spacing: -0.02em;">Trusted by Dubai Businesses</h2>
+        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">Testimonials</div>
+        <h2 class="text-4xl font-black" style="color: #0F172A; letter-spacing: -0.02em;">Trusted by Dubai Businesses</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
         {[
           {
-            quote: "Ambit handles our accounting and VAT compliance perfectly — accurate, timely, and completely stress-free.",
+            quote: "Ambit handles our accounting and VAT compliance perfectly. Accurate, timely, and completely stress-free.",
             name: 'Omar H.',
             role: 'Managing Director, Dubai Freezone Company',
           },
@@ -480,17 +490,17 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             role: 'Finance Manager, Abu Dhabi Multinational',
           },
         ].map(({ quote, name, role }) => (
-          <div class="p-8 rounded-2xl" style="background-color: #1E293B; border: 1px solid #334155;">
+          <div class="p-8 rounded-2xl shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="flex gap-1 mb-4">
               {[1,2,3,4,5].map(() => (
                 <svg class="w-4 h-4" style="color: #1a4480;" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               ))}
             </div>
-            <p class="text-base leading-relaxed mb-6" style="color: #94A3B8;">"{quote}"</p>
+            <p class="text-base leading-relaxed mb-6" style="color: #64748B;">"{quote}"</p>
             <div class="flex items-center gap-3">
               <img src="https://flagcdn.com/w20/ae.png" alt="UAE" class="w-6 h-4 object-cover rounded-sm" />
               <div>
-                <div class="text-sm font-bold text-white">{name}</div>
+                <div class="text-sm font-bold" style="color: #0F172A;">{name}</div>
                 <div class="text-xs" style="color: #64748B;">{role}</div>
               </div>
             </div>

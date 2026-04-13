@@ -10,16 +10,16 @@ import USLayout from '../../../../layouts/USLayout.astro';
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,68,128,0.18) 0%, transparent 70%);"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
-      <div class="flex items-center gap-3 mb-8">
+      <!-- <div class="flex items-center gap-3 mb-8">
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase" style="background-color: rgba(26,68,128,0.25); border: 1px solid rgba(26,68,128,0.4); color: #93C5FD;">
           <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-4 h-3 object-cover rounded-sm" />
           United States · Accounting & Bookkeeping
         </div>
-      </div>
+      </div> -->
 
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6" style="color: #F8FAFC;">
-        Accounting & Bookkeeping
-        <span class="block" style="color: #93C5FD;">United States</span>
+         United States
+        <span class="block" style="color: #93C5FD;">Accounting & Bookkeeping</span>
       </h1>
 
       <p class="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed" style="color: #94A3B8;">
@@ -109,11 +109,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== WHY IT MATTERS ===== -->
-  <section style="background-color: #0F172A;">
+  <section style="background-color: #ffffff;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight max-w-3xl" style="color: #F8FAFC;">
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight max-w-3xl" style="color: #0F172A;">
           Accounting Must Align with Tax, Reporting, and Multi-State Operations
         </h2>
         <p class="mt-4 text-base max-w-2xl leading-relaxed" style="color: #64748B;">
@@ -128,11 +128,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { title: 'Audit Readiness', body: 'Records and documentation prepared for audit and review.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
           { title: 'Integration Across Functions', body: 'Accounting aligned with tax compliance, payroll, and financial reporting.', icon: 'M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z' },
         ].map(({ title, body, icon }) => (
-          <div class="rounded-xl p-6" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-6 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-5" style="background-color: #1a4480;">
               <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/></svg>
             </div>
-            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
             <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -258,11 +258,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== WHO WE SERVE ===== -->
-  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Who We Serve</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Designed for US Businesses Across Structures</h2>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Designed for US Businesses Across Structures</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-6">
@@ -272,12 +272,12 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { title: 'Growing Companies', body: 'Scalable accounting structures as operations expand.' },
           { title: 'International Businesses in the US', body: 'US GAAP-aligned reporting for cross-border operations.' },
         ].map(({ title, body }) => (
-          <div class="rounded-xl p-8 flex items-start gap-4" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-8 flex items-start gap-4 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center mt-0.5" style="background-color: #1a4480;">
               <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div>
-              <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+              <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
               <p class="text-sm leading-relaxed" style="color: #64748B;">{body}</p>
             </div>
           </div>
@@ -335,11 +335,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== PROCESS ===== -->
-  <section id="process" style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section id="process" style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">How Work Is Structured</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Our Process</h2>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Our Process</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -350,9 +350,9 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { label: '04 / 05', title: 'Execution and Review', body: 'We handle bookkeeping, reconciliations, and reporting each period with a defined review process before finalisation.' },
           { label: '05 / 05', title: 'Continuity', body: 'We maintain records consistently, support year-end close, and adapt the structure as the business evolves.' },
         ].map(({ label, title, body }) => (
-          <div>
+          <div class="rounded-xl p-6 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="text-xs font-bold tracking-widest mb-4" style="color: #1a4480;">{label}</div>
-            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
             <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -411,11 +411,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-12">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Client Feedback</p>
-        <h2 class="text-2xl lg:text-3xl font-black" style="color: #F8FAFC;">What Clients Say</h2>
+        <h2 class="text-2xl lg:text-3xl font-black" style="color: #0F172A;">What Clients Say</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
@@ -423,12 +423,12 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { quote: 'Ambit brought consistency across our multi-state reporting. Our books are now clean and audit-ready.', name: 'CFO', company: 'Multi-State Business, United States' },
           { quote: 'Financial reporting is structured properly and aligns with our tax filings across states.', name: 'Controller', company: 'Growth Company, United States' },
         ].map(({ quote, name, company }) => (
-          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-8 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <svg class="w-6 h-6 mb-4" style="color: #1a4480;" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <p class="text-sm leading-relaxed mb-6" style="color: #94A3B8;">{quote}</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #64748B;">{quote}</p>
             <div>
-              <div class="text-xs font-bold" style="color: #F8FAFC;">{name}</div>
-              <div class="text-xs mt-0.5" style="color: #475569;">{company}</div>
+              <div class="text-xs font-bold" style="color: #0F172A;">{name}</div>
+              <div class="text-xs mt-0.5" style="color: #64748B;">{company}</div>
             </div>
           </div>
         ))}

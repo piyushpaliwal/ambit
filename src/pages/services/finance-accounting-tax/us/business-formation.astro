@@ -94,14 +94,14 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </div>
 
   <!-- ===== CERTIFICATION BLOCK ===== -->
-  <section style="background-color: #060D18; border-bottom: 1px solid #1E293B;">
+  <section style="background-color: #F8FAFC; border-bottom: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-10">
       <div class="flex flex-wrap items-center gap-6">
-        <span class="text-xs font-bold tracking-widest uppercase" style="color: #334155;">Standards</span>
+        <span class="text-xs font-bold tracking-widest uppercase" style="color: #94A3B8;">Standards</span>
         {['ISO 27001 Certified', 'IRS-Aligned Processes', 'State-Level Compliance Ready', 'Multi-State Structure Ready'].map(cert => (
-          <div class="flex items-center gap-2 px-4 py-2 rounded-lg" style="background-color: #0F172A; border: 1px solid #1E293B;">
+          <div class="flex items-center gap-2 px-4 py-2 rounded-lg" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <svg class="w-4 h-4" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-            <span class="text-xs font-semibold" style="color: #94A3B8;">{cert}</span>
+            <span class="text-xs font-semibold" style="color: #475569;">{cert}</span>
           </div>
         ))}
       </div>
@@ -109,16 +109,31 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== WHY IT MATTERS ===== -->
-  <section style="background-color: #0F172A;">
+  <section style="background-color: #ffffff;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
-      <div class="mb-14">
-        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight max-w-3xl" style="color: #F8FAFC;">
-          Entity Structure in the US Determines Tax, Compliance, and Scalability
-        </h2>
-        <p class="mt-4 text-base max-w-2xl leading-relaxed" style="color: #64748B;">
-          Business formation in the United States is not limited to registration. The choice of entity type, state of registration, and operational structure directly impacts tax obligations, compliance requirements, and long-term scalability. A poorly structured setup leads to higher taxes, compliance issues, and future restructuring.
-        </p>
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div class="relative hidden lg:block">
+          <img
+            src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&q=80"
+            alt="US business formation and entity setup"
+            class="rounded-2xl w-full object-cover shadow-lg"
+            style="height: 420px; object-position: center;"
+          />
+          <div class="absolute top-6 -right-5 bg-white rounded-xl px-4 py-3 shadow-lg" style="border: 1px solid #EEF2F6;">
+            <p class="text-xs font-bold mb-0.5" style="color: #0F172A;">LLC · S-Corp · C-Corp</p>
+            <p class="text-xs" style="color: #94A3B8;">All Entity Types</p>
+          </div>
+          <div class="absolute -bottom-5 left-6 rounded-xl px-4 py-3 shadow-lg" style="background: #0F172A; border: 1px solid #1E293B;">
+            <p class="text-xs font-bold text-white mb-0.5">EIN Registration</p>
+            <p class="text-xs" style="color: #475569;">Federal and State</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: #0F172A; letter-spacing: -0.02em;">Entity Structure in the US Determines Tax, Compliance, and Scalability</h2>
+          <div class="w-10 h-px mb-8" style="background-color: #1a4480;"></div>
+          <p class="text-base leading-relaxed" style="color: #64748B;">Business formation in the United States is not limited to registration. The choice of entity type, state of registration, and operational structure directly impacts tax obligations, compliance requirements, and long-term scalability. A poorly structured setup leads to higher taxes, compliance issues, and future restructuring.</p>
+        </div>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -128,11 +143,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { title: 'Tax Positioning from Day One', body: 'Entity structure aligned with tax efficiency and compliance.', icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5' },
           { title: 'Operational Readiness', body: 'Business ready to operate across states without delays.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
         ].map(({ title, body, icon }) => (
-          <div class="rounded-xl p-6" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-6 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-5" style="background-color: #1a4480;">
               <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/></svg>
             </div>
-            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
             <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -273,11 +288,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== WHO WE SERVE ===== -->
-  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Who We Serve</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Designed for Businesses Setting Up or Expanding in the US</h2>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Designed for Businesses Setting Up or Expanding in the US</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-6">
@@ -287,12 +302,12 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { title: 'International Businesses', body: 'Entry into the US with compliant and scalable structure.' },
           { title: 'Multi-Entity Groups', body: 'Formation and structuring across multiple entities.' },
         ].map(({ title, body }) => (
-          <div class="rounded-xl p-8 flex items-start gap-4" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-8 flex items-start gap-4 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center mt-0.5" style="background-color: #1a4480;">
               <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
             </div>
             <div>
-              <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+              <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
               <p class="text-sm leading-relaxed" style="color: #64748B;">{body}</p>
             </div>
           </div>
@@ -350,11 +365,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== PROCESS ===== -->
-  <section id="process" style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section id="process" style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">How Work Is Structured</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Our Process</h2>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Our Process</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -365,9 +380,9 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { label: '04 / 05', title: 'Setup and Alignment', body: 'We complete tax and payroll registrations, establish compliance frameworks, and connect with accounting and reporting systems.' },
           { label: '05 / 05', title: 'Continuity', body: 'We support ongoing annual filings, state renewals, and compliance requirements as the business grows and expands.' },
         ].map(({ label, title, body }) => (
-          <div>
+          <div class="rounded-xl p-6 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="text-xs font-bold tracking-widest mb-4" style="color: #1a4480;">{label}</div>
-            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
             <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -426,11 +441,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-12">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Client Feedback</p>
-        <h2 class="text-2xl lg:text-3xl font-black" style="color: #F8FAFC;">What Clients Say</h2>
+        <h2 class="text-2xl lg:text-3xl font-black" style="color: #0F172A;">What Clients Say</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
@@ -438,12 +453,12 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { quote: 'Ambit helped us choose the right entity and set up across multiple states without complications.', name: 'Co-founder', company: 'Technology Startup, United States' },
           { quote: 'Our US setup was structured correctly from the start. We avoided tax and compliance issues later.', name: 'CEO', company: 'International Business, United States' },
         ].map(({ quote, name, company }) => (
-          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-8 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <svg class="w-6 h-6 mb-4" style="color: #1a4480;" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <p class="text-sm leading-relaxed mb-6" style="color: #94A3B8;">{quote}</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #64748B;">{quote}</p>
             <div>
-              <div class="text-xs font-bold" style="color: #F8FAFC;">{name}</div>
-              <div class="text-xs mt-0.5" style="color: #475569;">{company}</div>
+              <div class="text-xs font-bold" style="color: #0F172A;">{name}</div>
+              <div class="text-xs mt-0.5" style="color: #64748B;">{company}</div>
             </div>
           </div>
         ))}

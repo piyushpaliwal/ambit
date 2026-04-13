@@ -84,16 +84,26 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== WHY IT MATTERS ===== -->
-  <section style="background-color: #0F172A;">
+  <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
-      <div class="mb-14">
-        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight max-w-3xl" style="color: #F8FAFC;">
-          Tax Compliance in the UAE Requires More Than Filing
-        </h2>
-        <p class="mt-4 text-base max-w-2xl leading-relaxed" style="color: #64748B;">
-          With corporate tax now applicable across UAE entities, getting it right requires understanding not just the rules but how they interact with your structure, jurisdiction, and financial reporting.
-        </p>
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div class="relative hidden lg:block">
+          <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80" alt="UAE corporate tax compliance" class="rounded-2xl w-full object-cover shadow-lg" style="height: 420px; object-position: center;" />
+          <div class="absolute top-6 -right-5 bg-white rounded-xl px-4 py-3 shadow-lg" style="border: 1px solid #EEF2F6;">
+            <p class="text-xs font-bold mb-0.5" style="color: #0F172A;">CT Registered</p>
+            <p class="text-xs" style="color: #94A3B8;">FTA Compliant</p>
+          </div>
+          <div class="absolute -bottom-5 left-6 rounded-xl px-4 py-3 shadow-lg" style="background: #0F172A; border: 1px solid #1E293B;">
+            <p class="text-xs font-bold text-white mb-0.5">Freezone Ready</p>
+            <p class="text-xs" style="color: #475569;">Mainland Aligned</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: #0F172A; letter-spacing: -0.02em;">Tax Compliance in the UAE Requires More Than Filing</h2>
+          <div class="w-10 h-px mb-8" style="background-color: #1a4480;"></div>
+          <p class="text-base leading-relaxed" style="color: #64748B;">With corporate tax now applicable across UAE entities, getting it right requires understanding not just the rules but how they interact with your structure, jurisdiction, and financial reporting.</p>
+        </div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
@@ -111,11 +121,11 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             body: 'The FTA expects not just accurate returns but well-maintained supporting records. Transfer pricing documentation, election forms, and audit trails must be in place before filing. Compliance is built through the year, not assembled at the deadline.',
           },
         ].map(({ title, body }) => (
-          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-8 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-6" style="background-color: #1a4480;">
               <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            <h3 class="text-base font-bold mb-3" style="color: #F8FAFC;">{title}</h3>
+            <h3 class="text-base font-bold mb-3" style="color: #0F172A;">{title}</h3>
             <p class="text-sm leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -200,11 +210,11 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== WHO WE SERVE ===== -->
-  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Who We Serve</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Built for UAE Business Structures</h2>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Built for UAE Business Structures</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-6">
@@ -226,8 +236,8 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             body: 'Foreign companies establishing UAE presence for the first time, needing to understand their corporate tax obligations, registration timelines, accounting requirements, and how UAE tax interacts with their home jurisdiction obligations.',
           },
         ].map(({ title, body }) => (
-          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
-            <h3 class="text-sm font-bold mb-3" style="color: #F8FAFC;">{title}</h3>
+          <div class="rounded-xl p-8" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
+            <h3 class="text-sm font-bold mb-3" style="color: #0F172A;">{title}</h3>
             <p class="text-sm leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -286,11 +296,11 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== PROCESS ===== -->
-  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">How We Work</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Our Process</h2>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Our Process</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -301,9 +311,9 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
           { step: '04', title: 'Execution and Review', body: 'We prepare computations, returns, and documentation on schedule. All submissions are reviewed before filing and copies retained for your records.' },
           { step: '05', title: 'Continuity', body: 'We monitor regulatory changes, track election renewal dates, and maintain your documentation through each compliance cycle without disruption.' },
         ].map(({ step, title, body }) => (
-          <div class="relative">
-            <div class="text-4xl font-black mb-4" style="color: #1E293B;">{step}</div>
-            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+          <div class="relative p-6 rounded-xl shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
+            <div class="text-4xl font-black mb-4" style="color: #1a4480;">{step}</div>
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
             <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -360,11 +370,11 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+  <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-12">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Client Feedback</p>
-        <h2 class="text-2xl lg:text-3xl font-black" style="color: #F8FAFC;">What Clients Say</h2>
+        <h2 class="text-2xl lg:text-3xl font-black" style="color: #0F172A;">What Clients Say</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
@@ -385,12 +395,12 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             company: 'Trading Group, Sharjah',
           },
         ].map(({ quote, name, company }) => (
-          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-8 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <svg class="w-6 h-6 mb-4" style="color: #1a4480;" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <p class="text-sm leading-relaxed mb-6" style="color: #94A3B8;">{quote}</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #64748B;">{quote}</p>
             <div>
-              <div class="text-xs font-bold" style="color: #F8FAFC;">{name}</div>
-              <div class="text-xs mt-0.5" style="color: #475569;">{company}</div>
+              <div class="text-xs font-bold" style="color: #0F172A;">{name}</div>
+              <div class="text-xs mt-0.5" style="color: #64748B;">{company}</div>
             </div>
           </div>
         ))}

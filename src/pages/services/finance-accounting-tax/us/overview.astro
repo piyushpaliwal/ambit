@@ -5,41 +5,71 @@ import USLayout from '../../../../layouts/USLayout.astro';
 <USLayout title="US Finance, Accounting & Tax Services | Ambit" description="Accounting, tax, payroll, and financial management for US businesses. US GAAP aligned, IRS compliant, and structured across federal and state requirements.">
 
   <!-- ===== HERO ===== -->
-  <section class="relative min-h-[88vh] flex items-center overflow-hidden" style="background-color: #0F172A;">
+  <section class="relative overflow-hidden" style="background-color: #0F172A; min-height: 600px;">
     <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#1E293B 1px, transparent 1px), linear-gradient(90deg, #1E293B 1px, transparent 1px); background-size: 64px 64px;"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,68,128,0.18) 0%, transparent 70%);"></div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
-      {/* <div class="flex items-center gap-3 mb-8">
-        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase" style="background-color: rgba(26,68,128,0.25); border: 1px solid rgba(26,68,128,0.4); color: #93C5FD;">
-          <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-4 h-3 object-cover rounded-sm" />
-          United States · Finance, Accounting & Tax
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 flex items-center" style="min-height: 600px;">
+      <div class="grid lg:grid-cols-2 gap-14 items-center w-full py-20 lg:py-0">
+
+        <!-- Left -->
+        <div>
+          <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
+            <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-5 h-3.5 object-cover rounded-sm" />
+            <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color: #93C5FD;">United States · Finance, Accounting &amp; Tax</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-bold leading-[1.08] text-white mb-6" style="letter-spacing: -0.02em;">
+            United States<br/>
+            <span style="color: #93C5FD;">Finance, Accounting &amp; Tax</span>
+          </h1>
+
+          <p class="text-base leading-relaxed mb-8" style="color: #94A3B8; max-width: 480px;">
+            From growth-stage businesses to multi-state operations across the United States, Ambit structures accounting, tax, payroll, and financial management to remain consistent across IRS, federal, and state requirements.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-10">
+            <a href="#services" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.45);">
+              See Our Services
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold rounded border transition-all hover:bg-white/5" style="color: #CBD5E1; border-color: #334155;">
+              Book Free Consultation
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-5 pt-8" style="border-top: 1px solid #1E293B;">
+            {['US GAAP Aligned', 'IRS Compliant', 'Federal and State Aligned', 'Sales Tax Compliant', 'Multi-State Ready'].map(t => (
+              <div class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #3B82F6;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-xs font-medium" style="color: #64748B;">{t}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div> */}
 
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6" style="color: #F8FAFC;">
-       United States 
-        <span class="block" style="color: #93C5FD;">Finance, Accounting & Tax</span>
-      </h1>
+        <!-- Right: NYC skyline with floating badges -->
+        <div class="relative hidden lg:block">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl" style="height: 440px;">
+            <img
+              src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=900&q=80"
+              alt="New York City skyline - US business hub"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(15,23,42,0.6) 0%, rgba(15,23,42,0.2) 60%, transparent 100%);"></div>
+          </div>
 
-      <p class="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed" style="color: #94A3B8;">
-        From growth-stage businesses to multi-state operations across the United States, Ambit structures accounting, tax, payroll, and financial management to remain consistent across IRS, federal, and state requirements.
-      </p>
+          <!-- Floating badge: IRS Compliant -->
+          <div class="absolute -bottom-6 -left-8 rounded-xl px-5 py-4 shadow-xl" style="background: #1a4480; border: 1px solid rgba(255,255,255,0.1);">
+            <div class="text-2xl font-bold text-white leading-none mb-0.5">IRS</div>
+            <div class="text-xs font-medium" style="color: #93C5FD;">Fully Compliant</div>
+          </div>
+          <div class="absolute -top-4 -right-4 rounded-xl px-4 py-3 shadow-xl" style="background: #1E293B; border: 1px solid #334155;">
+            <div class="text-xl font-bold text-white leading-none mb-0.5">US GAAP</div>
+            <div class="text-xs text-center" style="color: #64748B;">Aligned Reporting</div>
+          </div>
+        </div>
 
-      <div class="flex flex-wrap gap-3 mb-14">
-        {['US GAAP Aligned', 'IRS Compliant', 'Federal and State Aligned', 'Sales Tax Compliant', 'Multi-State Ready'].map(label => (
-          <span class="px-3 py-1.5 rounded-full text-xs font-semibold" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">{label}</span>
-        ))}
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
-          See Our Services
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold transition-all hover:opacity-80" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">
-          Book Free Consultation
-        </a>
       </div>
     </div>
   </section>
@@ -109,16 +139,36 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== WHY AMBIT ===== -->
-  <section style="background-color: #0F172A;">
+  <section style="background-color: #ffffff;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
-      <div class="mb-14">
-        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Why Ambit</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight max-w-3xl" style="color: #F8FAFC;">
-          Why US Businesses Work With Ambit
-        </h2>
-        <p class="mt-4 text-base max-w-2xl leading-relaxed" style="color: #64748B;">
-          Operating in the United States requires alignment across federal tax, state tax, sales tax, payroll taxes, and financial reporting standards. As businesses grow across jurisdictions, these obligations often become fragmented across systems, filings, and reporting cycles. Ambit brings structure across accounting, tax, payroll, and financial management so that compliance and reporting remain consistent without increasing internal complexity.
-        </p>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div class="relative hidden lg:block">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80"
+            alt="US business professionals"
+            class="rounded-2xl w-full object-cover shadow-lg"
+            style="height: 420px; object-position: center;"
+          />
+          <div class="absolute top-6 -right-5 bg-white rounded-xl px-4 py-3 shadow-lg" style="border: 1px solid #EEF2F6;">
+            <p class="text-xs font-bold mb-0.5" style="color: #0F172A;">US GAAP Aligned</p>
+            <p class="text-xs" style="color: #94A3B8;">IRS · Federal · State</p>
+          </div>
+          <div class="absolute -bottom-5 left-6 rounded-xl px-4 py-3 shadow-lg" style="background: #0F172A; border: 1px solid #1E293B;">
+            <p class="text-xs font-bold text-white mb-0.5">Multi-State Ready</p>
+            <p class="text-xs" style="color: #475569;">Sales Tax Compliant</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Why Ambit</p>
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: #0F172A; letter-spacing: -0.02em;">
+            Why US Businesses Work With Ambit
+          </h2>
+          <p class="text-base leading-relaxed mb-8" style="color: #64748B;">
+            Operating in the United States requires alignment across federal tax, state tax, sales tax, payroll taxes, and financial reporting standards. As businesses grow across jurisdictions, these obligations often become fragmented across systems, filings, and reporting cycles. Ambit brings structure across accounting, tax, payroll, and financial management so that compliance and reporting remain consistent without increasing internal complexity.
+          </p>
+        </div>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -144,11 +194,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
             icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
           },
         ].map(({ title, body, icon }) => (
-          <div class="rounded-xl p-6" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-6 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-5" style="background-color: #1a4480;">
               <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/></svg>
             </div>
-            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
             <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -249,11 +299,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== INDUSTRY SPOTLIGHT ===== -->
-  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+  <section style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-14">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Industry Spotlight</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #F8FAFC;">Serving a Wide Range of US Industries</h2>
+        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Serving a Wide Range of US Industries</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -265,8 +315,8 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { title: 'Healthcare', body: 'Structured reporting, payroll, and compliance support in regulated environments.' },
           { title: 'Professional Services', body: 'Clear books, reliable reporting, and consistency across engagements.' },
         ].map(({ title, body }) => (
-          <div class="rounded-xl p-6" style="background-color: #0D1829; border: 1px solid #1E293B;">
-            <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+          <div class="rounded-xl p-6 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
             <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
           </div>
         ))}
@@ -298,11 +348,11 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+  <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="mb-12">
         <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Testimonials</p>
-        <h2 class="text-2xl lg:text-3xl font-black" style="color: #F8FAFC;">Trusted Across the United States</h2>
+        <h2 class="text-2xl lg:text-3xl font-black" style="color: #0F172A;">Trusted Across the United States</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
@@ -310,12 +360,12 @@ import USLayout from '../../../../layouts/USLayout.astro';
           { quote: 'Ambit brought structure to our reporting and tax processes across multiple states. The difference is consistency.', name: 'CFO', company: 'Multi-State Business, United States' },
           { quote: 'Payroll, filings, and financial reporting are now aligned. There is much more clarity across the business.', name: 'Founder', company: 'Growth Company, United States' },
         ].map(({ quote, name, company }) => (
-          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+          <div class="rounded-xl p-8 shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
             <svg class="w-6 h-6 mb-4" style="color: #1a4480;" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <p class="text-sm leading-relaxed mb-6" style="color: #94A3B8;">{quote}</p>
+            <p class="text-sm leading-relaxed mb-6" style="color: #64748B;">{quote}</p>
             <div>
-              <div class="text-xs font-bold" style="color: #F8FAFC;">{name}</div>
-              <div class="text-xs mt-0.5" style="color: #475569;">{company}</div>
+              <div class="text-xs font-bold" style="color: #0F172A;">{name}</div>
+              <div class="text-xs mt-0.5" style="color: #64748B;">{company}</div>
             </div>
           </div>
         ))}

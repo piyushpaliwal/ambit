@@ -1,0 +1,430 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="RPO Services | Ambit" description="Recruitment process outsourcing designed to build structured hiring pipelines, improve candidate quality, and streamline hiring operations across roles and geographies.">
+  <Navbar />
+
+  <!-- ===== HERO ===== -->
+  <section
+    class="relative min-h-[88vh] flex items-center overflow-hidden"
+    style="background-color: #0F172A;"
+    x-data="{ visible: false }"
+    x-init="setTimeout(() => visible = true, 100)"
+  >
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1800&q=80"
+        alt="RPO Services"
+        class="w-full h-full object-cover"
+        style="opacity: 0.12;"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #0F172A 0%, #0F172A 50%, #1a4480 100%); opacity: 0.93;"></div>
+    </div>
+
+    <div class="absolute top-20 right-24 w-96 h-96 rounded-full blur-3xl" style="background: #1a4480; opacity: 0.13;"></div>
+    <div class="absolute bottom-20 left-16 w-72 h-72 rounded-full blur-3xl" style="background: #3B82F6; opacity: 0.07;"></div>
+
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 lg:px-12 py-32 text-center">
+
+      <div
+        x-show="visible"
+        x-transition:enter="transition duration-700"
+        x-transition:enter-start="opacity-0 -translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-8"
+        style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;"
+      >
+        <svg class="w-3.5 h-3.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Recruitment Process Outsourcing
+      </div>
+
+      <h1
+        x-show="visible"
+        x-transition:enter="transition duration-700 delay-100"
+        x-transition:enter-start="opacity-0 translate-y-6"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="text-4xl lg:text-6xl xl:text-7xl font-black leading-none mb-8 text-white"
+        style="letter-spacing: -0.03em;"
+      >
+        RPO Services
+        <br />
+        <span style="color: #3B82F6;">Structured Hiring at Scale</span>
+      </h1>
+
+      <p
+        x-show="visible"
+        x-transition:enter="transition duration-700 delay-200"
+        x-transition:enter-start="opacity-0 translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
+        style="color: #94A3B8;"
+      >
+        Recruitment process outsourcing designed to build structured hiring pipelines, improve candidate quality, and streamline hiring operations across roles and geographies.
+      </p>
+
+      <div
+        x-show="visible"
+        x-transition:enter="transition duration-700 delay-300"
+        x-transition:enter-start="opacity-0 translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="flex flex-wrap justify-center gap-4 mb-16"
+      >
+        <a href="/contact" class="px-8 py-4 text-sm font-bold text-white rounded-lg transition-all hover:opacity-90 hover:scale-105" style="background-color: #1a4480;">
+          Get a Free Quote
+        </a>
+        <a href="#why-it-matters" class="px-8 py-4 text-sm font-semibold rounded-lg border transition-all hover:bg-white/5" style="color: #94A3B8; border-color: #334155;">
+          Learn More
+        </a>
+      </div>
+
+      <!-- Trust pills -->
+      <div
+        x-show="visible"
+        x-transition:enter="transition duration-700 delay-400"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        class="flex flex-wrap justify-center gap-3 mb-16"
+      >
+        {['Structured hiring processes', 'Scalable recruitment support', 'Quality candidate pipelines', 'Operational efficiency', 'Consistent delivery'].map(label => (
+          <span class="text-xs font-semibold px-4 py-2 rounded-full" style="background-color: #1E293B; color: #64748B; border: 1px solid #334155;">{label}</span>
+        ))}
+      </div>
+
+      <!-- Stats row -->
+      <div
+        x-show="visible"
+        x-transition:enter="transition duration-700 delay-500"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto pt-12 border-t"
+        style="border-color: #1E293B;"
+      >
+        {[
+          { val: 'Efficient', label: 'Hiring processes' },
+          { val: 'Scalable', label: 'Recruitment support' },
+          { val: 'Quality', label: 'Candidate pipelines' },
+          { val: 'Faster', label: 'Time to hire' },
+        ].map(({ val, label }) => (
+          <div>
+            <div class="text-2xl font-black text-white mb-1">{val}</div>
+            <div class="text-xs" style="color: #64748B;">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLUE MARQUEE STRIP ===== -->
+  <div class="w-full py-4 overflow-hidden" style="background-color: #1a4480;">
+    <div class="flex gap-12 items-center" style="animation: marquee 35s linear infinite; width: max-content;">
+      {[
+        'End-to-end recruitment support',
+        'Candidate sourcing and screening',
+        'Pipeline development',
+        'Interview coordination',
+        'Hiring workflow management',
+        'Multi-role and multi-location hiring',
+        'Employer branding support',
+        'Recruitment analytics and tracking',
+        'End-to-end recruitment support',
+        'Candidate sourcing and screening',
+        'Pipeline development',
+        'Interview coordination',
+        'Hiring workflow management',
+        'Multi-role and multi-location hiring',
+        'Employer branding support',
+        'Recruitment analytics and tracking',
+      ].map(item => (
+        <span class="text-sm font-semibold text-white whitespace-nowrap flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full inline-block bg-white opacity-60"></span>
+          {item}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- ===== WHY IT MATTERS (white bg, image left) ===== -->
+  <section id="why-it-matters" class="py-24 px-6 lg:px-12 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Image with floating badges -->
+        <div class="relative">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
+            alt="Structured hiring"
+            class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl"
+          />
+          <!-- Badge top-right -->
+          <div class="absolute -top-5 -right-5 px-5 py-4 rounded-2xl shadow-xl text-center" style="background-color: #0F172A;">
+            <div class="text-lg font-black mb-0.5" style="color: #3B82F6;">Scalable</div>
+            <div class="text-xs" style="color: #64748B;">Hiring pipelines</div>
+          </div>
+          <!-- Badge bottom-left -->
+          <div class="absolute -bottom-5 -left-5 px-5 py-4 rounded-2xl shadow-xl text-center" style="background-color: #0F172A;">
+            <div class="text-2xl font-black mb-0.5" style="color: #22C55E;">Faster</div>
+            <div class="text-xs" style="color: #64748B;">Time to hire</div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #1a4480;">Why It Matters</div>
+          <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">Hiring Requires Structure, Not Just Sourcing</h2>
+          <p class="text-lg leading-relaxed mb-8" style="color: #64748B;">
+            Recruitment is often fragmented across sourcing, screening, and coordination stages. Without structured processes, hiring becomes slow, inconsistent, and resource-intensive. A structured RPO model ensures a consistent pipeline of qualified candidates, faster hiring cycles, and better alignment with business needs.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            {[
+              { title: 'Structured Hiring Pipelines', desc: 'End-to-end processes that bring consistency to every stage.' },
+              { title: 'Improved Candidate Quality', desc: 'Rigorous screening aligned with role and business requirements.' },
+              { title: 'Faster Hiring Cycles', desc: 'Reduced time-to-hire through structured coordination.' },
+              { title: 'Scalable Recruitment Support', desc: 'Capacity that grows with your hiring demands.' },
+            ].map(({ title, desc }) => (
+              <div class="p-4 rounded-xl border" style="background-color: #F8FAFC; border-color: #E2E8F0;">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-3" style="background-color: #EFF6FF;">
+                  <svg class="w-4 h-4" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div class="text-sm font-bold mb-1" style="color: #0F172A;">{title}</div>
+                <div class="text-xs leading-relaxed" style="color: #64748B;">{desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES (dark bg) ===== -->
+  <section class="py-24 px-6 lg:px-12" style="background-color: #0F172A;">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">What We Offer</div>
+        <h2 class="text-4xl font-black mb-4 text-white" style="letter-spacing: -0.02em;">RPO Services</h2>
+        <p class="text-lg max-w-2xl mx-auto" style="color: #64748B;">Eight core service areas covering the full recruitment lifecycle from sourcing to onboarding coordination.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          {
+            num: '01', title: 'Candidate Sourcing',
+            items: ['Talent identification across channels', 'Database and platform sourcing', 'Targeted candidate outreach']
+          },
+          {
+            num: '02', title: 'Screening and Shortlisting',
+            items: ['Resume screening', 'Initial candidate assessment', 'Shortlisting based on role requirements']
+          },
+          {
+            num: '03', title: 'Interview Coordination',
+            items: ['Scheduling interviews', 'Candidate communication', 'Coordination across stakeholders']
+          },
+          {
+            num: '04', title: 'Hiring Workflow Management',
+            items: ['Process tracking', 'Candidate pipeline management', 'Status reporting and updates']
+          },
+          {
+            num: '05', title: 'Multi-Role and Bulk Hiring',
+            items: ['Support for multiple roles', 'High-volume hiring support', 'Structured recruitment workflows']
+          },
+          {
+            num: '06', title: 'Employer Branding Support',
+            items: ['Candidate communication alignment', 'Representation of company positioning', 'Consistent hiring experience']
+          },
+          {
+            num: '07', title: 'Recruitment Analytics',
+            items: ['Hiring metrics and reporting', 'Pipeline tracking', 'Performance insights']
+          },
+          {
+            num: '08', title: 'End-to-End Support',
+            items: ['Support from sourcing to onboarding', 'Alignment with internal hiring teams', 'Continuous process improvement']
+          },
+        ].map(({ num, title, items }) => (
+          <div class="rounded-2xl p-6" style="background-color: #1E293B; border: 1px solid #334155;">
+            <div class="text-4xl font-black mb-4 leading-none" style="color: #334155;">{num}</div>
+            <h3 class="text-sm font-bold mb-4 text-white">{title}</h3>
+            <ul class="space-y-2">
+              {items.map(item => (
+                <li class="flex items-start gap-2 text-xs" style="color: #94A3B8;">
+                  <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO WE SERVE (light gray, image right) ===== -->
+  <section class="py-24 px-6 lg:px-12" style="background-color: #F8FAFC;">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Text -->
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #1a4480;">Who We Serve</div>
+          <h2 class="text-4xl font-black mb-6" style="color: #0F172A; letter-spacing: -0.02em;">Built for Businesses That Need to Hire at Scale</h2>
+          <p class="text-lg leading-relaxed mb-10" style="color: #64748B;">
+            Our RPO services are designed for organisations where recruitment volume, quality, and speed are critical to business growth and operations.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {[
+              { title: 'Growing Businesses', desc: 'Recruitment support as teams and roles expand.' },
+              { title: 'Startups', desc: 'Structured hiring from day one to support rapid scaling.' },
+              { title: 'Enterprises', desc: 'Multi-role and multi-location hiring at volume.' },
+              { title: 'Global Businesses', desc: 'Consistent hiring processes across geographies.' },
+            ].map(({ title, desc }) => (
+              <div class="p-5 rounded-xl bg-white border border-gray-100 shadow-sm">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-3" style="background-color: #EFF6FF;">
+                  <svg class="w-4 h-4" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div class="text-sm font-bold mb-1" style="color: #0F172A;">{title}</div>
+                <div class="text-xs leading-relaxed" style="color: #64748B;">{desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Image with badge -->
+        <div class="relative order-first lg:order-last">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
+            alt="Who we serve"
+            class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl"
+          />
+          <div class="absolute -bottom-5 -right-5 px-6 py-5 rounded-2xl shadow-xl" style="background-color: #0F172A;">
+            <div class="text-2xl font-black mb-1" style="color: #3B82F6;">8</div>
+            <div class="text-xs" style="color: #64748B;">Service Areas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM / SOLUTION (dark) ===== -->
+  <section class="py-24 px-6 lg:px-12" style="background-color: #0F172A;">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">The Challenge</div>
+        <h2 class="text-4xl font-black text-white mb-4" style="letter-spacing: -0.02em;">The Impact of Unstructured Hiring</h2>
+        <p class="text-lg max-w-2xl mx-auto" style="color: #64748B;">Hiring gaps compound quickly. Structured RPO support prevents them from forming.</p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="rounded-2xl p-8" style="background-color: #1E293B; border: 1px solid #374151;">
+          <h3 class="text-base font-bold mb-6" style="color: #94A3B8;">Without Structured RPO Support</h3>
+          <ul class="space-y-4">
+            {['Slow hiring cycles', 'Inconsistent candidate quality', 'Lack of pipeline visibility', 'High internal workload', 'Inefficient hiring processes'].map(item => (
+              <li class="flex items-center gap-3 text-sm" style="color: #64748B;">
+                <svg class="w-4 h-4 flex-shrink-0" style="color: #4B5563;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl p-8" style="background-color: #1E293B; border: 1px solid #1a4480;">
+          <h3 class="text-base font-bold mb-6 text-white">With Structured RPO Support</h3>
+          <ul class="space-y-4">
+            {['Faster and consistent hiring', 'Better candidate quality', 'Clear pipeline visibility', 'Reduced internal effort', 'Scalable recruitment operations'].map(item => (
+              <li class="flex items-center gap-3 text-sm" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0" style="color: #3B82F6;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS (white bg) ===== -->
+  <section class="py-24 px-6 lg:px-12 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">Our Process</div>
+        <h2 class="text-4xl font-black mb-4" style="color: #0F172A; letter-spacing: -0.02em;">How Hiring Is Structured</h2>
+        <p class="text-lg max-w-2xl mx-auto" style="color: #64748B;">A five-step model that ensures every hiring engagement is built for consistency, speed, and long-term reliability.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        {[
+          { step: '01', title: 'Understanding', desc: 'We assess your hiring needs, role requirements, and existing processes.' },
+          { step: '02', title: 'Pipeline Structuring', desc: 'Sourcing channels and screening frameworks are established.' },
+          { step: '03', title: 'Onboarding', desc: 'Teams are aligned and workflows integrated for a seamless start.' },
+          { step: '04', title: 'Execution and Coordination', desc: 'Live hiring with regular performance tracking and review.' },
+          { step: '05', title: 'Continuity', desc: 'Ongoing support, improvement, and scale as hiring demands evolve.' },
+        ].map(({ step, title, desc }) => (
+          <div class="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
+            <div class="text-2xl font-black mb-3" style="color: #1a4480;">{step}</div>
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
+            <p class="text-xs leading-relaxed" style="color: #64748B;">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS (light gray) ===== -->
+  <section class="py-24 px-6 lg:px-12" style="background-color: #F8FAFC;">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">Client Feedback</div>
+        <h2 class="text-4xl font-black" style="color: #0F172A; letter-spacing: -0.02em;">What Clients Say</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          'Our hiring process is now structured and efficient. We are able to scale our team faster.',
+          'Candidate quality and pipeline visibility improved significantly.',
+        ].map(quote => (
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <svg class="w-8 h-8 mb-5" style="color: #1a4480;" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p class="text-base leading-relaxed italic mb-6" style="color: #374151;">"{quote}"</p>
+            <div class="flex items-center gap-1">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-4 h-4" style="color: #F59E0B;" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA (dark) ===== -->
+  <section class="py-24 px-6 lg:px-12" style="background: linear-gradient(135deg, #0F172A 0%, #1a4480 100%);">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #94A3B8;">Get Started</div>
+      <h2 class="text-4xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">
+        Build a Scalable Hiring Process
+      </h2>
+      <p class="text-lg max-w-2xl mx-auto mb-10" style="color: #94A3B8;">
+        Structured RPO services designed to improve hiring speed, candidate quality, and recruitment scalability across your organisation.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-14">
+        <a href="/contact" class="px-8 py-4 text-sm font-bold text-white rounded-lg transition-all hover:opacity-90 hover:scale-105" style="background-color: #3B82F6;">
+          Get a Free Quote
+        </a>
+        <a href="/contact" class="px-8 py-4 text-sm font-semibold rounded-lg border transition-all hover:bg-white/5" style="color: #94A3B8; border-color: #334155;">
+          Book Free Consultation
+        </a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-10 border-t" style="border-color: #1E293B;">
+        {[
+          { val: 'Efficient', label: 'Hiring processes' },
+          { val: 'Scalable', label: 'Recruitment support' },
+          { val: 'Quality', label: 'Candidate pipelines' },
+          { val: 'Faster', label: 'Time to hire' },
+        ].map(({ val, label }) => (
+          <div>
+            <div class="text-2xl font-black text-white mb-1">{val}</div>
+            <div class="text-xs" style="color: #64748B;">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

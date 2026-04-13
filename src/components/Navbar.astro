@@ -1,4 +1,9 @@
 ---
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+};
 ---
 
 <!-- TOP COUNTRY BAR -->
@@ -71,23 +76,24 @@
 
       <!-- Desktop Nav Links -->
       <div class="hidden lg:flex items-center gap-0.5">
-        <a href="/" class="px-3 py-2 text-sm font-semibold tracking-wide uppercase transition-colors" style="color: #0F172A;">Home</a>
-        <a href="/about" class="px-3 py-2 text-sm font-medium tracking-wide uppercase text-gray-500 hover:text-gray-900 transition-colors">About Us</a>
+        <a href="/" class={`px-3 py-2 text-sm tracking-wide uppercase transition-colors ${isActive('/') ? 'font-semibold' : 'font-medium text-gray-500 hover:text-gray-900'}`} style={isActive('/') ? 'color: #0F172A;' : ''}>Home</a>
+        <a href="/about" class={`px-3 py-2 text-sm tracking-wide uppercase transition-colors ${isActive('/about') ? 'font-semibold' : 'font-medium text-gray-500 hover:text-gray-900'}`} style={isActive('/about') ? 'color: #0F172A;' : ''}>About Us</a>
 
         <!-- Services trigger -->
         <button
           @mouseenter="servicesOpen = true"
           @click="servicesOpen = !servicesOpen"
-          class="flex items-center gap-1 px-3 py-2 text-sm font-medium tracking-wide uppercase text-gray-500 hover:text-gray-900 transition-colors"
+          class={`flex items-center gap-1 px-3 py-2 text-sm tracking-wide uppercase transition-colors ${isActive('/services') ? 'font-semibold' : 'font-medium text-gray-500 hover:text-gray-900'}`}
+          style={isActive('/services') ? 'color: #0F172A;' : ''}
         >
           Services
           <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="servicesOpen ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
 
-        <a href="/industries" class="px-3 py-2 text-sm font-medium tracking-wide uppercase text-gray-500 hover:text-gray-900 transition-colors">Industries</a>
-        <a href="/how-it-works" class="px-3 py-2 text-sm font-medium tracking-wide uppercase text-gray-500 hover:text-gray-900 transition-colors">How It Works</a>
+        <a href="/industries" class={`px-3 py-2 text-sm tracking-wide uppercase transition-colors ${isActive('/industries') ? 'font-semibold' : 'font-medium text-gray-500 hover:text-gray-900'}`} style={isActive('/industries') ? 'color: #0F172A;' : ''}>Industries</a>
+        <a href="/how-it-works" class={`px-3 py-2 text-sm tracking-wide uppercase transition-colors ${isActive('/how-it-works') ? 'font-semibold' : 'font-medium text-gray-500 hover:text-gray-900'}`} style={isActive('/how-it-works') ? 'color: #0F172A;' : ''}>How It Works</a>
         <a href="#blog" class="px-3 py-2 text-sm font-medium tracking-wide uppercase text-gray-500 hover:text-gray-900 transition-colors">Blogs</a>
-        <a href="/contact" class="px-3 py-2 text-sm font-medium tracking-wide uppercase text-gray-500 hover:text-gray-900 transition-colors">Contact Us</a>
+        <a href="/contact" class={`px-3 py-2 text-sm tracking-wide uppercase transition-colors ${isActive('/contact') ? 'font-semibold' : 'font-medium text-gray-500 hover:text-gray-900'}`} style={isActive('/contact') ? 'color: #0F172A;' : ''}>Contact Us</a>
       </div>
 
       <!-- CTA -->
