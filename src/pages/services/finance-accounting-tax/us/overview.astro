@@ -10,16 +10,16 @@ import USLayout from '../../../../layouts/USLayout.astro';
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,68,128,0.18) 0%, transparent 70%);"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
-      <div class="flex items-center gap-3 mb-8">
+      {/* <div class="flex items-center gap-3 mb-8">
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase" style="background-color: rgba(26,68,128,0.25); border: 1px solid rgba(26,68,128,0.4); color: #93C5FD;">
           <img src="https://flagcdn.com/w20/us.png" alt="US" class="w-4 h-3 object-cover rounded-sm" />
           United States · Finance, Accounting & Tax
         </div>
-      </div>
+      </div> */}
 
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6" style="color: #F8FAFC;">
-        Finance, Accounting
-        <span class="block" style="color: #93C5FD;">& Tax for US Businesses</span>
+       United States 
+        <span class="block" style="color: #93C5FD;">Finance, Accounting & Tax</span>
       </h1>
 
       <p class="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed" style="color: #94A3B8;">
@@ -49,10 +49,10 @@ import USLayout from '../../../../layouts/USLayout.astro';
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-12">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {[
-          { metric: '500+', label: 'Clients', sub: 'Across the United States' },
-          { metric: '20+', label: 'Years', sub: 'Of accounting experience' },
-          { metric: 'US GAAP', label: 'Aligned', sub: 'Financial reporting standards' },
-          { metric: 'IRS', label: 'Compliant', sub: 'Federal and state filings' },
+          { metric: '500+', label: 'Clients' },
+          { metric: '20+', label: 'Years',  },
+          { metric: 'US GAAP', label: 'Aligned' },
+          { metric: 'IRS', label: 'Compliant',  },
         ].map(({ metric, label, sub }) => (
           <div class="text-center lg:text-left">
             <div class="text-3xl lg:text-4xl font-black mb-1" style="color: #F8FAFC;">{metric}</div>
@@ -65,8 +65,8 @@ import USLayout from '../../../../layouts/USLayout.astro';
   </section>
 
   <!-- ===== CAPABILITY MARQUEE ===== -->
-  <div class="overflow-hidden py-4" style="background-color: #0F172A; border-bottom: 1px solid #1E293B;">
-    <div class="flex gap-12 whitespace-nowrap animate-marquee text-xs font-semibold tracking-widest uppercase" style="color: #475569;">
+  <div class="overflow-hidden py-4" style="background-color: #1a4480;">
+    <div class="flex gap-12 whitespace-nowrap animate-marquee text-xs font-semibold tracking-widest uppercase" style="color: #ffffff; width: max-content;">
       {[
         'US GAAP aligned financial reporting',
         'IRS compliance across federal filings',
