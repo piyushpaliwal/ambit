@@ -1,0 +1,365 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy | Ambit" description="How Ambit collects, uses, manages, and safeguards information in connection with our accounting, tax, and advisory services across the UK, US, and UAE.">
+  <Navbar />
+
+  <main style="background-color: #0F172A; min-height: 100vh;">
+
+    <!-- ===== HERO ===== -->
+    <section class="relative overflow-hidden" style="background-color: #060D18; border-bottom: 1px solid #1E293B;">
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#1E293B 1px, transparent 1px), linear-gradient(90deg, #1E293B 1px, transparent 1px); background-size: 64px 64px;"></div>
+      <div class="relative max-w-4xl mx-auto px-6 lg:px-12 py-24">
+        <div class="flex items-center gap-2 mb-6">
+          <a href="/" class="text-xs transition-colors hover:opacity-80" style="color: #475569;">Home</a>
+          <svg class="w-3 h-3" style="color: #334155;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <span class="text-xs" style="color: #64748B;">Privacy Policy</span>
+        </div>
+        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Legal</p>
+        <h1 class="text-4xl lg:text-5xl font-black mb-4" style="color: #F8FAFC;">Privacy Policy</h1>
+        <p class="text-sm" style="color: #475569;">Last updated: April 2026</p>
+      </div>
+    </section>
+
+    <!-- ===== CONTENT ===== -->
+    <section class="max-w-4xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
+
+      <!-- Intro -->
+      <div class="mb-12 pb-12" style="border-bottom: 1px solid #1E293B;">
+        <p class="text-base leading-relaxed mb-4" style="color: #94A3B8;">
+          Ambit is committed to protecting the confidentiality, integrity, and proper use of personal and business information entrusted to us.
+        </p>
+        <p class="text-base leading-relaxed" style="color: #64748B;">
+          This Privacy Policy explains how we collect, use, manage, and safeguard information in the course of our business operations. It applies to information provided to us directly, obtained through our website, or received in connection with the delivery of our accounting, tax, and advisory services across the United Kingdom, United States, Canada, and the United Arab Emirates.
+        </p>
+      </div>
+
+      <!-- Sections -->
+      <div class="space-y-12">
+
+        <!-- 1 -->
+        <div id="about" class="scroll-mt-24">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">1</span>
+            About Ambit
+          </h2>
+          <p class="text-sm leading-relaxed mb-3" style="color: #64748B;">
+            In this policy, "Ambit", "we", "us", or "our" refers to the group of entities operating under the Ambit name.
+          </p>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">
+            Depending on the nature of the engagement, we may act as a data controller or data processor. Where we process data on behalf of clients, such processing is carried out strictly in accordance with client instructions and applicable legal requirements.
+          </p>
+        </div>
+
+        <!-- 2 -->
+        <div id="scope" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">2</span>
+            Scope of This Policy
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">This policy applies to:</p>
+          <ul class="space-y-2 mb-4">
+            {['clients and prospective clients', 'website visitors', 'business contacts and suppliers', 'individuals whose information is processed in the course of providing services'].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">
+            It covers information collected directly from individuals as well as information provided to us by clients or third parties in connection with our services.
+          </p>
+        </div>
+
+        <!-- 3 -->
+        <div id="information" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">3</span>
+            Information We Collect
+          </h2>
+          <p class="text-sm leading-relaxed mb-6" style="color: #64748B;">
+            We collect information only where it is necessary for legitimate business purposes or to fulfil our professional obligations.
+          </p>
+          <div class="space-y-6">
+            {[
+              { sub: '3.1', title: 'Identity and Contact Information', body: 'Names, business contact details, job titles, and related information required to establish and maintain professional relationships.' },
+              { sub: '3.2', title: 'Financial and Business Information', body: 'Accounting records, financial statements, transactional data, tax information, and other data necessary for the provision of services.' },
+              { sub: '3.3', title: 'Employment and Payroll Data', body: 'Employee-related information where payroll or related services are provided.' },
+              { sub: '3.4', title: 'Communication Records', body: 'Correspondence, instructions, and other information shared during engagements.' },
+              { sub: '3.5', title: 'Technical and Website Information', body: 'IP addresses, browser details, and general usage data collected through our website for security and performance purposes.' },
+            ].map(({ sub, title, body }) => (
+              <div class="rounded-xl p-6" style="background-color: #0D1829; border: 1px solid #1E293B;">
+                <p class="text-xs font-bold tracking-widest uppercase mb-2" style="color: #1a4480;">{sub}</p>
+                <h3 class="text-sm font-bold mb-2" style="color: #F8FAFC;">{title}</h3>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">{body}</p>
+              </div>
+            ))}
+          </div>
+          <p class="text-sm leading-relaxed mt-6" style="color: #64748B;">
+            We do not seek to collect excessive information and limit collection to what is proportionate and relevant.
+          </p>
+        </div>
+
+        <!-- 4 -->
+        <div id="how-obtained" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">4</span>
+            How Information Is Obtained
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">Information may be obtained:</p>
+          <ul class="space-y-2 mb-4">
+            {[
+              'directly from you through meetings, correspondence, or engagement processes',
+              'via our website, including enquiry or contact forms',
+              'from third parties acting on your behalf, including advisers or service providers',
+              'through systems, platforms, or integrations used as part of service delivery',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">Where information is provided via our website, it is done voluntarily.</p>
+        </div>
+
+        <!-- 5 -->
+        <div id="use" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">5</span>
+            Use of Information
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">Information is used in the normal course of our business to:</p>
+          <ul class="space-y-2 mb-4">
+            {[
+              'deliver accounting, tax, payroll, and advisory services',
+              'manage and administer client engagements',
+              'comply with legal, regulatory, and professional obligations',
+              'communicate with clients and respond to enquiries',
+              'maintain internal records, billing, and reporting',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm leading-relaxed mb-3" style="color: #64748B;">
+            We may also use information to improve service quality, internal processes, and operational efficiency.
+          </p>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">
+            We do not use personal data for purposes that are incompatible with those outlined above, and we do not sell personal data.
+          </p>
+        </div>
+
+        <!-- 6 -->
+        <div id="legal-basis" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">6</span>
+            Legal Basis for Processing
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">Where applicable, we process personal information on one or more of the following bases:</p>
+          <ul class="space-y-2">
+            {[
+              'performance of a contract or engagement',
+              'compliance with legal or regulatory obligations',
+              'legitimate business interests, including service delivery and administration',
+              'consent, where required',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- 7 -->
+        <div id="disclosure" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">7</span>
+            Disclosure of Information
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">We do not disclose personal information except where necessary and appropriate. Information may be shared:</p>
+          <ul class="space-y-2 mb-4">
+            {[
+              'with regulatory authorities, courts, or government bodies where required',
+              'with professional advisers, auditors, or legal representatives',
+              'with trusted service providers supporting our operations',
+              'within our organisation for the purposes of service delivery',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">All such disclosures are subject to appropriate confidentiality and data protection requirements.</p>
+        </div>
+
+        <!-- 8 -->
+        <div id="transfers" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">8</span>
+            International Data Transfers
+          </h2>
+          <p class="text-sm leading-relaxed mb-3" style="color: #64748B;">
+            Given the cross-border nature of our services, information may be processed in multiple jurisdictions, including the United Kingdom, United States, Canada, and the United Arab Emirates.
+          </p>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">
+            Where information is transferred across borders, we ensure that appropriate safeguards are in place to maintain a level of protection consistent with applicable data protection laws.
+          </p>
+        </div>
+
+        <!-- 9 -->
+        <div id="security" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">9</span>
+            Data Security
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">We maintain a structured and risk-based approach to information security. Our security framework includes:</p>
+          <ul class="space-y-2 mb-6">
+            {[
+              'infrastructure aligned with GCC 4.0 standards',
+              'role-based access controls and restricted system access',
+              'encryption and secure data handling practices',
+              'monitoring and audit controls',
+              'confidentiality obligations for all personnel',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="rounded-xl p-6 mb-4" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <div class="flex items-center gap-3 mb-2">
+              <svg class="w-5 h-5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+              <span class="text-sm font-bold" style="color: #F8FAFC;">ISO 27001 Certified</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: #64748B;">Ambit is ISO 27001 certified, demonstrating that our information security management systems are aligned with internationally recognised standards. This includes defined governance structures, risk assessment procedures, and ongoing monitoring of controls.</p>
+          </div>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">While we take appropriate steps to safeguard information, no system can guarantee absolute security, particularly in relation to internet-based transmission.</p>
+        </div>
+
+        <!-- 10 -->
+        <div id="retention" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">10</span>
+            Data Retention
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">We retain information only for as long as necessary for:</p>
+          <ul class="space-y-2 mb-4">
+            {[
+              'the provision of services',
+              'compliance with legal and regulatory requirements',
+              'the establishment, exercise, or defence of legal claims',
+              'maintaining appropriate business records',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm leading-relaxed mb-3" style="color: #64748B;">Retention periods may vary depending on the nature of the information and applicable legal obligations.</p>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">Where information is no longer required, it is securely deleted or archived.</p>
+        </div>
+
+        <!-- 11 -->
+        <div id="confidentiality" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">11</span>
+            Confidentiality
+          </h2>
+          <p class="text-sm leading-relaxed mb-3" style="color: #64748B;">All information provided to us is treated as confidential, subject to legal and regulatory obligations.</p>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">We apply internal controls to ensure that access to information is limited to those who require it for legitimate business purposes.</p>
+        </div>
+
+        <!-- 12 -->
+        <div id="rights" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">12</span>
+            Your Rights
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">Depending on your jurisdiction, you may have rights in relation to your personal information, including:</p>
+          <ul class="space-y-2 mb-4">
+            {[
+              'access to information held about you',
+              'correction of inaccurate or incomplete data',
+              'deletion or restriction of processing, where applicable',
+              'objection to certain types of processing',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">We will respond to such requests in accordance with applicable legal requirements.</p>
+        </div>
+
+        <!-- 13 -->
+        <div id="cookies" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">13</span>
+            Cookies and Website Usage
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">Our website may use cookies and similar technologies to:</p>
+          <ul class="space-y-2 mb-4">
+            {['improve functionality and user experience', 'analyse website usage', 'maintain security'].map(item => (
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed" style="color: #64748B;">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">You may manage or disable cookies through your browser settings.</p>
+        </div>
+
+        <!-- 14 -->
+        <div id="third-party" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">14</span>
+            Third-Party Websites
+          </h2>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">Our website may contain links to third-party websites. We are not responsible for the content or privacy practices of such websites.</p>
+        </div>
+
+        <!-- 15 -->
+        <div id="changes" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-4 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">15</span>
+            Changes to This Policy
+          </h2>
+          <p class="text-sm leading-relaxed mb-3" style="color: #64748B;">
+            We may amend this Privacy Policy from time to time to reflect changes in legal requirements, regulatory expectations, or business operations.
+          </p>
+          <p class="text-sm leading-relaxed" style="color: #64748B;">The most current version will be made available on our website.</p>
+        </div>
+
+        <!-- 16 -->
+        <div id="contact" class="scroll-mt-24 pt-12" style="border-top: 1px solid #1E293B;">
+          <h2 class="text-lg font-bold mb-6 flex items-center gap-3" style="color: #F8FAFC;">
+            <span class="text-xs font-black px-2 py-1 rounded" style="background-color: #1E293B; color: #1a4480;">16</span>
+            Contact
+          </h2>
+          <div class="rounded-xl p-8" style="background-color: #0D1829; border: 1px solid #1E293B;">
+            <p class="text-sm leading-relaxed mb-5" style="color: #64748B;">For any questions or requests relating to this Privacy Policy:</p>
+            <a href="mailto:nishant@ambitsol.co" class="inline-flex items-center gap-2.5 text-sm font-semibold transition-opacity hover:opacity-80" style="color: #93C5FD;">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              nishant@ambitsol.co
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
