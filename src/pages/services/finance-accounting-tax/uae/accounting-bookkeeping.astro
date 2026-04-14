@@ -49,10 +49,8 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             class="text-4xl lg:text-5xl xl:text-6xl font-black leading-none mb-6"
             style="color: #F8FAFC; letter-spacing: -0.03em;"
           >
-            Accounting<br />
-            <span style="color: #1a4480;">&amp; Bookkeeping</span><br />
-            UAE
-          </h1>
+            United Arab Emirates<br />
+            <span style="color: #1a4480;">Accounting & Bookkeeping</span></h1>
 
           <p
             x-show="visible"
@@ -79,6 +77,21 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
               See How It Works
             </a>
           </div>
+           <!-- Trust pills -->
+          <div
+            x-show="visible"
+            x-transition:enter="transition duration-700 delay-400"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            class="flex flex-wrap gap-3 mt-10"
+          >
+            {['IFRS Aligned', 'FTA Compliant', 'UAE Labour Law Aligned', 'VAT Compliant', 'Corporate Tax Ready'].map(tag => (
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold" style="background-color: rgba(26,68,128,0.12); color: #1a4480; border: 1px solid rgba(26,68,128,0.25);">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
         <!-- Right: Floating cards -->
@@ -103,50 +116,59 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
                   <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                 </div>
                 <div>
-                  <div class="text-xs font-bold" style="color: #F8FAFC;">IFRS Compliant</div>
-                  <div class="text-xs" style="color: #64748B;">Certified Standards</div>
+                  <div class="text-xs font-bold" style="color: #F8FAFC;">ISO 27001 Certified</div>
+                  <div class="text-xs" style="color: #64748B;"> FTA Registered</div>
                 </div>
               </div>
             </div>
 
-            <div class="absolute -bottom-5 -right-8 px-4 py-3 rounded-xl shadow-2xl" style="background-color: #1E293B; border: 1px solid #334155;">
-              <div class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background-color: #16A34A;">
-                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </div>
-                <div>
-                  <div class="text-xs font-bold" style="color: #F8FAFC;">UAE VAT Ready</div>
-                  <div class="text-xs" style="color: #64748B;">FTA Registered</div>
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
 
       </div>
     </div>
   </section>
+    <!-- ===== METRICS STRIP ===== -->
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B; border-bottom: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { metric: 'Accurate', label: 'Financial records' },
+          { metric: 'Consistent', label: 'Reporting cycles' },
+          { metric: 'US GAAP', label: 'Aligned' },
+          { metric: 'Audit-ready', label: 'Structure' },
+        ].map(({ metric, label, sub }) => (
+          <div class="text-center lg:text-left">
+            <div class="text-3xl lg:text-4xl font-black mb-1" style="color: #F8FAFC;">{metric}</div>
+            <div class="text-sm font-semibold mb-1" style="color: #93C5FD;">{label}</div>
+            <div class="text-xs" style="color: #475569;">{sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- ===== TRUST STRIP ===== -->
   <div class="w-full py-4 overflow-hidden" style="background-color: #1a4480;">
-    <div class="flex gap-12 items-center" style="animation: marquee 28s linear infinite; width: max-content;">
+    <div class="flex gap-12 items-center" style="animation: marquee 30s linear infinite; width: max-content;">
       {[
-        '✔ IFRS Aligned',
-        '✔ FTA Compliant',
-        '✔ UAE Labour Law Aligned',
-        '✔ VAT Compliant',
-        '✔ Corporate Tax Ready',
-        '✔ Freezone and Mainland Alignment',
-        '✔ Audit-Ready Structure',
-        '✔ Platform-Aligned Accounting',
-        '✔ IFRS Aligned',
-        '✔ FTA Compliant',
-        '✔ UAE Labour Law Aligned',
-        '✔ VAT Compliant',
-        '✔ Corporate Tax Ready',
-        '✔ Freezone and Mainland Alignment',
-        '✔ Audit-Ready Structure',
-        '✔ Platform-Aligned Accounting',
+        '✔ IFRS-Aligned Financial Reporting',
+        '✔ FTA compliance across VAT and corporate tax',
+        '✔ UAE Labour Law Payroll alignment',
+        '✔ Corporate tax and VAT structuring',
+        '✔ Consistent reporting across periods',
+        '✔ Structured financial workflows',
+        '✔ Freezone and Mainland alignment',
+        '✔ Platform-aligned accounting (Zoho, Xero, QuickBooks)',
+         '✔ IFRS-Aligned Financial Reporting',
+        '✔ FTA compliance across VAT and corporate tax',
+        '✔ UAE Labour Law Payroll alignment',
+        '✔ Corporate tax and VAT structuring',
+        '✔ Consistent reporting across periods',
+        '✔ Structured financial workflows',
+        '✔ Freezone and Mainland alignment',
+        '✔ Platform-aligned accounting (Zoho, Xero, QuickBooks)',
       ].map(item => (
         <span class="text-sm font-semibold text-white whitespace-nowrap">{item}</span>
       ))}
@@ -171,8 +193,9 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
         <div>
           <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Why It Matters</p>
           <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style="color: #0F172A; letter-spacing: -0.02em;">Accounting in the UAE Requires Alignment Across Standards and Jurisdictions</h2>
-          <div class="w-10 h-px mb-8" style="background-color: #1a4480;"></div>
-          <p class="text-base leading-relaxed" style="color: #64748B;">UAE businesses operate across Freezone and Mainland structures, each with distinct reporting obligations. Add IFRS requirements, FTA VAT filings, and corporate tax readiness into the mix and accounting becomes a compliance function that demands specialist knowledge. Getting it wrong creates audit exposure, regulatory risk, and financial blind spots.</p>
+          <div class="w-10 h-px " style="background-color: #1a4480;"></div>
+          <p class="text-base leading-relaxed" style="color: #64748B;">Accounting in the UAE extends beyond bookkeeping. Financial records must align with IFRS, VAT regulations, and corporate tax requirements across Freezone and Mainland entities.</p>
+          <p class="text-base leading-relaxed" style="color: #64748B;">Without structured accounting, inconsistencies across entities and reporting periods create compliance risk and limit financial visibility.</p>
         </div>
       </div>
 
@@ -181,17 +204,17 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
           {
             icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
             title: 'Consistency Across Entities',
-            desc: 'Whether you operate through a Freezone entity, a Mainland LLC, or a holding structure, your books need to reflect consistent, reconciled records that give you a single view of financial performance.',
+            desc: 'Financial records aligned across Freezone and Mainland structures.',
           },
           {
             icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
             title: 'IFRS-Aligned Reporting',
-            desc: 'All financial statements, from profit and loss to balance sheet and cash flow, must be prepared in line with IFRS. This is a baseline expectation for audit, banking, and investor reporting in the UAE.',
+            desc: 'Financial statements prepared in line with international standards.',
           },
           {
             icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
             title: 'Regulatory Readiness',
-            desc: 'With VAT at 5%, corporate tax now in effect, and the FTA actively monitoring compliance, your accounting function needs to be ready for scrutiny at any point. Clean, structured books are not optional.',
+            desc: 'Accounting structured to support VAT and corporate tax compliance.',
           },
         ].map(({ icon, title, desc }) => (
           <div class="p-8 rounded-2xl shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
@@ -213,67 +236,115 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">What We Offer</div>
-        <h2 class="text-4xl font-black" style="color: #0F172A; letter-spacing: -0.02em;">Accounting & Bookkeeping Services</h2>
+        <h2 class="text-4xl font-black" style="color: #0F172A; letter-spacing: -0.02em;">Accounting & Bookkeeping <br> — United Arab Emirates</h2>
         <p class="text-lg mt-4 max-w-2xl mx-auto" style="color: #64748B;">
           End-to-end accounting and financial reporting for UAE businesses, built around IFRS standards and FTA compliance.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        {[
-          {
-            num: '01',
-            title: 'Bookkeeping & Ledger Management',
-            desc: 'Day-to-day transaction recording, accounts payable and receivable management, and structured general ledger maintenance aligned with UAE Chart of Accounts requirements.',
-          },
-          {
-            num: '02',
-            title: 'Reconciliation',
-            desc: 'Monthly bank reconciliation, intercompany account reconciliation, and supplier and customer statement matching to ensure your books are clean, current, and audit-ready.',
-          },
-          {
-            num: '03',
-            title: 'Management Reporting',
-            desc: 'Monthly and quarterly management accounts including profit and loss, balance sheet, and cash flow statements, structured to give you clear financial visibility.',
-          },
-          {
-            num: '04',
-            title: 'Year-End Close',
-            desc: 'Full year-end close procedures including prepayments, accruals, depreciation posting, and preparation of trial balance for audit or statutory purposes.',
-          },
-          {
-            num: '05',
-            title: 'IFRS Financial Statements',
-            desc: 'Preparation of full IFRS-compliant financial statements including notes to accounts, suitable for submission to auditors, banks, and regulatory bodies in the UAE.',
-          },
-          {
-            num: '06',
-            title: 'Fixed Assets & Depreciation',
-            desc: 'Fixed asset register maintenance, depreciation schedule management, and accounting treatment of additions and disposals in line with IAS 16 and UAE requirements.',
-          },
-          {
-            num: '07',
-            title: 'Tax and VAT Alignment',
-            desc: 'Accounting entries structured to support accurate VAT returns and corporate tax filing, with clear audit trails and documentation for FTA review at any time.',
-          },
-          {
-            num: '08',
-            title: 'Group and Intercompany Accounting',
-            desc: 'Consolidation support, intercompany eliminations, and accounting alignment across multiple UAE and international entities for accurate group-level reporting.',
-          },
-          {
-            num: '09',
-            title: 'Audit Support',
-            desc: 'Full preparation and coordination support for statutory audits, including audit file preparation, auditor liaison, and resolution of queries from external reviewers.',
-          },
-        ].map(({ num, title, desc }) => (
-          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div class="text-xs font-black mb-4" style="color: #1a4480;">{num}</div>
-            <h3 class="text-base font-bold mb-3" style="color: #0F172A;">{title}</h3>
-            <p class="text-sm leading-relaxed" style="color: #64748B;">{desc}</p>
-          </div>
+  {[
+    {
+      num: '01',
+      title: 'Bookkeeping & Ledger Management',
+      bullets: [
+        'Transaction recording',
+        'Expense classification',
+        'Ledger maintenance aligned to IFRS',
+        'Chart of accounts structuring aligned with business model and reporting requirements',
+      ],
+    },
+    {
+      num: '02',
+      title: 'Reconciliation',
+      bullets: [
+        'Bank reconciliation',
+        'Multi-currency reconciliation',
+        'Control account reconciliation',
+        'Identification and correction of discrepancies',
+      ],
+    },
+    {
+      num: '03',
+      title: 'Management Reporting',
+      bullets: [
+        'Profit and Loss',
+        'Balance Sheet',
+        'Cash flow reporting',
+        'Structured monthly close',
+        'Revenue recognition aligned with IFRS principles',
+      ],
+    },
+    {
+      num: '04',
+      title: 'Year-End Close',
+      bullets: [
+        'Finalisation of financial records',
+        'Adjustments and closing entries',
+        'Accruals, prepayments, and provisions aligned with IFRS',
+      ],
+    },
+    {
+      num: '05',
+      title: 'IFRS Financial Statements',
+      bullets: [
+        'Preparation of IFRS-compliant financial statements',
+        'Consistency across reporting periods',
+        'Alignment with audit and regulatory expectations',
+      ],
+    },
+    {
+      num: '06',
+      title: 'Fixed Assets & Depreciation',
+      bullets: [
+        'Fixed asset register maintenance',
+        'Depreciation in line with IFRS',
+        'Alignment with financial reporting and tax',
+      ],
+    },
+    {
+      num: '07',
+      title: 'Tax and VAT Alignment',
+      bullets: [
+        'Financials structured for VAT and corporate tax',
+        'Consistency between accounting and filings',
+        'Clean handover for tax and VAT reporting',
+        'Maintenance of supporting documentation in line with FTA requirements',
+      ],
+    },
+    {
+      num: '08',
+      title: 'Group and Intercompany Accounting',
+      bullets: [
+        'Intercompany reconciliation',
+        'Multi-entity reporting alignment',
+        'Consolidation support',
+      ],
+    },
+    {
+      num: '09',
+      title: 'Audit Support',
+      bullets: [
+        'Preparation of audit-ready financials',
+        'Supporting schedules and documentation',
+        'Coordination during audit processes',
+      ],
+    },
+  ].map(({ num, title, bullets }) => (
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+      <div class="text-xs font-black mb-4" style="color: #1a4480;">{num}</div>
+      <h3 class="text-base font-bold mb-3" style="color: #0F172A;">{title}</h3>
+      <ul class="space-y-1">
+        {bullets.map((point) => (
+          <li class="text-sm leading-relaxed flex gap-2" style="color: #64748B;">
+            <span style="color: #1a4480; margin-top: 2px;">●</span>
+            <span>{point}</span>
+          </li>
         ))}
-      </div>
+      </ul>
+    </div>
+  ))}
+</div>
     </div>
   </section>
 
@@ -282,10 +353,8 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="text-center mb-16">
         <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">Who We Serve</div>
-        <h2 class="text-4xl font-black" style="color: #0F172A; letter-spacing: -0.02em;">Built for UAE Business Structures</h2>
-        <p class="text-lg mt-4 max-w-xl mx-auto" style="color: #64748B;">
-          Our accounting service is structured around how businesses actually operate in the UAE.
-        </p>
+        <h2 class="text-4xl font-black" style="color: #0F172A; letter-spacing: -0.02em;">Designed for Businesses Operating <br> Across UAE Structures</h2>
+       
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
@@ -293,22 +362,22 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
           {
             icon: '🏢',
             title: 'Freezone Companies',
-            desc: 'Accounting and bookkeeping structured around Freezone-specific requirements, including IFRS reporting, audit preparation, and alignment with Freezone authority expectations across DMCC, DIFC, ADGM, and others.',
+            desc: 'Accounting aligned with Freezone regulatory and reporting requirements.',
           },
           {
             icon: '🏙️',
             title: 'Mainland Businesses',
-            desc: 'Full accounting support for Mainland LLCs and branch offices, including VAT-compliant bookkeeping, management accounts, and year-end financial statements prepared for DED compliance and audit.',
+            desc: ' Structured financial records aligned with UAE compliance frameworks.',
           },
           {
             icon: '🌐',
             title: 'Multi-Entity Businesses',
-            desc: 'Group accounting support for businesses operating across multiple UAE entities or combining UAE operations with international holding structures, including intercompany accounting and consolidation.',
+            desc: ' Consistency across entities, jurisdictions, and reporting cycles.',
           },
           {
             icon: '✈️',
             title: 'International Businesses in UAE',
-            desc: 'Accounting and financial reporting for overseas businesses establishing or expanding into the UAE, ensuring local compliance while maintaining alignment with the standards required in home jurisdictions.',
+            desc: '  IFRS-aligned accounting for cross-border reporting and operations.',
           },
         ].map(({ icon, title, desc }) => (
           <div class="flex gap-6 p-8 rounded-2xl" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
@@ -333,13 +402,13 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
 
       <div class="grid md:grid-cols-2 gap-12">
         <div class="space-y-4">
-          <h3 class="text-xs font-bold uppercase tracking-widest mb-6" style="color: #64748B;">Without Ambit</h3>
+          <h3 class="text-xs font-bold uppercase tracking-widest mb-6" style="color: #64748B;">Without Structured Accounting</h3>
           {[
-            'Books maintained in multiple formats with no consistent standard across entities',
-            'Financial statements not IFRS-compliant, creating risk at audit and with lenders',
-            'VAT entries recorded incorrectly, leading to FTA penalties and rework',
-            'Year-end close takes weeks due to poor records throughout the year',
-            'No clear financial picture to support business decisions or investor reporting',
+            'Inconsistent financial records across entities',
+            'Misalignment with VAT and corporate tax',
+            'Limited visibility across performance',
+            'Audit readiness issues',
+            'Increased compliance risk',
           ].map(item => (
             <div class="flex items-start gap-3 p-4 rounded-xl" style="background-color: #1E293B; border-left: 3px solid #DC2626;">
               <span class="text-lg flex-shrink-0">❌</span>
@@ -348,21 +417,21 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
           ))}
         </div>
 
-        <div class="space-y-4">
-          <h3 class="text-xs font-bold uppercase tracking-widest mb-6" style="color: #64748B;">With Ambit</h3>
-          {[
-            'Consistent, structured books maintained across all UAE entities from day one',
-            'IFRS-compliant financial statements ready for audit, banking, and investor review',
-            'VAT-aligned accounting with accurate input and output tax recording every period',
-            'Smooth year-end close with all reconciliations and schedules prepared in advance',
-            'Real-time management reporting that gives you clear visibility and control',
-          ].map(item => (
-            <div class="flex items-start gap-3 p-4 rounded-xl" style="background-color: #1E293B; border-left: 3px solid #22C55E;">
-              <span class="text-lg flex-shrink-0">✅</span>
-              <span class="text-sm leading-relaxed" style="color: #94A3B8;">{item}</span>
-            </div>
-          ))}
-        </div>
+       <div class="space-y-4">
+  <h3 class="text-xs font-bold uppercase tracking-widest mb-6" style="color: #64748B;">With Structured Accounting</h3>
+  {[
+    'Clean and consistent financial records',
+    'Alignment across VAT, corporate tax, and reporting',
+    'Reliable financial visibility',
+    'Audit-ready documentation',
+    'Controlled compliance',
+  ].map(item => (
+    <div class="flex items-start gap-3 p-4 rounded-xl" style="background-color: #1E293B; border-left: 3px solid #22C55E;">
+      <span class="text-lg flex-shrink-0">✅</span>
+      <span class="text-sm leading-relaxed" style="color: #94A3B8;">{item}</span>
+    </div>
+  ))}
+</div>
       </div>
     </div>
   </section>
@@ -402,68 +471,43 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== RESULTS + UAE SPECIFIC ===== -->
-  <section class="py-24 px-6 lg:px-12" style="background-color: #F8FAFC;">
-    <div class="max-w-6xl mx-auto">
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
       <div class="grid lg:grid-cols-2 gap-16">
-
-        <!-- What You Gain -->
         <div>
-          <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">Impact</div>
-          <h2 class="text-3xl font-black mb-8" style="color: #0F172A; letter-spacing: -0.02em;">What You Gain</h2>
-          <div class="space-y-4">
+          <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">The Results</p>
+          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #F8FAFC;">What You Gain</h2>
+          <ul class="space-y-4">
             {[
-              'Accurate IFRS-compliant financial reports',
-              'VAT-ready accounting and FTA filing',
-              'Clear real-time visibility into your finances',
-              'Reduced compliance risk and audit exposure',
-              'A dedicated Dubai accounting team on demand',
+              'Accurate financial records',
+              'Consistent reporting across entities',
+              'Reduced rework during tax filings',
+              'Reliable financial data for decision-making',
             ].map(item => (
-              <div class="flex items-start gap-3">
-                <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #EFF6FF;">
-                  <svg class="w-3.5 h-3.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <span class="text-base" style="color: #374151;">{item}</span>
-              </div>
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
-        <!-- UAE Specific -->
         <div>
-          <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #1a4480;">UAE Expertise</div>
-          <h2 class="text-3xl font-black mb-8" style="color: #0F172A; letter-spacing: -0.02em;">Tailored for UAE Accounting<br />&amp; VAT Compliance</h2>
-          <div class="space-y-4">
+          <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">Built for  UAE Market</p>
+          <h2 class="text-2xl lg:text-3xl font-black mb-8 leading-tight" style="color: #F8FAFC;">Built for UAE Market</h2>
+          <ul class="space-y-4">
             {[
-              {
-                icon: '📋',
-                title: 'IFRS-Standard Reporting',
-                desc: 'All financial statements prepared and maintained to full IFRS requirements.',
-              },
-              {
-                icon: '🧾',
-                title: 'UAE VAT Filings & Audit Support',
-                desc: 'FTA-registered team handles all VAT returns and supports you through any audit.',
-              },
-              {
-                icon: '🏙️',
-                title: 'Freezone & Mainland Expertise',
-                desc: 'Deep knowledge of accounting requirements across all UAE business structures.',
-              },
-              {
-                icon: '📊',
-                title: 'Audit-Ready Financial Statements',
-                desc: 'Books maintained to the highest standard — always ready for internal or external review.',
-              },
-            ].map(({ icon, title, desc }) => (
-              <div class="flex items-start gap-4 p-5 rounded-xl bg-white border border-gray-100 shadow-sm">
-                <span class="text-2xl flex-shrink-0">{icon}</span>
-                <div>
-                  <div class="text-sm font-bold mb-1" style="color: #0F172A;">{title}</div>
-                  <div class="text-sm leading-relaxed" style="color: #64748B;">{desc}</div>
-                </div>
-              </div>
+              'IFRS-aligned accounting',
+              'FTA-ready financial records',
+              'Multi-entity and multi-currency support',
+              'Freezone and Mainland alignment',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>
@@ -480,12 +524,12 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
       <div class="grid md:grid-cols-2 gap-8">
         {[
           {
-            quote: "Ambit handles our accounting and VAT compliance perfectly. Accurate, timely, and completely stress-free.",
+            quote: "“Ambit brought structure across our Freezone and Mainland entities. Reporting is now consistent and audit-ready.”",
             name: 'Omar H.',
             role: 'Managing Director, Dubai Freezone Company',
           },
           {
-            quote: "Their team ensures all reports are IFRS-compliant and VAT-ready. Highly reliable for Dubai operations.",
+            quote: "“Their understanding of IFRS and UAE VAT requirements ensures our financials are always accurate and compliant.”",
             name: 'Layla K.',
             role: 'Finance Manager, Abu Dhabi Multinational',
           },
@@ -515,18 +559,18 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
     <div class="max-w-4xl mx-auto text-center">
       <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #94A3B8;">Get Started</div>
       <h2 class="text-4xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">
-        Simplify Accounting &<br />VAT Compliance in Dubai
+      Bring Structure to Your Financial Records
       </h2>
       <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: #94A3B8;">
-        Accurate IFRS-compliant financials, UAE VAT-ready bookkeeping, and expert advisory — all in one place.
+      Consistent accounting, IFRS-aligned reporting, and compliance-ready financials across your UAE operations.
       </p>
 
       <div class="flex flex-wrap justify-center gap-4 mb-14">
         <a href="/contact" class="px-8 py-4 text-sm font-bold text-white rounded-lg transition-all hover:opacity-90 hover:scale-105" style="background-color: #1a4480;">
           Book Free Consultation
         </a>
-        <a href="tel:+97141234567" class="px-8 py-4 text-sm font-semibold rounded-lg border transition-all hover:bg-white/5" style="color: #94A3B8; border-color: #334155;">
-          Call: +971 4 123 4567
+        <a href="/" class="px-8 py-4 text-sm font-semibold rounded-lg border transition-all hover:bg-white/5" style="color: #94A3B8; border-color: #334155;">
+        Get Started Today
         </a>
       </div>
 
@@ -537,7 +581,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
           { val: '24h', label: 'Turnaround Time' },
         ].map(({ val, label }) => (
           <div>
-            <div class="text-3xl font-black mb-1" style="color: #1a4480;">{val}</div>
+            <div class="text-3xl font-black mb-1" style="color: #e6e9ee;">{val}</div>
             <div class="text-xs" style="color: #64748B;">{label}</div>
           </div>
         ))}
