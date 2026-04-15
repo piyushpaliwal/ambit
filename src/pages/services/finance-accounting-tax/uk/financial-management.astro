@@ -633,37 +633,38 @@ import UKLayout from '../../../../layouts/UKLayout.astro';
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="py-24 px-6 lg:px-12" style="background-color: #0F172A;">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #64748B;">Testimonials</div>
-        <h2 class="text-4xl font-black text-white" style="letter-spacing: -0.02em;">Trusted by Businesses Across Borders</h2>
+  <section class="py-20 lg:py-24" style="background-color: #0F172A;">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <p class="text-xs font-semibold tracking-[0.15em] uppercase mb-3" style="color: #ffffff;">Client Stories</p>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-2" style="color: #ffffff; letter-spacing: -0.02em;">What Our Clients Say</h2>
+        <div class="w-10 h-0.5 mx-auto mt-4 mb-4" style="background-color: #1a4480;"></div>
+        <p class="text-sm text-gray-500">Trusted by 280+ businesses across UK, US & UAE</p>
       </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
         {[
-          {
-            quote: "Financial reporting is now structured and actually useful for decision-making. We have visibility across performance and cash flow.",
-            name: 'Sarah T.',
-            role: 'CEO, London E-Commerce Brand',
-          },
-          {
-            quote: "The level of insight has improved significantly. We now plan ahead instead of reacting.",
-            name: 'James R.',
-            role: 'Founder, Manchester SME',
-          },
-        ].map(({ quote, name, role }) => (
-          <div class="p-8 rounded-2xl" style="background-color: #1E293B; border: 1px solid #334155;">
+          { quote: 'Thanks to Ambit KPO Services, we’ve seen an increase in revenue. Their team ensures a seamless experience with frequent communication, effective task management, and prompt responses. Their dedication and accuracy stand out.', name: 'Rishabh, Washington', role: 'Managing Partner, CPA Firm — New York', photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&q=80&auto=format&fit=crop' },
+          { quote: 'Ambit KPO Services adapted to our processes with ease, delivering monthly financials quickly and communicating effectively through various channels. Their commitment to building a long-term relationship, even under less-than-ideal terms, truly impressed me.', name: 'Greg Johnson, Georgia', role: 'CEO, E-commerce Startup — London', photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&q=80&auto=format&fit=crop' },
+          { quote: 'There are not enough words to tell you how helpful Nishant and his firm have been in helping me with bookkeeping and accounting needs. I have worked with outsourcing firms and have never been as satisfied as I am with Nishant Sharma.', name: ' CPA Firm in Georgia', role: 'CPA Firm in Georgia', photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&q=80&auto=format&fit=crop' },
+          { quote: 'Finding a reliable accountant was crucial, and Ambit KPO Services has exceeded expectations. Their professionalism, attention to detail, and responsiveness have been outstanding. They provided expert advice and proactive solutions, making a significant difference for my business.', name: ' Rafael Emiliani', role: 'Managing Partner, CPA Firm — New York', photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&q=80&auto=format&fit=crop' },
+          { quote: 'I’ve worked with Nishant through the past tax season. His work is reliable, accurate, and he was able to help our firm with taxes and bookkeeping for a variety of businesses and clients.', name: ' CPA Firm in Florida', role: 'CPA Firm in Florida', photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&q=80&auto=format&fit=crop' },
+          { quote: 'Nishant has been taking care of our bookkeeping for some time now and has been doing a great job. Would recommend.', name: ' Kevin Volquartz', role: 'Running an eCommerce business on Amazon Europe', photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&q=80&auto=format&fit=crop' },
+        ].map(t => (
+          <div class="p-8 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all relative bg-white">
             <!-- Stars -->
-            <div class="flex gap-1 mb-4">
-              {[1,2,3,4,5].map(() => (
-                <svg class="w-4 h-4" style="color: #F59E0B;" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              ))}
+            <div class="flex gap-0.5 mb-4">
+              {[1,2,3,4,5].map(() => <svg class="w-4 h-4" style="color: #f59e0b;" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>)}
             </div>
-            <p class="text-base leading-relaxed mb-6" style="color: #94A3B8;">"{quote}"</p>
-            <div>
-              <div class="text-sm font-bold text-white">{name}</div>
-              <div class="text-xs" style="color: #64748B;">{role}</div>
+            <svg class="w-7 h-7 mb-3 opacity-10" style="color: #1a4480;" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6 italic">"{t.quote}"</p>
+            <div class="flex items-center gap-3 pt-5 border-t border-gray-100">
+              <img src={t.photo} alt={t.name} class="w-10 h-10 rounded-full object-cover flex-shrink-0" />
+              <div>
+                <p class="text-sm font-semibold text-gray-900">{t.name}</p>
+                <p class="text-xs text-gray-400">{t.role}</p>
+              </div>
             </div>
           </div>
         ))}
