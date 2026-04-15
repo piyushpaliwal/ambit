@@ -313,34 +313,62 @@ import Navbar from '../components/Navbar.astro';
       <div class="max-w-xl mb-20">
         <p class="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">The Process</p>
         <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: #0F172A; letter-spacing: -0.025em;">How It Works</h2>
-        <p class="text-sm leading-relaxed" style="color: #64748B;">A clear and structured approach to understand your requirements, set up the right solution, and deliver consistent results.</p>
+        <p class="text-sm leading-relaxed" style="color: #64748B;">A defined approach to reviewing requirements, building the right structure, and ensuring delivery stays consistent over time.</p>
       </div>
 
       <!-- Steps -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6 relative">
 
         <!-- Connecting line (desktop only) -->
         <div class="hidden lg:block absolute top-3 left-0 right-0 h-px" style="background: linear-gradient(to right, #E2E8F0 0%, #E2E8F0 100%);"></div>
 
         {[
-          { step: '01', title: 'Understanding Your Requirements', desc: 'We start with a detailed discussion to understand your business, current setup, and specific accounting, tax, or compliance needs.' },
-          { step: '02', title: 'Solution & Engagement Setup', desc: 'Based on your requirements, we define the scope of work, engagement model, timelines, and the right team structure.' },
-          { step: '03', title: 'Onboarding & Transition', desc: 'We set up systems, access, and workflows. Whether it is a new setup or transition, everything is handled in a structured and secure manner.' },
-          { step: '04', title: 'Execution, Support & Reporting', desc: 'We manage your accounting, tax, payroll, or advisory requirements with regular communication, clear reporting, and ongoing support.' },
-        ].map((s, i) => (
+          {
+            step: '01', title: 'Understanding',
+            desc: 'We review your current setup, systems, and workflows to identify where structure and consistency are needed.',
+            icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
+          },
+          {
+            step: '02', title: 'Structuring',
+            desc: 'Scope, processes, and delivery model are defined and aligned to your environment and reporting requirements.',
+            icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z',
+          },
+          {
+            step: '03', title: 'Onboarding',
+            desc: 'Systems, access, and workflows are established in a controlled manner, ready for consistent delivery from day one.',
+            icon: 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z',
+          },
+          {
+            step: '04', title: 'Delivery & Review',
+            desc: 'Work is executed with defined review layers ensuring accuracy, consistency, and alignment across reporting periods.',
+            icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+          },
+          {
+            step: '05', title: 'Continuity',
+            desc: 'Delivery is maintained and adapted to changes in volume, structure, or requirements without disruption.',
+            icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+          },
+        ].map((s) => (
           <div class="relative">
-            <!-- Step number with dot marker on the line -->
-            <div class="relative mb-8">
+            <!-- Dot marker on the line -->
+            <div class="relative mb-6">
               <div class="w-6 h-6 rounded-full border-2 bg-white relative z-10" style="border-color: #1a4480;">
                 <div class="absolute inset-1 rounded-full" style="background-color: #1a4480;"></div>
               </div>
             </div>
 
+            <!-- Icon -->
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="background-color: #EFF6FF;">
+              <svg class="w-5 h-5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={s.icon} />
+              </svg>
+            </div>
+
             <!-- Step label -->
-            <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #94A3B8;">{s.step} / 04</p>
+            <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #94A3B8;">{s.step} / 05</p>
 
             <!-- Title -->
-            <h3 class="text-lg font-bold mb-3 leading-snug" style="color: #0F172A;">{s.title}</h3>
+            <h3 class="text-base font-bold mb-3 leading-snug" style="color: #0F172A;">{s.title}</h3>
 
             <!-- Divider -->
             <div class="w-8 h-0.5 mb-4" style="background-color: #1a4480;"></div>
@@ -429,6 +457,9 @@ import Navbar from '../components/Navbar.astro';
           { name: 'Stripe', abbr: 'St', color: '#6772E5', sub: 'Online payments' },
           { name: 'PayPal', abbr: 'PP', color: '#003087', sub: 'Global payments' },
           { name: 'Bill.com', abbr: 'Bi', color: '#1E7D34', sub: 'Payables & receivables' },
+          { name: 'ProSeries', abbr: 'PS', color: '#D97706', sub: 'Professional tax preparation' },
+          { name: 'Drake Tax', abbr: 'DT', color: '#059669', sub: 'Tax preparation & compliance' },
+          { name: 'Lacerte', abbr: 'La', color: '#7C3AED', sub: 'Advanced tax & advisory' },
         ].map(tool => (
           <div class="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-gray-100 bg-white hover:border-slate-200 hover:shadow-md hover:-translate-y-0.5 transition-all group cursor-default">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black text-white flex-shrink-0" style={`background-color: ${tool.color};`}>{tool.abbr}</div>
