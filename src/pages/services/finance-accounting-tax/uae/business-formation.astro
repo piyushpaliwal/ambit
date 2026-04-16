@@ -358,25 +358,70 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   </section>
 
   <!-- ===== PROCESS ===== -->
-  <section id="process" style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
-      <div class="mb-14">
-        <p class="text-xs font-bold tracking-widest uppercase mb-4" style="color: #1a4480;">How Work Is Structured</p>
-        <h2 class="text-3xl lg:text-4xl font-black leading-tight" style="color: #0F172A;">Our Process</h2>
+  <section id="how-it-works" class="py-20 lg:py-28" style="background-color: #F8FAFC;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="text-xs font-bold tracking-[0.2em] uppercase mb-3" style="color: #1a4480;">Our Process</p>
+        <h2 class="text-3xl lg:text-4xl font-bold" style="color: #0F172A; letter-spacing: -0.02em;">Simple Process. Powerful Results.</h2>
+        <div class="w-10 h-px mx-auto mt-5" style="background-color: #1a4480;"></div>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div class="hidden lg:grid grid-cols-5 gap-6 relative">
+        <div class="absolute top-[52px] left-[12.5%] right-[12.5%] h-px" style="background: linear-gradient(to right, #1a4480, #1e5ab5, #1a4480);"></div>
         {[
-          { step: '01', title: 'Understanding', body: 'We review your business model, activities, ownership structure, and intended UAE market to assess setup requirements.' },
-          { step: '02', title: 'Structuring', body: 'We advise on Freezone versus Mainland, entity type, shareholding structure, and tax and compliance implications of each option.' },
-          { step: '03', title: 'Registration', body: 'We manage the incorporation process including document preparation, authority submissions, and licensing across the relevant UAE jurisdiction.' },
-          { step: '04', title: 'Setup and Alignment', body: 'We complete corporate tax and VAT registrations, establish accounting processes, and ensure compliance frameworks are in place before operations begin.' },
-          { step: '05', title: 'Continuity', body: 'We support ongoing licence renewals, regulatory filings, and compliance requirements as the business grows and its structure evolves.' },
-        ].map(({ step, title, body }) => (
-          <div class="relative p-6 rounded-xl shadow-sm" style="background-color: #ffffff; border: 1px solid #E2E8F0;">
-            <div class="text-4xl font-black mb-4" style="color: #1a4480;">{step}</div>
-            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{title}</h3>
-            <p class="text-xs leading-relaxed" style="color: #64748B;">{body}</p>
+          
+          {
+            step: '01', title: 'Understanding',
+            desc: 'We review your current setup, systems, and workflows to identify where structure and consistency are needed.',
+            icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
+          },
+          {
+            step: '02', title: 'Structuring',
+            desc: 'Scope, processes, and delivery model are defined and aligned to your environment and reporting requirements.',
+            icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z',
+          },
+          {
+            step: '03', title: 'Onboarding',
+            desc: 'Systems, access, and workflows are established in a controlled manner, ready for consistent delivery from day one.',
+            icon: 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z',
+          },
+          {
+            step: '04', title: 'Delivery & Review',
+            desc: 'Work is executed with defined review layers ensuring accuracy, consistency, and alignment across reporting periods.',
+            icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+          },
+          {
+            step: '05', title: 'Continuity',
+            desc: 'Delivery is maintained and adapted to changes in volume, structure, or requirements without disruption.',
+            icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+          }
+        ].map((step, i) => (
+          <div class="flex flex-col items-center text-center">
+            <div class="relative z-10 w-[104px] h-[104px] rounded-full flex flex-col items-center justify-center mb-6 shadow-lg" style="background: white; border: 2px solid #1a4480;">
+       
+              <span class="text-lg font-bold" style="color: #0F172A;">{i + 1}</span>
+            </div>
+            <h3 class="text-sm font-bold mb-2" style="color: #0F172A;">{step.title}</h3>
+            <div class="w-6 h-px mb-3 mx-auto" style="background: #1a4480;"></div>
+            <p class="text-xs leading-relaxed" style="color: #64748B;">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="lg:hidden space-y-6">
+        {[
+          { num: '01', title: 'Setup & Review', desc: 'Understand your current system and design the right approach.' },
+          { num: '02', title: 'Organise', desc: 'Clean your books, catch up backlogs, and structure data properly.' },
+          { num: '03', title: 'Manage', desc: 'Daily bookkeeping, reconciliation, and monthly reporting.' },
+          { num: '04', title: 'Support', desc: 'Dedicated manager, real-time insights, and HMRC guidance.' },
+        ].map((step, i) => (
+          <div class="flex gap-5 items-start">
+            <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-white text-sm" style="background: #1a4480;">{i + 1}</div>
+            <div class="pt-1">
+              <div class="text-xs font-bold tracking-[0.15em] uppercase mb-1" style="color: #94A3B8;">{step.num} / 04</div>
+              <div class="text-sm font-bold mb-1.5" style="color: #0F172A;">{step.title}</div>
+              <p class="text-xs leading-relaxed" style="color: #64748B;">{step.desc}</p>
+            </div>
           </div>
         ))}
       </div>

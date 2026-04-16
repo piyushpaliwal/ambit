@@ -448,10 +448,32 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
         <div class="absolute left-8 top-0 bottom-0 w-px" style="background-color: #E2E8F0;"></div>
         <div class="space-y-12">
           {[
-            { step: '01', title: 'Data Collection', desc: 'Gather invoices, receipts, bank statements, and all financial records for accurate processing.' },
-            { step: '02', title: 'Bookkeeping', desc: 'Accurate daily transaction recording, bank reconciliation, and VAT-compliant ledger management.' },
-            { step: '03', title: 'Reporting', desc: 'IFRS-compliant monthly, quarterly, and annual P&L, balance sheets, and cash flow reports.' },
-            { step: '04', title: 'Advisory & VAT Filing', desc: 'Actionable financial recommendations and fully compliant UAE VAT submissions to the FTA.' },
+            
+          {
+            step: '01', title: 'Understanding',
+            desc: 'We review your current setup, systems, and workflows to identify where structure and consistency are needed.',
+            icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
+          },
+          {
+            step: '02', title: 'Structuring',
+            desc: 'Scope, processes, and delivery model are defined and aligned to your environment and reporting requirements.',
+            icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z',
+          },
+          {
+            step: '03', title: 'Onboarding',
+            desc: 'Systems, access, and workflows are established in a controlled manner, ready for consistent delivery from day one.',
+            icon: 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z',
+          },
+          {
+            step: '04', title: 'Delivery & Review',
+            desc: 'Work is executed with defined review layers ensuring accuracy, consistency, and alignment across reporting periods.',
+            icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+          },
+          {
+            step: '05', title: 'Continuity',
+            desc: 'Delivery is maintained and adapted to changes in volume, structure, or requirements without disruption.',
+            icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+          }
           ].map(({ step, title, desc }) => (
             <div class="flex gap-8 items-start">
               <div class="relative flex-shrink-0">
