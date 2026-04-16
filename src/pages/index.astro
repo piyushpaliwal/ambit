@@ -631,11 +631,12 @@ import Navbar from '../components/Navbar.astro';
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
         {[
           {
-            tag: 'Tax Compliance',
-            title: 'US Tax Filing Deadlines Every Business Owner Must Know in 2025',
-            date: 'March 10, 2025',
-            read: '4 min read',
-            img: 'https://images.unsplash.com/photo-1586769852044-692d6e3703f0?w=600&h=300&q=80&auto=format&fit=crop'
+            tag: 'Tax Planning',
+            title: 'How Proper Tax Planning Can Keep More Money in Your Restaurant Business',
+            date: 'April 15, 2026',
+            read: '7 min read',
+            img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=300&q=80&auto=format&fit=crop',
+            href: '/blog/restaurant-tax-planning',
           },
           {
             tag: 'Bookkeeping',
@@ -652,7 +653,7 @@ import Navbar from '../components/Navbar.astro';
             img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=300&q=80&auto=format&fit=crop'
           },
         ].map(post => (
-          <article class="group rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white">
+          <a href={post.href ?? '#'} class="group block rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all bg-white" style="text-decoration: none;">
             <div class="relative overflow-hidden h-48">
               <img
                 src={post.img}
@@ -669,7 +670,7 @@ import Navbar from '../components/Navbar.astro';
                 <span class="text-xs font-medium" style="color: #1a4480;">{post.read}</span>
               </div>
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </div>
