@@ -1,0 +1,415 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="Ecommerce Accounting 101: Key Principles for Online Business Owners | Ambit Blog"
+  description="A complete guide to ecommerce accounting — covering financial statements, inventory, sales tax, payment processors, fraud prevention, and international sales."
+>
+  <Navbar />
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden" style="background-color: #0F172A; min-height: 520px;">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1800&auto=format&fit=crop&q=80"
+        alt="Ecommerce accounting"
+        class="w-full h-full object-cover"
+        style="opacity: 0.18;"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #0F172A 0%, #0F172A 55%, #1a4480 100%); opacity: 0.92;"></div>
+    </div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06] blur-3xl" style="background: #1a4480;"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 py-28">
+      <div class="flex items-center gap-2 mb-8 text-xs" style="color: #64748B;">
+        <a href="/blog" class="hover:text-white transition-colors">Blog</a>
+        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span style="color: #94A3B8;">Ecommerce</span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="text-xs font-bold px-3 py-1.5 rounded-full text-white" style="background-color: #7C3AED;">Ecommerce</span>
+        <span class="text-xs" style="color: #64748B;">April 19, 2026</span>
+        <span class="w-1 h-1 rounded-full" style="background-color: #334155;"></span>
+        <span class="text-xs" style="color: #64748B;">10 min read</span>
+      </div>
+
+      <h1 class="text-3xl lg:text-5xl font-black leading-tight text-white mb-6" style="letter-spacing: -0.02em;">
+        Ecommerce Accounting 101: Key Principles for Online Business Owners
+      </h1>
+
+      <p class="text-lg leading-relaxed" style="color: #94A3B8; max-width: 640px;">
+        From setting up your accounting system to managing inventory, sales tax, and international transactions — a practical guide for every ecommerce entrepreneur.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== ARTICLE BODY ===== -->
+  <section class="py-20" style="background-color: #ffffff;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-[1fr_280px] gap-14 items-start">
+
+        <!-- Main Content -->
+        <article>
+
+          <!-- Intro -->
+          <p class="text-lg leading-relaxed mb-6" style="color: #374151;">
+            Ecommerce has revolutionised the way businesses operate, enabling them to reach a global audience with ease. As an ecommerce business owner, understanding the nuances of accounting specific to this industry is essential. Proper accounting not only ensures compliance with tax regulations — it also provides valuable insights into the financial health of your venture.
+          </p>
+          <p class="text-base leading-relaxed mb-10" style="color: #64748B;">
+            In this guide we cover the key principles every ecommerce entrepreneur should know, from setting up your accounting system through to fraud prevention and international growth.
+          </p>
+
+          <div class="w-12 h-1 rounded mb-12" style="background-color: #1a4480;"></div>
+
+          <!-- Section 1 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">1</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">What is Ecommerce Accounting?</h2>
+            </div>
+            <p class="text-base leading-relaxed mb-5" style="color: #64748B;">
+              Ecommerce accounting refers to the systematic recording, analysis, and interpretation of financial transactions in an online business environment. It covers revenues, expenses, assets, liabilities, and equity to maintain accurate financial records.
+            </p>
+            <div class="text-sm font-bold mb-3" style="color: #0F172A;">Why it matters:</div>
+            <div class="space-y-3">
+              {[
+                { label: 'Financial Decision-Making', desc: 'Accurate financial data aids in making informed business decisions and setting realistic growth goals.' },
+                { label: 'Tax Compliance', desc: 'Adhering to tax regulations is crucial to avoid penalties and legal complications.' },
+                { label: 'Investor Confidence', desc: 'Reliable financial statements instil confidence in investors and stakeholders.' },
+                { label: 'Risk Management', desc: 'Identifying potential risks allows you to take timely measures to mitigate them.' },
+              ].map(item => (
+                <div class="flex gap-4 p-4 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                  <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #059669;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <div class="text-sm font-bold mb-1" style="color: #0F172A;">{item.label}</div>
+                    <p class="text-sm leading-relaxed" style="color: #64748B;">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">2</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Setting Up Your Ecommerce Accounting System</h2>
+            </div>
+            <div class="space-y-4">
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Choosing the Right Accounting Software</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Select software that is scalable, integrates with your ecommerce platforms, and is user-friendly. Options like QuickBooks, Xero, and Zoho Books are popular choices for online businesses.</p>
+              </div>
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Setting Up a Chart of Accounts</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">A well-structured chart of accounts ensures all transactions are appropriately categorised, making financial reporting more efficient and accurate from day one.</p>
+              </div>
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Integrating Ecommerce Platforms</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Integrating your ecommerce platform (Shopify, WooCommerce, Amazon, etc.) with your accounting software streamlines data transfer and reduces manual entry errors.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">3</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Understanding Ecommerce Financial Statements</h2>
+            </div>
+            <div class="space-y-4">
+              {[
+                { title: 'Income Statement (P&L)', desc: 'Provides a snapshot of revenues, expenses, and profits over a specific period. Helps ecommerce entrepreneurs assess their operational performance and profitability.' },
+                { title: 'Balance Sheet', desc: 'Presents the company\'s financial position at a specific point in time — assets, liabilities, and equity — giving a clear view of overall financial health.' },
+                { title: 'Cash Flow Statement', desc: 'Tracks the movement of cash into and out of the business. Essential for understanding liquidity and ensuring sufficient cash is available to meet obligations.' },
+              ].map(item => (
+                <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                  <div class="text-sm font-bold mb-2" style="color: #0F172A;">{item.title}</div>
+                  <p class="text-sm leading-relaxed" style="color: #64748B;">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 4 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">4</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Inventory Management and COGS</h2>
+            </div>
+            <p class="text-base leading-relaxed mb-5" style="color: #64748B;">
+              Proper inventory valuation directly impacts your Cost of Goods Sold (COGS) calculation and, consequently, your profitability. The three main methods are:
+            </p>
+            <div class="space-y-3">
+              {[
+                { label: 'FIFO (First In, First Out)', desc: 'Assumes the oldest inventory is sold first. Generally reflects a more accurate picture of current costs in inflationary markets.' },
+                { label: 'LIFO (Last In, First Out)', desc: 'Assumes the most recent inventory is sold first. Can reduce taxable income in rising cost environments (note: not permitted under IFRS).' },
+                { label: 'Average Cost', desc: 'Uses a weighted average of all inventory costs. Simpler to apply and smooths out price fluctuations across purchase periods.' },
+              ].map(item => (
+                <div class="flex gap-3 p-4 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                  <div class="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style="background-color: #1a4480;"></div>
+                  <p class="text-sm leading-relaxed" style="color: #64748B;"><span class="font-semibold" style="color: #0F172A;">{item.label}:</span> {item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 5 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">5</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Sales Tax Compliance for Ecommerce</h2>
+            </div>
+            <p class="text-base leading-relaxed mb-5" style="color: #64748B;">
+              Ecommerce businesses face complex sales tax regulations that vary by state and country. Non-compliance can result in significant penalties and back taxes.
+            </p>
+            <div class="space-y-3">
+              {[
+                'Determine where you have economic nexus — each US state has its own thresholds for remote sellers.',
+                'Register for sales tax permits in states where you\'re required to collect.',
+                'Automate tax calculation using tools like TaxJar or Avalara to reduce manual errors.',
+                'File and remit collected taxes on schedule — frequencies vary by state.',
+              ].map(item => (
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style="background-color: #1a4480;"></div>
+                  <p class="text-sm leading-relaxed" style="color: #64748B;">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 6 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">6</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Handling Payment Processors</h2>
+            </div>
+            <div class="space-y-4">
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Recording Payment Processor Fees</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Payment processors (Stripe, PayPal, etc.) charge fees that reduce your net revenue. These must be accurately recorded as expenses for correct financial reporting.</p>
+              </div>
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Reconciling Payment Deposits with Sales</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Ecommerce transactions often involve delays between purchase and payment deposit. Regular reconciliation ensures your sales records and bank statements align accurately.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">7</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Returns, Refunds, and Chargebacks</h2>
+            </div>
+            <div class="space-y-4">
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Accounting for Returns and Refunds</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Returns affect both revenue and inventory valuation. Each return should be recorded promptly to maintain accurate financial statements and stock counts.</p>
+              </div>
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #EF4444;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Addressing Chargeback Disputes</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Chargebacks can lead to revenue losses and additional administrative burden. Implement clear dispute processes and maintain detailed transaction records to minimise their impact.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 8 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">8</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Analysing Ecommerce Financial Data</h2>
+            </div>
+            <p class="text-base leading-relaxed mb-5" style="color: #64748B;">
+              Tracking the right KPIs transforms raw financial data into actionable insight. Key metrics for ecommerce businesses include:
+            </p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                'Conversion Rate',
+                'Customer Acquisition Cost (CAC)',
+                'Customer Lifetime Value (CLV)',
+                'Average Order Value (AOV)',
+                'Return Rate',
+                'Gross Margin',
+              ].map(kpi => (
+                <div class="flex items-center gap-3 px-4 py-3 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                  <div class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: #1a4480;"></div>
+                  <span class="text-sm font-medium" style="color: #0F172A;">{kpi}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 9 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">9</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Tax Planning for Ecommerce Businesses</h2>
+            </div>
+            <div class="space-y-3">
+              {[
+                'Identify all eligible tax deductions — shipping costs, platform fees, advertising, software subscriptions, and home office expenses all qualify.',
+                'Claim applicable tax credits to directly reduce your tax bill, not just your taxable income.',
+                'Make quarterly estimated tax payments to stay compliant and avoid underpayment penalties.',
+                'Work with a specialist accountant to structure your business efficiently as you scale.',
+              ].map(item => (
+                <div class="flex items-start gap-3">
+                  <div class="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style="background-color: #1a4480;"></div>
+                  <p class="text-sm leading-relaxed" style="color: #64748B;">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Section 10 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">10</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">Internal Controls and Fraud Prevention</h2>
+            </div>
+            <div class="space-y-4">
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Implementing Internal Controls</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Segregate financial duties, require dual approval for significant transactions, and maintain clear audit trails. Effective controls safeguard against both fraud and unintentional errors.</p>
+              </div>
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #EF4444;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Detecting and Preventing Ecommerce Fraud</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Common fraud types include account takeovers, card testing, and friendly fraud. Use fraud detection tools, monitor unusual transaction patterns, and implement strong authentication practices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 11 -->
+          <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">11</div>
+              <h2 class="text-xl font-bold" style="color: #0F172A;">International Ecommerce Accounting</h2>
+            </div>
+            <div class="space-y-4">
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Currency Conversion and Exchange Rates</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">International transactions require accurate currency conversion at the time of sale. Exchange rate fluctuations can materially impact revenue and expenses — these movements must be recorded correctly.</p>
+              </div>
+              <div class="p-5 rounded-xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #1a4480;">
+                <div class="text-sm font-bold mb-2" style="color: #0F172A;">Tax Implications of International Sales</div>
+                <p class="text-sm leading-relaxed" style="color: #64748B;">Selling internationally may trigger VAT, GST, or customs duties obligations. Understanding each market's tax requirements is essential to avoid compliance issues and unexpected costs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Callout -->
+          <div class="rounded-2xl p-8 mb-12" style="background: linear-gradient(135deg, #EFF6FF, #F5F3FF); border: 1px solid #C4B5FD;">
+            <h3 class="text-lg font-bold mb-3" style="color: #0F172A;">When to Bring in an Ecommerce Accountant</h3>
+            <p class="text-sm leading-relaxed mb-3" style="color: #374151;">
+              As your ecommerce business grows, accounting complexity grows with it. Managing multi-channel sales, international taxes, high transaction volumes, and seasonal fluctuations requires specialist expertise.
+            </p>
+            <p class="text-sm leading-relaxed" style="color: #374151;">
+              Engaging a specialist ecommerce accountant — like the team at Ambit — allows you to focus on growing your business while ensuring your finances are accurate, compliant, and structured for continued expansion.
+            </p>
+          </div>
+
+          <!-- FAQs -->
+          <div>
+            <h2 class="text-2xl font-bold mb-8" style="color: #0F172A; letter-spacing: -0.02em;">Frequently Asked Questions</h2>
+            <div class="space-y-4" x-data="{ open: null }">
+              {[
+                { q: 'What accounting software is best for ecommerce?', a: 'Popular options include QuickBooks, Xero, and Zoho Books. The best choice depends on your platform integrations, transaction volume, and reporting needs.' },
+                { q: 'How does inventory valuation affect my taxes?', a: 'Your chosen inventory method (FIFO, LIFO, Average Cost) directly affects COGS, which determines your gross profit and ultimately your tax liability. Choosing the right method for your situation can meaningfully reduce tax exposure.' },
+                { q: 'Do I need to collect sales tax on all ecommerce sales?', a: 'Not necessarily. Sales tax obligations depend on where your customers are located and whether you have economic nexus in those states. Requirements vary widely — consulting a tax professional is recommended.' },
+                { q: 'How should I handle chargebacks in my accounts?', a: 'Record chargebacks as a reversal of the original sale and track associated fees separately. Maintaining detailed transaction records helps with disputes and accurate financial reporting.' },
+                { q: 'When should I hire an ecommerce accountant?', a: 'As soon as your business starts generating consistent revenue or operating across multiple sales channels or markets. Early professional guidance prevents costly errors and sets up scalable financial systems.' },
+              ].map((faq, i) => (
+                <div class="rounded-xl overflow-hidden" style="border: 1px solid #E2E8F0;">
+                  <button
+                    class="w-full flex items-center justify-between px-5 py-4 text-left"
+                    style="background-color: #F8FAFC;"
+                    @click={`open === ${i} ? open = null : open = ${i}`}
+                  >
+                    <span class="text-sm font-semibold pr-4" style="color: #0F172A;">{faq.q}</span>
+                    <svg class="w-4 h-4 flex-shrink-0 transition-transform" :class={`open === ${i} ? 'rotate-180' : ''`} style="color: #64748B;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div x-show={`open === ${i}`} x-transition style="display:none;" class="px-5 py-4" style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
+                    <p class="text-sm leading-relaxed" style="color: #64748B;">{faq.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="hidden lg:block" style="position: sticky; top: 96px;">
+
+          <div class="rounded-2xl p-6 mb-6" style="background-color: #0F172A; border: 1px solid #1E293B;">
+            <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #64748B;">About Ambit</div>
+            <p class="text-xs leading-relaxed mb-5" style="color: #94A3B8;">
+              Ambit provides accounting, tax, and financial management services for ecommerce businesses across the UK, US, and UAE. Over 8 years of experience, 280+ clients served.
+            </p>
+            <a href="/contact" class="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-semibold text-white rounded-lg" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+              Book Free Consultation
+            </a>
+          </div>
+
+          <div class="rounded-2xl p-6 mb-6" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+            <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #64748B;">Topics</div>
+            <div class="flex flex-wrap gap-2">
+              {['Ecommerce', 'Accounting', 'Inventory', 'Sales Tax', 'COGS', 'International'].map(tag => (
+                <span class="text-xs font-medium px-3 py-1.5 rounded-full" style="background-color: #F5F3FF; color: #7C3AED; border: 1px solid #DDD6FE;">{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          <div class="rounded-2xl p-6" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+            <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color: #64748B;">Key Takeaways</div>
+            <div class="space-y-3">
+              {[
+                'Choose software that integrates with your sales platforms',
+                'Inventory valuation method affects tax liability',
+                'Sales tax compliance varies by state and country',
+                'Track KPIs like CAC, CLV, and gross margin',
+                'Bring in specialists as your business scales',
+              ].map(point => (
+                <div class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #1a4480;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span class="text-xs leading-relaxed" style="color: #64748B;">{point}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="py-20" style="background-color: #0F172A;">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #64748B;">Get Expert Help</p>
+      <h2 class="text-3xl lg:text-4xl font-black text-white mb-5" style="letter-spacing: -0.02em;">
+        Need Accounting Support for Your Ecommerce Business?
+      </h2>
+      <p class="text-base mb-10" style="color: #94A3B8;">
+        Ambit's accounting specialists work with ecommerce businesses across the UK, US, and UAE — handling everything from bookkeeping and sales tax to financial reporting and growth planning.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-white rounded-lg transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+          Book Free Consultation
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/blog" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold rounded-lg border transition-all hover:bg-white/5" style="color: #94A3B8; border-color: #334155;">
+          More Articles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
