@@ -260,6 +260,50 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
     </div>
   </section>
 
+  <!-- ===== VIRTUAL CFO ===== -->
+  <section style="background-color: #060D18; border-top: 1px solid #1E293B;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Advisory Services</p>
+          <h2 class="text-3xl lg:text-4xl font-black leading-tight mb-6" style="color: #F8FAFC;">Virtual CFO and Advisory</h2>
+          <div class="w-10 h-px mb-8" style="background-color: #1a4480;"></div>
+          <p class="text-base leading-relaxed mb-10" style="color: #64748B;">
+            Strategic financial oversight and business advisory — CFO-level expertise without the overhead of a full-time hire. Structured to support businesses at every stage of growth.
+          </p>
+          <ul class="space-y-4">
+            {[
+              'CFO-level support across reporting, planning, and decision-making',
+              'Financial structuring across industries and geographies',
+              'Support for compliance alignment and financial governance',
+              'Guidance on growth, cost control, and performance improvement',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-sm leading-relaxed" style="color: #94A3B8;">
+                <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { label: 'Strategic Oversight', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+            { label: 'Financial Planning', icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' },
+            { label: 'Governance & Compliance', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+            { label: 'Growth Advisory', icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+          ].map(({ label, icon }) => (
+            <div class="rounded-xl p-6 flex flex-col items-start gap-4" style="background-color: #0D1829; border: 1px solid #1E293B;">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background-color: #1a4480;">
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/></svg>
+              </div>
+              <span class="text-sm font-semibold" style="color: #F8FAFC;">{label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== WHO WE SERVE ===== -->
   <section style="background-color: #ffffff; border-top: 1px solid #E2E8F0;">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-24">
