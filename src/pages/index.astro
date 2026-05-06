@@ -53,7 +53,7 @@ import Navbar from '../components/Navbar.astro';
           x-transition:enter-end="opacity-100 translate-x-0"
           class="hidden lg:block relative">
           <div class="absolute -top-4 -right-4 w-full h-full rounded-xl" style="border: 1px solid #1E293B;"></div>
-          <img src="/images/hero-professional.png" alt="Professional accountant" class="relative rounded-xl w-full object-cover object-top shadow-2xl" style="max-height: 460px;" />
+          <img src="/images/homepage.jpg" alt="Professional accountant" class="relative rounded-xl w-full object-cover object-top shadow-2xl" style="max-height: 460px;" />
           <div class="absolute -bottom-5 -left-5 bg-white rounded-xl p-4 shadow-xl border border-gray-100">
             <p class="text-xs text-gray-400 mb-1">500+ Clients Across UK, USA and UAE</p>
             <p class="text-sm font-semibold text-gray-900">Structured. Compliant. Reliable.</p>
@@ -88,16 +88,16 @@ import Navbar from '../components/Navbar.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {[
-          { icon: 'M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Missed Deadlines and Compliance Pressure', desc: 'Filing delays and incomplete compliance can lead to penalties and unnecessary back and forth with regulators.' },
-          { icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4', title: 'Errors in Financial Data', desc: 'Manual entries and unstructured systems often lead to mistakes that take time and money to fix later.' },
-          { icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'No Clear Financial Picture', desc: 'If your reports are not organised, it becomes difficult to understand where the business stands or where it is going.' },
-          { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Rising Costs of Managing Finance Internally', desc: 'Hiring, training, software, and ongoing management make in-house accounting more expensive than most businesses expect.' },
+          { img: '/images/deadlines.png', title: 'Missed Deadlines and Compliance Pressure', desc: 'Filing delays and incomplete compliance can lead to penalties and unnecessary back and forth with regulators.' },
+          { img: '/images/errors.png', title: 'Errors in Financial Data', desc: 'Manual entries and unstructured systems often lead to mistakes that take time and money to fix later.' },
+          { img: '/images/financial.png', title: 'No Clear Financial Picture', desc: 'If your reports are not organised, it becomes difficult to understand where the business stands or where it is going.' },
+          { img: '/images/cost.png', title: 'Rising Costs of Managing Finance Internally', desc: 'Hiring, training, software, and ongoing management make in-house accounting more expensive than most businesses expect.' },
         ].map(p => (
           <div class="bg-white rounded-2xl p-8 hover:-translate-y-1 transition-all" style="border: 1px solid #EEF2F6; box-shadow: 0 2px 16px rgba(15,23,42,0.06);">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-6" style="background-color: #EEF2F8;">
-              <svg class="w-5 h-5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={p.icon}/>
-              </svg>
+             
+                 <img src={p.img} alt={p.title} class="w-7 h-7 object-contain" />
+             
             </div>
             <h3 class="text-sm font-bold mb-2 leading-snug" style="color: #0F172A;">{p.title}</h3>
             <p class="text-sm leading-relaxed" style="color: #94A3B8;">{p.desc}</p>
@@ -169,12 +169,12 @@ import Navbar from '../components/Navbar.astro';
     <div class="lg:flex-1 bg-white py-16 px-8 xl:px-16">
       <div>
         {[
-          { num: '01', icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z', title: 'Accounting & Bookkeeping', desc: 'Accurate and consistent financial records that give you a clear view of your business. We maintain your books, reconcile accounts, and ensure everything is up to date and reliable.' },
-          { num: '02', icon: 'M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z', title: 'Tax Preparation & Filing', desc: 'Complete support for business and personal tax across multiple jurisdictions. We handle filings, ensure compliance, and help you avoid unnecessary penalties.' },
-          { num: '03', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z', title: 'Payroll Management', desc: 'End-to-end payroll processing with full compliance. From salary calculations to filings and employee reporting, everything is handled accurately and on time.' },
-          { num: '04', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z', title: 'Accounts Payable', desc: 'Structured management of your outgoing payments. We track invoices, manage due dates, and ensure vendors are paid on time without disrupting your cash flow.' },
-          { num: '05', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2', title: 'Accounts Receivable', desc: 'Better control over invoicing and collections. We help you stay on top of receivables, reduce delays, and maintain steady cash flow.' },
-          { num: '06', icon: 'M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Financial Reporting & Insights', desc: 'Clear, structured reports that help you understand your numbers. From monthly statements to management reports, we give you the information needed to make better decisions.' },
+          { num: '01', img: '/images/bookkeeping.png', title: 'Accounting & Bookkeeping', desc: 'Accurate and consistent financial records that give you a clear view of your business. We maintain your books, reconcile accounts, and ensure everything is up to date and reliable.' },
+          { num: '02', img: '/images/tax.png', title: 'Tax Preparation & Filing', desc: 'Complete support for business and personal tax across multiple jurisdictions. We handle filings, ensure compliance, and help you avoid unnecessary penalties.' },
+          { num: '03', img: '/images/payroll.png', title: 'Payroll Management', desc: 'End-to-end payroll processing with full compliance. From salary calculations to filings and employee reporting, everything is handled accurately and on time.' },
+          { num: '04', img: '/images/accounts-payable.png', title: 'Accounts Payable', desc: 'Structured management of your outgoing payments. We track invoices, manage due dates, and ensure vendors are paid on time without disrupting your cash flow.' },
+          { num: '05', img: '/images/accounts-receivable.png', title: 'Accounts Receivable', desc: 'Better control over invoicing and collections. We help you stay on top of receivables, reduce delays, and maintain steady cash flow.' },
+          { num: '06', img: '/images/financial-reporting.png', title: 'Financial Reporting & Insights', desc: 'Clear, structured reports that help you understand your numbers. From monthly statements to management reports, we give you the information needed to make better decisions.' },
         ].map((s, i) => (
           <div class={`relative py-10 overflow-hidden ${i < 5 ? 'border-b border-gray-100' : ''}`}>
             <!-- Ghost number behind content -->
@@ -186,9 +186,7 @@ import Navbar from '../components/Navbar.astro';
             <!-- Icon + Title row -->
             <div class="flex items-center gap-4 mb-4">
               <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #0F172A 0%, #1a4480 100%); box-shadow: 0 6px 16px rgba(26,68,128,0.2);">
-                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={s.icon}/>
-                </svg>
+                <img src={s.img} alt={s.title} class="w-7 h-7 object-contain" />
               </div>
               <h3 class="text-xl font-bold" style="color: #0F172A; letter-spacing: -0.01em;">{s.title}</h3>
             </div>
@@ -245,7 +243,7 @@ import Navbar from '../components/Navbar.astro';
           <div class="absolute -top-6 -left-6 w-full h-full rounded-2xl" style="border: 1px solid #1E293B;"></div>
           <div class="relative rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80&auto=format&fit=crop"
+              src="/images/ouradvantage.jpg"
               alt="Expert accounting team"
               class="w-full h-[460px] object-cover"
             />
@@ -272,19 +270,17 @@ import Navbar from '../components/Navbar.astro';
 
           <div class="grid sm:grid-cols-2 gap-4 mb-8">
             {[
-              { num: '20+', label: 'Years of Experience', icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' },
-              { num: '500+', label: 'Clients Served', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z' },
-              { num: '250+', label: 'Accounting Professionals', icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z' },
-              { num: '3', label: 'Global Markets', icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
-              { num: '24/7', label: 'Support & Communication', icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' },
-              { num: '100%', label: 'Data Security & Confidentiality', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+              { num: '20+', label: 'Years of Experience', img: '/images/years.png' },
+              { num: '500+', label: 'Clients Served', img: '/images/clients.png' },
+              { num: '250+', label: 'Accounting Professionals', img: '/images/accounting.png' },
+              { num: '3', label: 'Global Markets', img: '/images/markets.png' },
+              { num: '24/7', label: 'Support & Communication', img: '/images/support.png' },
+              { num: '100%', label: 'Data Security & Confidentiality', img: '/images/security.png' },
             ].map(w => (
               <div class="p-5 rounded-xl border hover:border-slate-500 hover:-translate-y-0.5 transition-all" style="background-color: #1E293B; border-color: #334155;">
                 <div class="flex items-start gap-3">
                   <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
-                    <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={w.icon}/>
-                    </svg>
+                    <img src={w.img} alt={w.label} class="w-7 h-7 object-contain" />
                   </div>
                   <div>
                     <p class="text-xl font-bold text-white leading-none mb-1">{w.num}</p>
@@ -326,27 +322,27 @@ import Navbar from '../components/Navbar.astro';
           {
             step: '01', title: 'Understanding',
             desc: 'We review your current setup, systems, and workflows to identify where structure and consistency are needed.',
-            icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
+            img: '/images/understanding.png',
           },
           {
             step: '02', title: 'Structuring',
             desc: 'Scope, processes, and delivery model are defined and aligned to your environment and reporting requirements.',
-            icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z',
+            img: '/images/structuring.png',
           },
           {
             step: '03', title: 'Onboarding',
             desc: 'Systems, access, and workflows are established in a controlled manner, ready for consistent delivery from day one.',
-            icon: 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z',
+            img: '/images/onboarding.png',
           },
           {
             step: '04', title: 'Delivery & Review',
             desc: 'Work is executed with defined review layers ensuring accuracy, consistency, and alignment across reporting periods.',
-            icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+            img: '/images/delivery.png',
           },
           {
             step: '05', title: 'Continuity',
             desc: 'Delivery is maintained and adapted to changes in volume, structure, or requirements without disruption.',
-            icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+            img: '/images/continuity.png',
           },
         ].map((s) => (
           <div class="relative">
@@ -359,9 +355,7 @@ import Navbar from '../components/Navbar.astro';
 
             <!-- Icon -->
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="background-color: #EFF6FF;">
-              <svg class="w-5 h-5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={s.icon} />
-              </svg>
+                 <img src={s.img} alt={s.title} class="w-7 h-7 object-contain" />
             </div>
 
             <!-- Step label -->
@@ -413,18 +407,16 @@ import Navbar from '../components/Navbar.astro';
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {[
-          { icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Accounting Firms', desc: 'Support with accounting, tax preparation, and reporting during peak workloads and ongoing operations.' },
-          { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', label: 'E-commerce Businesses', desc: 'Sales tax compliance, multi-platform reconciliation, inventory tracking, and financial reporting.' },
-          { icon: 'M13 10V3L4 14h7v7l9-11h-7z', label: 'Startups', desc: 'Structured finance setup, compliance, and reporting from early stage to growth.' },
-          { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', label: 'Real Estate', desc: 'Property accounting, rental income tracking, and regulatory compliance.' },
-          { icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z', label: 'Healthcare', desc: 'Accurate financial management with secure handling of sensitive data and reporting requirements.' },
-          { icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5', label: 'Small & Medium Businesses', desc: 'Reliable accounting, tax, and reporting support as your business scales.' },
+          { img: '/images/accountingfirm.png', label: 'Accounting Firms', desc: 'Support with accounting, tax preparation, and reporting during peak workloads and ongoing operations.' },
+          { img: '/images/ecommerce.png', label: 'E-commerce Businesses', desc: 'Sales tax compliance, multi-platform reconciliation, inventory tracking, and financial reporting.' },
+          { img: '/images/startups.png', label: 'Startups', desc: 'Structured finance setup, compliance, and reporting from early stage to growth.' },
+          { img: '/images/realestate.png', label: 'Real Estate', desc: 'Property accounting, rental income tracking, and regulatory compliance.' },
+          { img: '/images/healthcare.png', label: 'Healthcare', desc: 'Accurate financial management with secure handling of sensitive data and reporting requirements.' },
+          { img: '/images/small-medium.png', label: 'Small & Medium Businesses', desc: 'Reliable accounting, tax, and reporting support as your business scales.' },
         ].map(ind => (
           <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 hover:border-slate-200 transition-all group flex items-start gap-4">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #E8EEF7, #dce6f5);">
-              <svg class="w-6 h-6 group-hover:scale-110 transition-transform" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={ind.icon}/>
-              </svg>
+              <img src={ind.img} alt={ind.label} class="w-7 h-7 object-contain" />
             </div>
             <div>
               <h3 class="text-sm font-bold text-gray-900 mb-1">{ind.label}</h3>
