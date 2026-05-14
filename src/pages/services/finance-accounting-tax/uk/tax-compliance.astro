@@ -42,10 +42,10 @@ import UKLayout from '../../../../layouts/UKLayout.astro';
           </p>
 
           <div class="flex flex-wrap gap-3 mb-10">
-            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.45);">
-            Speak to an Expert
+            <button onclick="document.getElementById('consult-modal').style.display='flex'" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white rounded transition-all hover:opacity-90 hover:-translate-y-0.5 cursor-pointer" style="background: linear-gradient(135deg, #1a4480 0%, #1e5ab5 100%); box-shadow: 0 4px 20px rgba(26,68,128,0.45); border: none;">
+              Speak to an Expert
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
+            </button>
             <a href="#how-it-works" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold rounded border transition-all hover:bg-white/5" style="color: #CBD5E1; border-color: #334155;">
               See How It Works
             </a>
@@ -816,5 +816,77 @@ import UKLayout from '../../../../layouts/UKLayout.astro';
       </div>
     </div>
   </section>
+
+<div id="consult-modal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:1rem;">
+  <div style="width:100%; max-width:520px; background:#fff; border-radius:1rem; box-shadow:0 25px 60px rgba(0,0,0,0.3); max-height:90vh; overflow-y:auto;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:1.75rem 1.75rem 1.25rem; border-bottom:1px solid #F1F5F9;">
+      <div>
+        <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#1a4480; margin-bottom:0.25rem;">Free Consultation</div>
+        <h2 style="font-size:1.2rem; font-weight:900; color:#0F172A; letter-spacing:-0.02em;">Book a Free Consultation</h2>
+      </div>
+      <button onclick="document.getElementById('consult-modal').style.display='none'" style="width:2rem; height:2rem; border-radius:50%; border:none; background:transparent; cursor:pointer; color:#94A3B8; display:flex; align-items:center; justify-content:center;">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="padding:1.5rem 1.75rem;">
+      <form id="consult-form-uk-tc" class="space-y-4" onsubmit="submitConsultFormUKTC(event)">
+        <input type="hidden" name="access_key" value="393035a6-1d5a-44b0-9df3-d97b614ca691" />
+        <input type="hidden" name="subject" value="New Consultation Request - UK Tax Compliance" />
+        <div>
+          <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:#374151;">Full Name <span style="color:#EF4444;">*</span></label>
+          <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl text-sm border outline-none" style="border-color:#E2E8F0; color:#0F172A; background:#F8FAFC;" onfocus="this.style.borderColor='#1a4480'; this.style.boxShadow='0 0 0 3px rgba(26,68,128,0.12)';" onblur="this.style.borderColor='#E2E8F0'; this.style.boxShadow='none';" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:#374151;">Email Address <span style="color:#EF4444;">*</span></label>
+          <input type="email" name="email" placeholder="Your Email Address" required class="w-full px-4 py-3 rounded-xl text-sm border outline-none" style="border-color:#E2E8F0; color:#0F172A; background:#F8FAFC;" onfocus="this.style.borderColor='#1a4480'; this.style.boxShadow='0 0 0 3px rgba(26,68,128,0.12)';" onblur="this.style.borderColor='#E2E8F0'; this.style.boxShadow='none';" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:#374151;">Phone Number</label>
+          <input type="tel" name="phone" placeholder="+44 (0) 000 0000" class="w-full px-4 py-3 rounded-xl text-sm border outline-none" style="border-color:#E2E8F0; color:#0F172A; background:#F8FAFC;" onfocus="this.style.borderColor='#1a4480'; this.style.boxShadow='0 0 0 3px rgba(26,68,128,0.12)';" onblur="this.style.borderColor='#E2E8F0'; this.style.boxShadow='none';" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:#374151;">Company Name</label>
+          <input type="text" name="company" placeholder="Your Company Name" class="w-full px-4 py-3 rounded-xl text-sm border outline-none" style="border-color:#E2E8F0; color:#0F172A; background:#F8FAFC;" onfocus="this.style.borderColor='#1a4480'; this.style.boxShadow='0 0 0 3px rgba(26,68,128,0.12)';" onblur="this.style.borderColor='#E2E8F0'; this.style.boxShadow='none';" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style="color:#374151;">Message / Requirements <span style="color:#EF4444;">*</span></label>
+          <textarea name="message" rows="4" placeholder="Tell us about your business and what you're looking for..." required class="w-full px-4 py-3 rounded-xl text-sm border outline-none resize-none" style="border-color:#E2E8F0; color:#0F172A; background:#F8FAFC;" onfocus="this.style.borderColor='#1a4480'; this.style.boxShadow='0 0 0 3px rgba(26,68,128,0.12)';" onblur="this.style.borderColor='#E2E8F0'; this.style.boxShadow='none';"></textarea>
+        </div>
+        <button id="consult-submit-btn-uk-tc" type="submit" class="w-full py-4 text-sm font-bold text-white rounded-xl transition-all hover:opacity-90" style="background-color:#1a4480;">Book Free Consultation</button>
+        <p class="text-xs text-center" style="color:#94A3B8;">We'll respond within 24 hours. No spam, no commitment.</p>
+      </form>
+      <div id="consult-success-uk-tc" style="display:none; padding:3rem 0; text-align:center;">
+        <div style="width:4rem; height:4rem; border-radius:50%; background:#ECFDF5; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem;">
+          <svg width="32" height="32" style="color:#22C55E;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div style="font-size:1.1rem; font-weight:900; color:#0F172A; margin-bottom:0.5rem;">Thank You!</div>
+        <div style="font-size:0.875rem; color:#64748B; margin-bottom:1.5rem;">Your request has been received. We'll be in touch within 24 hours.</div>
+        <button onclick="document.getElementById('consult-modal').style.display='none'" style="padding:0.6rem 1.5rem; font-size:0.875rem; font-weight:600; color:#fff; background:#1a4480; border:none; border-radius:0.5rem; cursor:pointer;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  function submitConsultFormUKTC(e) {
+    e.preventDefault();
+    const btn = document.getElementById('consult-submit-btn-uk-tc');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(e.target)
+    }).then(() => {
+      document.getElementById('consult-form-uk-tc').style.display = 'none';
+      document.getElementById('consult-success-uk-tc').style.display = 'block';
+    }).catch(() => {
+      btn.textContent = 'Book Free Consultation';
+      btn.disabled = false;
+    });
+  }
+  document.getElementById('consult-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+  });
+</script>
 
 </UKLayout>
