@@ -13,7 +13,6 @@ export default defineConfig({
     '/about-us': 'https://www.ambitsol.co/about',
     '/what-we-do': 'https://www.ambitsol.co/about',
     '/who-we-are': 'https://www.ambitsol.co/about',
-    '/contact': 'https://www.ambitsol.co/contact',
     '/contact-us.php': 'https://www.ambitsol.co/contact',
     '/how-we-work': 'https://www.ambitsol.co/how-it-works',
     '/faq': 'https://www.ambitsol.co',
@@ -23,8 +22,7 @@ export default defineConfig({
     '/review.php': 'https://www.ambitsol.co/',
     '/security': 'https://www.ambitsol.co/',
     '/privacy-policy': 'https://www.ambitsol.co/privacy',
-    '/privacy-policy.php': 'https://www.ambitsol.co/',
-    '/privacy': 'https://www.ambitsol.co/',
+    '/privacy-policy.php': 'https://www.ambitsol.co/privacy',
     '/terms-conditions': 'https://www.ambitsol.co/terms',
 
     // Blog indexes
