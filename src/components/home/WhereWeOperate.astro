@@ -1,0 +1,86 @@
+---
+---
+
+  <!-- ===== WHERE WE OPERATE ===== -->
+  <section class="py-20 lg:py-28" style="background-color: #0B1B32;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p
+        class="uppercase mb-4"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 18px; line-height: 31px; letter-spacing: 1.63px; color: #C5A880;"
+      >
+        Where We Operate
+      </p>
+      <h2
+        class="mb-5 max-w-2xl"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #FFFFFF;"
+      >
+        One accountable team,
+        <span
+          class="inline-block"
+          style="font-family: 'Segoe Script', 'Yellowtail', cursive; font-weight: 400; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #C5A880; margin: 0 0.12em;"
+        >three</span>
+        regulatory regimes
+      </h2>
+      <p
+        class="mb-12 max-w-2xl"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 18px; line-height: 31px; letter-spacing: -0.5px; color: rgba(255,255,255,0.6);"
+      >
+        The same delivery standard in every market, run by people who specialise in that market's authority - HMRC, the IRS and the UAE Federal Tax Authority.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          {
+            code: 'UK',
+            name: 'United Kingdom',
+            desc: 'Companies House filling, HMRC corporation tax and self assessment, PAYE/RTI payroll, VAT and Making Tax Digital.',
+            href: '/services/finance-accounting-tax/uk/overview',
+          },
+          {
+            code: 'USA',
+            name: 'United States',
+            desc: 'Federal, state and local returns, multi-state payroll and withholding, sales-tax nexus and IRS notice representation.',
+            href: '/services/finance-accounting-tax/us/overview',
+          },
+          {
+            code: 'UAE',
+            name: 'United Arab Emirates',
+            desc: 'Mainland and free-zone formation, FTA corporate tax and VAT registration, WPS payroll and end-of-service accruals.',
+            href: '/services/finance-accounting-tax/uae/overview',
+          },
+        ].map((region) => (
+          <div
+            class="rounded-[16px] px-7 py-7 flex flex-col transition-all hover:-translate-y-0.5"
+            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);"
+          >
+            <span
+              class="inline-flex items-center justify-center self-start px-3.5 py-1.5 rounded-full text-xs font-semibold mb-5"
+              style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #FFFFFF;"
+            >
+              {region.code}
+            </span>
+            <h3
+              class="mb-3"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 22px; line-height: 28px; letter-spacing: -0.5px; color: #FFFFFF;"
+            >
+              {region.name}
+            </h3>
+            <p
+              class="mb-6 flex-1"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 15px; line-height: 24px; color: rgba(255,255,255,0.55);"
+            >
+              {region.desc}
+            </p>
+            <a
+              href={region.href}
+              class="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; color: #C5A880;"
+            >
+              Learn more
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,164 @@
+---
+---
+
+<!-- ===== INDUSTRIES WE SERVE ===== -->
+<section
+  id="industries"
+  class="py-12 lg:py-16 relative overflow-hidden"
+  style="background-color: #F3F0EC;"
+  x-data="{
+    active: 'legal',
+    industries: {
+      legal: {
+        label: 'CPA Firms',
+        headline: 'Capacity that scales with your busy season, not against it',
+        body: 'Firms lose margin in January and April because capacity is fixed while workload is not. We operate as a white-labelled back office: your engagement letters, your review standards, your software licences - our team preparing the file so your seniors only review.',
+        services: ['Bookkeeping & Accounting', 'Cleanup/catch-up bookkeeping', 'Month end close', 'Tax preparation support', 'White-label support', 'Staff augmentation'],
+        cta: 'Explore Accounting Firms',
+        href: '/industries',
+        image: '/images/industries_we_serve.png',
+        alt: 'Legal and consultancy professional at work'
+      },
+      ecommerce: {
+        label: 'E-Commerce',
+        headline: 'Finance that keeps pace with every order and every channel',
+        body: 'Multi-platform sales, inventory and tax obligations add up fast. Ambit reconciles channels, manages sales tax and keeps your books clean so growth does not create chaos.',
+        services: ['Sales Tax Compliance', 'Multi-Platform Reconciliation', 'Inventory & Financial Reporting'],
+        cta: 'Explore E-Commerce',
+        href: '/industries',
+        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=85&auto=format&fit=crop',
+        alt: 'E-commerce business operations'
+      },
+      startups: {
+        label: 'Startups',
+        headline: 'Structured finance from first hire to first raise',
+        body: 'Early-stage teams need clean books, clean compliance and clear reporting without a full in-house finance function. Ambit builds the foundation so you are investor-ready.',
+        services: ['Bookkeeping Setup', 'Payroll & Compliance', 'Investor-Ready Reporting'],
+        cta: 'Explore Startups',
+        href: '/industries',
+        image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=85&auto=format&fit=crop',
+        alt: 'Startup team collaborating'
+      },
+      realestate: {
+        label: 'Real Estate',
+        headline: 'Property accounting that holds up under scrutiny',
+        body: 'From rental income tracking to entity-level reporting, Ambit keeps property portfolios organised, compliant and easy to review across markets.',
+        services: ['Property Accounting', 'Rental Income Tracking', 'Entity & Tax Compliance'],
+        cta: 'Explore Real Estate',
+        href: '/industries',
+        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=85&auto=format&fit=crop',
+        alt: 'Real estate property exterior'
+      },
+      healthcare: {
+        label: 'Healthcare',
+        headline: 'Secure financial management for care-focused teams',
+        body: 'Healthcare practices need accurate books and careful handling of sensitive data. Ambit delivers reliable accounting and reporting with compliance built in.',
+        services: ['Practice Accounting', 'Payroll Support', 'Secure Financial Reporting'],
+        cta: 'Explore Healthcare',
+        href: '/industries',
+        image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=85&auto=format&fit=crop',
+        alt: 'Healthcare professionals'
+      },
+      sme: {
+        label: 'Small &Medium Businesses',
+        headline: 'Reliable finance support as your business scales',
+        body: 'SMEs need a partner who can handle day-to-day accounting, tax and reporting without slowing decisions. Ambit grows with you across UK, USA and UAE.',
+        services: ['Accounting & Bookkeeping', 'Tax & Payroll', 'Management Reporting'],
+        cta: 'Explore SMB Services',
+        href: '/industries',
+        image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=85&auto=format&fit=crop',
+        alt: 'Small business team meeting'
+      }
+    }
+  }"
+>
+  <div class="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+    <h2
+      class="mb-5"
+      style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #0F172A;"
+    >
+      Industries we
+      <span
+        class="inline-block"
+        style="font-family: 'Segoe Script', 'Yellowtail', cursive; font-weight: 400; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #2738C0; margin: 0 0.12em;"
+      >Serve</span>
+    </h2>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap gap-2 sm:gap-2.5 mb-5 sm:mb-6">
+      <template x-for="[key, item] in Object.entries(industries)" :key="key">
+        <button
+          type="button"
+          @click="active = key"
+          class="px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-full transition-all duration-300 flex-shrink-0 cursor-pointer text-center"
+          :class="active === key
+            ? 'bg-[#2738C0] text-white shadow-md shadow-[#2738C0]/25 scale-[1.02]'
+            : 'bg-white text-[#0F172A] border border-[#D6D1C9] hover:border-[#2738C0]/50 hover:bg-[#FDF9F3]'"
+          style="font-family: 'DM Sans', sans-serif;"
+          x-text="item.label"
+        ></button>
+      </template>
+    </div>
+
+    <!-- Content: 2-Column Split -->
+    <div class="grid lg:grid-cols-2 gap-5 lg:gap-6 items-stretch">
+      <!-- Left Column: Image -->
+      <div class="overflow-hidden rounded-[1.5rem] sm:rounded-[1.75rem] shadow-sm min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]">
+        <img
+          :src="industries[active].image"
+          :alt="industries[active].alt"
+          class="w-full h-full object-cover min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Right Column: Card -->
+      <div
+        class="bg-white rounded-[1.5rem] sm:rounded-[1.75rem] p-6 sm:p-7 lg:p-8 flex flex-col justify-between"
+        style="box-shadow: 0 2px 16px rgba(15,23,42,0.04); border: 1px solid #EBE7E1;"
+      >
+        <div>
+          <h3
+            class="mb-3"
+            style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(20px, 2.2vw, 24px); line-height: 1.3; letter-spacing: -0.4px; color: #0F172A;"
+            x-text="industries[active].headline"
+          ></h3>
+
+          <p
+            class="text-[14px] sm:text-[15px] leading-relaxed mb-4 text-[#475569]"
+            style="font-family: 'DM Sans', sans-serif; font-weight: 400;"
+            x-text="industries[active].body"
+          ></p>
+
+          <p
+            class="text-[11px] sm:text-xs font-semibold tracking-[0.15em] uppercase mb-2 text-[#64748B]"
+            style="font-family: 'DM Sans', sans-serif;"
+          >
+            SERVICES MOST USED
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <template x-for="service in industries[active].services" :key="service">
+              <span
+                class="inline-flex px-3.5 py-1.5 text-xs sm:text-sm font-normal rounded-full border bg-white text-[#0F172A]"
+                style="border-color: #D6D1C9; font-family: 'DM Sans', sans-serif;"
+                x-text="service"
+              ></span>
+            </template>
+          </div>
+        </div>
+
+        <div>
+          <a
+            :href="industries[active].href"
+            class="inline-flex items-center gap-2 text-sm sm:text-base font-semibold transition-opacity hover:opacity-80"
+            style="font-family: 'DM Sans', sans-serif; color: #2738C0;"
+          >
+            <span x-text="industries[active].cta"></span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

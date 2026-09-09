@@ -1,0 +1,129 @@
+---
+---
+
+  <!-- ===== KNOWLEDGE HUB ===== -->
+  <section id="blog" class="py-20 lg:py-28" style="background-color: #F5F2ED;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p
+        class="uppercase mb-4"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 18px; line-height: 31px; letter-spacing: 1.63px; color: #2738C0;"
+      >
+        Knowledge Hub
+      </p>
+      <h2
+        class="mb-4 max-w-3xl"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #0F172A;"
+      >
+        Accounting tips &amp;
+        <span
+          class="inline-block"
+          style="font-family: 'Segoe Script', 'Yellowtail', cursive; font-weight: 400; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #2738C0; margin: 0 0.12em;"
+        >insights</span>
+        for your business
+      </h2>
+      <p
+        class="mb-12 max-w-2xl"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 20px; line-height: 31px; letter-spacing: 0; color: #0F172AB2;"
+      >
+        New insights published every 15 days - plus a fresh client case study on the same cycle.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {[
+          {
+            tag: 'Tax',
+            title: 'How Proper Tax Planning Can Keep More Money in Your Restaurant Business',
+            excerpt: 'Key tax strategies, credits, and deductions every restaurant owner should know - from equipment write-offs to tip credits that protect your margins.',
+            date: '15 April 2026',
+            read: '7 min read',
+            img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&q=80&auto=format&fit=crop',
+            href: '/blog/restaurant-tax-planning',
+          },
+          {
+            tag: 'AP',
+            title: 'Account Payables Outsourcing vs. In-house: Making the Right Decision',
+            excerpt: 'Compare cost, control, and speed when deciding whether to keep AP in-house or hand it to a specialist team that scales with your volume.',
+            date: '19 April 2026',
+            read: '8 min read',
+            img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&q=80&auto=format&fit=crop',
+            href: '/blog/ap-outsourcing-vs-inhouse',
+          },
+          {
+            tag: 'Ecommerce',
+            title: 'Ecommerce Accounting 101: Key Principles for Online Business Owners',
+            excerpt: 'Inventory, multi-channel sales, and marketplace fees create unique books. Here is how online sellers stay accurate without drowning in spreadsheets.',
+            date: '19 April 2026',
+            read: '10 min read',
+            img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&q=80&auto=format&fit=crop',
+            href: '/blog/ecommerce-accounting-101',
+          },
+        ].map((post) => (
+          <article
+            class="group flex flex-col bg-white overflow-hidden transition-all hover:-translate-y-0.5"
+            style="border-radius: 20px; box-shadow: 0 4px 24px rgba(15,23,42,0.06);"
+          >
+            <a href={post.href} class="block overflow-hidden" style="text-decoration: none;">
+              <div class="relative overflow-hidden" style="aspect-ratio: 16 / 10;">
+                <img
+                  src={post.img}
+                  alt={post.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+            <div class="flex flex-col flex-1 p-6 lg:p-7">
+              <div class="flex flex-wrap items-center gap-2.5 mb-4">
+                <span
+                  class="inline-flex items-center px-3 py-1 rounded-full"
+                  style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; line-height: 1; background-color: #E8ECFB; color: #2738C0;"
+                >
+                  {post.tag}
+                </span>
+                <span
+                  style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; color: #94A3B8;"
+                >
+                  {post.date} &middot; {post.read}
+                </span>
+              </div>
+              <h3
+                class="mb-3"
+                style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 18px; line-height: 26px; letter-spacing: -0.3px; color: #0F172A;"
+              >
+                <a href={post.href} class="hover:opacity-80 transition-opacity" style="color: inherit; text-decoration: none;">
+                  {post.title}
+                </a>
+              </h3>
+              <p
+                class="mb-5 flex-1"
+                style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 14px; line-height: 22px; color: #64748B;"
+              >
+                {post.excerpt}
+              </p>
+              <a
+                href={post.href}
+                class="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
+                style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 15px; color: #2738C0;"
+              >
+                Learn more
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-10">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-3 pl-6 pr-1.5 py-1.5 text-sm font-semibold rounded-full transition-all hover:-translate-y-0.5"
+          style="font-family: 'DM Sans', sans-serif; background-color: #FFFFFF; color: #0F172A; border: 1.5px solid #D6D1C9; box-shadow: 0 2px 10px rgba(15,23,42,0.04);"
+        >
+          View All Insights
+          <span class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #2738C0;">
+            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>

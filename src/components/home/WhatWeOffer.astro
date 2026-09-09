@@ -1,0 +1,125 @@
+---
+---
+
+  <!-- ===== WHAT WE OFFER ===== -->
+  <section id="what-we-offer" class="py-20 lg:py-28" style="background-color: #E6E3DF;">
+    <div class="w-full max-w-none mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20">
+      <p
+        class="uppercase mb-4"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 18px; line-height: 31px; letter-spacing: 1.63px; color: #2738C0;"
+      >
+        What We Offer
+      </p>
+      <h2
+        class="mb-4 max-w-3xl"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #0F172A;"
+      >
+        Accounting, Tax &amp;
+        <span
+          class="inline-block"
+          style="font-family: 'Segoe Script', 'Yellowtail', cursive; font-weight: 400; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #2738C0; margin: 0 0.12em;"
+        >Financial Management</span>
+        Services
+      </h2>
+      <p
+        class="mb-12 max-w-2xl"
+        style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 20px; line-height: 31px; letter-spacing: 0; color: #0F172AB2;"
+      >
+        Ten services, one delivery standard. Each runs to a written checklist with a named reviewer, whether it is a monthly close or a first-time state registration.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        {[
+        {
+            title: 'Firm Registration & Set Up',
+            desc: 'Company formation, entity setup and registration support so you can establish or expand your business with the right structure from day one.',
+            href: '/services/finance-accounting-tax/us/business-formation',
+            icon: 'userPlus',
+          },
+          {
+            title: 'Payroll Registration & Compliance',
+            desc: 'Employer registrations, payroll setup, filings and ongoing compliance across UK, USA and UAE - so your team is paid accurately and on time.',
+            href: '/services/finance-accounting-tax/us/payroll',
+            icon: 'book',
+          },
+          {
+            title: 'Sales Tax Registration & Compliance',
+            desc: 'State registrations, nexus reviews, filings and ongoing sales tax compliance support so you stay current across the jurisdictions you sell into.',
+            href: '/services/finance-accounting-tax/us/sales-tax-compliance',
+            icon: 'users',
+          },
+          {
+            title: 'Virtual Assistant Services',
+            desc: "Corporate and personal tax filing, VAT/sales tax compliance, and multi-jurisdiction tax planning handled by Ambit's outsourced tax team.",
+            href: '/services/bpo',
+            icon: 'users',
+          },
+          {
+            title: 'Audit Support',
+            desc: 'Ledger management, bank reconciliation, accounts payable/ receivable and month-end close - done for you, so your books are always audit-ready.',
+            href: '/services/finance-accounting-tax/us/accounting-bookkeeping',
+            icon: 'book',
+          },
+          {
+            title: 'QB Training',
+            desc: "Hands-on QuickBooks training for your team - workflows, reporting and day-to-day bookkeeping practices tailored to how your business operates.",
+            href: '/contact',
+            icon: 'userPlus',
+          },
+        ].map((card) => (
+          <div
+            class="bg-white rounded-[15px] p-7 lg:p-8 flex flex-col transition-all hover:-translate-y-0.5"
+            style="box-shadow: 0 2px 16px rgba(15,23,42,0.05); border: 1px solid #EBE7E1;"
+          >
+            <div
+              class="w-11 h-11 rounded-full flex items-center justify-center mb-5"
+              style="background-color: #E8ECFB;"
+            >
+              {card.icon === 'book' ? (
+                <svg class="w-5 h-5" style="color: #2738C0;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              ) : card.icon === 'userPlus' ? (
+                <svg class="w-5 h-5" style="color: #2738C0;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+              ) : (
+                <svg class="w-5 h-5" style="color: #2738C0;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              )}
+            </div>
+            <h3
+              class="mb-3 capitalize"
+              style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 21.99px; line-height: 28.99px; letter-spacing: -1px; color: #000000;"
+            >
+              {card.title}
+            </h3>
+            <p
+              class="mb-6 flex-1"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 16px; line-height: 26px; letter-spacing: 0; color: #0F172AB2;"
+            >
+              {card.desc}
+            </p>
+            <a
+              href={card.href}
+              class="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 16px; color: #2738C0;"
+            >
+              Learn more
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10">
+        <button
+          type="button"
+          onclick="const m=document.getElementById('consult-modal'); if(m) m.style.display='flex'; else window.location.href='/contact';"
+          class="inline-flex items-center gap-3 pl-6 pr-1.5 py-1.5 text-sm font-semibold text-white rounded-full transition-all hover:opacity-90 hover:-translate-y-0.5 cursor-pointer"
+          style="font-family: 'DM Sans', sans-serif; background-color: #2738C0; box-shadow: 0 8px 24px rgba(39,56,192,0.28);"
+          aria-label="Book Free Consultation"
+        >
+          Book Free Consultation
+          <span class="w-10 h-10 rounded-full flex items-center justify-center bg-white flex-shrink-0">
+            <svg class="w-4 h-4" style="color: #2738C0;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>

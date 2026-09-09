@@ -1,0 +1,229 @@
+---
+const leadership = [
+  {
+    name: 'Nishant Sharma',
+    role: 'Managing Partner',
+    credentials: 'Chartered Accountant · Profit First (Adv.)',
+    experience: '22+ Years Exp',
+    markets: 'UK · US · UAE · AU',
+    img: '/images/nishant.jpg',
+  },
+  {
+    name: 'Greg Johnson, CPA',
+    role: 'Co-Founder & Tax Advisor',
+    credentials: 'Certified Public Accountant (CPA)',
+    experience: '20+ Years Exp',
+    markets: 'US · CA · UK',
+    img: '/images/greg.jpg',
+  },
+];
+
+const highlights = [
+  {
+    title: 'Named Dedicated Team',
+    desc: 'The same accountants on your file month after month, preserving context and eliminating repeated onboarding.',
+    icon: 'team',
+  },
+  {
+    title: 'Senior Partner-Led Review',
+    desc: 'Every tax filing, management pack, and reconciliation is vetted by leadership with 20+ years of cross-border experience.',
+    icon: 'badge',
+  },
+  {
+    title: 'Multi-Jurisdiction Rigour',
+    desc: 'Coordinated execution aligned with UK GAAP, US GAAP, and UAE corporate tax regulations.',
+    icon: 'shield',
+  },
+];
+---
+
+<!-- ===== OUR PEOPLE ===== -->
+<section id="our-people" class="py-20 lg:py-28 overflow-hidden scroll-mt-20 lg:scroll-mt-24" style="background-color: #FDF8F4;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
+
+      <!-- Left Column: Narrative & Highlights -->
+      <div class="lg:col-span-5 flex flex-col">
+        <p
+          class="uppercase mb-3.5"
+          style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 18px; line-height: 28px; letter-spacing: 1.63px; color: #2738C0;"
+        >
+          Our People
+        </p>
+
+        <h2
+          class="mb-4"
+          style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(28px, 3.8vw, 42px); line-height: 1.18; letter-spacing: -0.4px; color: #0F172A;"
+        >
+          Meet the people
+          <span
+            class="inline-block"
+            style="font-family: 'Segoe Script', 'Yellowtail', cursive; font-weight: 400; font-size: clamp(28px, 4vw, 44px); line-height: 1.18; letter-spacing: 0; color: #2738C0; margin: 0 0.12em;"
+          >behind</span>
+          Ambit
+        </h2>
+
+        <p
+          class="mb-8 leading-relaxed text-[15px] sm:text-base text-[#475569]"
+          style="font-family: 'DM Sans', sans-serif; font-weight: 400;"
+        >
+          You work with the same named team every month — partners, department heads and the operations, IT and HR leads who keep delivery predictable.
+        </p>
+
+        <!-- Delivery Highlights -->
+        <div class="space-y-4 mb-8">
+          {highlights.map((item) => (
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#2738C0]/10 text-[#2738C0]">
+                {item.icon === 'team' && (
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                )}
+                {item.icon === 'badge' && (
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                )}
+                {item.icon === 'shield' && (
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                )}
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#0F172A]" style="font-family: 'DM Sans', sans-serif;">
+                  {item.title}
+                </h4>
+                <p class="text-xs sm:text-[13px] text-[#64748B] leading-relaxed mt-0.5" style="font-family: 'DM Sans', sans-serif;">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Quick Stats Strip -->
+        <div class="grid grid-cols-3 gap-3 py-4 mb-8 border-y border-[#E5DFD7]">
+          <div>
+            <div class="text-xl sm:text-2xl font-bold" style="color: #2738C0; font-family: 'DM Sans', sans-serif;">250+</div>
+            <div class="text-[11px] sm:text-xs text-[#64748B] mt-0.5" style="font-family: 'DM Sans', sans-serif;">Specialists</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold" style="color: #0F172A; font-family: 'DM Sans', sans-serif;">20+ Yrs</div>
+            <div class="text-[11px] sm:text-xs text-[#64748B] mt-0.5" style="font-family: 'DM Sans', sans-serif;">Leadership</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold" style="color: #0F172A; font-family: 'DM Sans', sans-serif;">4 Regimes</div>
+            <div class="text-[11px] sm:text-xs text-[#64748B] mt-0.5" style="font-family: 'DM Sans', sans-serif;">UK · US · UAE · AU</div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div>
+          <a
+            href="/about"
+            class="inline-flex items-center gap-3 pl-6 pr-1.5 py-1.5 text-sm font-semibold rounded-full transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5"
+            style="font-family: 'DM Sans', sans-serif; background-color: #FFFFFF; color: #0F172A; border: 1.5px solid #D6D1C9; box-shadow: 0 2px 10px rgba(15,23,42,0.04);"
+          >
+            Meet the full team
+            <span class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #2738C0;">
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Executive Cards & Backing Badge -->
+      <div class="lg:col-span-7">
+        <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 items-stretch">
+          {leadership.map((person) => (
+            <div
+              class="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-[#E8E3DC] shadow-[0_4px_20px_rgba(15,23,42,0.04)] hover:shadow-[0_16px_36px_rgba(39,56,192,0.1)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full"
+            >
+              <div>
+                <!-- Portrait with Experience Badge -->
+                <div class="relative w-full aspect-[4/4.3] rounded-xl sm:rounded-2xl overflow-hidden bg-[#F3EFE9] mb-4">
+                  <img
+                    src={person.img}
+                    alt={person.name}
+                    class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold backdrop-blur-md bg-white/90 text-[#0F172A] border border-white/60 shadow-sm flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#2738C0]"></span>
+                    {person.experience}
+                  </div>
+                </div>
+
+                <!-- Info -->
+                <h3
+                  class="font-bold text-lg sm:text-xl text-[#0F172A] mb-1"
+                  style="font-family: 'DM Sans', sans-serif;"
+                >
+                  {person.name}
+                </h3>
+                <p
+                  class="text-sm font-semibold text-[#2738C0] mb-1.5"
+                  style="font-family: 'DM Sans', sans-serif;"
+                >
+                  {person.role}
+                </p>
+                <p
+                  class="text-xs font-medium text-[#64748B] mb-4"
+                  style="font-family: 'DM Sans', sans-serif;"
+                >
+                  {person.credentials}
+                </p>
+              </div>
+
+              <!-- Footer link & Region -->
+              <div class="pt-3 border-t border-[#F1EFEA] flex items-center justify-between text-xs text-[#64748B]">
+                <span class="inline-flex items-center gap-1.5 font-medium">
+                  <svg class="w-3.5 h-3.5 text-[#2738C0]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  {person.markets}
+                </span>
+                <a
+                  href="/about"
+                  class="text-[#2738C0] font-semibold group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1"
+                >
+                  About {person.name.split(' ')[0]}
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Backing Delivery Team Callout -->
+        <div class="mt-4 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/80 border border-[#E8E3DC] flex items-center justify-between gap-4 shadow-sm">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-[#2738C0]/10 text-[#2738C0]">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs sm:text-sm font-semibold text-[#0F172A]" style="font-family: 'DM Sans', sans-serif;">
+                Backed by 250+ Delivery Professionals
+              </p>
+              <p class="text-[11px] sm:text-xs text-[#64748B]" style="font-family: 'DM Sans', sans-serif;">
+                Senior accountants, tax analysts &amp; payroll specialists across UK, US &amp; UAE
+              </p>
+            </div>
+          </div>
+          <a
+            href="/about"
+            class="text-xs font-semibold text-[#2738C0] whitespace-nowrap hover:underline hidden sm:inline-flex items-center gap-1"
+            style="font-family: 'DM Sans', sans-serif;"
+          >
+            Meet the full team &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

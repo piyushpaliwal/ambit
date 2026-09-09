@@ -1,0 +1,673 @@
+---
+---
+
+  <!-- ===== THE PROCESS / HOW WE WORK ===== -->
+  <section id="process" class="py-20 lg:py-28 relative overflow-hidden" style="background-color: #E8E4DB;">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      x-data="{
+        activeStep: 0,
+        hoveredStep: null,
+        autoPlay: true,
+        intervalId: null,
+        startAutoPlay() {
+          this.stopAutoPlay();
+          if (!this.autoPlay) return;
+          this.intervalId = window.setInterval(() => {
+            if (this.hoveredStep === null && this.autoPlay) {
+              this.activeStep = (this.activeStep + 1) % 5;
+            }
+          }, 4000);
+        },
+        stopAutoPlay() {
+          if (this.intervalId != null) {
+            window.clearInterval(this.intervalId);
+            this.intervalId = null;
+          }
+        },
+        toggleAutoPlay() {
+          this.autoPlay = !this.autoPlay;
+          this.hoveredStep = null;
+          if (this.autoPlay) this.startAutoPlay();
+          else this.stopAutoPlay();
+        },
+        selectStep(i) {
+          this.activeStep = i;
+        },
+        pauseTour() {
+          this.stopAutoPlay();
+        },
+        resumeTour() {
+          this.hoveredStep = null;
+          if (this.autoPlay) this.startAutoPlay();
+        }
+      }"
+      x-init="
+        startAutoPlay();
+        const self = $data;
+        const section = $el.closest('section');
+        if (section && 'IntersectionObserver' in window) {
+          const io = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (!entry) return;
+            if (entry.isIntersecting) {
+              self.hoveredStep = null;
+              if (self.autoPlay) self.startAutoPlay();
+            } else {
+              self.stopAutoPlay();
+            }
+          }, { threshold: 0.15 });
+          io.observe(section);
+        }
+      "
+    >
+      <!-- Section Header: Left Aligned Editorial Header + Right Aligned Auto-Tour Controls -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-16">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3.5" style="background: rgba(11,27,50,0.08); color: #2738C0;">
+            <span class="w-2 h-2 rounded-full animate-ping" style="background-color: #2738C0;"></span>
+            How We Work
+          </div>
+          <h2
+            class="mb-3 max-w-3xl"
+            style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #0F172A;"
+          >
+            A clear path to
+            <span
+              class="inline-block relative"
+              style="font-family: 'Segoe Script', 'Yellowtail', cursive; font-weight: 400; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #2738C0; margin: 0 0.12em;"
+            >
+              Financial
+            </span>
+            clarity
+          </h2>
+          <p
+            class="max-w-2xl text-base sm:text-lg"
+            style="font-family: 'DM Sans', sans-serif; font-weight: 400; color: #475569;"
+          >
+            Five stages, each with a defined output. You always know what has been done, what is next and who owns it.
+          </p>
+        </div>
+
+        <!-- Interactive Step Scrubber / Auto-tour Controls -->
+        <div class="flex items-center gap-2 self-start lg:self-end bg-white/80 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-slate-300/70 shadow-sm">
+          <button
+            @click="toggleAutoPlay()"
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer"
+            :class="autoPlay ? 'bg-[#0B1B32] text-white shadow-sm' : 'bg-slate-200/80 text-slate-700 hover:bg-slate-300/80'"
+            title="Toggle Auto Tour"
+          >
+            <template x-if="autoPlay">
+              <svg class="w-3.5 h-3.5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12" /></svg>
+            </template>
+            <template x-if="!autoPlay">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+            </template>
+            <span x-text="autoPlay ? 'Auto Tour: ON' : 'Auto Tour: OFF'"></span>
+          </button>
+
+          <div class="hidden sm:flex items-center gap-1">
+            {[
+              { num: '01', name: 'Understanding' },
+              { num: '02', name: 'Structuring' },
+              { num: '03', name: 'Onboarding' },
+              { num: '04', name: 'Delivery & Review' },
+              { num: '05', name: 'Continuity' }
+            ].map((p, idx) => (
+              <button
+                @click={`selectStep(${idx})`}
+                class="px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer"
+                :class={`activeStep === ${idx} ? 'bg-[#0B1B32] text-white shadow-md scale-105' : 'text-slate-600 hover:bg-white/80'`}
+              >
+                {p.num}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Horizontal Editorial Timeline (5 Stages) -->
+      <div
+        class="hidden lg:block relative process-timeline w-full mx-auto h-[530px] my-4 select-none"
+        @mouseenter="pauseTour()"
+        @mouseleave="resumeTour()"
+      >
+        <!-- 5-Column Grid with Alternating Cards & Icons -->
+        <div class="grid grid-cols-5 gap-[5px] relative z-10 h-[530px]">
+
+          <!-- STAGE 1: Understanding (Navy Icon Top, Card Bottom) -->
+          <div
+            class="relative top-[35px] h-[530px] cursor-pointer group transition-all duration-500"
+            :class="activeStep === 0 ? 'scale-[1.02] -translate-y-2' : 'hover:-translate-y-1.5 hover:scale-[1.01]'"
+            @mouseenter="hoveredStep = 0; activeStep = 0"
+            @click="selectStep(0)"
+          >
+            <!-- Independent Split Connector SVG for Stage 1 -->
+            <svg
+              class="absolute inset-0 w-full h-full pointer-events-none z-0"
+              viewBox="0 0 240 530"
+              fill="none"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <!-- Left Curved Branch & Vertical Line -->
+              <path
+                d="M 35 205 C 48 228, 75 248, 114 248 L 114 265"
+                :stroke="activeStep === 0 ? '#0B1B32' : '#94A3B8'"
+                :stroke-width="activeStep === 0 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 0 && 'process-arc-active'"
+              />
+              <!-- Right Curved Branch & Vertical Line -->
+              <path
+                d="M 205 205 C 192 228, 165 248, 126 248 L 126 265"
+                :stroke="activeStep === 0 ? '#0B1B32' : '#94A3B8'"
+                :stroke-width="activeStep === 0 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 0 && 'process-arc-active'"
+              />
+              <!-- Left Endpoint Node -->
+              <circle cx="35" cy="205" r="7" :fill="activeStep === 0 ? '#0B1B32' : '#0B1B32'" class="transition-all duration-300" />
+              <!-- Right Endpoint Node -->
+              <circle cx="205" cy="205" r="7" :fill="activeStep === 0 ? '#0B1B32' : '#0B1B32'" class="transition-all duration-300" />
+            </svg>
+
+            <!-- Large Navy Icon Circle (Top) -->
+            <div class="absolute top-[80px] left-1/2 -translate-x-1/2 flex items-center justify-center z-10">
+              <div
+                class="absolute inset-0 rounded-full transition-all duration-500 pointer-events-none"
+                :class="activeStep === 0 ? 'scale-125 opacity-100 bg-[#0B1B32]/10 animate-ping' : 'opacity-0'"
+              ></div>
+
+              <div
+                class="w-[156px] h-[156px] rounded-full flex items-center justify-center relative z-10 transition-all duration-500"
+                :class="activeStep === 0 ? 'shadow-2xl ring-4 ring-[#0B1B32]/15' : ''"
+                style="background-color: #0B1B32; border: 6px solid #FFFFFF; box-shadow: 0 12px 32px rgba(11,27,50,0.22);"
+              >
+                <!-- Lightbulb Icon -->
+                <svg class="w-14 h-14 text-white transition-transform duration-500 group-hover:rotate-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z" />
+                  <path d="M9 18h6" />
+                  <path d="M10 21h4" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Card 1 (Bottom) -->
+            <div
+              class="absolute top-[265px] left-0 right-0 bg-white rounded-[18px] px-4 py-4 text-center z-20 transition-all duration-500 border"
+              :class="activeStep === 0 ? 'shadow-xl border-[#0B1B32] ring-4 ring-[#0B1B32]/10' : 'border-[#CBD5E1] shadow-sm'"
+            >
+              <h3 class="mb-1.5 text-[18px] font-semibold text-[#0F172A]" style="font-family: 'DM Sans', sans-serif;">
+                Understanding
+              </h3>
+              <p class="text-[13px] leading-[19px] text-[#475569]" style="font-family: 'DM Sans', sans-serif;">
+                We review your current setup, systems, and workflows to identify where structure and consistency are needed.
+              </p>
+            </div>
+          </div>
+
+          <!-- STAGE 2: Structuring (Card Top, Gold Icon Bottom) -->
+          <div
+            class="relative -top-[15px] h-[530px] cursor-pointer group transition-all duration-500"
+            :class="activeStep === 1 ? 'scale-[1.02] -translate-y-2' : 'hover:-translate-y-1.5 hover:scale-[1.01]'"
+            @mouseenter="hoveredStep = 1; activeStep = 1"
+            @click="selectStep(1)"
+          >
+            <!-- Independent Split Connector SVG for Stage 2 (Inverted) -->
+            <svg
+              class="absolute inset-0 w-full h-full pointer-events-none z-0"
+              viewBox="0 0 240 530"
+              fill="none"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <!-- Left Curved Branch & Vertical Line -->
+              <path
+                d="M 35 200 C 48 178, 75 157, 114 157 L 114 140"
+                :stroke="activeStep === 1 ? '#C7A771' : '#94A3B8'"
+                :stroke-width="activeStep === 1 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 1 && 'process-arc-active-gold'"
+              />
+              <!-- Right Curved Branch & Vertical Line -->
+              <path
+                d="M 205 200 C 192 178, 165 157, 126 157 L 126 140"
+                :stroke="activeStep === 1 ? '#C7A771' : '#94A3B8'"
+                :stroke-width="activeStep === 1 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 1 && 'process-arc-active-gold'"
+              />
+              <!-- Left Endpoint Node -->
+              <circle cx="35" cy="200" r="7" :fill="activeStep === 1 ? '#C7A771' : '#C7A771'" class="transition-all duration-300" />
+              <!-- Right Endpoint Node -->
+              <circle cx="205" cy="200" r="7" :fill="activeStep === 1 ? '#C7A771' : '#C7A771'" class="transition-all duration-300" />
+            </svg>
+
+            <!-- Card 2 (Top) -->
+            <div
+              class="absolute top-[0px] left-0 right-0 bg-white rounded-[18px] px-4 py-4 text-center z-20 transition-all duration-500 border"
+              :class="activeStep === 1 ? 'shadow-xl border-[#C7A771] ring-4 ring-[#C7A771]/20' : 'border-[#CBD5E1] shadow-sm'"
+            >
+              <h3 class="mb-1.5 text-[18px] font-semibold text-[#0F172A]" style="font-family: 'DM Sans', sans-serif;">
+                Structuring
+              </h3>
+              <p class="text-[13px] leading-[19px] text-[#475569]" style="font-family: 'DM Sans', sans-serif;">
+                Scope, processes, and delivery model are defined and aligned to your environment and reporting requirements.
+              </p>
+            </div>
+
+            <!-- Large Gold Icon Circle (Bottom) -->
+            <div class="absolute top-[180px] left-1/2 -translate-x-1/2 flex items-center justify-center z-10">
+              <div
+                class="absolute inset-0 rounded-full transition-all duration-500 pointer-events-none"
+                :class="activeStep === 1 ? 'scale-125 opacity-100 bg-[#C7A771]/15 animate-ping' : 'opacity-0'"
+              ></div>
+
+              <div
+                class="w-[156px] h-[156px] rounded-full flex items-center justify-center relative z-10 transition-all duration-500"
+                :class="activeStep === 1 ? 'shadow-2xl ring-4 ring-[#C7A771]/20' : ''"
+                style="background-color: #C7A771; border: 6px solid #FFFFFF; box-shadow: 0 12px 32px rgba(199,167,113,0.3);"
+              >
+                <!-- 3D Pyramid Wireframe Icon -->
+                <svg class="w-14 h-14 text-white transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3 L2.5 20 L21.5 20 Z" />
+                  <path d="M12 3 L12 14" />
+                  <path d="M12 14 L2.5 20" />
+                  <path d="M12 14 L21.5 20" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 3: Onboarding (Navy Icon Top, Card Bottom) -->
+          <div
+            class="relative top-[35px] h-[530px] cursor-pointer group transition-all duration-500"
+            :class="activeStep === 2 ? 'scale-[1.02] -translate-y-2' : 'hover:-translate-y-1.5 hover:scale-[1.01]'"
+            @mouseenter="hoveredStep = 2; activeStep = 2"
+            @click="selectStep(2)"
+          >
+            <!-- Independent Split Connector SVG for Stage 3 -->
+            <svg
+              class="absolute inset-0 w-full h-full pointer-events-none z-0"
+              viewBox="0 0 240 530"
+              fill="none"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <!-- Left Curved Branch & Vertical Line -->
+              <path
+                d="M 35 205 C 48 228, 75 248, 114 248 L 114 265"
+                :stroke="activeStep === 2 ? '#0B1B32' : '#94A3B8'"
+                :stroke-width="activeStep === 2 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 2 && 'process-arc-active'"
+              />
+              <!-- Right Curved Branch & Vertical Line -->
+              <path
+                d="M 205 205 C 192 228, 165 248, 126 248 L 126 265"
+                :stroke="activeStep === 2 ? '#0B1B32' : '#94A3B8'"
+                :stroke-width="activeStep === 2 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 2 && 'process-arc-active'"
+              />
+              <!-- Left Endpoint Node -->
+              <circle cx="35" cy="205" r="7" :fill="activeStep === 2 ? '#0B1B32' : '#0B1B32'" class="transition-all duration-300" />
+              <!-- Right Endpoint Node -->
+              <circle cx="205" cy="205" r="7" :fill="activeStep === 2 ? '#0B1B32' : '#0B1B32'" class="transition-all duration-300" />
+            </svg>
+
+            <!-- Large Navy Icon Circle (Top) -->
+            <div class="absolute top-[80px] left-1/2 -translate-x-1/2 flex items-center justify-center z-10">
+              <div
+                class="absolute inset-0 rounded-full transition-all duration-500 pointer-events-none"
+                :class="activeStep === 2 ? 'scale-125 opacity-100 bg-[#0B1B32]/10 animate-ping' : 'opacity-0'"
+              ></div>
+
+              <div
+                class="w-[156px] h-[156px] rounded-full flex items-center justify-center relative z-10 transition-all duration-500"
+                :class="activeStep === 2 ? 'shadow-2xl ring-4 ring-[#0B1B32]/15' : ''"
+                style="background-color: #0B1B32; border: 6px solid #FFFFFF; box-shadow: 0 12px 32px rgba(11,27,50,0.22);"
+              >
+                <!-- Handshake Icon -->
+                <svg class="w-14 h-14 text-white transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.3-4.3a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0l-1.2 1.2" />
+                  <path d="m13 7-2-2a1 1 0 0 0-1.4 0L5.3 9.3a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0l1.2-1.2" />
+                  <path d="M18 11V6a2 2 0 0 0-2-2" />
+                  <path d="M6 13v5a2 2 0 0 0 2 2" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Card 3 (Bottom) -->
+            <div
+              class="absolute top-[265px] left-0 right-0 bg-white rounded-[18px] px-4 py-4 text-center z-20 transition-all duration-500 border"
+              :class="activeStep === 2 ? 'shadow-xl border-[#0B1B32] ring-4 ring-[#0B1B32]/10' : 'border-[#CBD5E1] shadow-sm'"
+            >
+              <h3 class="mb-1.5 text-[18px] font-semibold text-[#0F172A]" style="font-family: 'DM Sans', sans-serif;">
+                Onboarding
+              </h3>
+              <p class="text-[13px] leading-[19px] text-[#475569]" style="font-family: 'DM Sans', sans-serif;">
+                Systems, access, and workflows are established in a controlled manner, ready for consistent delivery from day one.
+              </p>
+            </div>
+          </div>
+
+          <!-- STAGE 4: Delivery & Review (Card Top, Gold Icon Bottom) -->
+          <div
+            class="relative -top-[15px] h-[530px] cursor-pointer group transition-all duration-500"
+            :class="activeStep === 3 ? 'scale-[1.02] -translate-y-2' : 'hover:-translate-y-1.5 hover:scale-[1.01]'"
+            @mouseenter="hoveredStep = 3; activeStep = 3"
+            @click="selectStep(3)"
+          >
+            <!-- Independent Split Connector SVG for Stage 4 (Inverted) -->
+            <svg
+              class="absolute inset-0 w-full h-full pointer-events-none z-0"
+              viewBox="0 0 240 530"
+              fill="none"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <!-- Left Curved Branch & Vertical Line -->
+              <path
+                d="M 35 200 C 48 178, 75 157, 114 157 L 114 140"
+                :stroke="activeStep === 3 ? '#C7A771' : '#94A3B8'"
+                :stroke-width="activeStep === 3 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 3 && 'process-arc-active-gold'"
+              />
+              <!-- Right Curved Branch & Vertical Line -->
+              <path
+                d="M 205 200 C 192 178, 165 157, 126 157 L 126 140"
+                :stroke="activeStep === 3 ? '#C7A771' : '#94A3B8'"
+                :stroke-width="activeStep === 3 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 3 && 'process-arc-active-gold'"
+              />
+              <!-- Left Endpoint Node -->
+              <circle cx="35" cy="200" r="7" :fill="activeStep === 3 ? '#C7A771' : '#C7A771'" class="transition-all duration-300" />
+              <!-- Right Endpoint Node -->
+              <circle cx="205" cy="200" r="7" :fill="activeStep === 3 ? '#C7A771' : '#C7A771'" class="transition-all duration-300" />
+            </svg>
+
+            <!-- Card 4 (Top) -->
+            <div
+              class="absolute top-[0px] left-0 right-0 bg-white rounded-[18px] px-4 py-4 text-center z-20 transition-all duration-500 border"
+              :class="activeStep === 3 ? 'shadow-xl border-[#C7A771] ring-4 ring-[#C7A771]/20' : 'border-[#CBD5E1] shadow-sm'"
+            >
+              <h3 class="mb-1.5 text-[18px] font-semibold text-[#0F172A]" style="font-family: 'DM Sans', sans-serif;">
+                Delivery &amp; Review
+              </h3>
+              <p class="text-[13px] leading-[19px] text-[#475569]" style="font-family: 'DM Sans', sans-serif;">
+                Work is executed with defined review layers ensuring accuracy, consistency, and alignment across reporting periods.
+              </p>
+            </div>
+
+            <!-- Large Gold Icon Circle (Bottom) -->
+            <div class="absolute top-[180px] left-1/2 -translate-x-1/2 flex items-center justify-center z-10">
+              <div
+                class="absolute inset-0 rounded-full transition-all duration-500 pointer-events-none"
+                :class="activeStep === 3 ? 'scale-125 opacity-100 bg-[#C7A771]/15 animate-ping' : 'opacity-0'"
+              ></div>
+
+              <div
+                class="w-[156px] h-[156px] rounded-full flex items-center justify-center relative z-10 transition-all duration-500"
+                :class="activeStep === 3 ? 'shadow-2xl ring-4 ring-[#C7A771]/20' : ''"
+                style="background-color: #C7A771; border: 6px solid #FFFFFF; box-shadow: 0 12px 32px rgba(199,167,113,0.3);"
+              >
+                <!-- Mail with Checkmark Icon -->
+                <svg class="w-14 h-14 text-white transition-transform duration-500 group-hover:-translate-y-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6h16a2 2 0 0 1 2 2v7" />
+                  <path d="M22 9l-10 6L2 9" />
+                  <path d="M2 8v10a2 2 0 0 0 2 2h9" />
+                  <path d="M16 18l2.5 2.5 4.5-4.5" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 5: Continuity (Navy Icon Top, Card Bottom) -->
+          <div
+            class="relative top-[35px] h-[530px] cursor-pointer group transition-all duration-500"
+            :class="activeStep === 4 ? 'scale-[1.02] -translate-y-2' : 'hover:-translate-y-1.5 hover:scale-[1.01]'"
+            @mouseenter="hoveredStep = 4; activeStep = 4"
+            @click="selectStep(4)"
+          >
+            <!-- Independent Split Connector SVG for Stage 5 -->
+            <svg
+              class="absolute inset-0 w-full h-full pointer-events-none z-0"
+              viewBox="0 0 240 530"
+              fill="none"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <!-- Left Curved Branch & Vertical Line -->
+              <path
+                d="M 35 205 C 48 228, 75 248, 114 248 L 114 265"
+                :stroke="activeStep === 4 ? '#0B1B32' : '#94A3B8'"
+                :stroke-width="activeStep === 4 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 4 && 'process-arc-active'"
+              />
+              <!-- Right Curved Branch & Vertical Line -->
+              <path
+                d="M 205 205 C 192 228, 165 248, 126 248 L 126 265"
+                :stroke="activeStep === 4 ? '#0B1B32' : '#94A3B8'"
+                :stroke-width="activeStep === 4 ? '2.5' : '1.75'"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-all duration-300"
+                :class="activeStep === 4 && 'process-arc-active'"
+              />
+              <!-- Left Endpoint Node -->
+              <circle cx="35" cy="205" r="7" :fill="activeStep === 4 ? '#0B1B32' : '#0B1B32'" class="transition-all duration-300" />
+              <!-- Right Endpoint Node -->
+              <circle cx="205" cy="205" r="7" :fill="activeStep === 4 ? '#0B1B32' : '#0B1B32'" class="transition-all duration-300" />
+            </svg>
+
+            <!-- Large Navy Icon Circle (Top) -->
+            <div class="absolute top-[80px] left-1/2 -translate-x-1/2 flex items-center justify-center z-10">
+              <div
+                class="absolute inset-0 rounded-full transition-all duration-500 pointer-events-none"
+                :class="activeStep === 4 ? 'scale-125 opacity-100 bg-[#0B1B32]/10 animate-ping' : 'opacity-0'"
+              ></div>
+
+              <div
+                class="w-[156px] h-[156px] rounded-full flex items-center justify-center relative z-10 transition-all duration-500"
+                :class="activeStep === 4 ? 'shadow-2xl ring-4 ring-[#0B1B32]/15' : ''"
+                style="background-color: #0B1B32; border: 6px solid #FFFFFF; box-shadow: 0 12px 32px rgba(11,27,50,0.22);"
+              >
+                <!-- Connected Process Node Boxes Icon -->
+                <svg class="w-14 h-14 text-white transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="6" height="6" x="3.5" y="3.5" rx="1.5" />
+                  <rect width="6" height="6" x="14.5" y="3.5" rx="1.5" />
+                  <rect width="6" height="6" x="14.5" y="14.5" rx="1.5" />
+                  <path d="M6.5 9.5v5a2.5 2.5 0 0 0 2.5 2.5H14.5" />
+                  <line x1="9.5" y1="6.5" x2="14.5" y2="6.5" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Card 5 (Bottom) -->
+            <div
+              class="absolute top-[265px] left-0 right-0 bg-white rounded-[18px] px-4 py-4 text-center z-20 transition-all duration-500 border"
+              :class="activeStep === 4 ? 'shadow-xl border-[#0B1B32] ring-4 ring-[#0B1B32]/10' : 'border-[#CBD5E1] shadow-sm'"
+            >
+              <h3 class="mb-1.5 text-[18px] font-semibold text-[#0F172A]" style="font-family: 'DM Sans', sans-serif;">
+                Continuity
+              </h3>
+              <p class="text-[13px] leading-[19px] text-[#475569]" style="font-family: 'DM Sans', sans-serif;">
+                Delivery is maintained and adapted to changes in volume, structure, or requirements without disruption.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile / Tablet Stacked Vertical Timeline (< lg) -->
+      <div class="lg:hidden relative pl-2 mt-8">
+        <div
+          class="absolute left-[33px] top-6 bottom-6 w-[3px] rounded-full"
+          style="background: linear-gradient(to bottom, #0B1B32, #C7A771, #0B1B32, #C7A771, #0B1B32);"
+          aria-hidden="true"
+        ></div>
+        <div class="space-y-6">
+          {[
+            {
+              title: 'Understanding',
+              desc: 'We review your current setup, systems, and workflows to identify where structure and consistency are needed.',
+              tone: '#0B1B32',
+              iconType: 'lightbulb'
+            },
+            {
+              title: 'Structuring',
+              desc: 'Scope, processes, and delivery model are defined and aligned to your environment and reporting requirements.',
+              tone: '#C7A771',
+              iconType: 'pyramid'
+            },
+            {
+              title: 'Onboarding',
+              desc: 'Systems, access, and workflows are established in a controlled manner, ready for consistent delivery from day one.',
+              tone: '#0B1B32',
+              iconType: 'handshake'
+            },
+            {
+              title: 'Delivery & Review',
+              desc: 'Work is executed with defined review layers ensuring accuracy, consistency, and alignment across reporting periods.',
+              tone: '#C7A771',
+              iconType: 'mail'
+            },
+            {
+              title: 'Continuity',
+              desc: 'Delivery is maintained and adapted to changes in volume, structure, or requirements without disruption.',
+              tone: '#0B1B32',
+              iconType: 'workflow'
+            },
+          ].map((step, idx) => (
+            <div
+              class="flex gap-4 sm:gap-6 items-start relative cursor-pointer group transition-transform duration-300 active:scale-[0.99]"
+              @click={`activeStep = ${idx}`}
+            >
+              <div class="relative flex items-center justify-center flex-shrink-0 z-10" style="width: 68px; height: 68px;">
+                <div
+                  class="rounded-full flex items-center justify-center transition-all duration-300 shadow-lg group-hover:scale-105"
+                  :class={`activeStep === ${idx} ? 'ring-4 ring-offset-2 ring-[#0B1B32]/30 scale-105' : ''`}
+                  style={`width: 60px; height: 60px; background-color: ${step.tone}; border: 4px solid #FFFFFF;`}
+                  aria-hidden="true"
+                >
+                  {step.iconType === 'lightbulb' && (
+                    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z" /><path d="M9 18h6" /><path d="M10 21h4" />
+                    </svg>
+                  )}
+                  {step.iconType === 'pyramid' && (
+                    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 3 L2.5 20 L21.5 20 Z" /><path d="M12 3 L12 14" /><path d="M12 14 L2.5 20" /><path d="M12 14 L21.5 20" />
+                    </svg>
+                  )}
+                  {step.iconType === 'handshake' && (
+                    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.3-4.3a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0l-1.2 1.2" /><path d="m13 7-2-2a1 1 0 0 0-1.4 0L5.3 9.3a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0l1.2-1.2" /><path d="M18 11V6a2 2 0 0 0-2-2" /><path d="M6 13v5a2 2 0 0 0 2 2" />
+                    </svg>
+                  )}
+                  {step.iconType === 'mail' && (
+                    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 6h16a2 2 0 0 1 2 2v7" /><path d="M22 9l-10 6L2 9" /><path d="M2 8v10a2 2 0 0 0 2 2h9" /><path d="M16 18l2.5 2.5 4.5-4.5" />
+                    </svg>
+                  )}
+                  {step.iconType === 'workflow' && (
+                    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="6" height="6" x="3.5" y="3.5" rx="1.5" /><rect width="6" height="6" x="14.5" y="3.5" rx="1.5" /><rect width="6" height="6" x="14.5" y="14.5" rx="1.5" /><path d="M6.5 9.5v5a2.5 2.5 0 0 0 2.5 2.5H14.5" /><line x1="9.5" y1="6.5" x2="14.5" y2="6.5" />
+                    </svg>
+                  )}
+                </div>
+              </div>
+              <div
+                class="flex-1 bg-white rounded-[18px] px-5 py-4 transition-all duration-300 border"
+                :class={`activeStep === ${idx} ? 'border-[#0B1B32] shadow-xl ring-2 ring-[#0B1B32]/10 -translate-y-0.5' : 'border-[#CBD5E1] shadow-sm group-hover:shadow-md'`}
+              >
+                <h3
+                  class="mb-1.5 text-[17px] font-semibold text-[#0F172A]"
+                  style="font-family: 'DM Sans', sans-serif;"
+                >
+                  {step.title}
+                </h3>
+                <p
+                  class="text-[13px] leading-[19px] text-[#475569]"
+                  style="font-family: 'DM Sans', sans-serif;"
+                >
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes processArcPulse {
+      0%, 100% { filter: drop-shadow(0 0 0 rgba(11, 27, 50, 0)); }
+      50% { filter: drop-shadow(0 0 6px rgba(11, 27, 50, 0.45)); }
+    }
+    @keyframes processArcPulseGold {
+      0%, 100% { filter: drop-shadow(0 0 0 rgba(199, 167, 113, 0)); }
+      50% { filter: drop-shadow(0 0 7px rgba(199, 167, 113, 0.55)); }
+    }
+    @keyframes processNodePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.35); }
+    }
+
+    .process-arc, .process-stem {
+      transition: stroke 0.35s ease, stroke-width 0.35s ease;
+    }
+
+    .process-arc-active {
+      animation: processArcPulse 1.6s ease-in-out infinite;
+    }
+    .process-arc-active-gold {
+      animation: processArcPulseGold 1.6s ease-in-out infinite;
+    }
+
+    .process-node {
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: fill 0.35s ease;
+    }
+
+    .process-node-active {
+      animation: processNodePulse 1.4s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .process-arc,
+      .process-arc-active,
+      .process-arc-active-gold,
+      .process-stem,
+      .process-node,
+      .process-node-active {
+        animation: none !important;
+      }
+    }
+  </style>

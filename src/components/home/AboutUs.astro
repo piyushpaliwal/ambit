@@ -1,0 +1,130 @@
+---
+import StatsGrid from './StatsGrid.astro';
+---
+
+  <!-- ===== ABOUT US ===== -->
+  <section id="about" class="py-20 lg:py-28 overflow-hidden" style="background-color: #FDF9F3;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+
+        <!-- Left: copy -->
+        <div class="-translate-y-[50px]">
+          <p
+            class="uppercase mb-4"
+            style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 18px; line-height: 31px; letter-spacing: 1.63px; color: #2738C0;"
+          >
+            About Us
+          </p>
+          <h2
+            class="mb-5"
+            style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #0F172A;"
+          >
+            A
+            <span
+              class="inline-block"
+              style="font-family: 'Segoe Script', 'Yellowtail', cursive; font-weight: 400; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #2738C0; margin: 0 0.1em;"
+            >trusted</span>
+            financial partnership
+          </h2>
+          <p
+            class="mb-8 max-w-[520px]"
+            style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 20px; line-height: 31px; letter-spacing: 0; color: #0F172AB2;"
+          >
+            Ambit exists to make finance operations boring in the best sense - reconciled on time, filed on time, and explained in language a founder or a board can act on. We run books, payroll and filings for growing businesses across three regulatory regimes, with the same named team on your file year after year.
+          </p>
+
+          <a
+            href="/about"
+            class="inline-flex items-center gap-3 pl-6 pr-1.5 py-1.5 text-sm font-semibold text-white rounded-full transition-all hover:opacity-90 hover:-translate-y-0.5"
+            style="font-family: 'DM Sans', sans-serif; background-color: #2738C0; box-shadow: 0 8px 24px rgba(39,56,192,0.28);"
+          >
+            Learn More About Us
+            <span class="w-10 h-10 rounded-full flex items-center justify-center bg-white flex-shrink-0">
+              <svg class="w-4 h-4" style="color: #2738C0;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Right: image collage + how we work card -->
+        <div class="relative mx-auto w-full max-w-lg lg:max-w-[350px] xl:max-w-[500px] pb-12 sm:pb-16 my-6 lg:my-0">
+          <!-- Main team meeting image -->
+          <div class="relative w-full overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] shadow-md">
+            <img
+              src="/images/ouradvantage.jpg"
+              alt="Ambit team in discussion"
+              class="w-full object-cover h-[400px] sm:h-[520px] lg:h-[594px]"
+            />
+          </div>
+
+          <!-- How we work card (Floating wrapper + micro-interactions) -->
+          <div
+            class="floating-card-wrapper absolute -right-6 sm:-right-12 lg:-right-16 top-[15%] sm:top-[20%] lg:top-[22%] z-20 w-[68%] sm:w-[60%] max-w-[290px] sm:max-w-[330px]"
+          >
+            <div
+              class="group/card bg-white rounded-2xl sm:rounded-[1.4rem] p-5 sm:p-6 lg:p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_24px_50px_rgba(15,23,42,0.18)] cursor-default"
+              style="box-shadow: 0 20px 45px rgba(15,23,42,0.14);"
+            >
+              <p
+                class="text-base sm:text-lg font-bold mb-3.5 sm:mb-4"
+                style="font-family: 'Poppins', sans-serif; color: #0F172A;"
+              >
+                How we work
+              </p>
+              <ul class="space-y-2.5 sm:space-y-3">
+                {[
+                  'Structured Processes',
+                  'Global Compliance Expertise',
+                  'Dedicated Account Teams',
+                  'Data Security & Confidentiality',
+                ].map((item) => (
+                  <li class="flex items-center gap-2.5 sm:gap-3">
+                    <span
+                      class="w-[2.5px] h-4 sm:h-5 rounded-full flex-shrink-0"
+                      style="background-color: #2738C0;"
+                    ></span>
+                    <span
+                      class="text-xs sm:text-[13.5px] font-medium leading-snug"
+                      style="color: #475569; font-family: 'Inter', sans-serif;"
+                    >
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <StatsGrid class="mt-16 lg:mt-20" />
+    </div>
+  </section>
+
+<style>
+  @keyframes floatingCard {
+    0%, 100% {
+      transform: translateX(110px) translateY(0);
+    }
+    50% {
+      transform: translateX(110px) translateY(-10px);
+    }
+  }
+
+  .floating-card-wrapper {
+    transform: translateX(110px);
+    animation: floatingCard 3.2s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .floating-card-wrapper:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floating-card-wrapper {
+      animation: none;
+    }
+  }
+</style>

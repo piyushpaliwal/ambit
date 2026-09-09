@@ -8,6 +8,56 @@
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 55s linear infinite;
   will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-continuous {
+  animation: marquee 70s linear infinite;
+  will-change: transform;
+}
+
+.hero-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-headline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 5.5vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -3px;
+}
+
+.hero-headline-script {
+  font-family: 'Segoe Script', 'Yellowtail', cursive;
+  font-weight: 400;
+  font-size: clamp(2rem, 5.5vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -3px;
+}
+
+.hero-trusted {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 27px;
+  letter-spacing: 0;
+}
+
+@media (min-width: 1024px) {
+  .hero-headline,
+  .hero-headline-script {
+    font-size: 64px;
+    line-height: 57px;
+  }
 }

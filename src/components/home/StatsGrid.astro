@@ -1,0 +1,247 @@
+---
+const stats = [
+  {
+    label: 'Loyalty',
+    target: 96,
+    prefix: '',
+    suffix: '%',
+    display: '96%',
+    desc: 'Client retention rate',
+    icon: 'shield',
+  },
+  {
+    label: 'Continuity',
+    target: 92,
+    prefix: '',
+    suffix: '%',
+    display: '92%',
+    desc: 'Employee retention rate',
+    icon: 'refresh',
+  },
+  {
+    label: 'Coverage',
+    target: 4,
+    prefix: '',
+    suffix: '',
+    display: '4',
+    desc: 'Markets served - UK, USA, UAE, Australia',
+    icon: 'globe',
+  },
+  {
+    label: 'Scale',
+    target: 500,
+    prefix: '',
+    suffix: '+',
+    display: '500+',
+    desc: 'Clients served to date',
+    icon: 'trending',
+  },
+  {
+    label: 'Responsiveness',
+    target: 24,
+    prefix: '<',
+    suffix: ' hrs',
+    display: '<24 hrs',
+    desc: 'Average response time',
+    icon: 'clock',
+  },
+  {
+    label: 'Experience',
+    target: 20,
+    prefix: '',
+    suffix: '+',
+    display: '20+',
+    desc: 'Years of experience across markets',
+    icon: 'sparkle',
+  },
+];
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={['grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 justify-items-stretch', className]}>
+  {stats.map((stat, idx) => (
+    <div
+      class="stat-card group relative cursor-pointer select-none rounded-[16px] transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02]"
+      style={`animation-delay: ${idx * 100}ms;`}
+    >
+      <!-- Normal State Background -->
+      <div
+        class="absolute inset-0 rounded-[16px] bg-white transition-opacity duration-500 ease-out group-hover:opacity-0"
+        style="box-shadow: 0 2px 16px rgba(15,23,42,0.05); border: 1px solid #F0EBE3;"
+      ></div>
+
+      <!-- Hover State Background (Rich Brand Blue Gradient with Shadow) -->
+      <div
+        class="absolute inset-0 rounded-[16px] opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+        style="background: linear-gradient(135deg, #182585 0%, #2738C0 60%, #3B4CCA 100%); box-shadow: 0 20px 36px -10px rgba(39,56,192,0.42), 0 8px 18px -4px rgba(39,56,192,0.25); border: 1px solid rgba(255,255,255,0.25);"
+      ></div>
+
+      <!-- Ambient Glow Orb inside card on hover -->
+      <div
+        class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl"
+        style="background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);"
+      ></div>
+
+      <!-- Shimmer light sweep bar -->
+      <div class="stat-shimmer pointer-events-none"></div>
+
+      <!-- Card Content Container -->
+      <div class="relative z-10 flex flex-col justify-between h-full min-h-[155px] p-6 sm:p-7">
+        <!-- Top Row: Label & Micro Icon Badge -->
+        <div class="flex items-center justify-between mb-2">
+          <p
+            class="uppercase font-medium text-xs tracking-[0.18em] transition-colors duration-300"
+            style="font-family: 'DM Sans', sans-serif; color: #B08D57;"
+          >
+            <span class="group-hover:text-[#FDE047] transition-colors duration-300 font-semibold tracking-[0.2em]">{stat.label}</span>
+          </p>
+
+          <!-- Icon Badge -->
+          <div
+            class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 bg-[#F1F5F9] text-[#2738C0] group-hover:bg-white/20 group-hover:text-white group-hover:rotate-12 group-hover:scale-110"
+          >
+            {stat.icon === 'shield' && (
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            )}
+            {stat.icon === 'refresh' && (
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            )}
+            {stat.icon === 'globe' && (
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            )}
+            {stat.icon === 'trending' && (
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            )}
+            {stat.icon === 'clock' && (
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            )}
+            {stat.icon === 'sparkle' && (
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            )}
+          </div>
+        </div>
+
+        <!-- Middle: Dynamic Counted Stat Value -->
+        <p
+          class="stat-number my-1 font-medium transition-all duration-300 text-[#0F172A] group-hover:text-white group-hover:scale-105 origin-left"
+          style="font-family: 'DM Sans', sans-serif; font-size: clamp(34px, 4vw, 42px); line-height: 1.1; letter-spacing: -0.01em;"
+          data-target={stat.target}
+          data-prefix={stat.prefix}
+          data-suffix={stat.suffix}
+        >
+          {stat.display}
+        </p>
+
+        <!-- Bottom: Description -->
+        <p
+          class="text-[13.5px] sm:text-sm leading-snug transition-colors duration-300 text-[#64748B] group-hover:text-white/90"
+          style="font-family: 'DM Sans', sans-serif; font-weight: 400;"
+        >
+          {stat.desc}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .stat-card {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .stat-shimmer {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.28) 50%,
+      transparent 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 5;
+  }
+
+  .stat-card:hover .stat-shimmer {
+    left: 200%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stat-card {
+      transition: none !important;
+      transform: none !important;
+    }
+    .stat-shimmer {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  function initStatsCounter() {
+    const statCards = document.querySelectorAll('.stat-card');
+    if (!statCards.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const card = entry.target as HTMLElement;
+            const numberEl = card.querySelector('.stat-number') as HTMLElement | null;
+            if (numberEl && !card.dataset.counted) {
+              card.dataset.counted = 'true';
+              const target = parseFloat(numberEl.getAttribute('data-target') || '0');
+              const prefix = numberEl.getAttribute('data-prefix') || '';
+              const suffix = numberEl.getAttribute('data-suffix') || '';
+              const duration = 1400;
+              const startTime = performance.now();
+
+              const updateCounter = (currentTime: number) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Smooth easeOutExpo
+                const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                const currentVal = Math.round(easeProgress * target);
+
+                numberEl.textContent = `${prefix}${currentVal}${suffix}`;
+
+                if (progress < 1) {
+                  requestAnimationFrame(updateCounter);
+                } else {
+                  numberEl.textContent = `${prefix}${target}${suffix}`;
+                }
+              };
+
+              requestAnimationFrame(updateCounter);
+            }
+            observer.unobserve(card);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    statCards.forEach((card) => observer.observe(card));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStatsCounter);
+  } else {
+    initStatsCounter();
+  }
+  document.addEventListener('astro:page-load', initStatsCounter);
+</script>

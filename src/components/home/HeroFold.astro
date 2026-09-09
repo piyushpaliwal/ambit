@@ -1,0 +1,140 @@
+---
+import { softwareTools } from '../../data/softwareTools';
+---
+
+  <div class="min-h-[100svh] flex flex-col">
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden flex-[7] min-h-[460px] flex flex-col" style="background-color: #0F172A;">
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="/images/homepage.jpg"
+      aria-hidden="true"
+    >
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(105deg, rgba(12,20,38,0.88) 0%, rgba(12,20,38,0.62) 48%, rgba(12,20,38,0.4) 100%);"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to top, rgba(12,20,38,0.5) 0%, transparent 45%);"></div>
+
+    <div class="relative flex-1 flex items-center max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-36 sm:pt-40 lg:pt-44 pb-10 lg:pb-12">
+      <div
+        class="max-w-3xl"
+        x-data="{ v: false }"
+        x-init="setTimeout(() => v = true, 80)"
+        x-show="v"
+        x-cloak
+        x-transition:enter="transition ease-out duration-700"
+        x-transition:enter-start="opacity-0 translate-y-6"
+        x-transition:enter-end="opacity-100 translate-y-0"
+      >
+        <p class="hero-eyebrow mb-4" style="color: #C5A059;">
+          Accounting, tax &amp; payroll - handled across UK, US &amp; UAE
+        </p>
+        <h1 class="hero-headline text-white max-w-4xl">
+          Outsourced Accounting & Bookkeeping That Works Like Your Own Team
+          <!-- Virtual Bookkeeping Services for Small Business, by
+          , by
+          <span class="hero-headline-script inline-block align-baseline whitespace-nowrap" style="color: #C5A059; margin-left: 0.15em;">Ambit</span> -->
+        </h1>
+        <p
+          class="mt-5 text-[14px] sm:text-[15px] lg:text-base leading-[1.65]"
+          style="font-family: 'Poppins', sans-serif; color: #FFFFFF; max-width: 520px; font-weight: 400;"
+        >
+          Ambit's virtual accounting services cover bookkeeping, tax preparation outsourcing, payroll and compliance reporting for small and growing businesses. One dedicated team, fully compliant, without the overhead of an in-house hire.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3.5 items-center">
+          <button
+            type="button"
+            onclick="document.getElementById('consult-modal').style.display='flex'"
+            class="inline-flex items-center gap-3 pl-6 pr-1.5 py-1.5 text-sm font-semibold text-white rounded-full transition-all hover:opacity-90 hover:-translate-y-0.5 cursor-pointer"
+            style="font-family: 'Inter', sans-serif; background-color: #1a4480; box-shadow: 0 8px 28px rgba(26,68,128,0.45);"
+            aria-label="Book Free Consultation"
+          >
+            Book Free Consultation
+            <span class="w-10 h-10 rounded-full flex items-center justify-center bg-white flex-shrink-0">
+              <svg class="w-4 h-4" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </span>
+          </button>
+          <a
+            href="#what-we-offer"
+            class="inline-flex items-center gap-3 pl-6 pr-1.5 py-1.5 text-sm font-semibold rounded-full transition-all hover:-translate-y-0.5"
+            style="font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #0F172A;"
+            aria-label="Explore Our Services"
+          >
+            Explore Our Services
+            <span class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #1a4480;">
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="mt-10 pt-6 border-t border-white/15 flex flex-wrap items-center gap-y-2.5 gap-x-4 text-xs sm:text-sm text-slate-200 font-medium">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#C5A059]/20 text-[#C5A059]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <span class="font-semibold text-white">500+ clients</span>
+          </div>
+          <span class="text-white/40 hidden sm:inline">•</span>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#C5A059]/20 text-[#C5A059]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </span>
+            <span class="font-semibold text-white">20+ years</span>
+          </div>
+          <span class="text-white/40 hidden sm:inline">•</span>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#C5A059]/20 text-[#C5A059]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </span>
+            <span class="font-semibold text-white">GDPR, HMRC, IRS &amp; FTA compliant</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUSTED CLIENTS + LOGO SLIDER ===== -->
+  <section class="flex-[3] min-h-[140px] flex items-center overflow-hidden" style="background-color: #FDF9F3;">
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 lg:py-8">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+        <p class="hero-trusted flex-shrink-0 lg:max-w-[320px]" style="color: #1a1a1a;">
+          Seamless integration with your accounting stack
+        </p>
+
+        <div class="relative flex-1 min-w-0 overflow-hidden">
+          <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10" style="background: linear-gradient(to right, #FDF9F3, transparent);"></div>
+          <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10" style="background: linear-gradient(to left, #FDF9F3, transparent);"></div>
+          <div class="flex w-max animate-marquee">
+            {[...Array(2)].map(() => (
+              <div class="flex items-center gap-4 pr-4">
+                {softwareTools.map((tool) => (
+                  <div
+                    class="flex items-center gap-2.5 px-3 py-2 flex-shrink-0"
+                    aria-label={tool.name}
+                  >
+                    <img
+                      src={tool.logo}
+                      alt={tool.name}
+                      class="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-md flex-shrink-0"
+                      loading="lazy"
+                    />
+                    <span style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: #0F172A; white-space: nowrap;">
+                      {tool.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>

@@ -1,0 +1,604 @@
+---
+---
+
+  <!-- ===== BUSINESS METRICS ===== -->
+  <section class="pt-16 pb-12 lg:pt-24 lg:pb-16 relative z-20 overflow-visible" style="background-color: #F5F1EB;">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      x-data="{
+        activeTab: 'startups',
+        activeMetric: 0,
+        hoveredMetric: null,
+        autoRotate: true,
+        rotateId: null,
+        prevMetric: 0,
+        arrowAnimKey: 0,
+        segmentPaths: [
+          'M 172 170 C 218 200, 262 240, 308 270',
+          'M 412 270 C 458 240, 502 200, 548 170',
+          'M 652 170 C 698 200, 742 240, 788 270',
+          'M 892 270 C 938 240, 982 200, 1028 170'
+        ],
+        get segmentPath() {
+          const from = this.prevMetric;
+          const to = this.activeMetric;
+          // Only animate when moving to the next step in sequence
+          if (to === from + 1 && from < 4) return this.segmentPaths[from];
+          return '';
+        },
+        advanceMetric() {
+          this.prevMetric = this.activeMetric;
+          this.activeMetric = (this.activeMetric + 1) % 5;
+          this.arrowAnimKey += 1;
+        },
+        tabs: {
+          startups: {
+            metrics: [
+              {
+                num: '01',
+                name: 'Runway',
+                icon: 'clock',
+                color: '#C7A771',
+                cardTitle: 'How long Your Money Will Last',
+                cardLabel: 'Runway',
+                cardDesc: 'Runway tells you how many months your startup can operate before cash runs dry at the current spend rate.',
+                formula: 'Cash Balance / Monthly Burn Rate = Months',
+                example: 'e.g. $120,000 / $15,000/mo = 8 months'
+              },
+              {
+                num: '02',
+                name: 'Burn Rate',
+                icon: 'fire',
+                color: '#0B1B32',
+                cardTitle: 'How Fast You Spend Cash',
+                cardLabel: 'Burn Rate',
+                cardDesc: 'Burn rate is the speed at which your company spends money each month beyond what it earns.',
+                formula: 'Total Monthly Expenses - Monthly Revenue',
+                example: 'e.g. $25,000 - $10,000 = $15,000/mo net burn'
+              },
+              {
+                num: '03',
+                name: 'MRR',
+                icon: 'chart',
+                color: '#0B1B32',
+                cardTitle: 'Monthly Recurring Revenue',
+                cardLabel: 'MRR',
+                cardDesc: 'MRR is the predictable revenue your business earns every month from subscriptions or contracts.',
+                formula: 'Number of Customers x Average Revenue Per Account',
+                example: 'e.g. 200 customers x $75/mo = $15,000 MRR'
+              },
+              {
+                num: '04',
+                name: 'CAC',
+                icon: 'target',
+                color: '#0B1B32',
+                cardTitle: 'Cost to Acquire a Customer',
+                cardLabel: 'CAC',
+                cardDesc: 'CAC tells you exactly how much you spend in sales and marketing to win a single new customer.',
+                formula: 'Total Sales & Marketing Spend / New Customers',
+                example: 'e.g. $30,000 / 60 customers = $500 CAC'
+              },
+              {
+                num: '05',
+                name: 'LTV',
+                icon: 'diamond',
+                color: '#0B1B32',
+                cardTitle: 'Lifetime Value of a Customer',
+                cardLabel: 'LTV',
+                cardDesc: 'LTV estimates the total revenue one customer will generate over their entire relationship with you.',
+                formula: 'Avg. Revenue Per Customer x Avg. Customer Lifespan',
+                example: 'e.g. $75/mo x 24 months = $1,800 LTV'
+              }
+            ]
+          },
+          growing: {
+            metrics: [
+              {
+                num: '01',
+                name: 'Gross Margin',
+                icon: 'pie-chart',
+                color: '#C7A771',
+                cardTitle: 'Profit After Direct Costs',
+                cardLabel: 'Gross Margin',
+                cardDesc: 'Gross margin shows what percentage of revenue remains after subtracting the cost of goods sold.',
+                formula: '(Revenue - COGS) / Revenue x 100',
+                example: 'e.g. ($500K - $200K) / $500K = 60%'
+              },
+              {
+                num: '02',
+                name: 'Net Profit',
+                icon: 'banknote',
+                color: '#0B1B32',
+                cardTitle: 'What You Actually Keep',
+                cardLabel: 'Net Profit',
+                cardDesc: 'Net profit is the bottom line - revenue minus all expenses, taxes, and costs.',
+                formula: 'Total Revenue - Total Expenses',
+                example: 'e.g. $500K - $420K = $80K net profit'
+              },
+              {
+                num: '03',
+                name: 'DSO',
+                icon: 'calendar',
+                color: '#0B1B32',
+                cardTitle: 'Days Sales Outstanding',
+                cardLabel: 'DSO',
+                cardDesc: 'DSO measures the average number of days it takes to collect payment after a sale is made.',
+                formula: '(Accounts Receivable / Revenue) x Days',
+                example: 'e.g. ($50K / $300K) x 90 days = 15 days'
+              },
+              {
+                num: '04',
+                name: 'EBITDA',
+                icon: 'layers',
+                color: '#0B1B32',
+                cardTitle: 'Earnings Before Interest & Tax',
+                cardLabel: 'EBITDA',
+                cardDesc: 'EBITDA shows operational profitability by excluding interest, taxes, depreciation, and amortisation.',
+                formula: 'Net Income + Interest + Taxes + D&A',
+                example: 'e.g. $80K + $5K + $15K + $10K = $110K'
+              },
+              {
+                num: '05',
+                name: 'Revenue Growth',
+                icon: 'trending-up',
+                color: '#0B1B32',
+                cardTitle: 'Rate of Revenue Increase',
+                cardLabel: 'Revenue Growth',
+                cardDesc: 'Revenue growth rate tells you how quickly your top-line revenue is expanding period over period.',
+                formula: '(Current - Previous) / Previous x 100',
+                example: 'e.g. ($600K - $500K) / $500K = 20%'
+              }
+            ]
+          }
+        },
+        get currentMetrics() { return this.tabs[this.activeTab].metrics; },
+        startRotate() {
+          this.stopRotate();
+          this.rotateId = setInterval(() => {
+            if (this.hoveredMetric === null && this.autoRotate) {
+              this.advanceMetric();
+            }
+          }, 5000);
+        },
+        stopRotate() { if (this.rotateId) clearInterval(this.rotateId); },
+        switchTab(t) { this.activeTab = t; this.activeMetric = 0; this.prevMetric = 0; this.arrowAnimKey += 1; },
+        selectMetric(i) {
+          if (i === this.activeMetric) return;
+          this.prevMetric = this.activeMetric;
+          this.activeMetric = i;
+          this.arrowAnimKey += 1;
+        }
+      }"
+      x-init="startRotate()"
+    >
+
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <p
+          class="uppercase mb-4"
+          style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: 2.5px; color: #2738C0;"
+        >
+          Business Metrics
+        </p>
+        <h2
+          class="mb-4 max-w-2xl mx-auto"
+          style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #0F172A;"
+        >
+          Numbers Every Business
+          <span
+            class="inline-block"
+            style="font-family: 'Segoe Script', 'Yellowtail', cursive; font-weight: 400; font-size: clamp(28px, 4vw, 40px); line-height: 41px; letter-spacing: 0; color: #2738C0; margin: 0 0.12em;"
+          >Owner</span>
+          Should Know
+        </h2>
+        <p
+          class="max-w-lg mx-auto"
+          style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 16px; line-height: 26px; color: #64748B;"
+        >
+          Track the metrics that matter - not the ones that just fill a spreadsheet.
+        </p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="flex justify-center mb-24 lg:mb-28">
+        <div class="inline-flex rounded-full overflow-hidden" style="border: 1.5px solid #1F2937;">
+          <button
+            @click="switchTab('startups')"
+            class="px-7 py-3 text-sm font-semibold transition-all cursor-pointer"
+            :class="activeTab === 'startups' ? 'text-white' : 'text-[#0F172A] hover:bg-[#E8E4DB]'"
+            :style="activeTab === 'startups' ? 'background-color: #0B1B32;' : 'background-color: transparent;'"
+            style="font-family: 'DM Sans', sans-serif; border-radius: 9999px 0 0 9999px;"
+          >
+            For Startups
+          </button>
+          <button
+            @click="switchTab('growing')"
+            class="px-7 py-3 text-sm font-semibold transition-all cursor-pointer"
+            :class="activeTab === 'growing' ? 'text-white' : 'text-[#0F172A] hover:bg-[#E8E4DB]'"
+            :style="activeTab === 'growing' ? 'background-color: #0B1B32;' : 'background-color: transparent;'"
+            style="font-family: 'DM Sans', sans-serif; border-radius: 0 9999px 9999px 0;"
+          >
+            For Growing Businesses
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop: Wavy Timeline with 5 Metrics -->
+      <div
+        class="hidden lg:block relative w-full h-[570px] select-none"
+        @mouseenter="stopRotate()"
+        @mouseleave="if (autoRotate) startRotate()"
+      >
+        <!-- SVG Dashed Connectors + running arrow on step change -->
+        <svg class="absolute inset-0 w-full h-[580px] pointer-events-none z-0" viewBox="0 0 1200 580" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <filter id="bmArrowGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Base dashed connectors (static) -->
+          <path class="bm-dash-path" d="M 172 170 C 218 200, 262 240, 308 270" stroke="#C7A771" stroke-width="1.8" stroke-dasharray="8 5" fill="none" />
+          <path class="bm-dash-path" d="M 412 270 C 458 240, 502 200, 548 170" stroke="#C7A771" stroke-width="1.8" stroke-dasharray="8 5" fill="none" />
+          <path class="bm-dash-path" d="M 652 170 C 698 200, 742 240, 788 270" stroke="#C7A771" stroke-width="1.8" stroke-dasharray="8 5" fill="none" />
+          <path class="bm-dash-path" d="M 892 270 C 938 240, 982 200, 1028 170" stroke="#C7A771" stroke-width="1.8" stroke-dasharray="8 5" fill="none" />
+
+          <!-- Forward-flowing animated arrows along the timeline -->
+          <g filter="url(#bmArrowGlow)">
+            <polygon points="-8,-6 8,0 -8,6" fill="#C7A771">
+              <animateMotion
+                dur="6s"
+                repeatCount="indefinite"
+                rotate="auto"
+                path="M 172 170 C 218 200, 262 240, 308 270 L 412 270 C 458 240, 502 200, 548 170 L 652 170 C 698 200, 742 240, 788 270 L 892 270 C 938 240, 982 200, 1028 170"
+              />
+            </polygon>
+            <circle r="2.5" fill="#FFFFFF" opacity="0.9">
+              <animateMotion
+                dur="6s"
+                repeatCount="indefinite"
+                rotate="auto"
+                path="M 172 170 C 218 200, 262 240, 308 270 L 412 270 C 458 240, 502 200, 548 170 L 652 170 C 698 200, 742 240, 788 270 L 892 270 C 938 240, 982 200, 1028 170"
+              />
+            </circle>
+          </g>
+
+          <!-- Second Staggered Flowing Arrow (3s offset) -->
+          <g filter="url(#bmArrowGlow)">
+            <polygon points="-8,-6 8,0 -8,6" fill="#C7A771" opacity="0.85">
+              <animateMotion
+                dur="6s"
+                begin="3s"
+                repeatCount="indefinite"
+                rotate="auto"
+                path="M 172 170 C 218 200, 262 240, 308 270 L 412 270 C 458 240, 502 200, 548 170 L 652 170 C 698 200, 742 240, 788 270 L 892 270 C 938 240, 982 200, 1028 170"
+              />
+            </polygon>
+            <circle r="2.5" fill="#FFFFFF" opacity="0.9">
+              <animateMotion
+                dur="6s"
+                begin="3s"
+                repeatCount="indefinite"
+                rotate="auto"
+                path="M 172 170 C 218 200, 262 240, 308 270 L 412 270 C 458 240, 502 200, 548 170 L 652 170 C 698 200, 742 240, 788 270 L 892 270 C 938 240, 982 200, 1028 170"
+              />
+            </circle>
+          </g>
+        </svg>
+
+        <!-- 5-column grid for metric circles -->
+        <div class="grid grid-cols-5 gap-0 relative z-10 h-[570px]">
+
+          <!-- Metric 1: HIGH position -->
+          <div class="relative h-full cursor-pointer group" @mouseenter="hoveredMetric = 0; selectMetric(0)" @mouseleave="hoveredMetric = null" @click="selectMetric(0)">
+            <div class="absolute top-[100px] left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
+              <div
+                class="w-[110px] h-[110px] rounded-full flex items-center justify-center transition-all duration-500 relative"
+                :class="activeMetric === 0 ? 'scale-110 shadow-2xl' : 'group-hover:scale-105'"
+                :style="'background-color:' + (activeMetric === 0 ? '#C7A771' : '#0B1B32') + '; border: 5px solid #FFFFFF; box-shadow: 0 8px 24px rgba(0,0,0,0.15);'"
+              >
+                <template x-if="currentMetrics[0].icon === 'clock'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 8 14" /></svg></template>
+                <template x-if="currentMetrics[0].icon === 'pie-chart'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></template>
+              </div>
+              <p class="mt-4 text-center" style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 15px; color: #0F172A;">
+                <span class="text-[#94A3B8] mr-1" x-text="currentMetrics[0].num"></span>
+                <span>-</span>
+                <span class="ml-1" x-text="currentMetrics[0].name"></span>
+              </p>
+            </div>
+
+            <!-- Tooltip Card (shows below) -->
+            <div
+              class="absolute top-[310px] left-1/2 -translate-x-1/2 w-[275px] bg-white rounded-2xl p-5 shadow-xl border border-[#E8E4DB] z-50 origin-top"
+              x-show="activeMetric === 0"
+              x-transition:enter="transition ease-out duration-350"
+              x-transition:enter-start="opacity-0 scale-95 -translate-y-3"
+              x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+              x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
+            >
+              <div class="flex items-start gap-2.5 mb-3">
+                <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #C7A771;">
+                  <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <div>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: #0F172A; line-height: 1.3;" x-text="currentMetrics[0].cardTitle"></p>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px; color: #C7A771;" x-text="'(' + currentMetrics[0].cardLabel + ')'"></p>
+                </div>
+              </div>
+              <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12.5px; line-height: 19px; color: #64748B;" class="mb-3" x-text="currentMetrics[0].cardDesc"></p>
+              <div class="rounded-xl px-3.5 py-2.5 mb-2" style="background-color: #FDF9F3; border: 1px solid #E8E4DB;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; color: #0F172A; line-height: 1.5;" x-text="currentMetrics[0].formula"></p>
+              </div>
+              <div class="rounded-xl px-3.5 py-2.5" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: #64748B; line-height: 1.5; font-style: italic;" x-text="currentMetrics[0].example"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metric 2: LOW position -->
+          <div class="relative h-full cursor-pointer group" @mouseenter="hoveredMetric = 1; selectMetric(1)" @mouseleave="hoveredMetric = null" @click="selectMetric(1)">
+            <div class="absolute top-[230px] left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
+              <div
+                class="w-[110px] h-[110px] rounded-full flex items-center justify-center transition-all duration-500 relative"
+                :class="activeMetric === 1 ? 'scale-110 shadow-2xl' : 'group-hover:scale-105'"
+                :style="'background-color:' + (activeMetric === 1 ? '#C7A771' : '#0B1B32') + '; border: 5px solid #FFFFFF; box-shadow: 0 8px 24px rgba(0,0,0,0.15);'"
+              >
+                <template x-if="currentMetrics[1].icon === 'fire'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z" /></svg></template>
+                <template x-if="currentMetrics[1].icon === 'banknote'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></template>
+              </div>
+              <p class="mt-4 text-center" style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 15px; color: #0F172A;">
+                <span class="text-[#94A3B8] mr-1" x-text="currentMetrics[1].num"></span>
+                <span>-</span>
+                <span class="ml-1" x-text="currentMetrics[1].name"></span>
+              </p>
+            </div>
+
+            <!-- Tooltip Card (shows above) -->
+            <div
+              class="absolute left-1/2 -translate-x-1/2 w-[275px] bg-white rounded-2xl p-5 shadow-xl border border-[#E8E4DB] z-50 origin-bottom"
+              style="bottom: calc(100% - 175px);"
+              x-show="activeMetric === 1"
+              x-transition:enter="transition ease-out duration-350"
+              x-transition:enter-start="opacity-0 scale-95 translate-y-3"
+              x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+              x-transition:leave-end="opacity-0 scale-95 translate-y-2"
+            >
+              <div class="flex items-start gap-2.5 mb-3">
+                <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #C7A771;"><svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                <div>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: #0F172A; line-height: 1.3;" x-text="currentMetrics[1].cardTitle"></p>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px; color: #C7A771;" x-text="'(' + currentMetrics[1].cardLabel + ')'"></p>
+                </div>
+              </div>
+              <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12.5px; line-height: 19px; color: #64748B;" class="mb-3" x-text="currentMetrics[1].cardDesc"></p>
+              <div class="rounded-xl px-3.5 py-2.5 mb-2" style="background-color: #FDF9F3; border: 1px solid #E8E4DB;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; color: #0F172A; line-height: 1.5;" x-text="currentMetrics[1].formula"></p>
+              </div>
+              <div class="rounded-xl px-3.5 py-2.5" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: #64748B; line-height: 1.5; font-style: italic;" x-text="currentMetrics[1].example"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metric 3: HIGH position -->
+          <div class="relative h-full cursor-pointer group" @mouseenter="hoveredMetric = 2; selectMetric(2)" @mouseleave="hoveredMetric = null" @click="selectMetric(2)">
+            <div class="absolute top-[100px] left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
+              <div
+                class="w-[110px] h-[110px] rounded-full flex items-center justify-center transition-all duration-500 relative"
+                :class="activeMetric === 2 ? 'scale-110 shadow-2xl' : 'group-hover:scale-105'"
+                :style="'background-color:' + (activeMetric === 2 ? '#C7A771' : '#0B1B32') + '; border: 5px solid #FFFFFF; box-shadow: 0 8px 24px rgba(0,0,0,0.15);'"
+              >
+                <template x-if="currentMetrics[2].icon === 'chart'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18" /><path d="M7 16l4-8 4 5 5-6" /></svg></template>
+                <template x-if="currentMetrics[2].icon === 'calendar'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></template>
+              </div>
+              <p class="mt-4 text-center" style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 15px; color: #0F172A;">
+                <span class="text-[#94A3B8] mr-1" x-text="currentMetrics[2].num"></span>
+                <span>-</span>
+                <span class="ml-1" x-text="currentMetrics[2].name"></span>
+              </p>
+            </div>
+
+            <!-- Tooltip Card -->
+            <div
+              class="absolute top-[310px] left-1/2 -translate-x-1/2 w-[275px] bg-white rounded-2xl p-5 shadow-xl border border-[#E8E4DB] z-50 origin-top"
+              x-show="activeMetric === 2"
+              x-transition:enter="transition ease-out duration-350"
+              x-transition:enter-start="opacity-0 scale-95 -translate-y-3"
+              x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+              x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
+            >
+              <div class="flex items-start gap-2.5 mb-3">
+                <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #C7A771;"><svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                <div>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: #0F172A; line-height: 1.3;" x-text="currentMetrics[2].cardTitle"></p>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px; color: #C7A771;" x-text="'(' + currentMetrics[2].cardLabel + ')'"></p>
+                </div>
+              </div>
+              <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12.5px; line-height: 19px; color: #64748B;" class="mb-3" x-text="currentMetrics[2].cardDesc"></p>
+              <div class="rounded-xl px-3.5 py-2.5 mb-2" style="background-color: #FDF9F3; border: 1px solid #E8E4DB;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; color: #0F172A; line-height: 1.5;" x-text="currentMetrics[2].formula"></p>
+              </div>
+              <div class="rounded-xl px-3.5 py-2.5" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: #64748B; line-height: 1.5; font-style: italic;" x-text="currentMetrics[2].example"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metric 4: LOW position -->
+          <div class="relative h-full cursor-pointer group" @mouseenter="hoveredMetric = 3; selectMetric(3)" @mouseleave="hoveredMetric = null" @click="selectMetric(3)">
+            <div class="absolute top-[230px] left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
+              <div
+                class="w-[110px] h-[110px] rounded-full flex items-center justify-center transition-all duration-500 relative"
+                :class="activeMetric === 3 ? 'scale-110 shadow-2xl' : 'group-hover:scale-105'"
+                :style="'background-color:' + (activeMetric === 3 ? '#C7A771' : '#0B1B32') + '; border: 5px solid #FFFFFF; box-shadow: 0 8px 24px rgba(0,0,0,0.15);'"
+              >
+                <template x-if="currentMetrics[3].icon === 'target'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></template>
+                <template x-if="currentMetrics[3].icon === 'layers'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></template>
+              </div>
+              <p class="mt-4 text-center" style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 15px; color: #0F172A;">
+                <span class="text-[#94A3B8] mr-1" x-text="currentMetrics[3].num"></span>
+                <span>-</span>
+                <span class="ml-1" x-text="currentMetrics[3].name"></span>
+              </p>
+            </div>
+
+            <!-- Tooltip Card (shows above) -->
+            <div
+              class="absolute left-1/2 -translate-x-1/2 w-[275px] bg-white rounded-2xl p-5 shadow-xl border border-[#E8E4DB] z-50 origin-bottom"
+              style="bottom: calc(100% - 175px);"
+              x-show="activeMetric === 3"
+              x-transition:enter="transition ease-out duration-350"
+              x-transition:enter-start="opacity-0 scale-95 translate-y-3"
+              x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+              x-transition:leave-end="opacity-0 scale-95 translate-y-2"
+            >
+              <div class="flex items-start gap-2.5 mb-3">
+                <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #C7A771;"><svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                <div>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: #0F172A; line-height: 1.3;" x-text="currentMetrics[3].cardTitle"></p>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px; color: #C7A771;" x-text="'(' + currentMetrics[3].cardLabel + ')'"></p>
+                </div>
+              </div>
+              <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12.5px; line-height: 19px; color: #64748B;" class="mb-3" x-text="currentMetrics[3].cardDesc"></p>
+              <div class="rounded-xl px-3.5 py-2.5 mb-2" style="background-color: #FDF9F3; border: 1px solid #E8E4DB;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; color: #0F172A; line-height: 1.5;" x-text="currentMetrics[3].formula"></p>
+              </div>
+              <div class="rounded-xl px-3.5 py-2.5" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: #64748B; line-height: 1.5; font-style: italic;" x-text="currentMetrics[3].example"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metric 5: HIGH position -->
+          <div class="relative h-full cursor-pointer group" @mouseenter="hoveredMetric = 4; selectMetric(4)" @mouseleave="hoveredMetric = null" @click="selectMetric(4)">
+            <div class="absolute top-[100px] left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
+              <div
+                class="w-[110px] h-[110px] rounded-full flex items-center justify-center transition-all duration-500 relative"
+                :class="activeMetric === 4 ? 'scale-110 shadow-2xl' : 'group-hover:scale-105'"
+                :style="'background-color:' + (activeMetric === 4 ? '#C7A771' : '#0B1B32') + '; border: 5px solid #FFFFFF; box-shadow: 0 8px 24px rgba(0,0,0,0.15);'"
+              >
+                <template x-if="currentMetrics[4].icon === 'diamond'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z" /></svg></template>
+                <template x-if="currentMetrics[4].icon === 'trending-up'"><svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></template>
+              </div>
+              <p class="mt-4 text-center" style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 15px; color: #0F172A;">
+                <span class="text-[#94A3B8] mr-1" x-text="currentMetrics[4].num"></span>
+                <span>-</span>
+                <span class="ml-1" x-text="currentMetrics[4].name"></span>
+              </p>
+            </div>
+
+            <!-- Tooltip Card -->
+            <div
+              class="absolute top-[310px] left-1/2 -translate-x-1/2 w-[275px] bg-white rounded-2xl p-5 shadow-xl border border-[#E8E4DB] z-50 origin-top"
+              x-show="activeMetric === 4"
+              x-transition:enter="transition ease-out duration-350"
+              x-transition:enter-start="opacity-0 scale-95 -translate-y-3"
+              x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+              x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
+            >
+              <div class="flex items-start gap-2.5 mb-3">
+                <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #C7A771;"><svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                <div>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; color: #0F172A; line-height: 1.3;" x-text="currentMetrics[4].cardTitle"></p>
+                  <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px; color: #C7A771;" x-text="'(' + currentMetrics[4].cardLabel + ')'"></p>
+                </div>
+              </div>
+              <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12.5px; line-height: 19px; color: #64748B;" class="mb-3" x-text="currentMetrics[4].cardDesc"></p>
+              <div class="rounded-xl px-3.5 py-2.5 mb-2" style="background-color: #FDF9F3; border: 1px solid #E8E4DB;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; color: #0F172A; line-height: 1.5;" x-text="currentMetrics[4].formula"></p>
+              </div>
+              <div class="rounded-xl px-3.5 py-2.5" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: #64748B; line-height: 1.5; font-style: italic;" x-text="currentMetrics[4].example"></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile: Stacked Metric Cards -->
+      <div class="lg:hidden space-y-4 mt-6">
+        <template x-for="(metric, idx) in currentMetrics" :key="idx">
+          <div
+            class="bg-white rounded-2xl p-5 border transition-all duration-300 cursor-pointer"
+            :class="activeMetric === idx ? 'border-[#0B1B32] shadow-xl ring-2 ring-[#0B1B32]/10' : 'border-[#E8E4DB] shadow-sm'"
+            @click="activeMetric = idx"
+          >
+            <div class="flex items-center gap-4 mb-3">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 transition-all"
+                :style="'background-color:' + metric.color + '; border: 3px solid #FFFFFF; box-shadow: 0 4px 12px rgba(0,0,0,0.1);'"
+              >
+                <template x-if="metric.icon === 'clock'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 8 14"/></svg></template>
+                <template x-if="metric.icon === 'fire'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z"/></svg></template>
+                <template x-if="metric.icon === 'chart'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 5 5-6"/></svg></template>
+                <template x-if="metric.icon === 'target'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></template>
+                <template x-if="metric.icon === 'diamond'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l10 10-10 10L2 12z"/></svg></template>
+                <template x-if="metric.icon === 'pie-chart'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></template>
+                <template x-if="metric.icon === 'banknote'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></template>
+                <template x-if="metric.icon === 'calendar'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></template>
+                <template x-if="metric.icon === 'layers'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></template>
+                <template x-if="metric.icon === 'trending-up'"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></template>
+              </div>
+              <div>
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 16px; color: #0F172A;">
+                  <span class="text-[#94A3B8]" x-text="metric.num"></span>
+                  <span class="mx-1">-</span>
+                  <span x-text="metric.name"></span>
+                </p>
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px; color: #C7A771;" x-text="metric.cardLabel"></p>
+              </div>
+            </div>
+            <div x-show="activeMetric === idx" x-transition class="pt-2 border-t border-[#F1F5F9]">
+              <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; line-height: 20px; color: #64748B;" class="mb-3" x-text="metric.cardDesc"></p>
+              <div class="rounded-xl px-3.5 py-2.5 mb-2" style="background-color: #FDF9F3; border: 1px solid #E8E4DB;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; color: #0F172A;" x-text="metric.formula"></p>
+              </div>
+              <div class="rounded-xl px-3.5 py-2.5" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+                <p style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px; color: #64748B; font-style: italic;" x-text="metric.example"></p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    @keyframes bmDashFlow {
+      to { stroke-dashoffset: -52; }
+    }
+    @keyframes bmTrailDraw {
+      from { stroke-dashoffset: 280; opacity: 0.2; }
+      to { stroke-dashoffset: 0; opacity: 1; }
+    }
+    .bm-dash-path {
+      animation: bmDashFlow 2.8s linear infinite;
+    }
+    .bm-active-trail {
+      stroke-dasharray: 280;
+      stroke-dashoffset: 280;
+      animation: bmTrailDraw 1.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bm-dash-path,
+      .bm-active-trail {
+        animation: none;
+      }
+    }
+  </style>
