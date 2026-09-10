@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="About Us | Ambit Accounting & Bookkeeping" description="Ambit — your trusted accounting and bookkeeping partner for US, UK, and UAE businesses. 12+ years of experience, 280+ clients, and a mission to simplify finance.">
+<Layout title="About Us | Ambit Accounting & Bookkeeping" description="Ambit — your trusted accounting and bookkeeping partner for US and UAE businesses. 12+ years of experience, 280+ clients, and a mission to simplify finance.">
   <Navbar />
 
   <!-- ===== HERO ===== -->
@@ -112,19 +112,17 @@ Ambit brings alignment across these moving parts, ensuring that operations remai
         '✔ 20+ Years Experience',
         '✔ 500+ Clients',
         '✔ 250+ Professionals',
-        '✔ UK · US · UAE Presence',
+        '✔ US · UAE Presence',
         '✔ ISO 27001 Certified',
         '✔ GDPR Compliant',
-        '✔ ICO Registered',
-        '✔ UK & US GAAP Standards',
+        '✔ US GAAP Standards',
         '✔ 20+ Years Experience',
         '✔ 500+ Clients',
         '✔ 250+ Professionals',
-        '✔ UK · US · UAE Presence',
+        '✔ US · UAE Presence',
         '✔ ISO 27001 Certified',
         '✔ GDPR Compliant',
-        '✔ ICO Registered',
-        '✔ UK & US GAAP Standards',
+        '✔ US GAAP Standards',
       ].map(item => (
         <span class="text-sm font-semibold text-white whitespace-nowrap">{item}</span>
       ))}
@@ -165,7 +163,7 @@ Ambit brings alignment across these moving parts, ensuring that operations remai
             The firm operates across finance, operational processes, and delivery support, bringing these functions into a structured and consistent environment. Work is designed to integrate into existing systems and workflows, ensuring <strong style="color: #0F172A;">continuity across teams, periods, and jurisdictions.</strong>
           </p>
           <p class="text-lg leading-relaxed mb-4" style="color: #64748B;">
-            This approach has been applied across businesses and professional firms operating in the <strong style="color: #0F172A;">United Kingdom, United States, and the United Arab Emirates.</strong>
+            This approach has been applied across businesses and professional firms operating in the <strong style="color: #0F172A;">United States and the United Arab Emirates.</strong>
           </p>
           <p class="text-lg leading-relaxed" style="color: #64748B;">
             The objective is not simply to complete work, but to ensure that it holds without rework, reinterpretation, or dependency on constant oversight.
@@ -175,7 +173,6 @@ Ambit brings alignment across these moving parts, ensuring that operations remai
           <div class="flex items-center gap-4 mt-10">
             <span class="text-xs font-semibold uppercase tracking-widest" style="color: #64748B;">Serving</span>
             {[
-              { flag: 'gb', label: 'UK' },
               { flag: 'us', label: 'USA' },
               { flag: 'ae', label: 'UAE' },
             ].map(({ flag, label }) => (
@@ -329,7 +326,7 @@ Ambit brings alignment across these moving parts, ensuring that operations remai
             <div class="text-sm mb-1" style="color: #3B82F6;">Founder & Chief Executive Officer</div>
             <div class="text-xs mb-6" style="color: #475569;">Chartered Accountant · Profit First Professional (Advanced)</div>
             <p class="text-base leading-relaxed mb-4" style="color: #94A3B8;">
-              Nishant brings over 20 years of experience across accounting, financial operations, and advisory, working with businesses and professional firms across the United Kingdom, United States, and the United Arab Emirates.
+              Nishant brings over 20 years of experience across accounting, financial operations, and advisory, working with businesses and professional firms across the United States and the United Arab Emirates.
             </p>
             <p class="text-base leading-relaxed mb-4" style="color: #94A3B8;">
               His work has focused on structuring financial and operational systems so that they remain consistent under scale — aligning workflows, improving reporting reliability, and ensuring that delivery integrates cleanly into how organisations operate.
@@ -344,7 +341,7 @@ Ambit brings alignment across these moving parts, ensuring that operations remai
               {[
                 { val: '20+', label: 'Years Experience' },
                 { val: '500+', label: 'Clients Supported' },
-                { val: '3', label: 'Markets Covered' },
+                { val: '2', label: 'Markets Covered' },
               ].map(({ val, label }) => (
                 <div>
                   <div class="text-2xl font-black mb-1" style="color: #3B82F6;">{val}</div>
@@ -494,12 +491,12 @@ Ambit brings alignment across these moving parts, ensuring that operations remai
         <p class="text-xs font-semibold tracking-[0.15em] uppercase mb-3" style="color: #1a4480;">Client Stories</p>
         <h2 class="text-3xl sm:text-4xl font-bold mb-2" style="color: #0F172A; letter-spacing: -0.02em;">What Our Clients Say</h2>
         <div class="w-10 h-0.5 mx-auto mt-4 mb-4" style="background-color: #1a4480;"></div>
-        <p class="text-sm text-gray-500">Trusted by 280+ businesses across UK, US & UAE</p>
+        <p class="text-sm text-gray-500">Trusted by 280+ businesses across US & UAE</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
         {[
           { quote: "Thanks to Ambit KPO Services, we've seen an increase in revenue. Their team ensures a seamless experience with frequent communication, effective task management, and prompt responses. Their dedication and accuracy stand out.", name: 'Rishabh, Washington', role: 'Managing Partner, CPA Firm — New York', initials: 'RW' },
-          { quote: "Ambit KPO Services adapted to our processes with ease, delivering monthly financials quickly and communicating effectively through various channels. Their commitment to building a long-term relationship, even under less-than-ideal terms, truly impressed me.", name: 'Greg Johnson, Georgia', role: 'CEO, E-commerce Startup — London', initials: 'GJ' },
+          { quote: "Ambit KPO Services adapted to our processes with ease, delivering monthly financials quickly and communicating effectively through various channels. Their commitment to building a long-term relationship, even under less-than-ideal terms, truly impressed me.", name: 'Greg Johnson, Georgia', role: 'CEO, E-commerce Startup — Georgia', initials: 'GJ' },
           { quote: "There are not enough words to tell you how helpful Nishant and his firm have been in helping me with bookkeeping and accounting needs. I have worked with outsourcing firms and have never been as satisfied as I am with Nishant Sharma.", name: 'CPA Firm in Georgia', role: 'CPA Firm in Georgia', initials: 'CF' },
           { quote: "Finding a reliable accountant was crucial, and Ambit KPO Services has exceeded expectations. Their professionalism, attention to detail, and responsiveness have been outstanding. They provided expert advice and proactive solutions, making a significant difference for my business.", name: 'Rafael Emiliani', role: 'Managing Partner, CPA Firm — New York', initials: 'RE' },
           { quote: "I've worked with Nishant through the past tax season. His work is reliable, accurate, and he was able to help our firm with taxes and bookkeeping for a variety of businesses and clients.", name: 'CPA Firm in Florida', role: 'CPA Firm in Florida', initials: 'CF' },

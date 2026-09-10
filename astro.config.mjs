@@ -121,6 +121,16 @@ export default defineConfig({
     '/services/financial-reporting': 'https://www.ambitsol.co/services/finance-accounting-tax/us/financial-management',
     '/remote-accounting-tax-solutions': 'https://www.ambitsol.co/services/finance-accounting-tax/us/tax-compliance',
 
+    // Hide former UK service pages
+    '/services/finance-accounting-tax/uk': 'https://www.ambitsol.co/services/finance-accounting-tax/us/overview',
+    '/services/finance-accounting-tax/uk/overview': 'https://www.ambitsol.co/services/finance-accounting-tax/us/overview',
+    '/services/finance-accounting-tax/uk/accounting-bookkeeping': 'https://www.ambitsol.co/services/finance-accounting-tax/us/accounting-bookkeeping',
+    '/services/finance-accounting-tax/uk/tax-compliance': 'https://www.ambitsol.co/services/finance-accounting-tax/us/tax-compliance',
+    '/services/finance-accounting-tax/uk/vat-compliance': 'https://www.ambitsol.co/services/finance-accounting-tax/us/tax-compliance',
+    '/services/finance-accounting-tax/uk/payroll': 'https://www.ambitsol.co/services/finance-accounting-tax/us/payroll',
+    '/services/finance-accounting-tax/uk/financial-management': 'https://www.ambitsol.co/services/finance-accounting-tax/us/financial-management',
+    '/services/finance-accounting-tax/uk/business-formation': 'https://www.ambitsol.co/services/finance-accounting-tax/us/business-formation',
+
     // Legacy .php and slug pages
     '/accounts-receivable-service.php': 'https://www.ambitsol.co/services/bpo',
     '/bakery-stores-bookkeeping-service.php': 'https://www.ambitsol.co/services/finance-accounting-tax/us/accounting-bookkeeping',

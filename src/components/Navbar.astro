@@ -1,7 +1,7 @@
 ---
 const currentPath = Astro.url.pathname;
 const isHome = currentPath === '/' || currentPath === '';
-const initialCountry = currentPath.includes('/uk') ? 'UK' : (currentPath.includes('/uae') ? 'UAE' : 'US');
+const initialCountry = currentPath.includes('/uae') ? 'UAE' : 'US';
 const isActive = (href: string) => {
   if (href === '/') return currentPath === '/';
   return currentPath.startsWith(href);
@@ -16,7 +16,6 @@ const isActive = (href: string) => {
     activePillar: 'finance',
     mobileServicesOpen: false,
     mobileFinanceOpen: false,
-    mobileUKOpen: false,
     mobileUSOpen: false,
     mobileUAEOpen: false,
     countryOpen: false,
@@ -44,9 +43,6 @@ const isActive = (href: string) => {
               <span class="inline-flex items-center">
                 <template x-if="country === 'US'">
                   <svg class="w-4 h-3 rounded-[2px] shadow-xs" viewBox="0 0 640 480"><g fill-rule="evenodd"><path fill="#bd3d44" d="M0 0h640v480H0"/><path stroke="#fff" stroke-width="37" d="M0 55.4h640M0 129.2h640M0 203h640M0 277h640M0 350.8h640M0 424.6h640"/><path fill="#192f5d" d="M0 0h256v258.5H0z"/><circle cx="30" cy="30" r="8" fill="#fff"/><circle cx="80" cy="30" r="8" fill="#fff"/><circle cx="130" cy="30" r="8" fill="#fff"/><circle cx="180" cy="30" r="8" fill="#fff"/><circle cx="230" cy="30" r="8" fill="#fff"/><circle cx="55" cy="65" r="8" fill="#fff"/><circle cx="105" cy="65" r="8" fill="#fff"/><circle cx="155" cy="65" r="8" fill="#fff"/><circle cx="205" cy="65" r="8" fill="#fff"/><circle cx="30" cy="100" r="8" fill="#fff"/><circle cx="80" cy="100" r="8" fill="#fff"/><circle cx="130" cy="100" r="8" fill="#fff"/><circle cx="180" cy="100" r="8" fill="#fff"/><circle cx="230" cy="100" r="8" fill="#fff"/><circle cx="55" cy="135" r="8" fill="#fff"/><circle cx="105" cy="135" r="8" fill="#fff"/><circle cx="155" cy="135" r="8" fill="#fff"/><circle cx="205" cy="135" r="8" fill="#fff"/><circle cx="30" cy="170" r="8" fill="#fff"/><circle cx="80" cy="170" r="8" fill="#fff"/><circle cx="130" cy="170" r="8" fill="#fff"/><circle cx="180" cy="170" r="8" fill="#fff"/><circle cx="230" cy="170" r="8" fill="#fff"/><circle cx="55" cy="205" r="8" fill="#fff"/><circle cx="105" cy="205" r="8" fill="#fff"/><circle cx="155" cy="205" r="8" fill="#fff"/><circle cx="205" cy="205" r="8" fill="#fff"/></g></svg>
-                </template>
-                <template x-if="country === 'UK'">
-                  <svg class="w-4 h-3 rounded-[2px] shadow-xs" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0h75z"/><path fill="#C8102E" d="m425 285 215 155v40L380 315l45-30zM215 195 0 40V0l260 165-45 30zM0 440l190-140 45 30L35 480H0v-40zm640-400L450 180l-45-30L605 0h35v40z"/><path fill="#FFF" d="M260 0h120v480H260zM0 180h640v120H0z"/><path fill="#C8102E" d="M284 0h72v480h-72zM0 204h640v72H0z"/></svg>
                 </template>
                 <template x-if="country === 'UAE'">
                   <svg class="w-4 h-3 rounded-[2px] shadow-xs" viewBox="0 0 640 480"><path fill="#00732f" d="M0 0h640v160H0z"/><path fill="#fff" d="M0 160h640v160H0z"/><path fill="#000" d="M0 320h640v160H0z"/><path fill="#f00" d="M0 0h210v480H0z"/></svg>
@@ -76,14 +72,6 @@ const isActive = (href: string) => {
                 <span>US</span>
               </a>
               <a
-                href="/services/finance-accounting-tax/uk/overview"
-                @click="country = 'UK'; countryOpen = false"
-                class="flex items-center gap-2 px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-              >
-                <svg class="w-4 h-3 rounded-[2px] shadow-xs flex-shrink-0" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0h75z"/><path fill="#C8102E" d="m425 285 215 155v40L380 315l45-30zM215 195 0 40V0l260 165-45 30zM0 440l190-140 45 30L35 480H0v-40zm640-400L450 180l-45-30L605 0h35v40z"/><path fill="#FFF" d="M260 0h120v480H260zM0 180h640v120H0z"/><path fill="#C8102E" d="M284 0h72v480h-72zM0 204h640v72H0z"/></svg>
-                <span>UK</span>
-              </a>
-              <a
                 href="/services/finance-accounting-tax/uae/overview"
                 @click="country = 'UAE'; countryOpen = false"
                 class="flex items-center gap-2 px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors"
@@ -95,12 +83,12 @@ const isActive = (href: string) => {
           </div>
 
           <a
-            :href="country === 'UK' ? 'tel:+442045771180' : (country === 'UAE' ? 'tel:+97140000000' : 'tel:+17068949160')"
+            :href="country === 'UAE' ? 'tel:+971567105833' : 'tel:+17068949160'"
             class="hidden sm:inline text-xs font-medium transition-colors hover:underline"
             style="color: #1a1a1a;"
           >
-            <span x-text="country === 'UK' ? 'Speak to our UK team: +44 20 4577 1180' : (country === 'UAE' ? 'Speak to our UAE team: +971 4 000 0000' : 'Speak to our US team: +1 (706) 894-9160')">
-              {initialCountry === 'UK' ? 'Speak to our UK team: +44 20 4577 1180' : (initialCountry === 'UAE' ? 'Speak to our UAE team: +971 4 000 0000' : 'Speak to our US team: +1 (706) 894-9160')}
+            <span x-text="country === 'UAE' ? 'Speak to our UAE team: +971 567105833' : 'Speak to our US team: +1 (706) 894-9160'">
+              {initialCountry === 'UAE' ? 'Speak to our UAE team: +971 567105833' : 'Speak to our US team: +1 (706) 894-9160'}
             </span>
           </a>
         </div>
@@ -317,34 +305,7 @@ const isActive = (href: string) => {
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
                   <div class="text-xs font-bold uppercase tracking-widest" style="color: #475569;">Finance, Accounting &amp; Tax</div>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
-
-                  <!-- UK -->
-                  <div>
-                    <a href="/services/finance-accounting-tax/uk/overview" class="flex items-center gap-2 mb-4 group" style="text-decoration: none;">
-                      <img src="https://flagcdn.com/w20/gb.png" alt="UK" class="w-5 h-3.5 object-cover rounded-sm" />
-                      <span class="text-xs font-bold uppercase tracking-widest" style="color: #94A3B8;">United Kingdom</span>
-                    </a>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
-                      {[
-                        ['Overview', '/services/finance-accounting-tax/uk/overview'],
-                        ['Accounting & Bookkeeping', '/services/finance-accounting-tax/uk/accounting-bookkeeping'],
-                        ['Tax Compliance', '/services/finance-accounting-tax/uk/tax-compliance'],
-                        ['VAT Compliance', '/services/finance-accounting-tax/uk/vat-compliance'],
-                        ['Payroll', '/services/finance-accounting-tax/uk/payroll'],
-                        ['Financial Management', '/services/finance-accounting-tax/uk/financial-management'],
-                        ['Business Formation', '/services/finance-accounting-tax/uk/business-formation'],
-                      ].map(([label, href]) => (
-                        <li>
-                          <a
-                            href={href}
-                            class="text-sm block py-0.5 transition-colors hover:text-white"
-                            style="color: #64748B; text-decoration: none;"
-                          >{label}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem;">
 
                   <!-- US -->
                   <div>
@@ -492,35 +453,6 @@ const isActive = (href: string) => {
               </button>
 
               <div x-show="mobileFinanceOpen" x-transition style="display:none; background-color: #0B1120;">
-
-                <!-- L3: United Kingdom accordion -->
-                <div class="border-t" style="border-color: #1E293B;">
-                  <button
-                    type="button"
-                    @click="mobileUKOpen = !mobileUKOpen"
-                    class="w-full flex items-center justify-between px-7 py-2.5 text-sm"
-                    style="color: #94A3B8;"
-                  >
-                    <span class="flex items-center gap-2">
-                      <img src="https://flagcdn.com/w20/gb.png" alt="UK" class="w-4 h-3 object-cover rounded-sm" />
-                      United Kingdom
-                    </span>
-                    <svg class="w-3 h-3 transition-transform duration-200" :class="mobileUKOpen ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                  </button>
-                  <div x-show="mobileUKOpen" style="display:none;">
-                    {[
-                      ['Overview', '/services/finance-accounting-tax/uk/overview'],
-                      ['Accounting & Bookkeeping', '/services/finance-accounting-tax/uk/accounting-bookkeeping'],
-                      ['Tax Compliance', '/services/finance-accounting-tax/uk/tax-compliance'],
-                      ['VAT Compliance', '/services/finance-accounting-tax/uk/vat-compliance'],
-                      ['Payroll', '/services/finance-accounting-tax/uk/payroll'],
-                      ['Financial Management', '/services/finance-accounting-tax/uk/financial-management'],
-                      ['Business Formation', '/services/finance-accounting-tax/uk/business-formation'],
-                    ].map(([label, href]) => (
-                      <a href={href} class="block px-10 py-2 text-sm border-t" style="color: #64748B; border-color: #1E293B; text-decoration: none;">{label}</a>
-                    ))}
-                  </div>
-                </div>
 
                 <!-- L3: United States accordion -->
                 <div class="border-t" style="border-color: #1E293B;">
