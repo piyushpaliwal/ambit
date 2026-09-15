@@ -98,7 +98,8 @@ export default defineConfig({
     '/when-is-it-appropriate-to-outsource-your-accounting-and-bookkeeping': 'https://www.ambitsol.co/blog/ecommerce-accounting-101',
 
     // Service pages
-    '/services': 'https://www.ambitsol.co/services/finance-accounting-tax/us/overview',
+    // Note: /services, /services/accounts-payable, /services/accounts-receivable
+    // are real pages (RedirectLayout) so crawlers get a valid <html><head>.
     '/services/accounting-bookkeeping': 'https://www.ambitsol.co/services/finance-accounting-tax/us/accounting-bookkeeping',
     '/services/bookkeeping-and-accounting': 'https://www.ambitsol.co/services/finance-accounting-tax/us/accounting-bookkeeping',
     '/services/catch-up-bookkeeping': 'https://www.ambitsol.co/services/finance-accounting-tax/us/accounting-bookkeeping',
@@ -112,14 +113,20 @@ export default defineConfig({
     '/service/accounts-payable-management': 'https://www.ambitsol.co/services/finance-accounting-tax/us/accounting-bookkeeping',
     '/service/finance-controller-services': 'https://www.ambitsol.co/services/finance-accounting-tax/us/accounting-bookkeeping',
     '/service/tax-return-preparation-services': 'https://www.ambitsol.co/services/finance-accounting-tax/us/accounting-bookkeeping',
-    '/services/accounts-payable': 'https://www.ambitsol.co/services/bpo',
-    '/services/accounts-receivable': 'https://www.ambitsol.co/services/bpo',
     '/services/dedicated-staffing': 'https://www.ambitsol.co/services/finance-accounting-tax/us/payroll',
     '/services/payroll': 'https://www.ambitsol.co/services/finance-accounting-tax/us/payroll',
     '/services/tax-return': 'https://www.ambitsol.co/services/finance-accounting-tax/us/tax-compliance',
     '/services/tax-service': 'https://www.ambitsol.co/services/finance-accounting-tax/us/tax-compliance',
     '/services/financial-reporting': 'https://www.ambitsol.co/services/finance-accounting-tax/us/financial-management',
     '/remote-accounting-tax-solutions': 'https://www.ambitsol.co/services/finance-accounting-tax/us/tax-compliance',
+
+    // Legacy short UAE paths (fix 4xx / broken internal links)
+    '/uae/accounting': 'https://www.ambitsol.co/services/finance-accounting-tax/uae/accounting-bookkeeping',
+    '/uae/payroll': 'https://www.ambitsol.co/services/finance-accounting-tax/uae/payroll',
+    '/uae/tax': 'https://www.ambitsol.co/services/finance-accounting-tax/uae/tax-compliance',
+    '/uae/accounts': 'https://www.ambitsol.co/services/finance-accounting-tax/uae/vat-compliance',
+    '/uae/reporting': 'https://www.ambitsol.co/services/finance-accounting-tax/uae/financial-management',
+    '/uae/offshore': 'https://www.ambitsol.co/services/finance-accounting-tax/uae/business-formation',
 
     // Hide former UK service pages
     '/services/finance-accounting-tax/uk': 'https://www.ambitsol.co/services/finance-accounting-tax/us/overview',

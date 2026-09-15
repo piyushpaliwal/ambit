@@ -16,7 +16,7 @@ import Footer from '../components/Footer.astro';
   >
     <div class="absolute inset-0">
       <img
-        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=80"
+        src="/images/remote/photo-1600880292203-757bb62b4baf.jpg"
         alt="Ambit team"
         class="w-full h-full object-cover"
         style="opacity: 0.15;"
@@ -136,7 +136,7 @@ Ambit brings alignment across these moving parts, ensuring that operations remai
 
         <div class="relative">
           <img
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+            src="/images/remote/photo-1556761175-5973dc0f32e7.jpg"
             alt="Ambit team collaboration"
             class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl"
           />
@@ -177,7 +177,7 @@ Ambit brings alignment across these moving parts, ensuring that operations remai
               { flag: 'ae', label: 'UAE' },
             ].map(({ flag, label }) => (
               <div class="flex items-center gap-2 px-3 py-2 rounded-lg" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
-                <img src={`https://flagcdn.com/w20/${flag}.png`} alt={label} class="w-5 h-3.5 object-cover rounded-sm" />
+                <img src={`/images/flags/w20-${flag}.png`} alt={label} class="w-5 h-3.5 object-cover rounded-sm" />
                 <span class="text-xs font-semibold" style="color: #374151;">{label}</span>
               </div>
             ))}

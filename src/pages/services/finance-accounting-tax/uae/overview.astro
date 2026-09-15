@@ -14,7 +14,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
     <!-- Background: Dubai skyline -->
     <div class="absolute inset-0">
       <img
-        src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80"
+        src="/images/remote/photo-1512453979798-5ea266f8880c.jpg"
         alt="Dubai skyline"
         class="w-full h-full object-cover"
         style="opacity: 0.18;"
@@ -41,7 +41,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
           >
             {['United Arab Emirates', 'Finance, Accounting & Tax'].map(tag => (
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;">
-                <img src="https://flagcdn.com/w20/ae.png" alt="UAE" class="w-3.5 h-2.5 object-cover rounded-sm" />
+                <img src="/images/flags/w20-ae.png" alt="UAE" class="w-3.5 h-2.5 object-cover rounded-sm" />
                 {tag}
               </span>
             ))}
@@ -114,7 +114,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
         >
           <div class="relative w-full max-w-md mx-auto">
             <img
-              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80"
+              src="/images/remote/photo-1611974789855-9c2a0a7236a3.jpg"
               alt="Dubai financial trading"
               class="w-full aspect-[4/3] object-cover rounded-2xl shadow-2xl"
               style="opacity: 0.75;"
@@ -173,7 +173,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
         <!-- Image -->
         <div class="relative order-2 lg:order-1">
           <img
-            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80"
+            src="/images/remote/photo-1512453979798-5ea266f8880c.jpg"
             alt="Dubai business district"
             class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl"
           />
@@ -350,65 +350,47 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
         <p class="text-lg max-w-2xl mx-auto" style="color: #64748B;">End-to-end financial support for businesses and individuals across the UAE. Structured, compliant, and consistent across VAT, corporate tax, and IFRS requirements.</p>
       </div>
 
-      <!-- Quick nav grid -->
-      <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
-        {[
-          { num: '01', label: 'Accounting & Bookkeeping', href: '/uae/accounting' },
-          { num: '02', label: 'Payroll Management', href: '/uae/payroll' },
-          { num: '03', label: 'Tax & VAT Filing', href: '/uae/tax' },
-          { num: '04', label: 'Accounts Payable & Receivable', href: '/uae/accounts' },
-          { num: '05', label: 'Financial Reporting & Analysis', href: '/uae/reporting' },
-          { num: '06', label: 'Offshore Accounting Teams', href: '/uae/offshore' },
-        ].map(({ num, label, href }) => (
-          <a href={href} class="group flex items-center gap-3 p-4 rounded-xl border border-transparent hover:border-amber-200 hover:shadow-sm transition-all bg-white">
-            <span class="text-xs font-black" style="color: #1a4480;">{num}</span>
-            <span class="text-sm font-semibold group-hover:text-amber-700 transition-colors" style="color: #374151;">{label}</span>
-            <svg class="w-3.5 h-3.5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </a>
-        ))}
-      </div> -->
-
       <!-- Service cards with images -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
           {
-            href: '/uae/accounting',
-            img: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80',
+            href: '/services/finance-accounting-tax/uae/accounting-bookkeeping',
+            img: '/images/remote/photo-1554224155-6726b3ff858f.jpg',
             title: 'Accounting & Bookkeeping',
             sub: 'IFRS Aligned',
             desc: 'IFRS-aligned financial records, reconciliations, and reporting across entities.',
           },
           {
-            href: '/uae/payroll',
-            img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
+            href: '/services/finance-accounting-tax/uae/payroll',
+            img: '/images/remote/photo-1521791136064-7986c2920216.jpg',
             title: 'Payroll',
             sub: 'UAE Labour Law',
             desc: 'WPS-compliant payroll aligned with UAE Labour Law and workforce requirements.',
           },
           {
-            href: '/uae/tax',
-            img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80',
+            href: '/services/finance-accounting-tax/uae/tax-compliance',
+            img: '/images/remote/photo-1450101499163-c8848c66ca85.jpg',
             title: 'Tax Compliance (Corporate Tax)',
             sub: 'FTA Compliant',
             desc: 'Corporate tax registration, computation, and filing aligned with UAE regulations.',
           },
           {
-            href: '/uae/accounts',
-            img: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&q=80',
+            href: '/services/finance-accounting-tax/uae/vat-compliance',
+            img: '/images/remote/photo-1567427017947-545c5f8d16ad.jpg',
             title: 'VAT Compliance',
             sub: 'FTA Registered',
             desc: 'Transaction-level VAT handling, filing, and reconciliation aligned with FTA requirements.',
           },
           {
-            href: '/uae/reporting',
-            img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+            href: '/services/finance-accounting-tax/uae/financial-management',
+            img: '/images/remote/photo-1551288049-bebda4e38f71.jpg',
             title: 'Financial Management',
             sub: 'IFRS Standards',
             desc: 'Reporting, analysis, forecasting, and performance visibility.',
           },
           {
-            href: '/uae/offshore',
-            img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
+            href: '/services/finance-accounting-tax/uae/business-formation',
+            img: '/images/remote/photo-1522071820081-009f0129c71c.jpg',
             title: 'Business Formation',
             sub: 'Freezone & Mainland',
             desc: 'Company setup across Mainland and Freezone structures with regulatory and tax alignment.',
@@ -671,7 +653,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
             </div>
             <p class="text-base leading-relaxed mb-6" style="color: #64748B;">"{quote}"</p>
             <div class="flex items-center gap-3">
-              <img src={`https://flagcdn.com/w20/${flag}.png`} alt={city} class="w-6 h-4 object-cover rounded-sm" />
+              <img src={`/images/flags/w20-${flag}.png`} alt={city} class="w-6 h-4 object-cover rounded-sm" />
               <div>
                 <div class="text-sm font-bold" style="color: #0F172A;">{name}</div>
                 <div class="text-xs" style="color: #64748B;">{role}</div>
@@ -687,7 +669,7 @@ import UAELayout from '../../../../layouts/UAELayout.astro';
   <section class="py-24 px-6 lg:px-12" style="background: linear-gradient(135deg, #0F172A 0%, #1a4480 50%, #0F172A 100%);">
     <div class="max-w-4xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background-color: rgba(26,68,128,0.12); border: 1px solid rgba(26,68,128,0.25);">
-        <img src="https://flagcdn.com/w20/ae.png" alt="UAE" class="w-5 h-3.5 object-cover rounded-sm" />
+        <img src="/images/flags/w20-ae.png" alt="UAE" class="w-5 h-3.5 object-cover rounded-sm" />
         <span class="text-xs font-semibold" style="color: #ffffff;">Dubai & UAE Accounting</span>
       </div>
 
