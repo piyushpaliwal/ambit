@@ -1,4 +1,22 @@
-User-agent: *
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Perplexitybot
 Allow: /
 
 Sitemap: https://www.ambitsol.co/sitemap-index.xml
