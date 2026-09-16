@@ -1,13 +1,55 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import tailwindcss from '@tailwindcss/vite';
+
+/** Move all URLs into sitemap-index.xml and remove sitemap-0.xml. */
+function consolidateSitemap() {
+  return {
+    name: 'consolidate-sitemap',
+    hooks: {
+      'astro:build:done': async ({ dir }) => {
+        const dist = fileURLToPath(dir);
+        const chunkPath = path.join(dist, 'sitemap-0.xml');
+        const indexPath = path.join(dist, 'sitemap-index.xml');
+        if (!fs.existsSync(chunkPath)) return;
+        fs.copyFileSync(chunkPath, indexPath);
+        fs.unlinkSync(chunkPath);
+        // Remove any extra numbered chunks if they appear later
+        for (const file of fs.readdirSync(dist)) {
+          if (/^sitemap-\d+\.xml$/.test(file)) {
+            fs.unlinkSync(path.join(dist, file));
+          }
+        }
+      },
+    },
+  };
+}
+
+const SITEMAP_EXCLUDE = [
+  '/services/accounts-payable',
+  '/services/accounts-receivable',
+];
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.ambitsol.co',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => {
+        const pathname = new URL(page).pathname.replace(/\/$/, '') || '/';
+        // Soft-redirect pages (noindex) — keep out of sitemap
+        if (pathname === '/services') return false;
+        if (SITEMAP_EXCLUDE.includes(pathname)) return false;
+        return true;
+      },
+    }),
+    consolidateSitemap(),
+  ],
   redirects: {
     // Core pages
     '/about-us': 'https://www.ambitsol.co/about',
