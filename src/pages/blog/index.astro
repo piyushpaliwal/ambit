@@ -5,6 +5,16 @@ import Footer from '../../components/Footer.astro';
 
 const posts = [
   {
+    slug: '7-signs-bookkeeping-process-holding-business-back',
+    title: '7 Signs Your Current Bookkeeping Process Is Holding Your Business Back',
+    excerpt: 'A diagnostic for growing businesses — warning signs of poor bookkeeping, their impact on cash flow and decisions, and when outsourced support is the right step.',
+    category: 'Bookkeeping',
+    categoryColor: '#1a4480',
+    date: 'April 20, 2026',
+    readTime: '6 min read',
+    image: '/images/bookkeeping-signs-preview.png',
+  },
+  {
     slug: 'restaurant-tax-planning',
     title: 'How Proper Tax Planning Can Keep More Money in Your Restaurant Business',
     excerpt: 'Discover the key tax strategies, credits, and deductions every restaurant owner should know — from Section 179 equipment write-offs to the FICA Tip Credit.',
@@ -101,14 +111,14 @@ const posts = [
         {posts.map(post => (
           <a href={`/blog/${post.slug}`} class="group block rounded-2xl overflow-hidden bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style="border: 1px solid #E2E8F0;">
             <!-- Image -->
-            <div class="relative overflow-hidden" style="height: 220px;">
+            <div class="relative overflow-hidden aspect-[16/9] w-full" style="background-color: #F8FAFC;">
               <img
                 src={post.image}
                 alt={post.title}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 50%, rgba(15,23,42,0.4) 100%);"></div>
-              <div class="absolute top-4 left-4">
+              <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 60%, rgba(15,23,42,0.2) 100%);"></div>
+              <div class="absolute top-3 left-3 sm:top-4 sm:left-4">
                 <span class="text-xs font-bold px-3 py-1.5 rounded-full text-white" style={`background-color: ${post.categoryColor};`}>{post.category}</span>
               </div>
             </div>
