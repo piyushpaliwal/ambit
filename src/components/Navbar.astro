@@ -173,6 +173,11 @@ const isActive = (href: string) => {
             :class={`(!isHome || scrolled) ? '${isActive('/how-it-works') ? 'text-[#0F172A] font-semibold' : 'text-gray-600 hover:text-gray-900'}' : 'text-white/90 hover:text-white'`}
           >How It Works</a>
           <a
+            href="/case-studies"
+            class="px-3 py-2 text-sm font-medium transition-colors duration-300"
+            :class={`(!isHome || scrolled) ? '${isActive('/case-studies') || isActive('/case-study') ? 'text-[#0F172A] font-semibold' : 'text-gray-600 hover:text-gray-900'}' : 'text-white/90 hover:text-white'`}
+          >Case Studies</a>
+          <a
             href="/blog"
             class="px-3 py-2 text-sm font-medium transition-colors duration-300"
             :class={`(!isHome || scrolled) ? '${isActive('/blog') ? 'text-[#0F172A] font-semibold' : 'text-gray-600 hover:text-gray-900'}' : 'text-white/90 hover:text-white'`}
@@ -536,6 +541,7 @@ const isActive = (href: string) => {
 
         <a href="/industries" class="flex items-center justify-between px-3 py-3 text-sm tracking-wide border-b" style="color: #94A3B8; border-color: #1E293B;">Industries</a>
         <a href="/how-it-works" class="flex items-center justify-between px-3 py-3 text-sm tracking-wide border-b" style="color: #94A3B8; border-color: #1E293B;">How It Works</a>
+        <a href="/case-studies" class="flex items-center justify-between px-3 py-3 text-sm tracking-wide border-b" style="color: #94A3B8; border-color: #1E293B;">Case Studies</a>
         <a href="/blog" class="flex items-center justify-between px-3 py-3 text-sm tracking-wide border-b" style="color: #94A3B8; border-color: #1E293B;">Blogs</a>
         <a href="/contact" class="flex items-center justify-between px-3 py-3 text-sm tracking-wide border-b" style="color: #94A3B8; border-color: #1E293B;">Contact</a>
 

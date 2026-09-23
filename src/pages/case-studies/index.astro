@@ -1,0 +1,187 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+interface CaseStudy {
+  slug: string;
+  title: string;
+  excerpt: string;
+  client: string;
+  category: string;
+  categoryColor: string;
+  date: string;
+  readTime: string;
+  image: string;
+  result?: string;
+}
+
+// Case studies collection
+const caseStudies: CaseStudy[] = [
+  {
+    slug: 'from-visibility-to-confidence',
+    title: 'From Visibility to Confidence: How a U.S. CPA Firm Scaled Remote Accounting from 4 to 16 Hours a Day',
+    excerpt: 'How a U.S. CPA firm started with a narrow 4-hour bookkeeping engagement and scaled to full accounting + operational support across 30–50 entities, requesting 3 extra resources.',
+    client: 'U.S. CPA Firm',
+    category: 'CPA Remote Support',
+    categoryColor: '#1a4480',
+    date: 'Case Study',
+    readTime: '6 min read',
+    image: '/images/remote/photo-1450101499163-c8848c66ca85.jpg',
+    result: '4 → 16 Hours a Day | 30–50 Books',
+  },
+];
+---
+
+<Layout title="Case Studies | Ambit Accounting & Bookkeeping" description="Real-world case studies and client success stories detailing how Ambit helps businesses streamline accounting, optimize taxes, and drive financial growth.">
+  <Navbar />
+
+  <!-- ===== HERO ===== -->
+  <section
+    class="relative overflow-hidden flex items-center"
+    style="background-color: #0F172A; min-height: 420px;"
+    x-data="{ visible: false }"
+    x-init="setTimeout(() => visible = true, 100)"
+  >
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06] blur-3xl" style="background: #1a4480;"></div>
+    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full opacity-[0.04] blur-3xl" style="background: #1a4480;"></div>
+
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 lg:px-12 py-24 text-center">
+      <div
+        x-show="visible"
+        x-transition:enter="transition duration-700"
+        x-transition:enter-start="opacity-0 -translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-8"
+        style="background-color: #1E293B; color: #94A3B8; border: 1px solid #334155;"
+      >
+        <svg class="w-3.5 h-3.5" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+        Proven Results
+      </div>
+      <h1
+        x-show="visible"
+        x-transition:enter="transition duration-700 delay-100"
+        x-transition:enter-start="opacity-0 translate-y-6"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="text-4xl lg:text-6xl font-black leading-none mb-6 text-white"
+        style="letter-spacing: -0.03em;"
+      >
+        Ambit Case Studies
+      </h1>
+      <p
+        x-show="visible"
+        x-transition:enter="transition duration-700 delay-200"
+        x-transition:enter-start="opacity-0 translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="text-lg max-w-2xl mx-auto"
+        style="color: #94A3B8;"
+      >
+        Real-world examples and client outcomes showing how our dedicated accounting and financial specialists deliver measurable impact across the US and UAE.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CASE STUDIES GRID / SECTION ===== -->
+  <section class="py-24" style="background-color: #F8FAFC;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+
+      <div class="flex items-center justify-between mb-12">
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] uppercase mb-2" style="color: #1a4480;">Client Stories</p>
+          <h2 class="text-2xl font-bold" style="color: #0F172A; letter-spacing: -0.02em;">{caseStudies.length} Case Stud{caseStudies.length !== 1 ? 'ies' : 'y'} Published</h2>
+        </div>
+      </div>
+
+      {caseStudies.length === 0 ? (
+        <div class="rounded-2xl p-12 lg:p-16 text-center max-w-2xl mx-auto bg-white border border-slate-200/80 shadow-xs">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center" style="background-color: #F1F5F9; color: #1a4480;">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3" style="letter-spacing: -0.01em;">Case Studies Coming Soon</h3>
+          <p class="text-sm leading-relaxed mb-8 max-w-lg mx-auto" style="color: #64748B;">
+            We are currently documenting our recent client success stories, operational improvements, and tax optimization outcomes. Check back soon for detailed breakdowns and metrics.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-2 px-6 py-3 text-xs font-bold text-white rounded-lg transition-all hover:opacity-90"
+              style="background: linear-gradient(135deg, #1a4480, #1e5ab5);"
+            >
+              Book Free Consultation
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a
+              href="/services/finance-accounting-tax/us/overview"
+              class="inline-flex items-center gap-2 px-6 py-3 text-xs font-semibold rounded-lg border transition-colors hover:bg-slate-50"
+              style="color: #1a4480; border-color: #CBD5E1;"
+            >
+              Explore Services
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {caseStudies.map((study) => (
+            <a href={`/case-studies/${study.slug}`} class="group block rounded-2xl overflow-hidden bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style="border: 1px solid #E2E8F0;">
+              <!-- Image -->
+              <div class="relative overflow-hidden aspect-[16/9] w-full" style="background-color: #F8FAFC;">
+                <img
+                  src={study.image}
+                  alt={study.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 60%, rgba(15,23,42,0.2) 100%);"></div>
+                <div class="absolute top-3 left-3 sm:top-4 sm:left-4">
+                  <span class="text-xs font-bold px-3 py-1.5 rounded-full text-white" style={`background-color: ${study.categoryColor};`}>{study.category}</span>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-xs" style="color: #94A3B8;">{study.date}</span>
+                  <span class="w-1 h-1 rounded-full" style="background-color: #CBD5E1;"></span>
+                  <span class="text-xs" style="color: #94A3B8;">{study.readTime}</span>
+                </div>
+                <h3 class="text-base font-bold leading-snug mb-3 group-hover:text-[#1a4480] transition-colors" style="color: #0F172A;">{study.title}</h3>
+                <p class="text-sm leading-relaxed mb-4" style="color: #64748B;">{study.excerpt}</p>
+                {study.result && (
+                  <div class="mb-5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style="background-color: #EFF6FF; color: #1a4480; border: 1px solid #DBEAFE;">
+                    <span>⚡</span>
+                    <span>{study.result}</span>
+                  </div>
+                )}
+                <div class="flex items-center gap-2 text-xs font-semibold" style="color: #1a4480;">
+                  Read Case Study
+                  <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="py-20" style="background-color: #0F172A;">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #64748B;">Work With Us</p>
+      <h2 class="text-3xl lg:text-4xl font-black text-white mb-5" style="letter-spacing: -0.02em;">Have Questions About Your Finances?</h2>
+      <p class="text-base mb-10" style="color: #94A3B8;">Our team of accounting and tax specialists is ready to help your business stay compliant and grow confidently.</p>
+      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-white rounded-lg transition-all hover:opacity-90" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+        Book Free Consultation
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

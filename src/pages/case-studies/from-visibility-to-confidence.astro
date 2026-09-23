@@ -1,0 +1,794 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="From Visibility to Confidence | Ambit Case Study"
+  description="How a U.S. CPA firm took a remote accounting engagement from 4 hours a day to 16, managing 30-50 entities with full transparency and requesting 3 extra resources."
+>
+  <Navbar />
+
+  <!-- ===== 00 HERO SECTION (Screen-Fit & Aligned with Website Subpage Theme) ===== -->
+  <section class="relative overflow-hidden pt-8 sm:pt-10 lg:pt-12 pb-8 sm:pb-10 lg:pb-12" style="background-color: #0F172A;">
+    <!-- Clean background photo & gradient matching how-it-works.astro, about.astro, industries.astro -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/remote/photo-1450101499163-c8848c66ca85.jpg"
+        alt="Remote Accounting Case Study"
+        class="w-full h-full object-cover"
+        style="opacity: 0.1;"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #0F172A 0%, #0F172A 50%, #1a4480 100%); opacity: 0.93;"></div>
+    </div>
+    <div class="absolute top-24 right-20 w-80 h-80 rounded-full blur-3xl pointer-events-none" style="background: #1a4480; opacity: 0.14;"></div>
+    <div class="absolute bottom-16 left-12 w-64 h-64 rounded-full blur-3xl pointer-events-none" style="background: #3B82F6; opacity: 0.07;"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 w-full">
+      <!-- Breadcrumb -->
+      <div class="flex items-center gap-2 mb-3 text-xs sm:text-sm" style="color: #64748B;">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href="/case-studies" class="hover:text-white transition-colors">Case Studies</a>
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span style="color: #94A3B8;">CPA Firm Case Study</span>
+      </div>
+
+      <!-- Category Pill + Meta -->
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider text-white" style="background-color: #1a4480;">
+          Confidential Case Study
+        </span>
+        <span class="text-xs sm:text-sm" style="color: #94A3B8;">10+ Months Engagement</span>
+        <span class="w-1.5 h-1.5 rounded-full" style="background-color: #334155;"></span>
+        <span class="text-xs sm:text-sm" style="color: #94A3B8;">6 min read</span>
+      </div>
+
+      <!-- H1 Title: Clean, Bold White (Increased Size & Prominence) -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white mb-3 tracking-tight">
+        From Visibility to Confidence
+      </h1>
+
+      <!-- Kicker/Subtitle (Website theme blue accent #93C5FD) -->
+      <p class="text-base sm:text-lg lg:text-xl font-semibold mb-3 max-w-3xl leading-snug" style="color: #93C5FD;">
+        How a U.S. CPA Firm Took a Remote Accounting Engagement from 4 Hours a Day to 16
+      </p>
+
+      <!-- Description -->
+      <p class="text-sm sm:text-base lg:text-lg leading-relaxed mb-6 lg:mb-8" style="color: #94A3B8; max-width: 720px;">
+        Prepared by Ambit &nbsp;|&nbsp; Client identity withheld for confidentiality. A practical look at how structured remote capacity expanded from routine bookkeeping into a full-scale operational accounting team.
+      </p>
+
+      <!-- Floating 4-Stat Bar (Proportioned to fit on screen cleanly without clipping) -->
+      <div
+        class="rounded-2xl p-3 sm:p-4 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 shadow-xl"
+        style="background-color: #1E293B; border: 1px solid #334155;"
+      >
+        <!-- Stat 1 (Ambit Signature Navy #1a4480) -->
+        <div
+          class="rounded-xl p-3.5 sm:p-5 text-white flex flex-col justify-center"
+          style="background-color: #1a4480;"
+        >
+          <div class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-1 tracking-tight text-white whitespace-nowrap">10+</div>
+          <div class="text-xs sm:text-sm uppercase font-bold tracking-wider text-white/90">Months on the Job</div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div
+          class="rounded-xl p-3.5 sm:p-5 text-white flex flex-col justify-center"
+          style="background-color: #0F172A; border: 1px solid #334155;"
+        >
+          <div class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-1 tracking-tight text-white whitespace-nowrap">30&#8209;50</div>
+          <div class="text-xs sm:text-sm uppercase font-semibold tracking-wider" style="color: #94A3B8;">Books / Entities / Accounts</div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div
+          class="rounded-xl p-3.5 sm:p-5 text-white flex flex-col justify-center"
+          style="background-color: #0F172A; border: 1px solid #334155;"
+        >
+          <div class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-1 tracking-tight text-white whitespace-nowrap">4&rarr;16</div>
+          <div class="text-xs sm:text-sm uppercase font-semibold tracking-wider" style="color: #94A3B8;">Hours a Day</div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div
+          class="rounded-xl p-3.5 sm:p-5 text-white flex flex-col justify-center"
+          style="background-color: #0F172A; border: 1px solid #334155;"
+        >
+          <div class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-1 tracking-tight text-white whitespace-nowrap">3</div>
+          <div class="text-xs sm:text-sm uppercase font-semibold tracking-wider" style="color: #94A3B8;">Extra Resources Requested</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 01 CLIENT OVERVIEW ===== -->
+  <section class="py-20 lg:py-28 bg-white border-b border-slate-100">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-[360px_1fr] gap-10 lg:gap-16 items-start">
+        
+        <!-- Left: Badge + Heading -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">01</div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em]" style="color: #1a4480;">Client Overview</p>
+          </div>
+          <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight"
+            style="color: #0F172A; letter-spacing: -0.02em;"
+          >
+            A focused scope with full transparency
+          </h2>
+        </div>
+
+        <!-- Right: Text Content (Matching website typography and colors) -->
+        <div class="space-y-6">
+          <p class="text-lg lg:text-xl font-medium leading-relaxed" style="color: #374151;">
+            A U.S.-based CPA firm engaged Ambit for remote support, starting with a narrow, well-defined scope: bookkeeping and financial statement preparation at roughly <strong class="font-bold" style="color: #1a4480;">four hours a day</strong>.
+          </p>
+          <p class="text-base leading-relaxed font-normal" style="color: #475569;">
+            The engagement began with an interview, a fit check, and a scope everyone agreed on — remote work with zero guesswork, full screen-share and remote-access visibility, and day-to-day coordination through Microsoft Teams, Planner, calls, and chats, backed by weekly/monthly check-ins and end-of-day reviews during busy periods.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 THE STARTING POINT ===== -->
+  <section class="py-20 lg:py-28" style="background-color: #F8FAFC;">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      
+      <!-- Section Header -->
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">02</div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em]" style="color: #1a4480;">The Starting Point</p>
+        </div>
+        <h2
+          class="text-2xl sm:text-3xl lg:text-4xl font-black"
+          style="color: #0F172A; letter-spacing: -0.02em;"
+        >
+          Engagement Snapshot
+        </h2>
+      </div>
+
+      <!-- 4 Cards Grid with Graphics & Highlights (Ambit Website Theme) -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <!-- Card 1: Scope -->
+        <div class="bg-white rounded-2xl p-7 sm:p-8 border border-slate-200 shadow-xs hover:border-[#1a4480] hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 flex-shrink-0 group-hover:scale-105 transition-transform" style="background-color: #EFF6FF;">
+              <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+              </svg>
+            </div>
+            <div class="text-xs sm:text-sm font-bold uppercase tracking-wider mb-2.5" style="color: #1a4480;">
+              Scope
+            </div>
+            <p class="text-base sm:text-lg font-semibold leading-snug" style="color: #0F172A;">
+              Remote bookkeeping and financial statements only
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Hours (Highlighted Metric) -->
+        <div class="bg-white rounded-2xl p-7 sm:p-8 border border-slate-200 shadow-xs hover:border-[#1a4480] hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 flex-shrink-0 group-hover:scale-105 transition-transform" style="background-color: #EFF6FF;">
+              <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="text-xs sm:text-sm font-bold uppercase tracking-wider mb-2" style="color: #1a4480;">
+              Hours
+            </div>
+            <div class="text-2xl sm:text-3xl font-black mb-1.5" style="color: #1a4480; letter-spacing: -0.02em;">
+              ~4 hrs/day
+            </div>
+            <p class="text-sm sm:text-base font-medium" style="color: #475569;">
+              Initial daily support commitment
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Visibility (Signature Highlighted Card) -->
+        <div class="rounded-2xl p-7 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between text-white relative overflow-hidden" style="background: linear-gradient(145deg, #1a4480, #133566); border: 1px solid #1e5ab5;">
+          <div class="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-white/5 pointer-events-none blur-xl"></div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/20 text-white backdrop-blur-xs">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/20 text-white border border-white/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                Key Pillar
+              </span>
+            </div>
+            <div class="text-xs sm:text-sm font-bold uppercase tracking-wider mb-2.5 text-blue-200">
+              Visibility
+            </div>
+            <p class="text-base sm:text-lg font-semibold leading-snug text-white">
+              Client had on-demand access — screen share, remote access, no exceptions
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4: Cadence -->
+        <div class="bg-white rounded-2xl p-7 sm:p-8 border border-slate-200 shadow-xs hover:border-[#1a4480] hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 flex-shrink-0 group-hover:scale-105 transition-transform" style="background-color: #EFF6FF;">
+              <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="text-xs sm:text-sm font-bold uppercase tracking-wider mb-2.5" style="color: #1a4480;">
+              Cadence
+            </div>
+            <p class="text-base sm:text-lg font-semibold leading-snug" style="color: #0F172A;">
+              Weekly/monthly check-ins, end-of-day reviews when volume picked up
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Callout Box (Pattern from website: border-left 4px solid #1a4480) -->
+      <div
+        class="rounded-2xl p-6 sm:p-8 bg-white border border-slate-200"
+        style="border-left: 4px solid #1a4480;"
+      >
+        <p class="text-lg sm:text-xl italic font-semibold leading-relaxed" style="color: #0F172A;">
+          "Visibility was the opening move — not the end game. The real payoff showed up later, built on consistent delivery and a scope that kept getting bigger."
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 03 KEY RESULTS ===== -->
+  <section class="py-20 lg:py-28 bg-white border-b border-slate-100">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <!-- Left: Badge + Heading + 2x2 Grid -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">03</div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em]" style="color: #1a4480;">Key Results</p>
+          </div>
+          <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-black mb-8 leading-tight"
+            style="color: #0F172A; letter-spacing: -0.02em;"
+          >
+            The headline numbers
+          </h2>
+
+          <!-- 2x2 Stat Cards -->
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <!-- Box 1 Solid Ambit Blue #1a4480 -->
+            <div
+              class="rounded-2xl px-3.5 py-5 sm:p-6 lg:p-7 text-white flex flex-col justify-center items-center text-center shadow-md"
+              style="background-color: #1a4480;"
+            >
+              <div class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-1 tracking-tight text-white whitespace-nowrap">10+</div>
+              <div class="text-xs sm:text-sm uppercase font-bold tracking-wider text-white/90">Months on the Job</div>
+            </div>
+
+            <!-- Box 2 Dark Navy -->
+            <div
+              class="rounded-2xl px-3.5 py-5 sm:p-6 lg:p-7 text-white flex flex-col justify-center items-center text-center"
+              style="background-color: #0F172A;"
+            >
+              <div class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-1 tracking-tight text-white whitespace-nowrap">30&#8209;50</div>
+              <div class="text-xs sm:text-sm uppercase font-semibold tracking-wider" style="color: #94A3B8;">Books / Entities / Accounts</div>
+            </div>
+
+            <!-- Box 3 Dark Navy -->
+            <div
+              class="rounded-2xl px-3.5 py-5 sm:p-6 lg:p-7 text-white flex flex-col justify-center items-center text-center"
+              style="background-color: #0F172A;"
+            >
+              <div class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-1 tracking-tight text-white whitespace-nowrap">4&rarr;16</div>
+              <div class="text-xs sm:text-sm uppercase font-semibold tracking-wider" style="color: #94A3B8;">Hours a Day</div>
+            </div>
+
+            <!-- Box 4 Dark Navy -->
+            <div
+              class="rounded-2xl px-3.5 py-5 sm:p-6 lg:p-7 text-white flex flex-col justify-center items-center text-center"
+              style="background-color: #0F172A;"
+            >
+              <div class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-1 tracking-tight text-white whitespace-nowrap">3</div>
+              <div class="text-xs sm:text-sm uppercase font-semibold tracking-wider" style="color: #94A3B8;">Extra Resources Requested</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bullet Outcome Rows with Icons -->
+        <div class="space-y-4 lg:pt-14">
+          
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs flex items-center gap-4 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+              ⚡
+            </div>
+            <p class="text-base sm:text-lg font-semibold" style="color: #0F172A;">
+              Coverage quadrupled — from 4 hours a day to 16
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs flex items-center gap-4 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+              📈
+            </div>
+            <p class="text-base sm:text-lg font-semibold" style="color: #0F172A;">
+              Scope expanded from bookkeeping-only to full accounting + operational support
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs flex items-center gap-4 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+              👥
+            </div>
+            <p class="text-base sm:text-lg font-semibold" style="color: #0F172A;">
+              Client requested three additional resources to keep scaling the relationship
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs flex items-center gap-4 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl" style="background-color: #F8FAFC; border: 1px solid #E2E8F0;">
+              🔍
+            </div>
+            <p class="text-base sm:text-lg font-semibold" style="color: #0F172A;">
+              100% remote visibility maintained throughout, from day one
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 HOW WE HELPED ===== -->
+  <section class="py-20 lg:py-28 text-white" style="background-color: #0F172A;">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <!-- Left Column -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">04</div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/90">How We Helped</p>
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight mb-6 text-white"
+            style="letter-spacing: -0.02em;"
+          >
+            From task list to true teammate.
+          </h2>
+          <p class="text-base sm:text-lg leading-relaxed font-normal mb-8" style="color: #94A3B8;">
+            What started as a task list became a true teammate relationship. The engagement grew in five stages — and as trust built, the resource took on progressively more: transaction processing, account reconciliations, POS maintenance, AP/AR, financials preparation, and a seat in real business-health conversations — not just task execution.
+          </p>
+        </div>
+
+        <!-- Right Column: 5 Stage Cards -->
+        <div class="space-y-3">
+          
+          <!-- Stage 1 (Active Solid Ambit Blue #1a4480) -->
+          <div
+            class="p-5 rounded-2xl flex items-center gap-5 text-white transition-all shadow-md"
+            style="background-color: #1a4480;"
+          >
+            <div class="text-base font-black text-white px-3 py-1 rounded bg-white/20">01</div>
+            <div>
+              <div class="text-lg sm:text-xl font-bold text-white">Select</div>
+              <div class="text-sm sm:text-base text-white/90 font-normal">Interview &amp; fit assessment</div>
+            </div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div
+            class="p-5 rounded-2xl flex items-center gap-5 transition-all"
+            style="background-color: #1E293B; border: 1px solid #334155;"
+          >
+            <div class="text-base font-black text-slate-400 px-3 py-1 rounded bg-slate-800">02</div>
+            <div>
+              <div class="text-lg sm:text-xl font-bold text-white">Start</div>
+              <div class="text-sm sm:text-base font-normal" style="color: #94A3B8;">Bookkeeping + financial statement preparation</div>
+            </div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div
+            class="p-5 rounded-2xl flex items-center gap-5 transition-all"
+            style="background-color: #1E293B; border: 1px solid #334155;"
+          >
+            <div class="text-base font-black text-slate-400 px-3 py-1 rounded bg-slate-800">03</div>
+            <div>
+              <div class="text-lg sm:text-xl font-bold text-white">Expand</div>
+              <div class="text-sm sm:text-base font-normal" style="color: #94A3B8;">Added AP/AR, POS maintenance, and operational support</div>
+            </div>
+          </div>
+
+          <!-- Stage 4 -->
+          <div
+            class="p-5 rounded-2xl flex items-center gap-5 transition-all"
+            style="background-color: #1E293B; border: 1px solid #334155;"
+          >
+            <div class="text-base font-black text-slate-400 px-3 py-1 rounded bg-slate-800">04</div>
+            <div>
+              <div class="text-lg sm:text-xl font-bold text-white">Integrate</div>
+              <div class="text-sm sm:text-base font-normal" style="color: #94A3B8;">Scaled to 30–50 books/entities/accounts</div>
+            </div>
+          </div>
+
+          <!-- Stage 5 -->
+          <div
+            class="p-5 rounded-2xl flex items-center gap-5 transition-all"
+            style="background-color: #1E293B; border: 1px solid #334155;"
+          >
+            <div class="text-base font-black text-slate-400 px-3 py-1 rounded bg-slate-800">05</div>
+            <div>
+              <div class="text-lg sm:text-xl font-bold text-white">Scale</div>
+              <div class="text-sm sm:text-base font-normal" style="color: #94A3B8;">Reached 16 hours/day across 3 requested resources</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 05 SERVICES DELIVERED ===== -->
+  <section class="py-20 lg:py-28" style="background-color: #F8FAFC;">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">05</div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em]" style="color: #1a4480;">Services Delivered</p>
+        </div>
+        <h2
+          class="text-2xl sm:text-3xl lg:text-4xl font-black mb-4"
+          style="color: #0F172A; letter-spacing: -0.02em;"
+        >
+          Comprehensive Financial &amp; Operational Functions Handled
+        </h2>
+        <p class="text-base max-w-2xl leading-relaxed" style="color: #475569;">
+          From everyday ledger entries to strategic business health consultations, here are the full-cycle functions delivered consistently across all 30–50 accounts.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { title: 'Bookkeeping', desc: 'Daily ledger entries, categorization & clean record-keeping' },
+          { title: 'Reconciliations', desc: 'Bank, credit card, and balance sheet account reconciliations' },
+          { title: 'POS Maintenance', desc: 'Point-of-sale system data matching and daily batch audits' },
+          { title: 'Accounts Payable', desc: 'Vendor invoice verification, approval routing & schedules' },
+          { title: 'Accounts Receivable', desc: 'Invoicing, billing tracking, collections & customer receipts' },
+          { title: 'Virtual Assistance', desc: 'Operational communication, document collection & admin support' },
+          { title: 'Financials Preparation', desc: 'Monthly closing, P&L, balance sheets & cash flow statements' },
+          { title: 'Business-Health Discussions', desc: 'Active seat in financial reviews & planning conversations' },
+        ].map((item) => (
+          <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-xs hover:border-[#1a4480] hover:shadow-md transition-all group flex flex-col justify-start">
+            <div class="w-10 h-10 rounded-xl mb-4 flex items-center justify-center text-white flex-shrink-0" style="background-color: #1a4480;">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold mb-2" style="color: #0F172A;">{item.title}</h3>
+            <p class="text-sm sm:text-base leading-relaxed" style="color: #475569;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 06 THE TURNING POINT ===== -->
+  <section class="py-20 lg:py-28 bg-white border-b border-slate-100">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">06</div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em]" style="color: #1a4480;">The Turning Point</p>
+        </div>
+        <h2
+          class="text-2xl sm:text-3xl lg:text-4xl font-black mb-4"
+          style="color: #0F172A; letter-spacing: -0.02em;"
+        >
+          Evolution of the Engagement
+        </h2>
+        <p class="text-base sm:text-lg max-w-2xl leading-relaxed" style="color: #475569;">
+          How consistent execution turned an initial 4-hour engagement into an essential 16-hour operational department.
+        </p>
+      </div>
+
+      <!-- 3 Distinct Evolution Cards (Pattern matching Image 2) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <!-- Card 1: Starting Point -->
+        <div class="bg-white rounded-2xl p-7 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="text-xs sm:text-sm font-bold uppercase tracking-wider mb-3" style="color: #1a4480;">
+              Starting Point
+            </div>
+            <div class="text-3xl sm:text-4xl font-black mb-6" style="color: #0F172A;">
+              ~4 hrs/day
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm sm:text-base font-medium" style="color: #475569;">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: #1a4480;"></span>
+                Bookkeeping
+              </li>
+              <li class="flex items-center gap-3 text-sm sm:text-base font-medium" style="color: #475569;">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: #1a4480;"></span>
+                Financials preparation
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Engagement Evolved -->
+        <div class="bg-white rounded-2xl p-7 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="text-xs sm:text-sm font-bold uppercase tracking-wider mb-3" style="color: #1a4480;">
+              Engagement Evolved
+            </div>
+            <div class="text-2xl sm:text-3xl lg:text-4xl font-black mb-6" style="color: #0F172A;">
+              Broader Workflow
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm sm:text-base font-medium" style="color: #475569;">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: #1a4480;"></span>
+                Reconciliations, POS, AP/AR
+              </li>
+              <li class="flex items-center gap-3 text-sm sm:text-base font-medium" style="color: #475569;">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: #1a4480;"></span>
+                Virtual assistance
+              </li>
+              <li class="flex items-center gap-3 text-sm sm:text-base font-medium" style="color: #475569;">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: #1a4480;"></span>
+                Business-health discussions
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3: Current Signal (Highlighted Navy Card matching Image 2) -->
+        <div class="rounded-2xl p-7 sm:p-8 flex flex-col justify-between shadow-lg text-white" style="background-color: #0F172A; border: 1px solid #1E293B;">
+          <div>
+            <div class="text-xs sm:text-sm font-bold uppercase tracking-wider mb-3" style="color: #93C5FD;">
+              Current Signal
+            </div>
+            <div class="text-3xl sm:text-4xl font-black mb-6 text-white">
+              ~16 hrs/day
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm sm:text-base font-medium text-white/95">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: #3B82F6;"></span>
+                30–50 books / entities / accounts
+              </li>
+              <li class="flex items-center gap-3 text-sm sm:text-base font-medium text-white/95">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: #3B82F6;"></span>
+                3 additional resources requested
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- What This Proves / Doesn't Prove Callout Cards (Website Theme) -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- What this proves -->
+        <div class="rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs" style="background-color: #F8FAFC; border-left: 4px solid #1a4480;">
+          <div class="flex items-center gap-2 mb-2 font-bold text-base sm:text-lg" style="color: #0F172A;">
+            <svg class="w-5 h-5 flex-shrink-0" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>What This Proves</span>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed" style="color: #475569;">
+            The engagement grew far beyond its original scope, built on consistent execution, proactive communication, and expanding mutual trust.
+          </p>
+        </div>
+
+        <!-- What it doesn't prove -->
+        <div class="rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs" style="background-color: #F8FAFC; border-left: 4px solid #64748B;">
+          <div class="flex items-center gap-2 mb-2 font-bold text-base sm:text-lg" style="color: #0F172A;">
+            <svg class="w-5 h-5 flex-shrink-0" style="color: #64748B;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>What It Doesn't Prove</span>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed" style="color: #475569;">
+            That visibility alone drove the growth. Transparency was there from day one — but it scaled alongside solid delivery and real responsibility, not because of one factor in isolation.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 07 WHY IT WORKED ===== -->
+  <section class="py-20 lg:py-28" style="background-color: #F8FAFC;">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">07</div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em]" style="color: #1a4480;">Why It Worked</p>
+        </div>
+        <h2
+          class="text-2xl sm:text-3xl lg:text-4xl font-black mb-3"
+          style="color: #0F172A; letter-spacing: -0.02em;"
+        >
+          Four factors. Real outcomes.
+        </h2>
+        <p class="text-base sm:text-lg max-w-2xl leading-relaxed" style="color: #475569;">
+          Four distinct elements that made this partnership expand naturally and reliably.
+        </p>
+      </div>
+
+      <!-- 4 Outcome Cards (Pattern matching Image 4) -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Transparency -->
+        <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-start">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0" style="background-color: #EFF6FF;">
+            <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold mb-3" style="color: #0F172A;">Transparency</h3>
+          <p class="text-base sm:text-lg leading-relaxed" style="color: #475569;">
+            The client could look in on the remote setup anytime, no exceptions.
+          </p>
+        </div>
+
+        <!-- Card 2: Operational Integration -->
+        <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-start">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0" style="background-color: #EFF6FF;">
+            <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold mb-3" style="color: #0F172A;">Operational Integration</h3>
+          <p class="text-base sm:text-lg leading-relaxed" style="color: #475569;">
+            The role outgrew bookkeeping fast, absorbing a much wider set of accounting and support duties.
+          </p>
+        </div>
+
+        <!-- Card 3: Measurable Expansion -->
+        <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-start">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0" style="background-color: #EFF6FF;">
+            <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold mb-3" style="color: #0F172A;">Measurable Expansion</h3>
+          <p class="text-base sm:text-lg leading-relaxed" style="color: #475569;">
+            Daily coverage grew from ~4 hours to ~16, with the client now asking for three more resources.
+          </p>
+        </div>
+
+        <!-- Card 4: Progressive Responsibility -->
+        <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-start">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0" style="background-color: #EFF6FF;">
+            <svg class="w-6 h-6" style="color: #1a4480;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold mb-3" style="color: #0F172A;">Progressive Responsibility</h3>
+          <p class="text-base sm:text-lg leading-relaxed" style="color: #475569;">
+            Growth happened in every direction, backed by facts, not testimonials or guesswork.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 08 AMBIT PERSPECTIVE (Dark Theme Matching Image 1) ===== -->
+  <section class="py-20 lg:py-28 text-white relative overflow-hidden" style="background-color: #0F172A; border-top: 1px solid #1E293B;">
+    <div class="absolute top-12 right-10 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background: #1a4480; opacity: 0.12;"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12">
+      
+      <div class="grid lg:grid-cols-[320px_1fr] gap-10 lg:gap-14 items-start">
+        
+        <!-- Left: Badge + Heading -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-black text-white" style="background-color: #1a4480;">08</div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em]" style="color: #93C5FD;">Ambit Perspective</p>
+          </div>
+          <h2
+            class="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight text-white"
+            style="letter-spacing: -0.02em;"
+          >
+            The best remote setups check four boxes.
+          </h2>
+        </div>
+
+        <!-- Right: 4 Mini Cards + Description + Quote + Confidentiality Note -->
+        <div>
+          
+          <!-- 4 Mini Cards Row (Website Dark Theme Boxes) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 mb-8">
+            <div class="rounded-2xl px-2.5 py-4 shadow-sm flex flex-col items-center justify-center text-center overflow-hidden transition-all hover:border-[#3B82F6]" style="background-color: #1E293B; border: 1px solid #334155;">
+              <span class="text-2xl sm:text-3xl mb-2">💬</span>
+              <span class="text-[10px] sm:text-[11px] lg:text-xs font-bold uppercase tracking-tight text-center block w-full text-white/95">Communication</span>
+            </div>
+
+            <div class="rounded-2xl px-2.5 py-4 shadow-sm flex flex-col items-center justify-center text-center overflow-hidden transition-all hover:border-[#3B82F6]" style="background-color: #1E293B; border: 1px solid #334155;">
+              <span class="text-2xl sm:text-3xl mb-2">⚙️</span>
+              <span class="text-[10px] sm:text-[11px] lg:text-xs font-bold uppercase tracking-tight text-center block w-full text-white/95">Workflows</span>
+            </div>
+
+            <div class="rounded-2xl px-2.5 py-4 shadow-sm flex flex-col items-center justify-center text-center overflow-hidden transition-all hover:border-[#3B82F6]" style="background-color: #1E293B; border: 1px solid #334155;">
+              <span class="text-2xl sm:text-3xl mb-2">✅</span>
+              <span class="text-[10px] sm:text-[11px] lg:text-xs font-bold uppercase tracking-tight text-center block w-full text-white/95">Execution</span>
+            </div>
+
+            <div class="rounded-2xl px-2.5 py-4 shadow-sm flex flex-col items-center justify-center text-center overflow-hidden transition-all hover:border-[#3B82F6]" style="background-color: #1E293B; border: 1px solid #334155;">
+              <span class="text-2xl sm:text-3xl mb-2">🚀</span>
+              <span class="text-[10px] sm:text-[11px] lg:text-xs font-bold uppercase tracking-tight text-center block w-full text-white/95">Growth</span>
+            </div>
+          </div>
+
+          <!-- Paragraph -->
+          <p class="text-base sm:text-lg leading-relaxed mb-6" style="color: #94A3B8;">
+            Visibility was there from day one. But the real story is everything that came after — bigger responsibilities, deeper involvement in operations, more hours on the clock, and a client asking for more hands on deck.
+          </p>
+
+          <!-- Quote Callout Box (Website Theme Dark Card) -->
+          <div
+            class="rounded-2xl p-6 sm:p-7 mb-6 shadow-sm"
+            style="background-color: #1E293B; border: 1px solid #334155; border-left: 4px solid #3B82F6;"
+          >
+            <p class="text-lg sm:text-xl italic font-semibold leading-relaxed text-white">
+              "Remote doesn't have to mean disconnected. It can mean visible on day one — and trusted enough to scale from there."
+            </p>
+          </div>
+
+          <!-- Confidentiality Note Card (Website Theme Dark Card) -->
+          <div
+            class="rounded-2xl p-6 sm:p-8 shadow-sm"
+            style="background-color: #1E293B; border: 1px solid #334155;"
+          >
+            <h4 class="text-sm sm:text-base font-bold uppercase tracking-wider mb-2.5" style="color: #93C5FD;">Confidentiality Note</h4>
+            <p class="text-sm sm:text-base leading-relaxed" style="color: #94A3B8;">
+              Client identity, location-specific identifying information, private communications, and other details that could reveal the client have been intentionally left out. No client testimonial or private communication was used. Every outcome here is limited to the information provided for this case study.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION (White Theme) ===== -->
+  <section class="py-20 lg:py-24 bg-white border-t border-slate-100">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-xs font-bold tracking-[0.2em] uppercase mb-4" style="color: #1a4480;">Work With Us</p>
+      <h2 class="text-3xl lg:text-4xl font-black mb-5" style="color: #0F172A; letter-spacing: -0.02em;">Schedule a No-Obligation Consultation</h2>
+      <p class="text-base sm:text-lg mb-10 max-w-2xl mx-auto leading-relaxed" style="color: #475569;">See how an outsourced accounting team can provide transparent, dedicated capacity for your accounting firm or growing business.</p>
+      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-white rounded-lg transition-all hover:opacity-90 shadow-md hover:shadow-lg" style="background: linear-gradient(135deg, #1a4480, #1e5ab5);">
+        Book Free Consultation
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
