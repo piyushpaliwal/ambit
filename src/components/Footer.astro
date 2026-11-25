@@ -2,6 +2,9 @@
 /** Optional props from country layouts — retained for compatibility. */
 const { countryPhone = '', countryEmail = 'nishant@ambitsol.co' } = Astro.props;
 
+const path = Astro.url.pathname;
+const initialCountry = path.includes('/uae/') || path.includes('/uae') ? 'UAE' : 'US';
+
 const quickLinks = [
   ['Home', '/'],
   ['About Us', '/about'],
@@ -35,19 +38,19 @@ const industries = [
 
 const markets = [
   {
-    code: 'USA',
+    code: 'US',
     name: 'United States',
     href: '/services/finance-accounting-tax/us/overview',
     address: '3133 Little Bear Ln, Buford, GA 30519',
-    phone: '+1 (706) 534-8944',
-    phoneHref: 'tel:+17065348944',
-    email: 'nishant@ambitsol.co',
+    phone: '+1 (706) 894-9160',
+    phoneHref: 'tel:+17068949160',
+    email: 'info@ambitsol.com',
   },
   {
     code: 'UAE',
     name: 'United Arab Emirates',
     href: '/services/finance-accounting-tax/uae/overview',
-    address: 'Office # 12C14-61, 12th floor -Rise Tower, Barsha Heights (TECOM) Dubai, United Arab Emirates',
+    address: 'Office # 12C14-61, 12th floor -Rise Tower, Barsha Heights (TECOM) Dubai',
     phone: '+971 56 710 5833',
     phoneHref: 'tel:+971567105833',
     email: 'anil.chavda@ambitsol.co',
@@ -58,9 +61,40 @@ const regions = [
   { code: 'US', label: 'United States', href: '/services/finance-accounting-tax/us/overview' },
   { code: 'UAE', label: 'United Arab Emirates', href: '/services/finance-accounting-tax/uae/overview' },
 ];
+
+const marketsJson = JSON.stringify(markets);
 ---
 
-<footer style="background-color: #0B1220;">
+<footer
+  style="background-color: #0B1220;"
+  x-data={`{
+    open: false,
+    current: '${initialCountry}',
+    markets: ${marketsJson},
+    get market() {
+      return this.markets.find(m => m.code === this.current) || this.markets[0];
+    },
+    selectCountry(code, href) {
+      this.current = code;
+      this.open = false;
+      try { localStorage.setItem('ambit_country', code); } catch (e) {}
+      if (href) window.location.href = href;
+    },
+    init() {
+      const path = window.location.pathname;
+      if (path.includes('/uae')) {
+        this.current = 'UAE';
+      } else if (path.includes('/finance-accounting-tax/us') || path.includes('/us/')) {
+        this.current = 'US';
+      } else {
+        try {
+          const saved = localStorage.getItem('ambit_country');
+          if (saved === 'US' || saved === 'UAE') this.current = saved;
+        } catch (e) {}
+      }
+    }
+  }`}
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Top: brand + newsletter -->
@@ -201,49 +235,48 @@ const regions = [
         >
           Our Markets
         </h4>
-        <div class="space-y-6">
-          {markets.map((m) => (
-            <div>
-              <a href={m.href} class="inline-flex items-center gap-2.5 mb-2.5 group">
-                <span
-                  class="inline-flex items-center justify-center px-2 py-0.5 rounded-full"
-                  style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.06em; color: #C5A880; border: 1px solid #C5A880;"
-                >
-                  {m.code}
-                </span>
-                <span
-                  class="transition-opacity group-hover:opacity-80"
-                  style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; color: #FFFFFF;"
-                >
-                  {m.name}
-                </span>
-              </a>
-              <p
-                class="mb-2"
-                style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.55);"
-              >
-                {m.address}
-              </p>
-              <div class="space-y-1.5">
-                <a
-                  href={m.phoneHref}
-                  class="flex items-center gap-2 transition-opacity hover:opacity-80"
-                  style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; color: rgba(255,255,255,0.72);"
-                >
-                  <svg class="w-3.5 h-3.5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                  {m.phone}
-                </a>
-                <a
-                  href={`mailto:${m.email}`}
-                  class="flex items-center gap-2 transition-opacity hover:opacity-80"
-                  style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; color: rgba(255,255,255,0.72);"
-                >
-                  <svg class="w-3.5 h-3.5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                  {m.email}
-                </a>
-              </div>
-            </div>
-          ))}
+        <div>
+          <a :href="market.href" class="inline-flex items-center gap-2.5 mb-2.5 group">
+            <span
+              class="inline-flex items-center justify-center px-2 py-0.5 rounded-full"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 0.06em; color: #C5A880; border: 1px solid #C5A880;"
+              x-text="market.code"
+            >
+              {initialCountry}
+            </span>
+            <span
+              class="transition-opacity group-hover:opacity-80"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; color: #FFFFFF;"
+              x-text="market.name"
+            >
+              {markets.find((m) => m.code === initialCountry)?.name}
+            </span>
+          </a>
+          <p
+            class="mb-2"
+            style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.55);"
+            x-text="market.address"
+          >
+            {markets.find((m) => m.code === initialCountry)?.address}
+          </p>
+          <div class="space-y-1.5">
+            <a
+              :href="market.phoneHref"
+              class="flex items-center gap-2 transition-opacity hover:opacity-80"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; color: rgba(255,255,255,0.72);"
+            >
+              <svg class="w-3.5 h-3.5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span x-text="market.phone">{markets.find((m) => m.code === initialCountry)?.phone}</span>
+            </a>
+            <a
+              :href="'mailto:' + market.email"
+              class="flex items-center gap-2 transition-opacity hover:opacity-80"
+              style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; color: rgba(255,255,255,0.72);"
+            >
+              <svg class="w-3.5 h-3.5 flex-shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span x-text="market.email">{markets.find((m) => m.code === initialCountry)?.email}</span>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -276,11 +309,7 @@ const regions = [
         ))}
       </div>
 
-      <div
-        class="lg:flex-1 lg:flex lg:justify-end relative"
-        x-data="{ open: false, current: 'US' }"
-        @click.outside="open = false"
-      >
+      <div class="lg:flex-1 lg:flex lg:justify-end relative" @click.outside="open = false">
         <button
           type="button"
           class="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
@@ -289,7 +318,7 @@ const regions = [
           :aria-expanded="open.toString()"
           aria-haspopup="listbox"
         >
-          <span x-text="current">US</span>
+          <span x-text="current">{initialCountry}</span>
           <svg class="w-3.5 h-3.5 opacity-70 transition-transform" :class="open && 'rotate-180'" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
         <div
@@ -301,14 +330,14 @@ const regions = [
           role="listbox"
         >
           {regions.map((r) => (
-            <a
-              href={r.href}
-              class="block px-4 py-2.5 text-left transition-colors hover:bg-white/5"
+            <button
+              type="button"
+              class="block w-full px-4 py-2.5 text-left transition-colors hover:bg-white/5"
               style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 13px; color: #FFFFFF;"
-              @click={`current = '${r.code}'; open = false`}
+              @click={`selectCountry('${r.code}', '${r.href}')`}
             >
               {r.code} — {r.label}
-            </a>
+            </button>
           ))}
         </div>
       </div>
